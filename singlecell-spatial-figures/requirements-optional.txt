@@ -1,0 +1,17 @@
+# OPTIONAL, untested integrations. Select only needed packages and resolve/pin
+# compatible versions in a separate project environment. Not an install-all list.
+# anndata
+# scanpy
+# squidpy
+# spatialdata
+# spatialdata-plot
+# cellrank
+# scvelo
+# liana
+# marsilea
+# PyComplexHeatmap
+# networkx
+# adjustText
+# plotnine
+# patchworklib
+# pyyaml

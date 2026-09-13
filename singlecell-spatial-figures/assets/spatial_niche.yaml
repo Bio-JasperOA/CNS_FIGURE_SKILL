@@ -1,0 +1,175 @@
+spec_version: '2.0'
+figure:
+  id: Fig_spatial_niche
+  question: Which identities and states are supported by independent evidence?
+  main_message: 'DRAFT: replace after reviewing the observed results.'
+  evidence_level: descriptive
+  width_mm: 183
+  height_mm: 150
+design:
+  font_family: Arial
+  fallback_font: DejaVu Sans
+  font_pt: 7
+  min_font_pt: 6
+  tag_pt: 9
+  line_pt: 0.6
+  panel_padding_mm:
+  - 9
+  - 6
+  - 11
+  - 13
+layout:
+  rows: 2
+  cols: 2
+  row_weights:
+  - 1
+  - 1
+  col_weights:
+  - 1
+  - 1
+  gap_mm: 5
+  margin_mm:
+  - 4
+  - 4
+  - 4
+  - 4
+datasets:
+  data_a:
+    path: data/spatial_niche_a.csv
+    grain: spot
+    keys:
+    - id
+    value_definition: 'DRAFT: declare the supplied numeric quantity and denominator.'
+    source: 'DRAFT: replace with actual file version, assay/layer and analysis provenance.'
+  data_b:
+    path: data/spatial_niche_b.csv
+    grain: spot
+    keys:
+    - id
+    value_definition: 'DRAFT: declare the supplied numeric quantity and denominator.'
+    source: 'DRAFT: replace with actual file version, assay/layer and analysis provenance.'
+  data_c:
+    path: data/spatial_niche_c.csv
+    grain: matrix
+    keys:
+    - id
+    value_definition: 'DRAFT: declare the supplied numeric quantity and denominator.'
+    source: 'DRAFT: replace with actual file version, assay/layer and analysis provenance.'
+  data_d:
+    path: data/spatial_niche_d.csv
+    grain: donor_summary
+    keys:
+    - id
+    value_definition: 'DRAFT: declare the supplied numeric quantity and denominator.'
+    source: 'DRAFT: replace with actual file version, assay/layer and analysis provenance.'
+scales:
+  identity:
+    kind: categorical
+    order:
+    - Population_A
+    - Population_B
+    colors:
+      Population_A: '#4477AA'
+      Population_B: '#CC6677'
+    label: Population
+  expression:
+    kind: continuous
+    limits:
+    - 0
+    - 4
+    label: 'DRAFT: log-normalized expression'
+    cmap: viridis
+panels:
+- id: a
+  question: Where is the candidate niche in the full section?
+  role: spatial_context
+  renderer: spatial
+  data_id: data_a
+  slot:
+  - 0
+  - 0
+  - 1
+  - 1
+  channels:
+    x: x
+    y: y
+    color: expression
+  scale_ids:
+    color: expression
+  depends_on: []
+  statistics:
+    inferential: false
+    independent_unit: none
+    n_biological: 0
+    method: Descriptive plan; no hypothesis test is claimed.
+  spatial:
+    unit: um
+    y_axis_down: true
+    section_column: section_id
+    transform_applied: 'DRAFT: document calibration and applied affine transform.'
+- id: b
+  question: Is the local organization visible within a documented ROI?
+  role: spatial_context
+  renderer: spatial_roi
+  data_id: data_b
+  slot:
+  - 0
+  - 1
+  - 1
+  - 1
+  channels:
+    x: x
+    y: y
+    color: expression
+  scale_ids:
+    color: expression
+  depends_on:
+  - a
+  statistics:
+    inferential: false
+    independent_unit: none
+    n_biological: 0
+    method: Descriptive plan; no hypothesis test is claimed.
+  spatial:
+    unit: um
+    y_axis_down: true
+    section_column: section_id
+    transform_applied: 'DRAFT: document calibration and applied affine transform.'
+- id: c
+  question: Which interaction effects are supported by the model?
+  role: mechanism_candidate
+  renderer: annotated_heatmap
+  data_id: data_c
+  slot:
+  - 1
+  - 0
+  - 1
+  - 1
+  channels: {}
+  scale_ids: {}
+  depends_on:
+  - a
+  statistics:
+    inferential: false
+    independent_unit: none
+    n_biological: 0
+    method: Descriptive plan; no hypothesis test is claimed.
+- id: d
+  question: Is the candidate pattern reproducible across biological samples?
+  role: validation
+  renderer: sample_effect
+  data_id: data_d
+  slot:
+  - 1
+  - 1
+  - 1
+  - 1
+  channels: {}
+  scale_ids: {}
+  depends_on:
+  - a
+  statistics:
+    inferential: false
+    independent_unit: none
+    n_biological: 0
+    method: Descriptive plan; no hypothesis test is claimed.

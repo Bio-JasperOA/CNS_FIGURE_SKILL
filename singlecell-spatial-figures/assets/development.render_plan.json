@@ -1,0 +1,277 @@
+{
+  "plan_version": "2.0",
+  "spec": {
+    "spec_version": "2.0",
+    "figure": {
+      "id": "Fig_development",
+      "question": "Which identities and states are supported by independent evidence?",
+      "main_message": "DRAFT: replace after reviewing the observed results.",
+      "evidence_level": "prediction",
+      "width_mm": 183,
+      "height_mm": 150
+    },
+    "design": {
+      "font_family": "Arial",
+      "fallback_font": "DejaVu Sans",
+      "font_pt": 7,
+      "min_font_pt": 6,
+      "tag_pt": 9,
+      "line_pt": 0.6,
+      "panel_padding_mm": [
+        9,
+        6,
+        11,
+        13
+      ]
+    },
+    "layout": {
+      "rows": 2,
+      "cols": 2,
+      "row_weights": [
+        1,
+        1
+      ],
+      "col_weights": [
+        1,
+        1
+      ],
+      "gap_mm": 5,
+      "margin_mm": [
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    "datasets": {
+      "data_a": {
+        "path": "data/development_a.csv",
+        "grain": "cell",
+        "keys": [
+          "id"
+        ],
+        "value_definition": "DRAFT: declare the supplied numeric quantity and denominator.",
+        "source": "DRAFT: replace with actual file version, assay/layer and analysis provenance."
+      },
+      "data_b": {
+        "path": "data/development_b.csv",
+        "grain": "edge",
+        "keys": [
+          "id"
+        ],
+        "value_definition": "DRAFT: declare the supplied numeric quantity and denominator.",
+        "source": "DRAFT: replace with actual file version, assay/layer and analysis provenance."
+      },
+      "data_c": {
+        "path": "data/development_c.csv",
+        "grain": "trend",
+        "keys": [
+          "id"
+        ],
+        "value_definition": "DRAFT: declare the supplied numeric quantity and denominator.",
+        "source": "DRAFT: replace with actual file version, assay/layer and analysis provenance."
+      },
+      "data_d": {
+        "path": "data/development_d.csv",
+        "grain": "metrics",
+        "keys": [
+          "id"
+        ],
+        "value_definition": "DRAFT: declare the supplied numeric quantity and denominator.",
+        "source": "DRAFT: replace with actual file version, assay/layer and analysis provenance."
+      }
+    },
+    "scales": {
+      "identity": {
+        "kind": "categorical",
+        "order": [
+          "Population_A",
+          "Population_B"
+        ],
+        "colors": {
+          "Population_A": "#4477AA",
+          "Population_B": "#CC6677"
+        },
+        "label": "Population"
+      },
+      "expression": {
+        "kind": "continuous",
+        "limits": [
+          0,
+          4
+        ],
+        "label": "DRAFT: log-normalized expression",
+        "cmap": "viridis"
+      }
+    },
+    "panels": [
+      {
+        "id": "a",
+        "question": "How do time and cell identity relate in a fixed embedding?",
+        "role": "overview",
+        "renderer": "embedding",
+        "data_id": "data_a",
+        "slot": [
+          0,
+          0,
+          1,
+          1
+        ],
+        "channels": {
+          "x": "x",
+          "y": "y",
+          "category": "cell_type"
+        },
+        "scale_ids": {
+          "category": "identity"
+        },
+        "depends_on": [],
+        "statistics": {
+          "inferential": false,
+          "independent_unit": "none",
+          "n_biological": 0,
+          "method": "Descriptive plan; no hypothesis test is claimed."
+        }
+      },
+      {
+        "id": "b",
+        "question": "Which predicted transitions carry the transported mass?",
+        "role": "mechanism_candidate",
+        "renderer": "transport",
+        "data_id": "data_b",
+        "slot": [
+          0,
+          1,
+          1,
+          1
+        ],
+        "channels": {},
+        "scale_ids": {},
+        "depends_on": [
+          "a"
+        ],
+        "statistics": {
+          "inferential": false,
+          "independent_unit": "none",
+          "n_biological": 0,
+          "method": "Descriptive plan; no hypothesis test is claimed."
+        }
+      },
+      {
+        "id": "c",
+        "question": "Which programs vary along the inferred lineage?",
+        "role": "quantification",
+        "renderer": "lineage_trend",
+        "data_id": "data_c",
+        "slot": [
+          1,
+          0,
+          1,
+          1
+        ],
+        "channels": {},
+        "scale_ids": {},
+        "depends_on": [
+          "a"
+        ],
+        "statistics": {
+          "inferential": false,
+          "independent_unit": "none",
+          "n_biological": 0,
+          "method": "Descriptive plan; no hypothesis test is claimed."
+        }
+      },
+      {
+        "id": "d",
+        "question": "Does the trajectory generalize to held-out time points?",
+        "role": "validation",
+        "renderer": "heldout_validation",
+        "data_id": "data_d",
+        "slot": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "channels": {},
+        "scale_ids": {},
+        "depends_on": [
+          "a"
+        ],
+        "statistics": {
+          "inferential": false,
+          "independent_unit": "none",
+          "n_biological": 0,
+          "method": "Descriptive plan; no hypothesis test is claimed."
+        }
+      }
+    ]
+  },
+  "render_order": [
+    "a",
+    "b",
+    "c",
+    "d"
+  ],
+  "boxes": {
+    "a": {
+      "outer_mm": [
+        4,
+        4,
+        85.0,
+        68.5
+      ],
+      "content_mm": [
+        17,
+        13,
+        66.0,
+        48.5
+      ]
+    },
+    "b": {
+      "outer_mm": [
+        94.0,
+        4,
+        85.0,
+        68.5
+      ],
+      "content_mm": [
+        107.0,
+        13,
+        66.0,
+        48.5
+      ]
+    },
+    "c": {
+      "outer_mm": [
+        4,
+        77.5,
+        85.0,
+        68.5
+      ],
+      "content_mm": [
+        17,
+        86.5,
+        66.0,
+        48.5
+      ]
+    },
+    "d": {
+      "outer_mm": [
+        94.0,
+        77.5,
+        85.0,
+        68.5
+      ],
+      "content_mm": [
+        107.0,
+        86.5,
+        66.0,
+        48.5
+      ]
+    }
+  },
+  "input_manifest": {},
+  "spec_sha256": "9cfb9dce3aca39cf88ac8ab9540cd793015ce4cdf476fca14ba48c289d255b05",
+  "status": "preflight_passed_not_reviewed"
+}

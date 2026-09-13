@@ -1,0 +1,34 @@
+{
+  "one_skill_entry": true,
+  "skill_name": "singlecell-spatial-figures",
+  "frontmatter_yaml_parsed": true,
+  "local_markdown_links_checked": 32,
+  "broken_local_links": [],
+  "configuration_files_parsed": [
+    "assets/spatial_niche.yaml",
+    "assets/model_benchmark.render_plan.json",
+    "assets/model_benchmark.yaml",
+    "assets/development.yaml",
+    "assets/development.render_plan.json",
+    "assets/atlas.yaml",
+    "assets/figure_spec.schema.json",
+    "assets/spatial_niche.render_plan.json",
+    "assets/atlas.render_plan.json"
+  ],
+  "inherited_scripts_byte_identical": [
+    "complex_recipes.py",
+    "complex_recipes.R",
+    "figure_core.py",
+    "render_project.py",
+    "composer.py",
+    "figure_core.R",
+    "native_renderers.py",
+    "framework_contract.py",
+    "compose_plan.R"
+  ],
+  "python_tests": "76 passed, 11 warnings, 0 failed",
+  "r_tests": "not_run: Rscript unavailable",
+  "official_platform_validation": "not_run",
+  "new_manual_visual_review": "not_performed",
+  "new_literature_search": "not_performed"
+}

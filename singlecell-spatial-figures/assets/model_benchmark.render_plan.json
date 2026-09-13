@@ -1,0 +1,271 @@
+{
+  "plan_version": "2.0",
+  "spec": {
+    "spec_version": "2.0",
+    "figure": {
+      "id": "Fig_model_benchmark",
+      "question": "Which identities and states are supported by independent evidence?",
+      "main_message": "DRAFT: replace after reviewing the observed results.",
+      "evidence_level": "prediction",
+      "width_mm": 183,
+      "height_mm": 150
+    },
+    "design": {
+      "font_family": "Arial",
+      "fallback_font": "DejaVu Sans",
+      "font_pt": 7,
+      "min_font_pt": 6,
+      "tag_pt": 9,
+      "line_pt": 0.6,
+      "panel_padding_mm": [
+        9,
+        6,
+        11,
+        13
+      ]
+    },
+    "layout": {
+      "rows": 2,
+      "cols": 2,
+      "row_weights": [
+        1,
+        1
+      ],
+      "col_weights": [
+        1,
+        1
+      ],
+      "gap_mm": 5,
+      "margin_mm": [
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    "datasets": {
+      "data_a": {
+        "path": "data/model_benchmark_a.csv",
+        "grain": "metrics",
+        "keys": [
+          "id"
+        ],
+        "value_definition": "DRAFT: declare the supplied numeric quantity and denominator.",
+        "source": "DRAFT: replace with actual file version, assay/layer and analysis provenance."
+      },
+      "data_b": {
+        "path": "data/model_benchmark_b.csv",
+        "grain": "metrics",
+        "keys": [
+          "id"
+        ],
+        "value_definition": "DRAFT: declare the supplied numeric quantity and denominator.",
+        "source": "DRAFT: replace with actual file version, assay/layer and analysis provenance."
+      },
+      "data_c": {
+        "path": "data/model_benchmark_c.csv",
+        "grain": "metrics",
+        "keys": [
+          "id"
+        ],
+        "value_definition": "DRAFT: declare the supplied numeric quantity and denominator.",
+        "source": "DRAFT: replace with actual file version, assay/layer and analysis provenance."
+      },
+      "data_d": {
+        "path": "data/model_benchmark_d.csv",
+        "grain": "metrics",
+        "keys": [
+          "id"
+        ],
+        "value_definition": "DRAFT: declare the supplied numeric quantity and denominator.",
+        "source": "DRAFT: replace with actual file version, assay/layer and analysis provenance."
+      }
+    },
+    "scales": {
+      "identity": {
+        "kind": "categorical",
+        "order": [
+          "Population_A",
+          "Population_B"
+        ],
+        "colors": {
+          "Population_A": "#4477AA",
+          "Population_B": "#CC6677"
+        },
+        "label": "Population"
+      },
+      "expression": {
+        "kind": "continuous",
+        "limits": [
+          0,
+          4
+        ],
+        "label": "DRAFT: log-normalized expression",
+        "cmap": "viridis"
+      }
+    },
+    "panels": [
+      {
+        "id": "a",
+        "question": "What is the held-out unit and where is leakage prevented?",
+        "role": "overview",
+        "renderer": "split_design",
+        "data_id": "data_a",
+        "slot": [
+          0,
+          0,
+          1,
+          1
+        ],
+        "channels": {},
+        "scale_ids": {},
+        "depends_on": [],
+        "statistics": {
+          "inferential": false,
+          "independent_unit": "none",
+          "n_biological": 0,
+          "method": "Descriptive plan; no hypothesis test is claimed."
+        }
+      },
+      {
+        "id": "b",
+        "question": "What are paired model differences on identical held-out units?",
+        "role": "benchmark",
+        "renderer": "paired_metrics",
+        "data_id": "data_b",
+        "slot": [
+          0,
+          1,
+          1,
+          1
+        ],
+        "channels": {},
+        "scale_ids": {},
+        "depends_on": [
+          "a"
+        ],
+        "statistics": {
+          "inferential": false,
+          "independent_unit": "none",
+          "n_biological": 0,
+          "method": "Descriptive plan; no hypothesis test is claimed."
+        }
+      },
+      {
+        "id": "c",
+        "question": "Do the probabilities match the observed event rates?",
+        "role": "uncertainty",
+        "renderer": "calibration",
+        "data_id": "data_c",
+        "slot": [
+          1,
+          0,
+          1,
+          1
+        ],
+        "channels": {},
+        "scale_ids": {},
+        "depends_on": [
+          "a"
+        ],
+        "statistics": {
+          "inferential": false,
+          "independent_unit": "none",
+          "n_biological": 0,
+          "method": "Descriptive plan; no hypothesis test is claimed."
+        }
+      },
+      {
+        "id": "d",
+        "question": "In which prespecified strata does performance fail?",
+        "role": "validation",
+        "renderer": "failure_strata",
+        "data_id": "data_d",
+        "slot": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "channels": {},
+        "scale_ids": {},
+        "depends_on": [
+          "a"
+        ],
+        "statistics": {
+          "inferential": false,
+          "independent_unit": "none",
+          "n_biological": 0,
+          "method": "Descriptive plan; no hypothesis test is claimed."
+        }
+      }
+    ]
+  },
+  "render_order": [
+    "a",
+    "b",
+    "c",
+    "d"
+  ],
+  "boxes": {
+    "a": {
+      "outer_mm": [
+        4,
+        4,
+        85.0,
+        68.5
+      ],
+      "content_mm": [
+        17,
+        13,
+        66.0,
+        48.5
+      ]
+    },
+    "b": {
+      "outer_mm": [
+        94.0,
+        4,
+        85.0,
+        68.5
+      ],
+      "content_mm": [
+        107.0,
+        13,
+        66.0,
+        48.5
+      ]
+    },
+    "c": {
+      "outer_mm": [
+        4,
+        77.5,
+        85.0,
+        68.5
+      ],
+      "content_mm": [
+        17,
+        86.5,
+        66.0,
+        48.5
+      ]
+    },
+    "d": {
+      "outer_mm": [
+        94.0,
+        77.5,
+        85.0,
+        68.5
+      ],
+      "content_mm": [
+        107.0,
+        86.5,
+        66.0,
+        48.5
+      ]
+    }
+  },
+  "input_manifest": {},
+  "spec_sha256": "a64cd8147279aee3c2fae762cbd3022cbfcd1ec1762aaf1fd503d927fe12e81c",
+  "status": "preflight_passed_not_reviewed"
+}
