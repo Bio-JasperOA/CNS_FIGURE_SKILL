@@ -1,0 +1,12 @@
+{
+  "demo": true,
+  "font_family": "DejaVu Sans",
+  "width_mm": 183,
+  "height_mm": 118,
+  "subtitle": "Synthetic style fixture | identical data in both versions",
+  "effect_label": "Supplied normalized enrichment score",
+  "q_color_limits": [
+    0,
+    5
+  ]
+}

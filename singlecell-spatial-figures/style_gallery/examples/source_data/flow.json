@@ -1,0 +1,8 @@
+{
+  "demo": true,
+  "font_family": "DejaVu Sans",
+  "width_mm": 183,
+  "height_mm": 118,
+  "subtitle": "Synthetic coupling table | widths retain the original aggregate mass",
+  "mass_unit": "arbitrary mass units"
+}

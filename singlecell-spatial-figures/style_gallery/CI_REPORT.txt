@@ -1,0 +1,16 @@
+........................................................................ [ 23%]
+........................................................................ [ 47%]
+..........................................................ss............ [ 71%]
+........................................................................ [ 95%]
+.............                                                            [100%]
+=============================== warnings summary ===============================
+singlecell-spatial-figures/tests/test_framework_v2.py: 11 warnings
+  /home/runner/work/CNS_FIGURE_SKILL/CNS_FIGURE_SKILL/singlecell-spatial-figures/scripts/figure_core.py:51: UserWarning: Arial is unavailable; using DejaVu Sans. Record this in provenance.
+    warnings.warn(f"{style.font} is unavailable; using {chosen}. Record this in provenance.")
+
+singlecell-spatial-figures/tests/test_visual_v3.py::test_typography_math_and_missing_glyph
+  /home/runner/work/CNS_FIGURE_SKILL/CNS_FIGURE_SKILL/singlecell-spatial-figures/scripts/visual_audit.py:61: UserWarning: Glyph 1114111 (\U0010ffff) missing from font(s) DejaVu Sans.
+    fig.canvas.draw();renderer=fig.canvas.get_renderer();factor=25.4/fig.dpi;fw,fh=fig.get_size_inches()*25.4
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+299 passed, 2 skipped, 12 warnings in 22.21s

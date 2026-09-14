@@ -102,3 +102,20 @@ python scripts/render_v3.py bind-report build/Fig1 build/Fig1/carrier_audit.json
 保留 `spec_version: '3.0'`。本次增加 52 个可选色卡家族，原有默认色和六种 norm 不变。使用前读 [色卡索引与调用规则](assets/palettes/README.md)。类别尺度可写 `preset: C19` 加固定 `order`；连续尺度可写 `preset: M02`，中心发散可用 `preset: D03` 加 `norm: {type: two_slope, center: 0}`。`preset` 不可与显式 colors/cmap 混用。C06 必须选具体变体；C21 是衍生试选，不标为论文原色。
 
 `render_v3.py` 自动编译预设并保留 `palette_bindings.json`、原始配置及色卡依赖哈希。类别颜色不足时停止，不循环或插值；只筛选群组时重用已保存的命名颜色字典。R 的 `scripts/palette_presets.R` 读取同一 RGB8 表，但当前未运行原生 R 测试，不能扩张为跨后端等价验证。
+
+<!-- STYLE_GALLERY_V3_1:START -->
+## 图形样式库 · v3.1（不更改大版本 / schema）
+
+先按图型阅读 [最简版与高级版实例](style_gallery/examples/README.md) 和 [设计操作手册](style_gallery/DESIGN_GUIDE.md)，再编写项目图。不要先执行默认绘图函数、最后仅修改字体。此路线新增14类表格驱动的独立Figure；原有FigureSpec四类与schema 3.0保持不变。
+
+从 `style_gallery/catalogue.py` 选择对应问题、最低必要编码、高级信息层和失败条件。优先复用现有命名色卡；类别颜色在嵌入、组成、通信图中必须一致。高级版增加真实输入支持的模块/计数、分布、配对、方向或不确定性，不增加装饰性复杂度。内置CSV和图全部是合成样式fixture，不是研究结果，不能用于填补缺少的实验数据。
+
+```bash
+python style_gallery/render.py plot --kind dotplot --input reviewed.csv --config reviewed.json --mode advanced --out results/Fig1
+python -m pytest style_gallery/tests -q
+```
+
+配置结构参照对应 `style_gallery/examples/source_data/*.json`；真实任务设置 `demo: false`并给出`provenance`、值的定义与固定尺度。先保留最简必要编码，再使用高级层次；与论文对照时区分实际看图、读图注和读源码，禁止称为逐图复现。100类别嵌入示例使用C19、重点编号及独立完整色键，不保证100色可由人眼完全区分。
+
+`style_gallery/render_from_R.R`调用同一Python渲染器，不是14套原生R后端。需要旧版最终PDF与载体审核时继续用 `scripts/render_v3.py inspect-pdf` / `bind-report`；新的Canvas边界检查不替代正式人工审核。
+<!-- STYLE_GALLERY_V3_1:END -->

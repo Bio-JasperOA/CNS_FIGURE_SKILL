@@ -1,0 +1,10 @@
+source,target,weight
+Myeloid,Epithelial,0.9
+Myeloid,Endothelial,0.2
+Myeloid,B cells,0.45
+Stromal,Epithelial,0.3
+Stromal,Endothelial,0.85
+Stromal,B cells,0.25
+T cells,Epithelial,0.2
+T cells,Endothelial,0.4
+T cells,B cells,0.72

@@ -1,0 +1,10 @@
+{
+  "demo": true,
+  "font_family": "DejaVu Sans",
+  "width_mm": 183,
+  "height_mm": 118,
+  "subtitle": "320 synthetic effect estimates and adjusted P values | thresholds fixed",
+  "effect_threshold": 1,
+  "q_threshold": 0.05,
+  "label_n": 6
+}

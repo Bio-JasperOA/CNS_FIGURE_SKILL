@@ -1,5 +1,5 @@
 {
-  "version": "3.0.1",
+  "version": "3.1.0",
   "date": "2026-09-15",
   "authority": "Current implementation boundary; runtime evidence in QA_REPORT.md",
   "python_v3_renderers": [
@@ -274,6 +274,38 @@
       "C06 variants are not additional palette families",
       "C21 is derived, not paper-extracted",
       "No universal color distinguishability guarantee"
+    ]
+  },
+  "style_gallery": {
+    "version": "3.1.0",
+    "path": "style_gallery/README.md",
+    "kinds": [
+      "embedding",
+      "spatial",
+      "dotplot",
+      "heatmap",
+      "distribution",
+      "composition",
+      "paired",
+      "volcano",
+      "enrichment",
+      "trajectory",
+      "network",
+      "flow",
+      "benchmark",
+      "correlation"
+    ],
+    "implementation": "style_gallery/render.py",
+    "test": "style_gallery/tests/test_gallery.py",
+    "catalogue": "style_gallery/catalogue.py",
+    "gallery": "style_gallery/examples/README.md",
+    "status": "standalone_table_driven_python_renderers",
+    "examples": "14 minimal/advanced pairs + 100-category stress pair; all synthetic",
+    "R": "shared Python entry point only; native R not tested",
+    "limits": [
+      "Not additional FigureSpec registrations; existing four remain unchanged",
+      "Not original-paper numerical reproduction",
+      "Canvas text bounds are not a full perception or collision audit"
     ]
   }
 }

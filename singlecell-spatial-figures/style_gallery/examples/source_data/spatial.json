@@ -1,0 +1,15 @@
+{
+  "demo": true,
+  "font_family": "DejaVu Sans",
+  "width_mm": 183,
+  "height_mm": 118,
+  "subtitle": "Synthetic style fixture | identical data in both versions",
+  "limits": [
+    0,
+    3.2
+  ],
+  "coordinate_unit": "um",
+  "scale_bar": 200,
+  "point_area": 12,
+  "value_label": "Supplied expression score"
+}

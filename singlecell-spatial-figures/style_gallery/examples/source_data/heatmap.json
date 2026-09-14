@@ -1,0 +1,34 @@
+{
+  "demo": true,
+  "font_family": "DejaVu Sans",
+  "width_mm": 183,
+  "height_mm": 118,
+  "subtitle": "Synthetic style fixture | identical data in both versions",
+  "group_order": [
+    "T cells",
+    "B cells",
+    "Myeloid",
+    "Stromal",
+    "Endothelial",
+    "Epithelial"
+  ],
+  "feature_order": [
+    "G01",
+    "G02",
+    "G03",
+    "G04",
+    "G05",
+    "G06",
+    "G07",
+    "G08",
+    "G09",
+    "G10",
+    "G11",
+    "G12"
+  ],
+  "limits": [
+    -2.5,
+    2.5
+  ],
+  "title": "Expression modules with aligned annotations"
+}

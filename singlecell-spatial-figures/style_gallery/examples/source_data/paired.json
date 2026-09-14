@@ -1,0 +1,11 @@
+{
+  "demo": true,
+  "font_family": "DejaVu Sans",
+  "width_mm": 183,
+  "height_mm": 118,
+  "subtitle": "10 synthetic paired biological samples | no P value invented",
+  "condition_order": [
+    "Before",
+    "After"
+  ]
+}

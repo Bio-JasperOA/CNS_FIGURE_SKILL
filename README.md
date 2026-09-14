@@ -42,3 +42,11 @@ preset: C19
 order: [T_cell, B_cell, Myeloid]
 # 某个 continuous scale 内则使用 preset: M02，limits 与 norm 仍显式定义。
 ```
+
+<!-- STYLE_GALLERY_V3_1:START -->
+## v3.1 · 图形样式与实例
+
+**[浏览14类最简版 / 高级版](singlecell-spatial-figures/style_gallery/examples/README.md)** · [设计手册](singlecell-spatial-figures/style_gallery/DESIGN_GUIDE.md) · [运行代码](singlecell-spatial-figures/style_gallery/README.md) · [新增测试记录](singlecell-spatial-figures/style_gallery/QA_REPORT.md)
+
+每类含同一输入的两版图、PNG/PDF/SVG、源表和配置，以及CNS及子刊论文具体panel的设计对照。另有100类别嵌入图与完整色键。所有实例均为合成样式测试，不是生物学结果或论文数值复现。保留v3大版本、schema 3.0及52个色卡家族；不覆盖现有分析流程。
+<!-- STYLE_GALLERY_V3_1:END -->

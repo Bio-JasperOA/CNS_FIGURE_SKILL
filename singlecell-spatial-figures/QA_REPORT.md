@@ -1,3 +1,9 @@
+<!-- STYLE_GALLERY_V3_1:START -->
+# v3.1 样式模块增量验证
+
+最新样式模块的实际记录见 [style_gallery/QA_REPORT.md](style_gallery/QA_REPORT.md)，服务器构建结果见 [style_gallery/CI_REPORT.txt](style_gallery/CI_REPORT.txt)。本地新增样式测试87项通过；不要把历史213项重复计为本轮运行结果。下文保留既有v3/v3.0.1审核记录。R入口不声称原生后端已验证。
+<!-- STYLE_GALLERY_V3_1:END -->
+
 # v3.0 当前验证记录
 
 日期：2026-09-14。代码基于 main 的 `bda11f2bd4da4c77166da2154011c8cf6573c9d3` 修改。本次新增的是工程/视觉决策/验收能力，不扩大旧版论文检索或逐图复现声明。

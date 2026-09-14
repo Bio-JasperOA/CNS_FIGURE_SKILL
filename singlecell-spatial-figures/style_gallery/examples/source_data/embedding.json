@@ -1,0 +1,24 @@
+{
+  "demo": true,
+  "font_family": "DejaVu Sans",
+  "width_mm": 183,
+  "height_mm": 118,
+  "subtitle": "Synthetic embedding coordinates | not a computed UMAP",
+  "title": "Cell identities on shared coordinates",
+  "group_order": [
+    "T cells",
+    "B cells",
+    "Myeloid",
+    "Stromal",
+    "Endothelial",
+    "Epithelial"
+  ],
+  "colors": {
+    "T cells": "#729ECE",
+    "B cells": "#FF9E4A",
+    "Myeloid": "#67BF5C",
+    "Stromal": "#ED665D",
+    "Endothelial": "#AD8BC9",
+    "Epithelial": "#A8786E"
+  }
+}

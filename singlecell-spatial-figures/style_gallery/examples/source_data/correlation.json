@@ -1,0 +1,27 @@
+{
+  "demo": true,
+  "font_family": "DejaVu Sans",
+  "width_mm": 183,
+  "height_mm": 118,
+  "subtitle": "Synthetic symmetric matrix | fixed range -1 to 1",
+  "row_order": [
+    "Program 1",
+    "Program 2",
+    "Program 3",
+    "Program 4",
+    "Program 5",
+    "Program 6",
+    "Program 7",
+    "Program 8"
+  ],
+  "column_order": [
+    "Program 1",
+    "Program 2",
+    "Program 3",
+    "Program 4",
+    "Program 5",
+    "Program 6",
+    "Program 7",
+    "Program 8"
+  ]
+}

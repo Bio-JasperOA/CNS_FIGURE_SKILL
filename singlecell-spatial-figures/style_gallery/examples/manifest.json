@@ -1,0 +1,90 @@
+{
+  "version": "3.1.0",
+  "data_kind": "synthetic_style_fixture",
+  "pairs": [
+    {
+      "kind": "embedding",
+      "data_sha256": "701b8d403faf6d876a150c5c1cac3fa4acc565ad72d8f2e6df79aa63365aa300",
+      "config_sha256": "ca6a7ab58724211d2069fcca1648801af1eb39c5fd42d1459e48e0fad4fbd1b2",
+      "demo": true
+    },
+    {
+      "kind": "spatial",
+      "data_sha256": "dca1774488faf5f0fe8db8bdfaf9cea6309ce7c05ed297dd27ba3ff40e690300",
+      "config_sha256": "bc607593d2a069caf1bf48918df142598f24ce486649f55e0235f7f5b230dc68",
+      "demo": true
+    },
+    {
+      "kind": "dotplot",
+      "data_sha256": "d26758ebab1db683e9745a15b002fc66ad407a38d43231167c4910d7e7ea61a4",
+      "config_sha256": "ee5f0d22bf61b52baaaadea316654857a58aec8dae62d3b775387d928d15fea9",
+      "demo": true
+    },
+    {
+      "kind": "heatmap",
+      "data_sha256": "0117d098b6d41c984640c35225fa59d94884727f9d657fbc797e5d93818a230b",
+      "config_sha256": "c994932dc192a9a9c8276de410858f69677f8e941992a1e3da8ed6b9446cc5dc",
+      "demo": true
+    },
+    {
+      "kind": "distribution",
+      "data_sha256": "b92026837e217b0e48b9b2ae4db81fe86bfc468d342999281ed3e21ce973da56",
+      "config_sha256": "9c372e1d826e0e4c679d622fa293a7e97e2237fd66515433aa81af90af46c40c",
+      "demo": true
+    },
+    {
+      "kind": "composition",
+      "data_sha256": "637b9799cb476c1090380de8e85133a21de7b127b01570cfae579baf209406f7",
+      "config_sha256": "8a050aa5dd7302e0e01fe7a2e4cf42fd4008f43a04bfa42cb5c14c407dd79595",
+      "demo": true
+    },
+    {
+      "kind": "paired",
+      "data_sha256": "b8e119beef8b85bdee51b170101e0427eec9f584e0190db32b58b0b5b02b911d",
+      "config_sha256": "46ba4c0d0c1f8b68e06352bc4e515e31c0ac84d976f4c192643f3589f9bf3774",
+      "demo": true
+    },
+    {
+      "kind": "volcano",
+      "data_sha256": "e06975ad87a0c5f7adc077003997b7efbba5c6dc6aeef6a6c299c2a452abc9c4",
+      "config_sha256": "8e7b8480bf9f032a1b696d031b0dfd20d9100b339570698667b8a6e4baa05d8e",
+      "demo": true
+    },
+    {
+      "kind": "enrichment",
+      "data_sha256": "252f9611da6635be9ce7419b097a6a731c077f7c40465348dbfa0b14ad861e68",
+      "config_sha256": "b23e7d1d5451ad494c145ccf54987b5e168759dba36b6a5e4eb467fa4f1bc692",
+      "demo": true
+    },
+    {
+      "kind": "trajectory",
+      "data_sha256": "a1025189208966373b5a8b1de9b2a43804bb2e9e53ac2767e7036ea52f945f48",
+      "config_sha256": "a08577ec859969a8f118647555ce2c4cb82f5448439cf635ff2edc098c48f805",
+      "demo": true
+    },
+    {
+      "kind": "network",
+      "data_sha256": "1af1bd681ba1ab93ff9345b07b4ac038b24d2f8fabae73cad9ce0305dd88749b",
+      "config_sha256": "181fac6c83f2b3e4ed5ca68c1ef5b9663a12390df869331e524a08a7c9e5083a",
+      "demo": true
+    },
+    {
+      "kind": "flow",
+      "data_sha256": "d521301f22c62067fed2d305f59db780691cafc64e0c66916996eaec4d917eda",
+      "config_sha256": "a985853b56bcb4c241a9458436ac511206bc2cea91cf1788b6dbd4c20f960265",
+      "demo": true
+    },
+    {
+      "kind": "benchmark",
+      "data_sha256": "6d7ea7227f3cc39a1bef6357555b5058b13ec7fbdcfce2ffe165fa2fd5b659ff",
+      "config_sha256": "888f9d762f3526c61a0bcbcf008f53bc248184df75715f7c60f74bb4b35631e9",
+      "demo": true
+    },
+    {
+      "kind": "correlation",
+      "data_sha256": "8c4c471a4b58fd8af9134e93a700b8f9144a902098d3cfab5ee4843e7d207575",
+      "config_sha256": "5a5242711707f7047417645eabf3f981f333fb5a1cd64e8b3063162b8fcbe7ce",
+      "demo": true
+    }
+  ]
+}

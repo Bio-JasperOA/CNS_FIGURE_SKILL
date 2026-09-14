@@ -1,0 +1,10 @@
+source,target,mass
+Progenitor A,State X,90
+Progenitor A,State Y,40
+Progenitor A,State Z,5
+Progenitor B,State X,20
+Progenitor B,State Y,70
+Progenitor B,State Z,35
+Progenitor C,State X,5
+Progenitor C,State Y,20
+Progenitor C,State Z,115
