@@ -1,0 +1,7 @@
+# Tested v3 environment extension. Use an isolated environment, not an existing model environment.
+-r requirements-tested.txt
+-r requirements-planner.txt
+PyMuPDF==1.26.7
+Pillow==12.3.0
+# Optional cross-renderer QA: pypdfium2 + system Poppler (pdftoppm).
+# R bridge: an independently verified R installation with jsonlite/Cairo/grid.

@@ -1,0 +1,258 @@
+{
+  "version": "3.0.0",
+  "date": "2026-09-14",
+  "authority": "Current implementation boundary; runtime evidence in QA_REPORT.md",
+  "python_v3_renderers": [
+    "annotated_heatmap",
+    "embedding",
+    "marker_dot",
+    "spatial"
+  ],
+  "r": {
+    "status": "implemented_not_executed",
+    "bridge": "scripts/render_v3.R",
+    "requires": "Rscript + jsonlite + Cairo/grid",
+    "limits": [
+      "No independent measured-layout parity proof",
+      "No automatic TeX/plotmath conversion",
+      "Nonnegative simple annotation tracks only; no complete native track-axis ticks"
+    ]
+  },
+  "rules": {
+    "hard": "data/IDs/units/scale validity/geometry/final minimum font/stale evidence",
+    "adjustable": "dimensions, font preferences, contrast/color distance, gap, wrap width, repair count",
+    "human": "scientific answer, narrative hierarchy, optical kerning, unregistered occlusion, final perception"
+  },
+  "issues": [
+    {
+      "id": 1,
+      "area": "Scope",
+      "status": "scoped; scientific analysis excluded",
+      "implementation": [
+        "scripts/render_v3.py",
+        "SKILL.md"
+      ],
+      "tests": [
+        "tests/test_visual_v3.py::test_unsupported_renderer_fails_before_drawing"
+      ],
+      "remaining_limit": "Scientific interpretation remains human."
+    },
+    {
+      "id": 2,
+      "area": "Visual decisions",
+      "status": "advisory diagnostics + manual design",
+      "implementation": [
+        "scripts/visual_layout.py",
+        "references/v3_playbook.md"
+      ],
+      "tests": [
+        "tests/test_visual_v3.py::test_operational_design_warnings"
+      ],
+      "remaining_limit": "Area/reading-order signals are not an aesthetic score."
+    },
+    {
+      "id": 3,
+      "area": "Capability alignment",
+      "status": "strict v3 renderer/preflight contract",
+      "implementation": [
+        "scripts/visual_contract.py",
+        "CAPABILITIES.json"
+      ],
+      "tests": [
+        "tests/test_visual_v3.py::test_unsupported_renderer_fails_before_drawing",
+        "tests/test_visual_v3.py::test_capability_registry"
+      ],
+      "remaining_limit": "Legacy blueprints are not v3 implementations."
+    },
+    {
+      "id": 4,
+      "area": "Scalar mappings",
+      "status": "Python implemented and tested",
+      "implementation": [
+        "scripts/visual_contract.py"
+      ],
+      "tests": [
+        "tests/test_visual_v3.py::test_normalizers",
+        "tests/test_visual_v3.py::test_out_of_range_policy",
+        "tests/test_visual_v3.py::test_explicit_under_over_and_missing_colors"
+      ],
+      "remaining_limit": "Native R consumes compiled colors; execution unverified."
+    },
+    {
+      "id": 5,
+      "area": "Color perception",
+      "status": "screening implemented; acceptance human",
+      "implementation": [
+        "scripts/visual_contract.py"
+      ],
+      "tests": [
+        "tests/test_visual_v3.py::test_lab_black_white_and_pair_screen",
+        "tests/test_visual_v3.py::test_broken_palette_lightness",
+        "tests/test_visual_v3.py::test_cvd_screen_numeric_boundaries"
+      ],
+      "remaining_limit": "D65 CIELAB deltaE76 and Machado severity100 only; no accessibility certification."
+    },
+    {
+      "id": 6,
+      "area": "Adaptive layout",
+      "status": "bounded measured fit implemented",
+      "implementation": [
+        "scripts/visual_layout.py"
+      ],
+      "tests": [
+        "tests/test_visual_v3.py::test_reject_crowded_legends_and_extreme_aspect",
+        "tests/test_visual_v3.py::test_guide_wrap_preserves_words_and_identifiers"
+      ],
+      "remaining_limit": "Right/bottom guide choices; no global optimal solver or auto panel split."
+    },
+    {
+      "id": 7,
+      "area": "Independent guides",
+      "status": "implemented for four v3 renderers",
+      "implementation": [
+        "scripts/visual_contract.py",
+        "scripts/visual_layout.py"
+      ],
+      "tests": [
+        "tests/test_visual_v3.py::test_shared_guide_is_drawn_once_and_change_propagates",
+        "tests/test_visual_v3.py::test_explicit_guide_length_and_nonlinear_tick_density"
+      ],
+      "remaining_limit": "Manual legend semantics review still required."
+    },
+    {
+      "id": 8,
+      "area": "Typography",
+      "status": "artist/math/font/PDF checks + manual optics",
+      "implementation": [
+        "scripts/visual_audit.py"
+      ],
+      "tests": [
+        "tests/test_visual_v3.py::test_typography_math_and_missing_glyph",
+        "tests/test_visual_v3.py::test_pdf_final_size_and_carrier"
+      ],
+      "remaining_limit": "Optical kerning and all platform-specific fallback behavior remain unverified."
+    },
+    {
+      "id": 9,
+      "area": "Visual QA parity",
+      "status": "Python artist QA; common final-PDF QA",
+      "implementation": [
+        "scripts/visual_audit.py",
+        "scripts/render_v3.R"
+      ],
+      "tests": [
+        "tests/test_visual_v3.py::test_geometry_failure_classes",
+        "tests/test_visual_v3.py::test_r_bridge_runtime_when_available"
+      ],
+      "remaining_limit": "R native execution skipped; bounding boxes are conservative and unregistered occlusions are manual."
+    },
+    {
+      "id": 10,
+      "area": "Final carrier",
+      "status": "actual PDF anchors and displayed type implemented",
+      "implementation": [
+        "scripts/visual_audit.py",
+        "scripts/review_gate.py"
+      ],
+      "tests": [
+        "tests/test_visual_v3.py::test_pdf_final_size_and_carrier",
+        "tests/test_visual_v3.py::test_bind_export_report_invalidates_review"
+      ],
+      "remaining_limit": "Only nonrotated live-text PDF insertion; no native DOCX/PPTX or flattened-image proof."
+    },
+    {
+      "id": 11,
+      "area": "Repair escalation",
+      "status": "explicit decisions/history implemented",
+      "implementation": [
+        "scripts/review_gate.py",
+        "scripts/render_v3.py"
+      ],
+      "tests": [
+        "tests/test_visual_v3.py::test_repair_escalation"
+      ],
+      "remaining_limit": "Whole-layout redesign is a human decision, not an automatic layout rewrite."
+    },
+    {
+      "id": 12,
+      "area": "Impact tracking",
+      "status": "transitive closure and artifact hashes implemented",
+      "implementation": [
+        "scripts/review_gate.py",
+        "scripts/render_v3.py"
+      ],
+      "tests": [
+        "tests/test_visual_v3.py::test_impact_and_stale_review",
+        "tests/test_visual_v3.py::test_configuration_changes_invalidate_existing_review"
+      ],
+      "remaining_limit": "Full rerender workflow, not a file watcher or incremental cache."
+    },
+    {
+      "id": 13,
+      "area": "Narrative acceptance",
+      "status": "executable record completeness; content human",
+      "implementation": [
+        "scripts/review_gate.py",
+        "references/v3_playbook.md"
+      ],
+      "tests": [
+        "tests/test_visual_v3.py::test_impact_and_stale_review"
+      ],
+      "remaining_limit": "Reviewer must identify answering marks and alternative explanation; software cannot certify the answer."
+    },
+    {
+      "id": 14,
+      "area": "Visual regression",
+      "status": "deterministic stress fixtures and two PDF engines",
+      "implementation": [
+        "tests/test_visual_v3.py",
+        "examples/v3_software_qa/figure.yaml"
+      ],
+      "tests": [
+        "tests/test_visual_v3.py::test_two_pdf_rasterizers",
+        "tests/test_visual_v3.py::test_shipped_example"
+      ],
+      "remaining_limit": "No real experimental data, no all-OS or R rendering validation."
+    },
+    {
+      "id": 15,
+      "area": "Human review",
+      "status": "12 criteria/failure conditions and stale gate implemented",
+      "implementation": [
+        "scripts/review_gate.py"
+      ],
+      "tests": [
+        "tests/test_visual_v3.py::test_required_warning_acknowledgement",
+        "tests/test_visual_v3.py::test_configuration_changes_invalidate_existing_review"
+      ],
+      "remaining_limit": "Completeness is not independent scientific endorsement."
+    },
+    {
+      "id": 16,
+      "area": "Defaults vs invariants",
+      "status": "schema and playbook distinguish policies",
+      "implementation": [
+        "scripts/visual_contract.py",
+        "references/v3_playbook.md"
+      ],
+      "tests": [
+        "tests/test_visual_v3.py::test_new_schema_and_shared_guide"
+      ],
+      "remaining_limit": "Do not interpret adjustable thresholds as universal journal specifications."
+    },
+    {
+      "id": 17,
+      "area": "Maintenance",
+      "status": "single current registry/QA entry; legacy retained",
+      "implementation": [
+        "CAPABILITIES.json",
+        "QA_REPORT.md",
+        "references/README.md"
+      ],
+      "tests": [
+        "tests/test_visual_v3.py::test_capability_registry"
+      ],
+      "remaining_limit": "Historical claims do not expand current implementation."
+    }
+  ]
+}

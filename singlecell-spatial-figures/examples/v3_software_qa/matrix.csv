@@ -1,0 +1,7 @@
+row,column,value,rm,cm,effect
+QA_R1,QA_C1,-2.0,2,1,-0.2
+QA_R1,QA_C2,0.0,2,2,0
+QA_R1,QA_C3,5.0,2,3,0.5
+QA_R2,QA_C1,-3.0,3,1,-0.3
+QA_R2,QA_C2,6.0,3,2,0.6
+QA_R2,QA_C3,,3,3,
