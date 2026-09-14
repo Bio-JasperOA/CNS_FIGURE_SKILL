@@ -1,0 +1,74 @@
+name: Build scientific style gallery
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.delivery/style-gallery/**'
+      - '.github/workflows/style-gallery.yml'
+      - 'singlecell-spatial-figures/style_gallery/*.py'
+      - 'singlecell-spatial-figures/style_gallery/*.json'
+      - 'singlecell-spatial-figures/style_gallery/tests/*.py'
+      - 'singlecell-spatial-figures/style_gallery/requirements*.txt'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: style-gallery-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.13'
+      - name: Materialize verified initial delivery, when present
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import hashlib,io,tarfile
+          root=Path('.delivery/style-gallery')
+          if root.exists():
+              paths=[root/f'part_{i}.bin' for i in range(4)]
+              blob=b''.join(p.read_bytes() for p in paths)
+              expected='233452e6a7a95f5a0fb996e24cb2009c8e695a0ee8a6eb29273e7d38274f46a0'
+              assert hashlib.sha256(blob).hexdigest()==expected,'Delivery checksum mismatch'
+              with tarfile.open(fileobj=io.BytesIO(blob),mode='r:xz') as archive:
+                  members=archive.getmembers()
+                  assert len(members)==14 and sum(m.size for m in members)<500000
+                  for m in members:
+                      parts=Path(m.name).parts
+                      assert m.isfile() and parts[:2]==('singlecell-spatial-figures','style_gallery')
+                      assert '..' not in parts and not Path(m.name).is_absolute()
+                  archive.extractall('.',filter='data')
+              for p in paths:p.unlink()
+          PY
+      - name: Install isolated rendering and test dependencies
+        run: |
+          python -m pip install -r singlecell-spatial-figures/requirements-v3.txt -r singlecell-spatial-figures/style_gallery/requirements-tested.txt
+      - name: Update additive metadata and verify published palettes
+        run: |
+          python singlecell-spatial-figures/style_gallery/repository_update.py metadata
+          python singlecell-spatial-figures/style_gallery/repository_update.py presets
+      - name: Run existing and new tests
+        run: |
+          python -m pytest singlecell-spatial-figures/tests singlecell-spatial-figures/style_gallery/tests -q | tee singlecell-spatial-figures/style_gallery/CI_REPORT.txt
+      - name: Render all minimal and advanced examples
+        run: |
+          python singlecell-spatial-figures/style_gallery/render.py demo --out singlecell-spatial-figures/style_gallery/examples
+          python singlecell-spatial-figures/style_gallery/repository_update.py manifest
+          git diff --check
+      - name: Commit generated examples and source files
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add singlecell-spatial-figures/style_gallery README.md singlecell-spatial-figures/SKILL.md singlecell-spatial-figures/CAPABILITIES.json singlecell-spatial-figures/QA_REPORT.md singlecell-spatial-figures/MANIFEST.sha256
+          git add -u
+          if ! git diff --cached --quiet; then
+            git commit -m 'Build 14 paired chart examples for v3.1 [skip ci]'
+            git push origin HEAD:main
+          fi
