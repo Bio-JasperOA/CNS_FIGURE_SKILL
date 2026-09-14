@@ -15,6 +15,7 @@ from visual_contract import VISUAL_DEFAULTS,VisualScale,legacy_view,validate_vis
 from visual_layout import all_guides,fit_panel,draw_panel,figure_text,design_audit,LayoutFailure
 from visual_audit import inspect_figure,audit_pdf,audit_carrier,compare_rasters,issue,digest
 from review_gate import snapshot,review_template,check_review,impact,escalation,bind_report
+from palette_presets import resolve_presets,dependency_paths
 
 
 def write_json(path,record):
@@ -22,7 +23,14 @@ def write_json(path,record):
 
 
 def render(spec_path,root,output):
-    spec=read_spec(spec_path);out=Path(output);out.mkdir(parents=True,exist_ok=True)
+    original_spec=read_spec(spec_path);out=Path(output);out.mkdir(parents=True,exist_ok=True)
+    try:
+        spec,preset_bindings=resolve_presets(original_spec)
+    except (ValueError,KeyError,TypeError) as e:
+        write_json(out/'preflight.json',dict(ok=False,issues=[dict(code='PALETTE_PRESET',severity='error',message=str(e))]))
+        raise ValueError('Palette preset preflight failed; see preflight.json.') from e
+    write_json(out/'palette_bindings.json',preset_bindings)
+    write_json(out/'figure_spec.input.json',original_spec)
     pre=validate_visual_spec(spec,check_files=True,root=root);write_json(out/'preflight.json',pre)
     if not pre['ok']:raise ValueError('Preflight failed; see preflight.json.')
     tab=load_tables(legacy_view(spec),root);guides=all_guides(spec);bounds=panel_boxes(spec)
@@ -93,7 +101,9 @@ def render(spec_path,root,output):
     manifests=deepcopy(pre['input_manifest'])
     for did,record in manifests.items():record['resolved_path']=str((Path(root)/spec['datasets'][did]['path']).resolve())
     manifests['__figure_spec__']=dict(resolved_path=str(Path(spec_path).resolve()),sha256=digest(spec_path))
-    artifacts=list(files.values())+[str(out/'qa.json'),str(out/'figure_spec.json'),str(out/'render_plan_v3.json')]+[str(out/v) for v in prepared.values()]
+    for path in dependency_paths(preset_bindings):
+        manifests['__palette__'+path.name]=dict(resolved_path=str(path.resolve()),sha256=digest(path))
+    artifacts=list(files.values())+[str(out/'qa.json'),str(out/'figure_spec.json'),str(out/'render_plan_v3.json'),str(out/'palette_bindings.json'),str(out/'figure_spec.input.json')]+[str(out/v) for v in prepared.values()]
     state=snapshot(spec,manifests,artifacts,[p for p in Path(__file__).parent.iterdir() if p.suffix in {'.py','.R'}])
     previous=out/'snapshot.json'
     if previous.exists():write_json(out/'impact.json',impact(json.loads(previous.read_text()),state))

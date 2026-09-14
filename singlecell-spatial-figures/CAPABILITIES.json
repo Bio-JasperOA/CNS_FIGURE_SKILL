@@ -1,6 +1,6 @@
 {
-  "version": "3.0.0",
-  "date": "2026-09-14",
+  "version": "3.0.1",
+  "date": "2026-09-15",
   "authority": "Current implementation boundary; runtime evidence in QA_REPORT.md",
   "python_v3_renderers": [
     "annotated_heatmap",
@@ -254,5 +254,26 @@
       ],
       "remaining_limit": "Historical claims do not expand current implementation."
     }
-  ]
+  ],
+  "palette_presets": {
+    "status": "opt_in_additive",
+    "spec_version": "3.0",
+    "n_families": 52,
+    "n_callable_ids": 55,
+    "index": "assets/palettes/index.json",
+    "implementation": [
+      "scripts/palette_presets.py",
+      "scripts/palette_presets.R",
+      "scripts/render_v3.py"
+    ],
+    "tests": "tests/test_palette_presets.py",
+    "native_R": "not_executed",
+    "limits": [
+      "RGB8 matches review HEX, not original float64 tables",
+      "Cyclic presets do not perform automatic phase wrapping",
+      "C06 variants are not additional palette families",
+      "C21 is derived, not paper-extracted",
+      "No universal color distinguishability guarantee"
+    ]
+  }
 }

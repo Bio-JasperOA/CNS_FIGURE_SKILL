@@ -1,0 +1,153 @@
+spec_version: '3.0'
+figure:
+  id: software_qa
+  question: How do two artificial panels share a centered scale?
+  main_message: SOFTWARE QA ONLY; no biological observations.
+  evidence_level: descriptive
+  width_mm: 183
+  height_mm: 95
+design:
+  font_family: DejaVu Sans
+  fallback_font: DejaVu Sans
+  font_pt: 7
+  min_font_pt: 6
+  tag_pt: 9
+  line_pt: 0.6
+  panel_padding_mm:
+  - 9
+  - 6
+  - 11
+  - 13
+layout:
+  rows: 1
+  cols: 2
+  row_weights:
+  - 1
+  col_weights:
+  - 1
+  - 1
+  gap_mm: 5
+  margin_mm:
+  - 4
+  - 4
+  - 4
+  - 4
+datasets:
+  data_a:
+    path: v3_software_qa/points.csv
+    grain: cell
+    keys:
+    - id
+    value_definition: Artificial software test
+    source: SOFTWARE QA ONLY
+  data_b:
+    path: v3_software_qa/matrix.csv
+    grain: matrix
+    keys:
+    - row
+    - column
+    source: ARTIFICIAL SOFTWARE QA
+    value_definition: Artificial signed scalar and nonnegative QA annotation counts.
+scales:
+  signed:
+    kind: continuous
+    limits:
+    - -2
+    - 5
+    label: Artificial signed value
+    norm:
+      type: two_slope
+      center: 0
+    out_of_range: extend
+    invalid: error
+    bad: '#bdbdbd'
+    under: '#172f58'
+    over: '#6b0000'
+    palette_role: diverging
+    preset: D03
+panels:
+- id: a
+  question: Where are artificial scalar values on a QA lattice?
+  role: identity
+  renderer: spatial
+  data_id: data_a
+  slot:
+  - 0
+  - 0
+  - 1
+  - 1
+  channels:
+    x: x
+    y: y
+    color: value
+  scale_ids:
+    color: signed
+  depends_on: []
+  statistics:
+    inferential: false
+    independent_unit: none
+    n_biological: 0
+    method: Descriptive plan; no hypothesis test is claimed.
+  spatial:
+    unit: pixel
+    section_column: section
+    y_axis_down: true
+    transform_applied: Artificial coordinate grid; no tissue or image.
+  title: 'ARTIFICIAL SOFTWARE QA
+
+    Lattice: no biological observations'
+  marks:
+    area_pt2: 30
+- id: b
+  question: Do matrix and spatial fixture values use the same scalar mapping?
+  role: identity
+  renderer: annotated_heatmap
+  data_id: data_b
+  slot:
+  - 0
+  - 1
+  - 1
+  - 1
+  channels:
+    x: column
+    y: row
+    color: value
+    row_metric: rm
+    col_metric: cm
+    effect: effect
+  scale_ids:
+    color: signed
+  depends_on:
+  - a
+  statistics:
+    inferential: false
+    independent_unit: none
+    n_biological: 0
+    method: Descriptive plan; no hypothesis test is claimed.
+  title: 'ARTIFICIAL SOFTWARE QA
+
+    Shared mapping, separate effects'
+visual:
+  reading_order:
+  - a
+  - b
+  lead_panel: a
+  wrap_mm: 28
+  max_cell_mm: 20
+  max_repair_cycles: 2
+guides:
+  shared_score:
+    owner: b
+    panels:
+    - a
+    - b
+    channel: color
+    scale_id: signed
+    position: bottom
+    orientation: horizontal
+    ticks:
+    - -2
+    - 0
+    - 5
+    length_mm: 32
+    thickness_mm: 3

@@ -96,3 +96,9 @@ python scripts/render_v3.py bind-report build/Fig1 build/Fig1/carrier_audit.json
 交付实际图、真实脚本、源数据、配置、QA、snapshot 和完整审阅记录。对未跑的 R/设备/生物学项目明确标注。
 
 任何新能力必须同步修改 `CAPABILITIES.json`、对应测试及当前 `QA_REPORT.md`；历史审计保留但不重复承担当前能力说明。硬约束保护数值、身份、几何和来源；字号、色差、留白、列宽、修复轮次等默认值允许有记录地调整。不要将这些默认值称为 Nature/Cell/Science 的通用官方标准。
+
+## Palette presets · v3.0.1（兼容扩充）
+
+保留 `spec_version: '3.0'`。本次增加 52 个可选色卡家族，原有默认色和六种 norm 不变。使用前读 [色卡索引与调用规则](assets/palettes/README.md)。类别尺度可写 `preset: C19` 加固定 `order`；连续尺度可写 `preset: M02`，中心发散可用 `preset: D03` 加 `norm: {type: two_slope, center: 0}`。`preset` 不可与显式 colors/cmap 混用。C06 必须选具体变体；C21 是衍生试选，不标为论文原色。
+
+`render_v3.py` 自动编译预设并保留 `palette_bindings.json`、原始配置及色卡依赖哈希。类别颜色不足时停止，不循环或插值；只筛选群组时重用已保存的命名颜色字典。R 的 `scripts/palette_presets.R` 读取同一 RGB8 表，但当前未运行原生 R 测试，不能扩张为跨后端等价验证。

@@ -57,3 +57,13 @@ Python 3.13.5。以下是本次实际导入的版本，不是全平台兼容声�
 ```
 
 当前能力范围的唯一登记是 `CAPABILITIES.json`。`references/QA_REPORT_v2.md` 与旧日志属于历史记录，不与本报告合并计数。未运行官方 Agent Skills 认证器；本项目的测试不是第三方认证。
+
+## v3.0.1 palette preset extension — 2026-09-15
+
+This is an additive patch within v3. `spec_version` remains `3.0`; original tests and original manual palettes are retained.
+
+Current local run: **213 passed, 1 skipped, 12 warnings**. Includes **79 new preset tests**, covering all 55 callable entries / 52 families, capacity, repeated/unknown category handling, stable saved mappings, six scalar normalization mechanisms, cyclic-role handling, table SHA256 mismatch rejection, endpoint HEX, preset resolution/replay, and end-to-end v3 render/provenance/snapshot/failure behavior. Existing tests account for 134 passes and one native-R skip. Warnings are the previous explicit Arial fallbacks and the deliberate missing-glyph fixture.
+
+No native R execution is claimed (Rscript absent). R helper performs structural input validation; SHA256 verification and dependency binding are done by Python. No new original-paper or real-biological-data reproduction is claimed. Continuous presets intentionally freeze the review HEX values as RGB8, not the source float64 LUT bytes. The saved original review-catalogue hashes provide provenance for the full floating-point tables.
+
+Palette figures remain drafts requiring human review. High capacity is a count of unique RGB entries, not evidence that all category pairs are perceptually separable. The existing 3.0.0 validation above is historical and is not overwritten by this extension.

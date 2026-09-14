@@ -16,3 +16,9 @@ python -m pytest -q
 `build/` 不应混入真实研究源数据或未经审阅的发表结果。示例是人工软件数据、不是生物学证据。使用真实数据后填写文件来源和版本，重新运行检查。
 
 目录：`scripts/` 为执行逻辑；`tests/` 为回归与失败场景；`examples/` 为可跑的软件测试项目；`assets/` 为保留的 v2 schema/templates；`references/` 为按需资料。v3 schema 由 `visual_contract.schema_v3()` 扩展原闭合 schema，未知配置字段仍会报错；不要把旧 `assets/*.render_plan.json` 当作新数据的结果。
+
+## Palette presets · v3.0.1（兼容扩充）
+
+保留 `spec_version: '3.0'`。本次增加 52 个可选色卡家族，原有默认色和六种 norm 不变。使用前读 [色卡索引与调用规则](assets/palettes/README.md)。类别尺度可写 `preset: C19` 加固定 `order`；连续尺度可写 `preset: M02`，中心发散可用 `preset: D03` 加 `norm: {type: two_slope, center: 0}`。`preset` 不可与显式 colors/cmap 混用。C06 必须选具体变体；C21 是衍生试选，不标为论文原色。
+
+`render_v3.py` 自动编译预设并保留 `palette_bindings.json`、原始配置及色卡依赖哈希。类别颜色不足时停止，不循环或插值；只筛选群组时重用已保存的命名颜色字典。R 的 `scripts/palette_presets.R` 读取同一 RGB8 表，但当前未运行原生 R 测试，不能扩张为跨后端等价验证。

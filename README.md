@@ -29,3 +29,16 @@ python -m pytest -q
 A successful render produces **a draft**, not an approved scientific figure. Complete `review.json` against the actual output; a later input/config/code/export change makes that review stale. Use `render_v3.py --help` and the playbook for final placement and native-R audits.
 
 No fonts, user experiments, paper PDFs or author model weights are distributed. The paper/code audit is inherited; v3 does not claim additional paper reproduction. Journal dimensions and contrast thresholds are project defaults, not universal publication rules. No new license is assigned by this update.
+
+## v3.0.1 · Palette presets
+
+已加入 52 个可选色卡家族（含 21 个类别家族及 20–102 色的高容量方案）；保留 v3 大版本和 `spec_version: '3.0'`，不更换现有图的默认配色。
+
+[色卡浏览与调用说明](singlecell-spatial-figures/assets/palettes/README.md) · [预览图](singlecell-spatial-figures/assets/palettes/preview.svg) · [当前测试记录](singlecell-spatial-figures/QA_REPORT.md)
+
+```yaml
+# 某个 categorical scale 内：
+preset: C19
+order: [T_cell, B_cell, Myeloid]
+# 某个 continuous scale 内则使用 preset: M02，limits 与 norm 仍显式定义。
+```
