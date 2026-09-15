@@ -1,5 +1,5 @@
 {
-  "contract_version": "1.2.0",
+  "contract_version": "2.0.0",
   "global": {
     "provenance_required_for_real_data": true,
     "subtitle_allowed": false,
@@ -7,101 +7,28 @@
     "stable_identity_colors": true
   },
   "contracts": {
-    "cell_qc": {
-      "required": ["cell_id", "sample", "n_counts", "n_features", "pct_mito"],
-      "optional": ["pct_ribo", "pct_hb", "doublet_score", "condition", "keep"],
-      "grain": "one row per cell",
-      "notes": "Thresholds must be declared upstream or in plotting config; the plotting layer does not invent filtering cutoffs."
-    },
-    "feature_variability": {
-      "required": ["feature", "mean", "variance", "selected"],
-      "optional": ["dispersion", "rank", "sample", "batch"],
-      "grain": "one row per feature or feature-by-group",
-      "notes": "selected must reflect the upstream HVG/SVG rule."
-    },
-    "embedding": {
-      "required": ["id", "x", "y"],
-      "optional": ["group", "sample", "batch", "condition", "value", "confidence", "stage", "lineage", "parent"],
-      "grain": "one row per cell/spot/state point",
-      "notes": "Coordinates are treated as reviewed inputs and are not rotated, recomputed or re-embedded by the plotting layer."
-    },
-    "group_feature": {
-      "required": ["group", "feature", "value"],
-      "optional": ["fraction", "condition", "sample", "module", "n", "q", "effect"],
-      "grain": "one row per group-feature combination",
-      "notes": "Dot size, color and annotation tracks must each map to explicitly named fields."
-    },
-    "effect": {
-      "required": ["feature", "effect"],
-      "optional": ["se", "lower", "upper", "p", "q", "mean", "fraction_1", "fraction_2", "contrast", "group"],
-      "grain": "one row per tested feature/contrast",
-      "notes": "Intervals and significance are upstream results; plotting never fabricates either."
-    },
-    "enrichment_result": {
-      "required": ["term", "effect", "q", "count"],
-      "optional": ["group", "contrast", "pathway", "leading_edge_count"],
-      "grain": "one row per enrichment term and contrast",
-      "notes": "Signed enrichment effect, q-value and supporting count are upstream results. Count must retain its original definition."
-    },
-    "gsea_profile": {
-      "required": ["rank", "running_score", "hit", "rank_metric"],
-      "optional": ["term", "feature", "leading_edge"],
-      "grain": "one row per ranked position and enrichment profile",
-      "notes": "Running score, hit positions and rank metric must come from the upstream GSEA result; the plotting layer does not recalculate enrichment."
-    },
-    "composition_effect": {
-      "required": ["sample", "group", "fraction"],
-      "optional": ["count", "condition", "subject", "batch", "effect", "lower", "upper", "q"],
-      "grain": "one row per sample-group combination",
-      "notes": "Fractions must use a declared denominator and normally sum to one within sample."
-    },
-    "trajectory": {
-      "required": ["state", "time"],
-      "optional": ["lineage", "mean", "lower", "upper", "probability", "transition_to", "mass", "feature", "value"],
-      "grain": "state/time, lineage/time, feature/time or transition edge",
-      "notes": "Pseudotime, lineage, fate probability and transition mass are distinct semantics and must not be silently substituted."
-    },
-    "interaction": {
-      "required": ["source", "target", "score"],
-      "optional": ["ligand", "receptor", "pathway", "q", "condition", "distance", "target_program"],
-      "grain": "one row per directed interaction or LR edge",
-      "notes": "Network direction and edge width must retain their upstream meaning."
-    },
-    "spatial_point": {
-      "required": ["id", "section", "x", "y"],
-      "optional": ["value", "group", "gene", "sample", "condition", "confidence", "probability", "cell_state", "gradient_value", "pseudotime", "boundary_id", "image_x", "image_y", "vertices", "n_counts", "n_features", "pct_mito", "in_tissue", "niche", "domain"],
-      "grain": "one row per spot/cell/segment coordinate, or per spatial unit-feature when gene is supplied",
-      "notes": "Coordinate unit and aspect ratio must be declared; tissue boundaries are never inferred from scatter geometry unless provided by an upstream segmentation result. Gradient, pseudotime, probability, QC, domain and niche fields are accepted only when supplied upstream."
-    },
-    "spatial_composition": {
-      "required": ["id", "section", "x", "y", "group", "fraction"],
-      "optional": ["sample", "condition", "confidence", "method", "region"],
-      "grain": "one row per spot-group component",
-      "notes": "Fractions must sum to one within spatial unit when they represent composition."
-    },
-    "spatial_effect": {
-      "required": ["feature", "effect"],
-      "optional": ["moran_i", "geary_c", "p", "q", "rank", "section", "module", "mean_expression"],
-      "grain": "one row per spatial feature/statistic",
-      "notes": "Autocorrelation statistics remain named; they are not converted into generic significance scores."
-    },
-    "moran_point": {
-      "required": ["id", "feature", "value", "spatial_lag"],
-      "optional": ["section", "x", "y"],
-      "grain": "one row per spatial unit-feature",
-      "notes": "Spatial lag must be computed upstream using the declared neighborhood/weight matrix. The plotting layer only displays the supplied Moran scatter coordinates."
-    },
-    "model_metric": {
-      "required": ["dataset", "method", "metric", "value"],
-      "optional": ["seed", "fold", "baseline", "lower", "upper", "compute", "n"],
-      "grain": "one row per dataset-method-metric replicate",
-      "notes": "Paired comparisons must preserve dataset identity rather than comparing unrelated aggregate distributions."
-    },
-    "prediction": {
-      "required": ["id", "observed", "predicted"],
-      "optional": ["residual", "uncertainty", "feature", "group", "section", "x", "y", "condition"],
-      "grain": "one row per prediction target",
-      "notes": "Residual sign and uncertainty definition must be declared. Spatial prediction requires coordinates rather than reconstructing geometry from ordering."
-    }
+    "cell_qc": {"required": ["cell_id", "sample", "n_counts", "n_features", "pct_mito"], "optional": ["pct_ribo", "pct_hb", "doublet_score", "condition", "keep"], "grain": "one row per cell", "notes": "Thresholds must be declared upstream or in plotting config; the plotting layer does not invent filtering cutoffs."},
+    "feature_variability": {"required": ["feature", "mean", "variance", "selected"], "optional": ["dispersion", "rank", "sample", "batch"], "grain": "one row per feature or feature-by-group", "notes": "selected must reflect the upstream HVG/SVG rule."},
+    "sample_value": {"required": ["id", "group", "value"], "optional": ["condition", "sample", "batch", "stage", "metric"], "grain": "one row per observation and grouping level", "notes": "Generic reviewed scalar observations for distributions; group/condition semantics must be declared by the caller."},
+    "pca_component": {"required": ["component", "variance_ratio"], "optional": ["cumulative", "loading_feature", "loading"], "grain": "one row per principal component", "notes": "Explained-variance values and loadings are upstream PCA outputs; the plotting layer does not recompute PCA."},
+    "embedding": {"required": ["id", "x", "y"], "optional": ["group", "sample", "batch", "condition", "section", "value", "confidence", "stage", "lineage", "parent"], "grain": "one row per cell/spot/state point", "notes": "Coordinates are treated as reviewed inputs and are not rotated, recomputed or re-embedded by the plotting layer."},
+    "group_feature": {"required": ["group", "feature", "value"], "optional": ["fraction", "condition", "sample", "module", "n", "q", "effect"], "grain": "one row per group-feature combination", "notes": "Dot size, color and annotation tracks must each map to explicitly named fields."},
+    "effect": {"required": ["feature", "effect"], "optional": ["se", "lower", "upper", "p", "q", "mean", "fraction_1", "fraction_2", "contrast", "group"], "grain": "one row per tested feature/contrast", "notes": "Intervals and significance are upstream results; plotting never fabricates either."},
+    "enrichment_result": {"required": ["term", "effect", "q", "count"], "optional": ["group", "contrast", "pathway", "leading_edge_count"], "grain": "one row per enrichment term and contrast", "notes": "Signed enrichment effect, q-value and supporting count are upstream results. Count must retain its original definition."},
+    "gsea_profile": {"required": ["rank", "running_score", "hit", "rank_metric"], "optional": ["term", "feature", "leading_edge"], "grain": "one row per ranked position and enrichment profile", "notes": "Running score, hit positions and rank metric must come from the upstream GSEA result; the plotting layer does not recalculate enrichment."},
+    "composition_effect": {"required": ["sample", "group", "fraction"], "optional": ["count", "condition", "subject", "batch", "effect", "lower", "upper", "q"], "grain": "one row per sample-group combination", "notes": "Fractions must use a declared denominator and normally sum to one within sample."},
+    "trajectory": {"required": ["state", "time"], "optional": ["lineage", "mean", "lower", "upper", "probability", "transition_to", "mass", "feature", "value"], "grain": "state/time, lineage/time, feature/time or transition edge", "notes": "Pseudotime, lineage, fate probability and transition mass are distinct semantics and must not be silently substituted."},
+    "velocity_point": {"required": ["id", "x", "y", "vx", "vy"], "optional": ["latent_time", "group", "terminal_state", "confidence"], "grain": "one row per cell with upstream velocity vector", "notes": "Velocity vectors and latent time are upstream results; rendering does not solve a velocity model or infer vector fields."},
+    "fate_probability": {"required": ["id", "state", "probability"], "optional": ["group", "lineage", "terminal"], "grain": "one row per cell-state fate probability", "notes": "Probabilities must be supplied by the upstream fate model and remain distinct from pseudotime or categorical labels."},
+    "interaction": {"required": ["source", "target", "score"], "optional": ["ligand", "receptor", "pathway", "q", "condition", "distance", "target_program"], "grain": "one row per directed interaction or LR edge", "notes": "Network direction and edge width must retain their upstream meaning."},
+    "concordance_pair": {"required": ["pair", "scrna_score", "spatial_score"], "optional": ["pathway", "q", "group"], "grain": "one row per cross-modal feature or LR pair", "notes": "Both modality-specific scores must be computed upstream; the plotting layer only compares them."},
+    "spatial_point": {"required": ["id", "section", "x", "y"], "optional": ["value", "group", "gene", "sample", "condition", "confidence", "probability", "cell_state", "state_abundance", "gradient_value", "pseudotime", "boundary_id", "image_x", "image_y", "vertices", "n_counts", "n_features", "pct_mito", "in_tissue", "niche", "domain"], "grain": "one row per spot/cell/segment coordinate, or per spatial unit-feature when gene is supplied", "notes": "Coordinate unit and aspect ratio must be declared; tissue boundaries are never inferred from scatter geometry unless provided by an upstream segmentation result. Gradient, pseudotime, probability, QC, domain and niche fields are accepted only when supplied upstream."},
+    "spatial_composition": {"required": ["id", "section", "x", "y", "group", "fraction"], "optional": ["sample", "condition", "confidence", "method", "region"], "grain": "one row per spot-group component", "notes": "Fractions must sum to one within spatial unit when they represent composition."},
+    "spatial_effect": {"required": ["feature", "effect"], "optional": ["moran_i", "geary_c", "p", "q", "rank", "section", "module", "mean_expression"], "grain": "one row per spatial feature/statistic", "notes": "Autocorrelation statistics remain named; they are not converted into generic significance scores."},
+    "moran_point": {"required": ["id", "feature", "value", "spatial_lag"], "optional": ["section", "x", "y"], "grain": "one row per spatial unit-feature", "notes": "Spatial lag must be computed upstream using the declared neighborhood/weight matrix. The plotting layer only displays the supplied Moran scatter coordinates."},
+    "morphology_point": {"required": ["id", "section", "x", "y", "morphology_value", "transcript_value"], "optional": ["vertices", "group", "region", "condition"], "grain": "one row per segmented cell/spot with reviewed image and transcript features", "notes": "Morphology features and segmentation vertices must come from upstream image analysis; the plotting layer does not segment histology."},
+    "image_pixel": {"required": ["x", "y", "intensity"], "optional": ["channel", "section"], "grain": "one row per supplied image pixel/bin or downsampled image coordinate", "notes": "Image intensity is an upstream image representation. This table form supports deterministic tests and overlays without reconstructing histology from transcript coordinates."},
+    "model_metric": {"required": ["dataset", "method", "metric", "value"], "optional": ["seed", "fold", "baseline", "lower", "upper", "compute", "n"], "grain": "one row per dataset-method-metric replicate", "notes": "Paired comparisons must preserve dataset identity rather than comparing unrelated aggregate distributions."},
+    "prediction": {"required": ["id", "observed", "predicted"], "optional": ["residual", "uncertainty", "feature", "group", "section", "x", "y", "condition"], "grain": "one row per prediction target", "notes": "Residual sign and uncertainty definition must be declared. Spatial prediction requires coordinates rather than reconstructing geometry from ordering."}
   }
 }
