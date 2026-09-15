@@ -57,9 +57,18 @@ jobs:
           python .github/scripts/publish_style_gallery.py verify
       - name: Finalize immutable publication documents
         run: |
-          # Always run the reviewed publisher, not a working-tree test fixture.
           git restore --source=HEAD -- .github/scripts/finalize_style_docs.py
           python .github/scripts/finalize_style_docs.py
+          # Restore the reviewed publisher after generation, then normalize only
+          # trailing whitespace. Keep both staged and working-tree diff checks.
+          git restore --source=HEAD --staged --worktree -- .github/scripts/finalize_style_docs.py
+          python - <<'PY'
+          from pathlib import Path
+          p = Path('.github/scripts/finalize_style_docs.py')
+          text = p.read_text(encoding='utf-8')
+          p.write_text('\n'.join(line.rstrip(' \t') for line in text.splitlines()) + '\n', encoding='utf-8')
+          compile(p.read_text(encoding='utf-8'), str(p), 'exec')
+          PY
           python singlecell-spatial-figures/style_gallery/repository_update.py manifest
           git diff --check
           git diff --cached --check
@@ -67,7 +76,7 @@ jobs:
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add singlecell-spatial-figures/style_gallery README.md README_MAINTAINER.md docs/GALLERY.md docs/preview.png singlecell-spatial-figures/SKILL.md singlecell-spatial-figures/CAPABILITIES.json singlecell-spatial-figures/QA_REPORT.md singlecell-spatial-figures/MANIFEST.sha256
+          git add .github/scripts/finalize_style_docs.py singlecell-spatial-figures/style_gallery README.md README_MAINTAINER.md docs/GALLERY.md docs/preview.png singlecell-spatial-figures/SKILL.md singlecell-spatial-figures/CAPABILITIES.json singlecell-spatial-figures/QA_REPORT.md singlecell-spatial-figures/MANIFEST.sha256
           if git ls-files .delivery | grep -q .; then git add -u .delivery; fi
           if ! git diff --cached --quiet; then
             git commit -m 'Publish 26 no-subtitle chart pairs and verified v3.2 sources [skip ci]'
