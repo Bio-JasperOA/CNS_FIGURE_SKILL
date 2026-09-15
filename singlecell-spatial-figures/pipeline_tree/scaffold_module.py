@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
-"""Generate a conservative code scaffold for one registered pipeline module.
+"""Generate conservative code scaffolds for registered pipeline modules.
 
-The generated files are intentionally non-implementing stubs: they establish contracts
-and test locations without pretending a scientific renderer exists before it is built.
+Generated files are deliberately non-implementing stubs. They establish contracts and
+locations without pretending a scientific renderer exists before it is implemented and
+tested. Use `--all` to materialize the full registered tree.
 """
 from __future__ import annotations
 
@@ -64,7 +65,7 @@ def adapt(table):
 '''
 
 
-def test_stub(module: dict, package_path: str) -> str:
+def test_stub(module: dict) -> str:
     return f'''from pathlib import Path
 import json
 
@@ -110,7 +111,7 @@ def generate(module_id: str, root: Path, force: bool = False) -> Path:
     (folder / "minimal.py").write_text(python_stub("required", module), encoding="utf-8")
     (folder / "advanced.py").write_text(python_stub("advanced", module), encoding="utf-8")
     (folder / "panel.py").write_text(python_stub("panel", module), encoding="utf-8")
-    (folder / "tests" / "test_module.py").write_text(test_stub(module, folder.as_posix()), encoding="utf-8")
+    (folder / "tests" / "test_module.py").write_text(test_stub(module), encoding="utf-8")
     (folder / "README.md").write_text(
         f"# {module['id']}\n\nStatus: scaffold only. Do not claim renderer implementation until code, fixtures and tests replace the explicit NotImplementedError paths.\n",
         encoding="utf-8",
@@ -118,14 +119,26 @@ def generate(module_id: str, root: Path, force: bool = False) -> Path:
     return folder
 
 
+def generate_all(root: Path, force: bool = False) -> list[Path]:
+    return [generate(module["id"], root, force=force) for module in REGISTRY["modules"]]
+
+
 def main() -> int:
     parser = argparse.ArgumentParser()
-    parser.add_argument("module_id")
+    group = parser.add_mutually_exclusive_group(required=True)
+    group.add_argument("module_id", nargs="?")
+    group.add_argument("--all", action="store_true")
     parser.add_argument("--root", default=str(HERE.parent / "plots"))
     parser.add_argument("--force", action="store_true")
     args = parser.parse_args()
-    path = generate(args.module_id, Path(args.root), args.force)
-    print(path)
+    root = Path(args.root)
+    if args.all:
+        paths = generate_all(root, args.force)
+        for path in paths:
+            print(path)
+        print(f"generated {len(paths)} module scaffolds")
+    else:
+        print(generate(args.module_id, root, args.force))
     return 0
 
 
