@@ -1,5 +1,5 @@
 {
-  "contract_version": "1.1.0",
+  "contract_version": "1.2.0",
   "global": {
     "provenance_required_for_real_data": true,
     "subtitle_allowed": false,
@@ -37,6 +37,18 @@
       "grain": "one row per tested feature/contrast",
       "notes": "Intervals and significance are upstream results; plotting never fabricates either."
     },
+    "enrichment_result": {
+      "required": ["term", "effect", "q", "count"],
+      "optional": ["group", "contrast", "pathway", "leading_edge_count"],
+      "grain": "one row per enrichment term and contrast",
+      "notes": "Signed enrichment effect, q-value and supporting count are upstream results. Count must retain its original definition."
+    },
+    "gsea_profile": {
+      "required": ["rank", "running_score", "hit", "rank_metric"],
+      "optional": ["term", "feature", "leading_edge"],
+      "grain": "one row per ranked position and enrichment profile",
+      "notes": "Running score, hit positions and rank metric must come from the upstream GSEA result; the plotting layer does not recalculate enrichment."
+    },
     "composition_effect": {
       "required": ["sample", "group", "fraction"],
       "optional": ["count", "condition", "subject", "batch", "effect", "lower", "upper", "q"],
@@ -57,9 +69,9 @@
     },
     "spatial_point": {
       "required": ["id", "section", "x", "y"],
-      "optional": ["value", "group", "gene", "sample", "condition", "confidence", "boundary_id", "image_x", "image_y", "vertices", "n_counts", "n_features", "pct_mito", "in_tissue", "niche", "domain"],
-      "grain": "one row per spot/cell/segment coordinate",
-      "notes": "Coordinate unit and aspect ratio must be declared; tissue boundaries are never inferred from scatter geometry unless provided by an upstream segmentation result. QC metrics, domains and niches are accepted only when supplied upstream."
+      "optional": ["value", "group", "gene", "sample", "condition", "confidence", "probability", "cell_state", "gradient_value", "pseudotime", "boundary_id", "image_x", "image_y", "vertices", "n_counts", "n_features", "pct_mito", "in_tissue", "niche", "domain"],
+      "grain": "one row per spot/cell/segment coordinate, or per spatial unit-feature when gene is supplied",
+      "notes": "Coordinate unit and aspect ratio must be declared; tissue boundaries are never inferred from scatter geometry unless provided by an upstream segmentation result. Gradient, pseudotime, probability, QC, domain and niche fields are accepted only when supplied upstream."
     },
     "spatial_composition": {
       "required": ["id", "section", "x", "y", "group", "fraction"],
@@ -69,9 +81,15 @@
     },
     "spatial_effect": {
       "required": ["feature", "effect"],
-      "optional": ["moran_i", "geary_c", "p", "q", "rank", "section", "module"],
+      "optional": ["moran_i", "geary_c", "p", "q", "rank", "section", "module", "mean_expression"],
       "grain": "one row per spatial feature/statistic",
       "notes": "Autocorrelation statistics remain named; they are not converted into generic significance scores."
+    },
+    "moran_point": {
+      "required": ["id", "feature", "value", "spatial_lag"],
+      "optional": ["section", "x", "y"],
+      "grain": "one row per spatial unit-feature",
+      "notes": "Spatial lag must be computed upstream using the declared neighborhood/weight matrix. The plotting layer only displays the supplied Moran scatter coordinates."
     },
     "model_metric": {
       "required": ["dataset", "method", "metric", "value"],
