@@ -1,0 +1,153 @@
+{
+  "outside_canvas": [],
+  "subtitle_count": 0,
+  "rendered_text": [
+    {
+      "text": "0.73",
+      "size_pt": 6.5,
+      "gid": null
+    },
+    {
+      "text": "0.61",
+      "size_pt": 6.5,
+      "gid": null
+    },
+    {
+      "text": "0.50",
+      "size_pt": 6.5,
+      "gid": null
+    },
+    {
+      "text": "Prevalence",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Recall",
+      "size_pt": 8.0,
+      "gid": null
+    },
+    {
+      "text": "0.0",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0.2",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0.4",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0.6",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0.8",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "1.0",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Precision",
+      "size_pt": 8.0,
+      "gid": null
+    },
+    {
+      "text": "0.00",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0.25",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0.50",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0.75",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "1.00",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Supplied illustrative band",
+      "size_pt": 7.5,
+      "gid": null
+    },
+    {
+      "text": "Baseline",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Multimodal",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Fine-tuned",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Precision–recall trade-offs",
+      "size_pt": 11.5,
+      "gid": "main_title"
+    },
+    {
+      "text": "SYNTHETIC EXAMPLE",
+      "size_pt": 6.0,
+      "gid": "synthetic_disclosure"
+    }
+  ],
+  "semantic_layers": [
+    {
+      "name": "supplied evaluation curves",
+      "fields": [
+        "model",
+        "recall",
+        "precision"
+      ]
+    },
+    {
+      "name": "supplied interval and operating thresholds",
+      "fields": [
+        "lower",
+        "upper",
+        "threshold",
+        "operating_point"
+      ]
+    }
+  ],
+  "font": "DejaVu Sans",
+  "width_mm": 190.0,
+  "height_mm": 135.0,
+  "input_csv_sha256": "8b68ed41cdc7be541bdce2f1e0c1105f790131b846323bce714ceba4ec838b6a",
+  "derived_order": null,
+  "omitted_intersections": null,
+  "axes_count": 1,
+  "scope": "canvas bounds and subtitle policy; not a scientific or universal collision certificate",
+  "outputs": {
+    "png": "1430c2a344e4e76ea66436646ec654450551364b46e5a1261bae8d0663e21988",
+    "pdf": "24c60632f3a26644343aed5786e92ed147abb434856a95ea1042d36f5ed61326",
+    "svg": "5ecfd022bd15f6bd7e79aebc62093782e894dba631a0ce9474501e49b04b35cf"
+  }
+}

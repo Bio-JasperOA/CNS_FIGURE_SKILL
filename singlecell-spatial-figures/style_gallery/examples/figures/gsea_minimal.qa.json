@@ -1,0 +1,93 @@
+{
+  "outside_canvas": [],
+  "subtitle_count": 0,
+  "rendered_text": [
+    {
+      "text": "Position in ranked list",
+      "size_pt": 8.0,
+      "gid": null
+    },
+    {
+      "text": "0",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "50",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "100",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "150",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "200",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Supplied running enrichment score",
+      "size_pt": 8.0,
+      "gid": null
+    },
+    {
+      "text": "0.00",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0.15",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0.30",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0.45",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Ranked enrichment profile",
+      "size_pt": 11.5,
+      "gid": "main_title"
+    },
+    {
+      "text": "SYNTHETIC EXAMPLE",
+      "size_pt": 6.0,
+      "gid": "synthetic_disclosure"
+    }
+  ],
+  "semantic_layers": [
+    {
+      "name": "upstream enrichment profile",
+      "fields": [
+        "running_score",
+        "rank"
+      ]
+    }
+  ],
+  "font": "DejaVu Sans",
+  "width_mm": 190.0,
+  "height_mm": 135.0,
+  "input_csv_sha256": "e4905879e96b2f1137942c12f14e5791dc690a34b6825e22b0727b67311b69ef",
+  "derived_order": null,
+  "omitted_intersections": null,
+  "axes_count": 1,
+  "scope": "canvas bounds and subtitle policy; not a scientific or universal collision certificate",
+  "outputs": {
+    "png": "a28f227c88bee0dd60eb6c98fd898245803cc7c97276dc9dff5a5bf4d1088b96",
+    "pdf": "252d093db1cd232962a0da30f892b51d65d89472a1a4fd9dc2d9d6a7854156f6",
+    "svg": "2285e6e59ebef9c21d6aafc54adfc0d338bcd827f8e78548038e6d8c9ea45781"
+  }
+}

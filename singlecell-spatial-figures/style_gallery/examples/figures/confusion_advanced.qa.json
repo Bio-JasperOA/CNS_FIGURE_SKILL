@@ -1,0 +1,266 @@
+{
+  "outside_canvas": [],
+  "subtitle_count": 0,
+  "rendered_text": [
+    {
+      "text": "107\n90%",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0\n0%",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "8\n7%",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "3\n3%",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "1\n1%",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "3\n3%",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "78\n80%",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "10\n10%",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "1\n1%",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "6\n6%",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0\n0%",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "1\n1%",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "139\n93%",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "6\n4%",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "4\n3%",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "9\n6%",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "10\n7%",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "2\n1%",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "123\n85%",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0\n0%",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "5\n4%",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "10\n8%",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "8\n6%",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "5\n4%",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "101\n78%",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Predicted identity",
+      "size_pt": 8.0,
+      "gid": null
+    },
+    {
+      "text": "T cells",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "B cells",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Myeloid",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Stromal",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Endothelial",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Observed identity",
+      "size_pt": 8.0,
+      "gid": null
+    },
+    {
+      "text": "T cells (n=119)",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "B cells (n=98)",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Myeloid (n=150)",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Stromal (n=144)",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Endothelial (n=129)",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Row fraction",
+      "size_pt": 8.0,
+      "gid": null
+    },
+    {
+      "text": "0.0",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0.2",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0.4",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0.6",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0.8",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "1.0",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Classification errors by cell type",
+      "size_pt": 11.5,
+      "gid": "main_title"
+    },
+    {
+      "text": "SYNTHETIC EXAMPLE",
+      "size_pt": 6.0,
+      "gid": "synthetic_disclosure"
+    }
+  ],
+  "semantic_layers": [
+    {
+      "name": "row denominators with retained raw counts",
+      "fields": [
+        "count",
+        "actual"
+      ]
+    },
+    {
+      "name": "classification counts",
+      "fields": [
+        "count",
+        "actual",
+        "predicted"
+      ]
+    }
+  ],
+  "font": "DejaVu Sans",
+  "width_mm": 190.0,
+  "height_mm": 135.0,
+  "input_csv_sha256": "d2cc9c2e72a97e8dc8a7f19f166316301f216f686541b7c8d82d1f9367abd0b8",
+  "derived_order": null,
+  "omitted_intersections": null,
+  "axes_count": 2,
+  "scope": "canvas bounds and subtitle policy; not a scientific or universal collision certificate",
+  "outputs": {
+    "png": "6aeb37c787ed50b369538e937da49960e1de00644e8c39472f5d7193506b84b7",
+    "pdf": "56aec3cc8901f78ff89a5f75269c12fc88d0e98f227054e7b87c972a0b368252",
+    "svg": "691bf4d544a7e5c95f0cd8f08fd8173b5288482b747eb740a44d276cbed72662"
+  }
+}

@@ -1,49 +1,289 @@
-id,group,value
-0_0,Reference,2.110718166972662
-0_1,Reference,1.9078559434859939
-0_2,Reference,0.5564658309632468
-0_3,Reference,1.3720216808328687
-0_4,Reference,1.069775318407018
-0_5,Reference,1.0045567820907033
-0_6,Reference,0.9732187216010388
-0_7,Reference,1.037301869700114
-0_8,Reference,0.8905497109439217
-0_9,Reference,0.07220588814000561
-0_10,Reference,0.8585842230309739
-0_11,Reference,0.9935774224221423
-0_12,Reference,1.2650451471417927
-0_13,Reference,0.657453994237061
-0_14,Reference,1.5917820778985012
-0_15,Reference,0.9307096942861206
-1_0,Early,1.789041191883424
-1_1,Early,1.7453872034981162
-1_2,Early,1.384423289323652
-1_3,Early,1.3278949068972956
-1_4,Early,2.3493465163704683
-1_5,Early,1.0068224814358566
-1_6,Early,1.3804591265745492
-1_7,Early,1.7473694111011513
-1_8,Early,0.7001152097191543
-1_9,Early,1.9096592020404592
-1_10,Early,1.9275861786503379
-1_11,Early,1.4948988914071109
-1_12,Early,0.6769411859483343
-1_13,Early,1.6966947395452963
-1_14,Early,0.6183655411848431
-1_15,Early,1.1011271956245672
-2_0,Late,1.8753150467080766
-2_1,Late,1.582534991333421
-2_2,Late,2.1794165268482373
-2_3,Late,2.4451612533869085
-2_4,Late,2.2304183643588327
-2_5,Late,2.1171246405819466
-2_6,Late,2.6378547741578866
-2_7,Late,2.0216481756446756
-2_8,Late,2.4135219362255116
-2_9,Late,1.667967541271679
-2_10,Late,2.7720594062223185
-2_11,Late,2.2915474383117638
-2_12,Late,2.6242402353563636
-2_13,Late,1.733841358380172
-2_14,Late,2.088201170091502
-2_15,Late,2.491846415337013
+id,group,condition,value
+State A-Control-0,State A,Control,1.9223171285266678
+State A-Control-1,State A,Control,1.4150594865828223
+State A-Control-2,State A,Control,1.2363045785859375
+State A-Control-3,State A,Control,1.4229766479943402
+State A-Control-4,State A,Control,1.4899785083449444
+State A-Control-5,State A,Control,1.2043806974860232
+State A-Control-6,State A,Control,1.6516157886810487
+State A-Control-7,State A,Control,1.9056235318363977
+State A-Control-8,State A,Control,1.6311616535018567
+State A-Control-9,State A,Control,1.4143698420316306
+State A-Control-10,State A,Control,1.6849759992224238
+State A-Control-11,State A,Control,0.8580063691008034
+State A-Control-12,State A,Control,1.1781394122491913
+State A-Control-13,State A,Control,1.0128029951532218
+State A-Control-14,State A,Control,1.1591351172848265
+State A-Control-15,State A,Control,1.011881103979658
+State A-Control-16,State A,Control,1.4126502989796956
+State A-Control-17,State A,Control,1.8109180463272594
+State A-Control-18,State A,Control,1.3143710825859052
+State A-Control-19,State A,Control,1.7523001837632546
+State A-Control-20,State A,Control,1.3384473124850804
+State A-Control-21,State A,Control,1.437408165338561
+State A-Control-22,State A,Control,1.3190424483471956
+State A-Control-23,State A,Control,0.9004983699563006
+State A-Control-24,State A,Control,1.5545085119600577
+State A-Control-25,State A,Control,1.4687269769863913
+State A-Control-26,State A,Control,1.671899858554023
+State A-Control-27,State A,Control,1.67341140480368
+State A-Control-28,State A,Control,1.8125350727857603
+State A-Control-29,State A,Control,1.6258420618094258
+State A-Control-30,State A,Control,1.5616886445458285
+State A-Control-31,State A,Control,1.0818273419971205
+State A-Control-32,State A,Control,1.185163567375194
+State A-Control-33,State A,Control,2.0096349415475077
+State A-Control-34,State A,Control,1.7366349239435857
+State A-Control-35,State A,Control,1.4625093424956253
+State A-Perturbed-0,State A,Perturbed,2.0585020461155383
+State A-Perturbed-1,State A,Perturbed,2.2049744100978166
+State A-Perturbed-2,State A,Perturbed,1.664939680280975
+State A-Perturbed-3,State A,Perturbed,1.3790157877964635
+State A-Perturbed-4,State A,Perturbed,2.423480282646893
+State A-Perturbed-5,State A,Perturbed,2.3241534596125417
+State A-Perturbed-6,State A,Perturbed,1.6996104889319432
+State A-Perturbed-7,State A,Perturbed,2.1964673083347925
+State A-Perturbed-8,State A,Perturbed,1.7023088319585558
+State A-Perturbed-9,State A,Perturbed,2.3854693732025987
+State A-Perturbed-10,State A,Perturbed,2.308843865365375
+State A-Perturbed-11,State A,Perturbed,1.6312244098800996
+State A-Perturbed-12,State A,Perturbed,1.8651036257038596
+State A-Perturbed-13,State A,Perturbed,2.0313540932239027
+State A-Perturbed-14,State A,Perturbed,1.453380050866195
+State A-Perturbed-15,State A,Perturbed,1.9354961371163186
+State A-Perturbed-16,State A,Perturbed,1.9882617630247075
+State A-Perturbed-17,State A,Perturbed,2.0216842728645767
+State A-Perturbed-18,State A,Perturbed,2.1027320169305255
+State A-Perturbed-19,State A,Perturbed,1.872058367910956
+State A-Perturbed-20,State A,Perturbed,2.284085215396625
+State A-Perturbed-21,State A,Perturbed,1.567629379712785
+State A-Perturbed-22,State A,Perturbed,1.8090669449773116
+State A-Perturbed-23,State A,Perturbed,2.084457739197287
+State A-Perturbed-24,State A,Perturbed,2.0303415862535683
+State A-Perturbed-25,State A,Perturbed,2.1448381625171873
+State A-Perturbed-26,State A,Perturbed,2.224941379434083
+State A-Perturbed-27,State A,Perturbed,2.3595425722743975
+State A-Perturbed-28,State A,Perturbed,2.434752306164922
+State A-Perturbed-29,State A,Perturbed,2.1363971566189166
+State A-Perturbed-30,State A,Perturbed,1.9056639162691544
+State A-Perturbed-31,State A,Perturbed,1.6274678876569164
+State A-Perturbed-32,State A,Perturbed,2.086761973713204
+State A-Perturbed-33,State A,Perturbed,1.720286724708702
+State A-Perturbed-34,State A,Perturbed,2.5531228468856098
+State A-Perturbed-35,State A,Perturbed,2.450966139068938
+State B-Control-0,State B,Control,1.609272543084204
+State B-Control-1,State B,Control,2.031115942238553
+State B-Control-2,State B,Control,1.8846975472087324
+State B-Control-3,State B,Control,2.3347307402756643
+State B-Control-4,State B,Control,2.350698302799848
+State B-Control-5,State B,Control,1.8858224324429314
+State B-Control-6,State B,Control,1.9860403159210653
+State B-Control-7,State B,Control,2.133745512642619
+State B-Control-8,State B,Control,2.365698787582623
+State B-Control-9,State B,Control,1.5911636392453712
+State B-Control-10,State B,Control,1.6301809717176388
+State B-Control-11,State B,Control,2.159601586634972
+State B-Control-12,State B,Control,1.9389722509656573
+State B-Control-13,State B,Control,1.5014619292082865
+State B-Control-14,State B,Control,1.3665244982024922
+State B-Control-15,State B,Control,1.7692730952451108
+State B-Control-16,State B,Control,1.8922559399358936
+State B-Control-17,State B,Control,1.4752330310016735
+State B-Control-18,State B,Control,2.343798946882107
+State B-Control-19,State B,Control,1.866991974628956
+State B-Control-20,State B,Control,2.5609136182311865
+State B-Control-21,State B,Control,1.820199998592618
+State B-Control-22,State B,Control,2.003771034145107
+State B-Control-23,State B,Control,1.6376501539446453
+State B-Control-24,State B,Control,2.0621215644259996
+State B-Control-25,State B,Control,2.00347795907305
+State B-Control-26,State B,Control,1.9652820294266065
+State B-Control-27,State B,Control,1.582117388306745
+State B-Control-28,State B,Control,1.921696271292536
+State B-Control-29,State B,Control,2.0711009930359365
+State B-Control-30,State B,Control,1.9357910622571775
+State B-Control-31,State B,Control,1.9169624597622414
+State B-Control-32,State B,Control,2.1737957872005875
+State B-Control-33,State B,Control,1.8379732645428237
+State B-Control-34,State B,Control,1.6874979051085621
+State B-Control-35,State B,Control,1.7542611443450304
+State B-Perturbed-0,State B,Perturbed,2.742593363396187
+State B-Perturbed-1,State B,Perturbed,2.2142872767572
+State B-Perturbed-2,State B,Perturbed,2.25258146990313
+State B-Perturbed-3,State B,Perturbed,2.583523728299153
+State B-Perturbed-4,State B,Perturbed,2.6246218566942394
+State B-Perturbed-5,State B,Perturbed,2.0341315011582486
+State B-Perturbed-6,State B,Perturbed,2.9038834683760775
+State B-Perturbed-7,State B,Perturbed,2.853394680500937
+State B-Perturbed-8,State B,Perturbed,2.2573207303895098
+State B-Perturbed-9,State B,Perturbed,1.7653002034585623
+State B-Perturbed-10,State B,Perturbed,1.9011342128638438
+State B-Perturbed-11,State B,Perturbed,2.766854560109005
+State B-Perturbed-12,State B,Perturbed,2.348529523634989
+State B-Perturbed-13,State B,Perturbed,2.768862536706177
+State B-Perturbed-14,State B,Perturbed,2.3796333597313226
+State B-Perturbed-15,State B,Perturbed,2.456733940489993
+State B-Perturbed-16,State B,Perturbed,2.8265203328568353
+State B-Perturbed-17,State B,Perturbed,2.5852230003203758
+State B-Perturbed-18,State B,Perturbed,2.633136463863847
+State B-Perturbed-19,State B,Perturbed,3.092199494333145
+State B-Perturbed-20,State B,Perturbed,2.5252220642851526
+State B-Perturbed-21,State B,Perturbed,2.210631455224326
+State B-Perturbed-22,State B,Perturbed,2.7791839414693547
+State B-Perturbed-23,State B,Perturbed,2.4047269544812484
+State B-Perturbed-24,State B,Perturbed,2.6969942313648927
+State B-Perturbed-25,State B,Perturbed,2.19318815356402
+State B-Perturbed-26,State B,Perturbed,2.581152153668452
+State B-Perturbed-27,State B,Perturbed,3.350482497933412
+State B-Perturbed-28,State B,Perturbed,2.4520845573659464
+State B-Perturbed-29,State B,Perturbed,2.3354194349170685
+State B-Perturbed-30,State B,Perturbed,2.1140445779967036
+State B-Perturbed-31,State B,Perturbed,2.044568399798632
+State B-Perturbed-32,State B,Perturbed,2.158517793663714
+State B-Perturbed-33,State B,Perturbed,2.1974953147494283
+State B-Perturbed-34,State B,Perturbed,2.672377944273821
+State B-Perturbed-35,State B,Perturbed,2.3090638350328327
+State C-Control-0,State C,Control,1.9602621951553711
+State C-Control-1,State C,Control,1.7937143760485723
+State C-Control-2,State C,Control,2.381194435161829
+State C-Control-3,State C,Control,2.7887516207751393
+State C-Control-4,State C,Control,2.3974390939947154
+State C-Control-5,State C,Control,2.692861634338697
+State C-Control-6,State C,Control,2.937064632185294
+State C-Control-7,State C,Control,1.8649973333634355
+State C-Control-8,State C,Control,1.8692222924372721
+State C-Control-9,State C,Control,2.772081298765371
+State C-Control-10,State C,Control,2.27291707311626
+State C-Control-11,State C,Control,2.6610582024363088
+State C-Control-12,State C,Control,2.8659200114041026
+State C-Control-13,State C,Control,2.573058422856067
+State C-Control-14,State C,Control,1.8274884013862276
+State C-Control-15,State C,Control,2.5746916527045545
+State C-Control-16,State C,Control,2.1654563933066204
+State C-Control-17,State C,Control,2.684488033356354
+State C-Control-18,State C,Control,2.638867354059671
+State C-Control-19,State C,Control,2.4160266679481373
+State C-Control-20,State C,Control,2.48588519661486
+State C-Control-21,State C,Control,1.7844831704694837
+State C-Control-22,State C,Control,2.2589519577192334
+State C-Control-23,State C,Control,1.449618209398985
+State C-Control-24,State C,Control,2.278567197141482
+State C-Control-25,State C,Control,2.3587107250938533
+State C-Control-26,State C,Control,2.778177732885339
+State C-Control-27,State C,Control,3.3496176734449645
+State C-Control-28,State C,Control,2.3074738682023557
+State C-Control-29,State C,Control,2.403618280400744
+State C-Control-30,State C,Control,1.9009577866445269
+State C-Control-31,State C,Control,2.492737880201602
+State C-Control-32,State C,Control,2.6574768582720374
+State C-Control-33,State C,Control,2.3224448346082665
+State C-Control-34,State C,Control,2.3448511854817653
+State C-Control-35,State C,Control,2.262661341348033
+State C-Perturbed-0,State C,Perturbed,3.115174449914479
+State C-Perturbed-1,State C,Perturbed,2.310702412135377
+State C-Perturbed-2,State C,Perturbed,2.8225672199652823
+State C-Perturbed-3,State C,Perturbed,2.6494263876676367
+State C-Perturbed-4,State C,Perturbed,3.244600724865484
+State C-Perturbed-5,State C,Perturbed,3.284203456128565
+State C-Perturbed-6,State C,Perturbed,2.632001048310884
+State C-Perturbed-7,State C,Perturbed,2.942869289220583
+State C-Perturbed-8,State C,Perturbed,3.5340629456079222
+State C-Perturbed-9,State C,Perturbed,3.3830541769000027
+State C-Perturbed-10,State C,Perturbed,2.7157860585321574
+State C-Perturbed-11,State C,Perturbed,3.2637015979534665
+State C-Perturbed-12,State C,Perturbed,3.3248850161820194
+State C-Perturbed-13,State C,Perturbed,3.280460451431649
+State C-Perturbed-14,State C,Perturbed,3.0152499973334717
+State C-Perturbed-15,State C,Perturbed,3.2796099005854575
+State C-Perturbed-16,State C,Perturbed,3.17183176574881
+State C-Perturbed-17,State C,Perturbed,2.84925058421975
+State C-Perturbed-18,State C,Perturbed,3.269426698245408
+State C-Perturbed-19,State C,Perturbed,3.31041802445638
+State C-Perturbed-20,State C,Perturbed,2.3532737890869155
+State C-Perturbed-21,State C,Perturbed,3.036430574974851
+State C-Perturbed-22,State C,Perturbed,2.4517475143774985
+State C-Perturbed-23,State C,Perturbed,2.491571079354275
+State C-Perturbed-24,State C,Perturbed,2.5570052016080305
+State C-Perturbed-25,State C,Perturbed,3.2040970533825694
+State C-Perturbed-26,State C,Perturbed,2.9077869115178583
+State C-Perturbed-27,State C,Perturbed,2.4678742254314976
+State C-Perturbed-28,State C,Perturbed,3.267117578256107
+State C-Perturbed-29,State C,Perturbed,2.9232784029417833
+State C-Perturbed-30,State C,Perturbed,2.634207075808641
+State C-Perturbed-31,State C,Perturbed,2.533033612284042
+State C-Perturbed-32,State C,Perturbed,2.9358078365828906
+State C-Perturbed-33,State C,Perturbed,2.5368403315105055
+State C-Perturbed-34,State C,Perturbed,2.909166002294688
+State C-Perturbed-35,State C,Perturbed,3.115252006766438
+State D-Control-0,State D,Control,3.2436123050738384
+State D-Control-1,State D,Control,1.7819501307633008
+State D-Control-2,State D,Control,2.622111289326842
+State D-Control-3,State D,Control,2.501844277935334
+State D-Control-4,State D,Control,1.9537149364521271
+State D-Control-5,State D,Control,2.4548034614562475
+State D-Control-6,State D,Control,3.07173147245308
+State D-Control-7,State D,Control,3.007020667926041
+State D-Control-8,State D,Control,3.3520649961139655
+State D-Control-9,State D,Control,2.7520166704269013
+State D-Control-10,State D,Control,2.4516054414492436
+State D-Control-11,State D,Control,1.6018956894197842
+State D-Control-12,State D,Control,2.672816582185499
+State D-Control-13,State D,Control,2.3415043337404238
+State D-Control-14,State D,Control,3.524024375002951
+State D-Control-15,State D,Control,2.1013789032289916
+State D-Control-16,State D,Control,2.358062035594978
+State D-Control-17,State D,Control,3.2924625117543918
+State D-Control-18,State D,Control,3.309593335470189
+State D-Control-19,State D,Control,2.9986955617908
+State D-Control-20,State D,Control,1.6417416075961435
+State D-Control-21,State D,Control,2.878900756232051
+State D-Control-22,State D,Control,3.2299803484910274
+State D-Control-23,State D,Control,3.004500696215465
+State D-Control-24,State D,Control,3.124334580114344
+State D-Control-25,State D,Control,2.9605856216836
+State D-Control-26,State D,Control,2.760845578631475
+State D-Control-27,State D,Control,2.4106369229701765
+State D-Control-28,State D,Control,2.806606516617222
+State D-Control-29,State D,Control,2.9748644442025043
+State D-Control-30,State D,Control,2.629661566391287
+State D-Control-31,State D,Control,2.466646181967255
+State D-Control-32,State D,Control,2.5607691141668334
+State D-Control-33,State D,Control,1.8884658708510262
+State D-Control-34,State D,Control,3.187985197391138
+State D-Control-35,State D,Control,2.820756822785025
+State D-Perturbed-0,State D,Perturbed,3.422192557169017
+State D-Perturbed-1,State D,Perturbed,3.3655170759584028
+State D-Perturbed-2,State D,Perturbed,3.203043302412148
+State D-Perturbed-3,State D,Perturbed,3.45456215972603
+State D-Perturbed-4,State D,Perturbed,2.8764668892033622
+State D-Perturbed-5,State D,Perturbed,3.574263325710109
+State D-Perturbed-6,State D,Perturbed,2.984819192588194
+State D-Perturbed-7,State D,Perturbed,3.939609923491104
+State D-Perturbed-8,State D,Perturbed,3.693127997973116
+State D-Perturbed-9,State D,Perturbed,3.1212705724248795
+State D-Perturbed-10,State D,Perturbed,3.018813381530392
+State D-Perturbed-11,State D,Perturbed,3.644655069098443
+State D-Perturbed-12,State D,Perturbed,4.596413772270687
+State D-Perturbed-13,State D,Perturbed,3.4451939663163427
+State D-Perturbed-14,State D,Perturbed,3.3590324964323504
+State D-Perturbed-15,State D,Perturbed,3.5368068815568483
+State D-Perturbed-16,State D,Perturbed,2.6565421016604804
+State D-Perturbed-17,State D,Perturbed,3.624907768008059
+State D-Perturbed-18,State D,Perturbed,3.2818529837200288
+State D-Perturbed-19,State D,Perturbed,3.1207784361518858
+State D-Perturbed-20,State D,Perturbed,2.985910936773868
+State D-Perturbed-21,State D,Perturbed,3.03488277464988
+State D-Perturbed-22,State D,Perturbed,3.228378779844455
+State D-Perturbed-23,State D,Perturbed,3.199330334095559
+State D-Perturbed-24,State D,Perturbed,2.9557223757527797
+State D-Perturbed-25,State D,Perturbed,4.113157426226851
+State D-Perturbed-26,State D,Perturbed,3.2715662987889935
+State D-Perturbed-27,State D,Perturbed,3.197751477118376
+State D-Perturbed-28,State D,Perturbed,4.707424274852086
+State D-Perturbed-29,State D,Perturbed,3.461104984815075
+State D-Perturbed-30,State D,Perturbed,3.623955284461097
+State D-Perturbed-31,State D,Perturbed,3.525977543564252
+State D-Perturbed-32,State D,Perturbed,2.6483346535171424
+State D-Perturbed-33,State D,Perturbed,3.310374764237818
+State D-Perturbed-34,State D,Perturbed,3.3514815758237293
+State D-Perturbed-35,State D,Perturbed,2.5104454106831904

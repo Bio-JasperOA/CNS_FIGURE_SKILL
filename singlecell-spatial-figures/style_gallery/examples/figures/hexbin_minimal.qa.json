@@ -1,0 +1,93 @@
+{
+  "outside_canvas": [],
+  "subtitle_count": 0,
+  "rendered_text": [
+    {
+      "text": "Library size (counts)",
+      "size_pt": 8.0,
+      "gid": null
+    },
+    {
+      "text": "0",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "4000",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "8000",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "12000",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "16000",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Detected genes",
+      "size_pt": 8.0,
+      "gid": null
+    },
+    {
+      "text": "1500",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "3000",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "4500",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "6000",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Density and quality-control thresholds",
+      "size_pt": 11.5,
+      "gid": "main_title"
+    },
+    {
+      "text": "SYNTHETIC EXAMPLE",
+      "size_pt": 6.0,
+      "gid": "synthetic_disclosure"
+    }
+  ],
+  "semantic_layers": [
+    {
+      "name": "paired observations",
+      "fields": [
+        "x",
+        "y"
+      ]
+    }
+  ],
+  "font": "DejaVu Sans",
+  "width_mm": 190.0,
+  "height_mm": 135.0,
+  "input_csv_sha256": "f6e658a58cd387a3e80d38e3341c698cc23545af9e70e3314332fb0e07ea479e",
+  "derived_order": null,
+  "omitted_intersections": null,
+  "axes_count": 1,
+  "scope": "canvas bounds and subtitle policy; not a scientific or universal collision certificate",
+  "outputs": {
+    "png": "88157a0cbf23de9902d05ad9e5f62c3855aecc1ba21f06393477d2653df2c63b",
+    "pdf": "4821aa62673ad04a65361a1c3ada9c2d018e5ca18a67b5fdca3ed2270b0cd9d8",
+    "svg": "b24af6e8ad4880d8b0dcd35594d67ffbd72108356d14439b9c03f9be3a062ee9"
+  }
+}

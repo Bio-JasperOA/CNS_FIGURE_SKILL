@@ -1,0 +1,17 @@
+{
+  "demo": true,
+  "width_mm": 210,
+  "height_mm": 135,
+  "term_order": [
+    "T-cell abundance",
+    "B-cell abundance",
+    "Myeloid state",
+    "Matrix programme",
+    "Vascular score",
+    "Inflammation",
+    "Differentiation",
+    "Stress response"
+  ],
+  "interval_label": "Illustrative interval",
+  "effect_label": "Supplied effect estimate"
+}

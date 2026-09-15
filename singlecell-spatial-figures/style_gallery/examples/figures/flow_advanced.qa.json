@@ -1,8 +1,111 @@
 {
   "outside_canvas": [],
-  "axes_count": 1,
+  "subtitle_count": 0,
+  "rendered_text": [
+    {
+      "text": "Progenitor\n100",
+      "size_pt": 7.5,
+      "gid": null
+    },
+    {
+      "text": "Intermediate\n100",
+      "size_pt": 7.5,
+      "gid": null
+    },
+    {
+      "text": "Committed\n100",
+      "size_pt": 7.5,
+      "gid": null
+    },
+    {
+      "text": "Input state",
+      "size_pt": 8.0,
+      "gid": null
+    },
+    {
+      "text": "Branch A\n90",
+      "size_pt": 6.5,
+      "gid": null
+    },
+    {
+      "text": "Branch B\n105",
+      "size_pt": 6.5,
+      "gid": null
+    },
+    {
+      "text": "Branch C\n105",
+      "size_pt": 6.5,
+      "gid": null
+    },
+    {
+      "text": "Lineage branch",
+      "size_pt": 8.0,
+      "gid": null
+    },
+    {
+      "text": "Fate A\n87.75",
+      "size_pt": 7.5,
+      "gid": null
+    },
+    {
+      "text": "Fate B\n113.25",
+      "size_pt": 7.5,
+      "gid": null
+    },
+    {
+      "text": "Fate C\n99",
+      "size_pt": 7.5,
+      "gid": null
+    },
+    {
+      "text": "Outcome",
+      "size_pt": 8.0,
+      "gid": null
+    },
+    {
+      "text": "Total 300 coupling units",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "State transitions and conserved mass",
+      "size_pt": 11.5,
+      "gid": "main_title"
+    },
+    {
+      "text": "SYNTHETIC EXAMPLE",
+      "size_pt": 6.0,
+      "gid": "synthetic_disclosure"
+    }
+  ],
+  "semantic_layers": [
+    {
+      "name": "conserved multistage edge mass",
+      "fields": [
+        "source",
+        "target",
+        "mass",
+        "stage"
+      ]
+    },
+    {
+      "name": "per-stage node totals",
+      "fields": [
+        "mass"
+      ]
+    }
+  ],
   "font": "DejaVu Sans",
-  "width_mm": 183.0,
-  "height_mm": 118.00000000000001,
-  "scope": "canvas text bounds only; visual and scientific review remain required"
+  "width_mm": 210.00000000000003,
+  "height_mm": 135.0,
+  "input_csv_sha256": "91e2d545b628d1792d987dc8ebe49558b6da5d469aa6077127e74b9d4d09bb8e",
+  "derived_order": null,
+  "omitted_intersections": null,
+  "axes_count": 1,
+  "scope": "canvas bounds and subtitle policy; not a scientific or universal collision certificate",
+  "outputs": {
+    "png": "fc2f724545394cc6c8760575f9e84d5199ea1530c814542e8de5d07cf1bca6e6",
+    "pdf": "eabf0d7728afff5e7179d7d25baca76d9b52b9b02cb2be7513db34b4e61c6080",
+    "svg": "8a070575e0eef5be56ee8ff8e89e568c977c7584449cb9cc9fe1a8f7624bbd3c"
+  }
 }

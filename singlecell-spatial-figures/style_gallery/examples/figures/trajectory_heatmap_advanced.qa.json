@@ -1,0 +1,282 @@
+{
+  "outside_canvas": [],
+  "subtitle_count": 0,
+  "rendered_text": [
+    {
+      "text": "Pseudotime",
+      "size_pt": 8.0,
+      "gid": null
+    },
+    {
+      "text": "0.00",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0.25",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0.51",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0.75",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "1.00",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Gene 01",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Gene 02",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Gene 03",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Gene 04",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Gene 05",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Gene 06",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Gene 07",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Gene 08",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Gene 09",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Gene 10",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Gene 11",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Gene 12",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Gene 13",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Gene 14",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Gene 15",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Gene 16",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Gene 17",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Gene 18",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Gene 19",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Gene 20",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Gene 21",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Gene 22",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Gene 23",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Gene 24",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Module",
+      "size_pt": 7.5,
+      "gid": null
+    },
+    {
+      "text": "Early",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Middle",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Late",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Supplied fitted expression",
+      "size_pt": 8.0,
+      "gid": null
+    },
+    {
+      "text": "0.0",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0.5",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "1.0",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "1.5",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "2.0",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "2.5",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "3.0",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Temporal gene programmes",
+      "size_pt": 11.5,
+      "gid": "main_title"
+    },
+    {
+      "text": "SYNTHETIC EXAMPLE",
+      "size_pt": 6.0,
+      "gid": "synthetic_disclosure"
+    }
+  ],
+  "semantic_layers": [
+    {
+      "name": "stable peak-time ordering and modules",
+      "fields": [
+        "time",
+        "value",
+        "module"
+      ]
+    },
+    {
+      "name": "same supplied temporal matrix",
+      "fields": [
+        "time",
+        "value",
+        "gene"
+      ]
+    }
+  ],
+  "font": "DejaVu Sans",
+  "width_mm": 190.0,
+  "height_mm": 155.0,
+  "input_csv_sha256": "94368f2f49d01921e9cc712afc466c55f89d33f2804c6ebf2bc356dca7c7b68d",
+  "derived_order": [
+    "Gene 01",
+    "Gene 02",
+    "Gene 03",
+    "Gene 04",
+    "Gene 05",
+    "Gene 06",
+    "Gene 07",
+    "Gene 08",
+    "Gene 09",
+    "Gene 10",
+    "Gene 11",
+    "Gene 12",
+    "Gene 13",
+    "Gene 14",
+    "Gene 15",
+    "Gene 16",
+    "Gene 17",
+    "Gene 18",
+    "Gene 19",
+    "Gene 20",
+    "Gene 21",
+    "Gene 22",
+    "Gene 23",
+    "Gene 24"
+  ],
+  "omitted_intersections": null,
+  "axes_count": 2,
+  "scope": "canvas bounds and subtitle policy; not a scientific or universal collision certificate",
+  "outputs": {
+    "png": "ca1c5a2fe0a882f10ca822f939db70d5c7b0c7c3c68f840e51152b5b41d20afe",
+    "pdf": "ab68c25c76a33a12376f24c0a5215d24a398beb64ea97aa73532ac3c13f46603",
+    "svg": "4f7526b002d5e208914508087fd3e8380ca23974b9b8f565048046753f8d9e65"
+  }
+}

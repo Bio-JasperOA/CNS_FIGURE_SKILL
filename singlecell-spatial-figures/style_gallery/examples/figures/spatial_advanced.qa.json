@@ -1,8 +1,161 @@
 {
   "outside_canvas": [],
-  "axes_count": 2,
+  "subtitle_count": 0,
+  "rendered_text": [
+    {
+      "text": "Region A",
+      "size_pt": 8.0,
+      "gid": null
+    },
+    {
+      "text": "80 µm",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "x (µm)",
+      "size_pt": 8.0,
+      "gid": null
+    },
+    {
+      "text": "0",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "100",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "200",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "300",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "400",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "y (µm)",
+      "size_pt": 8.0,
+      "gid": null
+    },
+    {
+      "text": "0",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "60",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "120",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "180",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "240",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Expression",
+      "size_pt": 8.0,
+      "gid": null
+    },
+    {
+      "text": "−1",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "1",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "2",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "3",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "4",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "5",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Spatial expression and tissue compartments",
+      "size_pt": 11.5,
+      "gid": "main_title"
+    },
+    {
+      "text": "SYNTHETIC EXAMPLE",
+      "size_pt": 6.0,
+      "gid": "synthetic_disclosure"
+    }
+  ],
+  "semantic_layers": [
+    {
+      "name": "spatial expression",
+      "fields": [
+        "x",
+        "y",
+        "value"
+      ]
+    },
+    {
+      "name": "supplied segmentation",
+      "fields": [
+        "vertices"
+      ]
+    },
+    {
+      "name": "declared ROI",
+      "fields": [
+        "config.rois"
+      ]
+    }
+  ],
   "font": "DejaVu Sans",
-  "width_mm": 183.0,
-  "height_mm": 118.00000000000001,
-  "scope": "canvas text bounds only; visual and scientific review remain required"
+  "width_mm": 190.0,
+  "height_mm": 135.0,
+  "input_csv_sha256": "75454b46aec489fa7aad4c8bfb7376a9daaabe5f36e9e1e702b52225afe1a03a",
+  "derived_order": null,
+  "omitted_intersections": null,
+  "axes_count": 2,
+  "scope": "canvas bounds and subtitle policy; not a scientific or universal collision certificate",
+  "outputs": {
+    "png": "3019a0e2cee073cef4dedd330e938d090c06613f5603b14bca10d2c405705ff2",
+    "pdf": "452a6e4408a16621a0cd3f34f53f3e3e6b5cd4ef7c9bc7ee81955dae4c982573",
+    "svg": "7c9ad39ab31f42a46d6921ac5ad1f4edfd87c1577328b642b7279aa0bef585f6"
+  }
 }

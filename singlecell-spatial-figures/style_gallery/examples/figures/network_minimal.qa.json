@@ -1,8 +1,99 @@
 {
   "outside_canvas": [],
-  "axes_count": 1,
+  "subtitle_count": 0,
+  "rendered_text": [
+    {
+      "text": "T cells",
+      "size_pt": 8.0,
+      "gid": null
+    },
+    {
+      "text": "B cells",
+      "size_pt": 8.0,
+      "gid": null
+    },
+    {
+      "text": "Myeloid",
+      "size_pt": 8.0,
+      "gid": null
+    },
+    {
+      "text": "Stromal",
+      "size_pt": 8.0,
+      "gid": null
+    },
+    {
+      "text": "Endothelial",
+      "size_pt": 8.0,
+      "gid": null
+    },
+    {
+      "text": "Epithelial",
+      "size_pt": 8.0,
+      "gid": null
+    },
+    {
+      "text": "B cells",
+      "size_pt": 8.0,
+      "gid": null
+    },
+    {
+      "text": "Myeloid",
+      "size_pt": 8.0,
+      "gid": null
+    },
+    {
+      "text": "Endothelial",
+      "size_pt": 8.0,
+      "gid": null
+    },
+    {
+      "text": "Epithelial",
+      "size_pt": 8.0,
+      "gid": null
+    },
+    {
+      "text": "T cells",
+      "size_pt": 8.0,
+      "gid": null
+    },
+    {
+      "text": "Stromal",
+      "size_pt": 8.0,
+      "gid": null
+    },
+    {
+      "text": "Candidate sender–receiver communication",
+      "size_pt": 11.5,
+      "gid": "main_title"
+    },
+    {
+      "text": "SYNTHETIC EXAMPLE",
+      "size_pt": 6.0,
+      "gid": "synthetic_disclosure"
+    }
+  ],
+  "semantic_layers": [
+    {
+      "name": "weighted candidate edges",
+      "fields": [
+        "weight",
+        "source",
+        "target"
+      ]
+    }
+  ],
   "font": "DejaVu Sans",
-  "width_mm": 183.0,
-  "height_mm": 118.00000000000001,
-  "scope": "canvas text bounds only; visual and scientific review remain required"
+  "width_mm": 190.0,
+  "height_mm": 135.0,
+  "input_csv_sha256": "402e4d36acf8c9a3db84e2dc48e72a67be4c1e798321f98988f492dea21b940b",
+  "derived_order": null,
+  "omitted_intersections": null,
+  "axes_count": 1,
+  "scope": "canvas bounds and subtitle policy; not a scientific or universal collision certificate",
+  "outputs": {
+    "png": "b2c2121b05fa8a8fac8086c5df79556bf7f81ba8f3f0baa90d0949ada7eff3cf",
+    "pdf": "e67c563c5cfd312b2ac2c39d6065fc7e5060ce4513a146025be923812a28590c",
+    "svg": "bfe374f005ef1c2ebaacc7c36b0475773980802245ea337f27418369c3b23760"
+  }
 }

@@ -1,7 +1,8 @@
+# Actual authoring environment; do not upgrade an existing analysis environment blindly.
 numpy==2.3.5
 pandas==2.2.3
 scipy==1.17.0
 matplotlib==3.10.8
 Pillow==12.3.0
-pytest==9.0.2
 PyMuPDF==1.26.7
+pytest==9.0.2

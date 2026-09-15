@@ -1,8 +1,93 @@
 {
   "outside_canvas": [],
-  "axes_count": 1,
+  "subtitle_count": 0,
+  "rendered_text": [
+    {
+      "text": "log₂ fold change",
+      "size_pt": 8.0,
+      "gid": null
+    },
+    {
+      "text": "−2",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "2",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "4",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "−log₁₀(q)",
+      "size_pt": 8.0,
+      "gid": null
+    },
+    {
+      "text": "0.0",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "1.5",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "3.0",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "4.5",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "6.0",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Differential expression and annotated gene sets",
+      "size_pt": 11.5,
+      "gid": "main_title"
+    },
+    {
+      "text": "SYNTHETIC EXAMPLE",
+      "size_pt": 6.0,
+      "gid": "synthetic_disclosure"
+    }
+  ],
+  "semantic_layers": [
+    {
+      "name": "effect and adjusted evidence",
+      "fields": [
+        "effect",
+        "q"
+      ]
+    }
+  ],
   "font": "DejaVu Sans",
-  "width_mm": 183.0,
-  "height_mm": 118.00000000000001,
-  "scope": "canvas text bounds only; visual and scientific review remain required"
+  "width_mm": 190.0,
+  "height_mm": 135.0,
+  "input_csv_sha256": "c0aa9b87a7a67996fe23275185f43f5ed2930df2018447aad63f7edf4dce115c",
+  "derived_order": null,
+  "omitted_intersections": null,
+  "axes_count": 1,
+  "scope": "canvas bounds and subtitle policy; not a scientific or universal collision certificate",
+  "outputs": {
+    "png": "bb142a6908615a9d43d15f6e86ddf78063d742a4099ad936bf8ad9b2c5247689",
+    "pdf": "bd74f34a029b435b24ed5aade2f390489ec7c610b1742de2ff1a1c8049daa6db",
+    "svg": "9e964720bd034794b24a7b80b68f994c2bae91fbfebd9f0fc0bc9e85e430f8b7"
+  }
 }

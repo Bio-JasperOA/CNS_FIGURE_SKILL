@@ -1,10 +1,19 @@
-source,target,mass
-Progenitor A,State X,90
-Progenitor A,State Y,40
-Progenitor A,State Z,5
-Progenitor B,State X,20
-Progenitor B,State Y,70
-Progenitor B,State Z,35
-Progenitor C,State X,5
-Progenitor C,State Y,20
-Progenitor C,State Z,115
+stage,source,target,mass
+0,Progenitor,Branch A,70.0
+0,Progenitor,Branch B,20.0
+0,Progenitor,Branch C,10.0
+0,Intermediate,Branch A,15.0
+0,Intermediate,Branch B,65.0
+0,Intermediate,Branch C,20.0
+0,Committed,Branch A,5.0
+0,Committed,Branch B,20.0
+0,Committed,Branch C,75.0
+1,Branch A,Fate A,72.0
+1,Branch A,Fate B,13.5
+1,Branch A,Fate C,4.5
+1,Branch B,Fate A,10.5
+1,Branch B,Fate B,84.0
+1,Branch B,Fate C,10.5
+1,Branch C,Fate A,5.25
+1,Branch C,Fate B,15.75
+1,Branch C,Fate C,84.0

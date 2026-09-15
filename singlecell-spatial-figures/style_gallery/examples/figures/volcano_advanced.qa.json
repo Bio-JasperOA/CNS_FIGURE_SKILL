@@ -1,8 +1,157 @@
 {
   "outside_canvas": [],
-  "axes_count": 1,
+  "subtitle_count": 0,
+  "rendered_text": [
+    {
+      "text": "Gene361",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Gene054",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Gene369",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Gene003",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Gene428",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Gene444",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Down: 71",
+      "size_pt": 8.0,
+      "gid": null
+    },
+    {
+      "text": "Up: 74",
+      "size_pt": 8.0,
+      "gid": null
+    },
+    {
+      "text": "log₂ fold change",
+      "size_pt": 8.0,
+      "gid": null
+    },
+    {
+      "text": "−5.0",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "−2.5",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0.0",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "2.5",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "5.0",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "−log₁₀(q)",
+      "size_pt": 8.0,
+      "gid": null
+    },
+    {
+      "text": "0.0",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "1.5",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "3.0",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "4.5",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "6.0",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Regulators",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Differential expression and annotated gene sets",
+      "size_pt": 11.5,
+      "gid": "main_title"
+    },
+    {
+      "text": "SYNTHETIC EXAMPLE",
+      "size_pt": 6.0,
+      "gid": "synthetic_disclosure"
+    }
+  ],
+  "semantic_layers": [
+    {
+      "name": "effect and adjusted evidence",
+      "fields": [
+        "effect",
+        "q"
+      ]
+    },
+    {
+      "name": "supplied gene-set membership",
+      "fields": [
+        "feature_set"
+      ]
+    },
+    {
+      "name": "fixed rule labels and direction counts",
+      "fields": [
+        "feature",
+        "effect",
+        "q"
+      ]
+    }
+  ],
   "font": "DejaVu Sans",
-  "width_mm": 183.0,
-  "height_mm": 118.00000000000001,
-  "scope": "canvas text bounds only; visual and scientific review remain required"
+  "width_mm": 190.0,
+  "height_mm": 135.0,
+  "input_csv_sha256": "c0aa9b87a7a67996fe23275185f43f5ed2930df2018447aad63f7edf4dce115c",
+  "derived_order": null,
+  "omitted_intersections": null,
+  "axes_count": 1,
+  "scope": "canvas bounds and subtitle policy; not a scientific or universal collision certificate",
+  "outputs": {
+    "png": "e122a184c462b5c98864ae39c0c7a2574d80d6bd899190a00018598ac78f560b",
+    "pdf": "70d9d7881d04ab46c7350d350775eafe43d7dbb64d166aa485c7b64271a901dd",
+    "svg": "d6a0a5882ed2e291201b3126dc58135a822f0f4c90419634b9e7712332abbf5f"
+  }
 }

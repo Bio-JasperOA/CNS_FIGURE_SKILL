@@ -1,0 +1,129 @@
+{
+  "outside_canvas": [],
+  "subtitle_count": 0,
+  "rendered_text": [
+    {
+      "text": "Prevalence",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Recall",
+      "size_pt": 8.0,
+      "gid": null
+    },
+    {
+      "text": "0.0",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0.2",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0.4",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0.6",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0.8",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "1.0",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Precision",
+      "size_pt": 8.0,
+      "gid": null
+    },
+    {
+      "text": "0.00",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0.25",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0.50",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0.75",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "1.00",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Supplied illustrative band",
+      "size_pt": 7.5,
+      "gid": null
+    },
+    {
+      "text": "Baseline",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Multimodal",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Fine-tuned",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Precision–recall trade-offs",
+      "size_pt": 11.5,
+      "gid": "main_title"
+    },
+    {
+      "text": "SYNTHETIC EXAMPLE",
+      "size_pt": 6.0,
+      "gid": "synthetic_disclosure"
+    }
+  ],
+  "semantic_layers": [
+    {
+      "name": "supplied evaluation curves",
+      "fields": [
+        "model",
+        "recall",
+        "precision"
+      ]
+    }
+  ],
+  "font": "DejaVu Sans",
+  "width_mm": 190.0,
+  "height_mm": 135.0,
+  "input_csv_sha256": "8b68ed41cdc7be541bdce2f1e0c1105f790131b846323bce714ceba4ec838b6a",
+  "derived_order": null,
+  "omitted_intersections": null,
+  "axes_count": 1,
+  "scope": "canvas bounds and subtitle policy; not a scientific or universal collision certificate",
+  "outputs": {
+    "png": "bc6bf2071ac897665181eaba166abed08457e0c3b3ab1538ea024a06d97476ab",
+    "pdf": "a0b3a2ac43e85f050ddc0cf8d8670f465ceb98624d219b5765c3ba630f786639",
+    "svg": "bce22ab6b9d00e6556a38f835fa93fc7ed805db30fb927f55acdb396f834c49b"
+  }
+}

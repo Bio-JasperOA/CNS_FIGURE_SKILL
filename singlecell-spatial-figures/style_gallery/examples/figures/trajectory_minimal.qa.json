@@ -1,8 +1,114 @@
 {
   "outside_canvas": [],
-  "axes_count": 1,
+  "subtitle_count": 0,
+  "rendered_text": [
+    {
+      "text": "Early programme",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Transient\nprogramme",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Late programme",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Pseudotime",
+      "size_pt": 8.0,
+      "gid": null
+    },
+    {
+      "text": "0.00",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0.25",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0.50",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0.75",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "1.00",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Supplied fitted expression",
+      "size_pt": 8.0,
+      "gid": null
+    },
+    {
+      "text": "0.0",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0.8",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "1.6",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "2.4",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Supplied illustrative interval",
+      "size_pt": 6.7,
+      "gid": null
+    },
+    {
+      "text": "Lineage programmes over time",
+      "size_pt": 11.5,
+      "gid": "main_title"
+    },
+    {
+      "text": "SYNTHETIC EXAMPLE",
+      "size_pt": 6.0,
+      "gid": "synthetic_disclosure"
+    }
+  ],
+  "semantic_layers": [
+    {
+      "name": "supplied trends and uncertainty",
+      "fields": [
+        "mean",
+        "lower",
+        "upper"
+      ]
+    }
+  ],
   "font": "DejaVu Sans",
-  "width_mm": 183.0,
-  "height_mm": 118.00000000000001,
-  "scope": "canvas text bounds only; visual and scientific review remain required"
+  "width_mm": 190.0,
+  "height_mm": 135.0,
+  "input_csv_sha256": "eb6d9489af0c68e81823ecc19848379d6e41cd7fd471ca50353a0581d9b2bf56",
+  "derived_order": null,
+  "omitted_intersections": null,
+  "axes_count": 1,
+  "scope": "canvas bounds and subtitle policy; not a scientific or universal collision certificate",
+  "outputs": {
+    "png": "70be2383b97a7ef1b754e2621d1f5cad888062caed9f7fe7c9872f3f1387c546",
+    "pdf": "8810e9a72576b530e3a120da1ef00c082c572ebde7785cc065e8255508408526",
+    "svg": "b185b0cf91068b034efa35ef78115d8cff9babe6092aa16c2c13d81a252fbb18"
+  }
 }

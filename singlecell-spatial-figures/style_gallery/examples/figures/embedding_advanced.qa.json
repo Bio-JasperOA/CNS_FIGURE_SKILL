@@ -1,8 +1,142 @@
 {
   "outside_canvas": [],
-  "axes_count": 1,
+  "subtitle_count": 0,
+  "rendered_text": [
+    {
+      "text": "T cells",
+      "size_pt": 7.3,
+      "gid": null
+    },
+    {
+      "text": "B cells",
+      "size_pt": 7.3,
+      "gid": null
+    },
+    {
+      "text": "Myeloid",
+      "size_pt": 7.3,
+      "gid": null
+    },
+    {
+      "text": "Stromal",
+      "size_pt": 7.3,
+      "gid": null
+    },
+    {
+      "text": "Endothelial",
+      "size_pt": 7.3,
+      "gid": null
+    },
+    {
+      "text": "Epithelial",
+      "size_pt": 7.3,
+      "gid": null
+    },
+    {
+      "text": "Immune",
+      "size_pt": 8.5,
+      "gid": null
+    },
+    {
+      "text": "Tissue",
+      "size_pt": 8.5,
+      "gid": null
+    },
+    {
+      "text": "Vascular",
+      "size_pt": 8.5,
+      "gid": null
+    },
+    {
+      "text": "Embedding 1",
+      "size_pt": 8.0,
+      "gid": null
+    },
+    {
+      "text": "Embedding 2",
+      "size_pt": 8.0,
+      "gid": null
+    },
+    {
+      "text": "T cells",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "B cells",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Myeloid",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Stromal",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Endothelial",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Epithelial",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Cell identity and lineage hierarchy",
+      "size_pt": 11.5,
+      "gid": "main_title"
+    },
+    {
+      "text": "SYNTHETIC EXAMPLE",
+      "size_pt": 6.0,
+      "gid": "synthetic_disclosure"
+    }
+  ],
+  "semantic_layers": [
+    {
+      "name": "identity",
+      "fields": [
+        "x",
+        "y",
+        "group"
+      ]
+    },
+    {
+      "name": "supplied abstract state graph",
+      "fields": [
+        "config.abstract_edges"
+      ]
+    },
+    {
+      "name": "declared hierarchy",
+      "fields": [
+        "parent"
+      ]
+    },
+    {
+      "name": "direct identity lookup",
+      "fields": [
+        "group"
+      ]
+    }
+  ],
   "font": "DejaVu Sans",
-  "width_mm": 183.0,
-  "height_mm": 118.00000000000001,
-  "scope": "canvas text bounds only; visual and scientific review remain required"
+  "width_mm": 190.0,
+  "height_mm": 135.0,
+  "input_csv_sha256": "117f56e83eb779e2477fe6e131fbcd58f4ddfb5c10f0450ea18fdf44dcf93223",
+  "derived_order": null,
+  "omitted_intersections": null,
+  "axes_count": 1,
+  "scope": "canvas bounds and subtitle policy; not a scientific or universal collision certificate",
+  "outputs": {
+    "png": "05daf28a1e23873c03e48a175d918dade8ee880507d8f597c54ba700b0f57445",
+    "pdf": "a3ea61a0f2f045c678820cfb6b8a4bc78183dd2615bbcbd359b55a23427914da",
+    "svg": "f6e0140fff83782d44c512dc180b118da42eea1258d6b77e770daa7db60e7924"
+  }
 }

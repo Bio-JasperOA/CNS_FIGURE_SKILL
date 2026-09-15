@@ -1,8 +1,112 @@
 {
   "outside_canvas": [],
-  "axes_count": 1,
+  "subtitle_count": 0,
+  "rendered_text": [
+    {
+      "text": "T cells",
+      "size_pt": 8.0,
+      "gid": null
+    },
+    {
+      "text": "6/28",
+      "size_pt": 6.0,
+      "gid": null
+    },
+    {
+      "text": "B cells",
+      "size_pt": 8.0,
+      "gid": null
+    },
+    {
+      "text": "10/13",
+      "size_pt": 6.0,
+      "gid": null
+    },
+    {
+      "text": "Myeloid",
+      "size_pt": 8.0,
+      "gid": null
+    },
+    {
+      "text": "17/10",
+      "size_pt": 6.0,
+      "gid": null
+    },
+    {
+      "text": "Stromal",
+      "size_pt": 8.0,
+      "gid": null
+    },
+    {
+      "text": "17/19",
+      "size_pt": 6.0,
+      "gid": null
+    },
+    {
+      "text": "Endothelial",
+      "size_pt": 8.0,
+      "gid": null
+    },
+    {
+      "text": "22/11",
+      "size_pt": 6.0,
+      "gid": null
+    },
+    {
+      "text": "Epithelial",
+      "size_pt": 8.0,
+      "gid": null
+    },
+    {
+      "text": "16/7",
+      "size_pt": 6.0,
+      "gid": null
+    },
+    {
+      "text": "Node values: out / in (score); arrows mark receivers",
+      "size_pt": 6.8,
+      "gid": null
+    },
+    {
+      "text": "Candidate sender–receiver communication",
+      "size_pt": 11.5,
+      "gid": "main_title"
+    },
+    {
+      "text": "SYNTHETIC EXAMPLE",
+      "size_pt": 6.0,
+      "gid": "synthetic_disclosure"
+    }
+  ],
+  "semantic_layers": [
+    {
+      "name": "mass-allocated chord endpoints and node totals",
+      "fields": [
+        "weight",
+        "source",
+        "target"
+      ]
+    },
+    {
+      "name": "weighted candidate edges",
+      "fields": [
+        "weight",
+        "source",
+        "target"
+      ]
+    }
+  ],
   "font": "DejaVu Sans",
-  "width_mm": 183.0,
-  "height_mm": 118.00000000000001,
-  "scope": "canvas text bounds only; visual and scientific review remain required"
+  "width_mm": 190.0,
+  "height_mm": 135.0,
+  "input_csv_sha256": "402e4d36acf8c9a3db84e2dc48e72a67be4c1e798321f98988f492dea21b940b",
+  "derived_order": null,
+  "omitted_intersections": null,
+  "axes_count": 1,
+  "scope": "canvas bounds and subtitle policy; not a scientific or universal collision certificate",
+  "outputs": {
+    "png": "321dae9b03689c62e8931b0395d3ed945924f80e15710529a2cb0bad11fd85cd",
+    "pdf": "acd5e6998713416cf41df78e6dfb3c8412a797d98d3db7a8aa70a8583f79e127",
+    "svg": "16062c803ff5ef1b5ab9f60117c94e495f3b11bca9af57fba85a515e5615617d"
+  }
 }

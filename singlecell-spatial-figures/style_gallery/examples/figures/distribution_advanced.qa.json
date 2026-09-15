@@ -1,8 +1,140 @@
 {
   "outside_canvas": [],
-  "axes_count": 1,
+  "subtitle_count": 0,
+  "rendered_text": [
+    {
+      "text": "n=36",
+      "size_pt": 6.5,
+      "gid": null
+    },
+    {
+      "text": "n=36",
+      "size_pt": 6.5,
+      "gid": null
+    },
+    {
+      "text": "n=36",
+      "size_pt": 6.5,
+      "gid": null
+    },
+    {
+      "text": "n=36",
+      "size_pt": 6.5,
+      "gid": null
+    },
+    {
+      "text": "n=36",
+      "size_pt": 6.5,
+      "gid": null
+    },
+    {
+      "text": "n=36",
+      "size_pt": 6.5,
+      "gid": null
+    },
+    {
+      "text": "n=36",
+      "size_pt": 6.5,
+      "gid": null
+    },
+    {
+      "text": "n=36",
+      "size_pt": 6.5,
+      "gid": null
+    },
+    {
+      "text": "Within group: Control / Perturbed",
+      "size_pt": 8.0,
+      "gid": null
+    },
+    {
+      "text": "State A",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "State B",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "State C",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "State D",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Sample-level module score",
+      "size_pt": 8.0,
+      "gid": null
+    },
+    {
+      "text": "1",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "2",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "3",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "4",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Distribution across biological samples",
+      "size_pt": 11.5,
+      "gid": "main_title"
+    },
+    {
+      "text": "SYNTHETIC EXAMPLE",
+      "size_pt": 6.0,
+      "gid": "synthetic_disclosure"
+    }
+  ],
+  "semantic_layers": [
+    {
+      "name": "observations",
+      "fields": [
+        "value",
+        "id"
+      ]
+    },
+    {
+      "name": "density, median and IQR",
+      "fields": [
+        "value"
+      ]
+    },
+    {
+      "name": "stratified distributions",
+      "fields": [
+        "condition"
+      ]
+    }
+  ],
   "font": "DejaVu Sans",
-  "width_mm": 183.0,
-  "height_mm": 118.00000000000001,
-  "scope": "canvas text bounds only; visual and scientific review remain required"
+  "width_mm": 190.0,
+  "height_mm": 135.0,
+  "input_csv_sha256": "650d60973d54e1ab7f632d271012b735e9a4829429519c14e881ab78d1cd2e36",
+  "derived_order": null,
+  "omitted_intersections": null,
+  "axes_count": 1,
+  "scope": "canvas bounds and subtitle policy; not a scientific or universal collision certificate",
+  "outputs": {
+    "png": "db69c66df26eed02bb5e9d62fa0d4d7d7dde42502f19c0971d957c9a348a01a6",
+    "pdf": "2bddeb73252b966503cd0e5204a4bf3c3ccb07e966b77ab51116229bc2f3e113",
+    "svg": "b7fc0bf445c95a4d2ba5af28e806c37c83414f943eafe7f9eb4f64efe6a2ef6b"
+  }
 }

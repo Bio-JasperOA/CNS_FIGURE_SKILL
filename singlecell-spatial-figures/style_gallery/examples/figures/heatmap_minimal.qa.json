@@ -1,8 +1,187 @@
 {
   "outside_canvas": [],
-  "axes_count": 2,
+  "subtitle_count": 0,
+  "rendered_text": [
+    {
+      "text": "Early1",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Early2",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Early3",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Mid1",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Mid2",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Mid3",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Late1",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Late2",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Late3",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "TF-1",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "TF-2",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "TF-3",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "TF-4",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "TF-5",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Cycle-1",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Cycle-2",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Cycle-3",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Cycle-4",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Cycle-5",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Matrix-1",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Matrix-2",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Matrix-3",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Matrix-4",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Matrix-5",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Supplied expression z-score",
+      "size_pt": 8.0,
+      "gid": null
+    },
+    {
+      "text": "−2",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "−1",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "1",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "2",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Expression modules and sample context",
+      "size_pt": 11.5,
+      "gid": "main_title"
+    },
+    {
+      "text": "SYNTHETIC EXAMPLE",
+      "size_pt": 6.0,
+      "gid": "synthetic_disclosure"
+    }
+  ],
+  "semantic_layers": [
+    {
+      "name": "expression matrix",
+      "fields": [
+        "value"
+      ]
+    }
+  ],
   "font": "DejaVu Sans",
-  "width_mm": 183.0,
-  "height_mm": 118.00000000000001,
-  "scope": "canvas text bounds only; visual and scientific review remain required"
+  "width_mm": 190.0,
+  "height_mm": 135.0,
+  "input_csv_sha256": "929ce12e4e4707c52dad5dfe9dd5a110508b1ae88482ef7d1db0712652d0302d",
+  "derived_order": null,
+  "omitted_intersections": null,
+  "axes_count": 2,
+  "scope": "canvas bounds and subtitle policy; not a scientific or universal collision certificate",
+  "outputs": {
+    "png": "a72f739ef297c1ebbd78fe5c91b4342389bd64c943ea6a592651c89ebce7564d",
+    "pdf": "3c09d762e008dd749dcfb4f852bedde6d4e7121a3209fd812acecee7abe4217c",
+    "svg": "ef953734ef6d48c85fe9dc823b03fb8406e50a97fcdd2b713aae987222585d10"
+  }
 }

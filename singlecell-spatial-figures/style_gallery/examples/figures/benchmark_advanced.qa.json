@@ -1,8 +1,392 @@
 {
   "outside_canvas": [],
-  "axes_count": 1,
+  "subtitle_count": 0,
+  "rendered_text": [
+    {
+      "text": "0.58",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0.60",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0.62",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0.66",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0.65",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0.69",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0.68",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0.71",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0.78",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0.78",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0.85",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0.86",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0.86",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0.84",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0.86",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0.84",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0.65",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0.70",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0.69",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0.71",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0.66",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0.68",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0.70",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0.73",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0.71",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0.77",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0.78",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0.81",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0.80",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0.80",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0.82",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0.86",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0.75",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0.79",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0.82",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0.84",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0.76",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0.78",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0.85",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0.86",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Δ +0.00",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Δ +0.02",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Δ +0.04",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Δ +0.07",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Cell text = raw score; top = median paired difference",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Baseline",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Model B",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Model C",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Model D",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Dataset 01",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Dataset 02",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Dataset 03",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Dataset 04",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Dataset 05",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Dataset 06",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Dataset 07",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Dataset 08",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Dataset 09",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Dataset 10",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Score difference vs Baseline",
+      "size_pt": 8.0,
+      "gid": null
+    },
+    {
+      "text": "−0.100",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "−0.075",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "−0.050",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "−0.025",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0.000",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0.025",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0.050",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0.075",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0.100",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Matched-dataset method performance",
+      "size_pt": 11.5,
+      "gid": "main_title"
+    },
+    {
+      "text": "SYNTHETIC EXAMPLE",
+      "size_pt": 6.0,
+      "gid": "synthetic_disclosure"
+    }
+  ],
+  "semantic_layers": [
+    {
+      "name": "matched reference differences and raw scores",
+      "fields": [
+        "dataset",
+        "method",
+        "score"
+      ]
+    },
+    {
+      "name": "dataset-level performance",
+      "fields": [
+        "dataset",
+        "method",
+        "score"
+      ]
+    }
+  ],
   "font": "DejaVu Sans",
-  "width_mm": 183.0,
-  "height_mm": 118.00000000000001,
-  "scope": "canvas text bounds only; visual and scientific review remain required"
+  "width_mm": 190.0,
+  "height_mm": 135.0,
+  "input_csv_sha256": "9d6a15ff24e6f56b390236940bbb542d5246a581f96591ccdf75a5e947daf4a4",
+  "derived_order": null,
+  "omitted_intersections": null,
+  "axes_count": 2,
+  "scope": "canvas bounds and subtitle policy; not a scientific or universal collision certificate",
+  "outputs": {
+    "png": "c5bec08bd4d1eb8095228a4d6fdaa36d5fcce4fbaa25c2839a913e36d1f82cb6",
+    "pdf": "86c059419cdf58570e26d6b73cfdabe85e5fb980a7a9e19c80078427b902a67a",
+    "svg": "0cc1436f6fbeb6c5a48273c2f4d60c66e0b37a7f7663a3df51ba0c9b0c22e082"
+  }
 }

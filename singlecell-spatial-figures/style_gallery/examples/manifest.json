@@ -1,90 +1,1306 @@
 {
-  "version": "3.1.0",
+  "version": "3.2.0",
   "data_kind": "synthetic_style_fixture",
+  "subtitle_policy": "forbidden",
   "pairs": [
     {
       "kind": "embedding",
-      "data_sha256": "701b8d403faf6d876a150c5c1cac3fa4acc565ad72d8f2e6df79aa63365aa300",
-      "config_sha256": "ca6a7ab58724211d2069fcca1648801af1eb39c5fd42d1459e48e0fad4fbd1b2",
-      "demo": true
+      "data_sha256": "117f56e83eb779e2477fe6e131fbcd58f4ddfb5c10f0450ea18fdf44dcf93223",
+      "config_sha256": "64df2880b1d7cef7fd5362d8ac0b9df8810ea8c0d523c57afaf0207341574614",
+      "modes": {
+        "minimal": {
+          "layers": [
+            {
+              "name": "identity",
+              "fields": [
+                "x",
+                "y",
+                "group"
+              ]
+            }
+          ],
+          "outputs": {
+            "png": "0bcf321bfad5f465c0f3f4f0117a9d57cc6673c2fbf1ed6540686cf52034433f",
+            "pdf": "1e802e3c420519709e78a08b709fdc0edde2a2b8cde4ec916c73de39be46f4f3",
+            "svg": "24b361cc9852f319a3d87609dedec1be2538ad34733d9f979fed3de8c498133a"
+          }
+        },
+        "advanced": {
+          "layers": [
+            {
+              "name": "identity",
+              "fields": [
+                "x",
+                "y",
+                "group"
+              ]
+            },
+            {
+              "name": "supplied abstract state graph",
+              "fields": [
+                "config.abstract_edges"
+              ]
+            },
+            {
+              "name": "declared hierarchy",
+              "fields": [
+                "parent"
+              ]
+            },
+            {
+              "name": "direct identity lookup",
+              "fields": [
+                "group"
+              ]
+            }
+          ],
+          "outputs": {
+            "png": "05daf28a1e23873c03e48a175d918dade8ee880507d8f597c54ba700b0f57445",
+            "pdf": "a3ea61a0f2f045c678820cfb6b8a4bc78183dd2615bbcbd359b55a23427914da",
+            "svg": "f6e0140fff83782d44c512dc180b118da42eea1258d6b77e770daa7db60e7924"
+          }
+        }
+      }
     },
     {
       "kind": "spatial",
-      "data_sha256": "dca1774488faf5f0fe8db8bdfaf9cea6309ce7c05ed297dd27ba3ff40e690300",
-      "config_sha256": "bc607593d2a069caf1bf48918df142598f24ce486649f55e0235f7f5b230dc68",
-      "demo": true
+      "data_sha256": "75454b46aec489fa7aad4c8bfb7376a9daaabe5f36e9e1e702b52225afe1a03a",
+      "config_sha256": "c771d8a0c885eea580896ffc402eb9950c5704fedcb00e537a3d90f2a9d04c14",
+      "modes": {
+        "minimal": {
+          "layers": [
+            {
+              "name": "spatial expression",
+              "fields": [
+                "x",
+                "y",
+                "value"
+              ]
+            }
+          ],
+          "outputs": {
+            "png": "0dc401178132be4a840120295e54006977684b62955871dc5f7ba52a6f086e5e",
+            "pdf": "812bb4f87b1909c131ee3bed0b06ac937e6db27d1afa7c814803a437d912cafc",
+            "svg": "a81c1d0a536af252c5e62a28629b8ad9bcf815d409ff9bb829baec98623870d5"
+          }
+        },
+        "advanced": {
+          "layers": [
+            {
+              "name": "spatial expression",
+              "fields": [
+                "x",
+                "y",
+                "value"
+              ]
+            },
+            {
+              "name": "supplied segmentation",
+              "fields": [
+                "vertices"
+              ]
+            },
+            {
+              "name": "declared ROI",
+              "fields": [
+                "config.rois"
+              ]
+            }
+          ],
+          "outputs": {
+            "png": "3019a0e2cee073cef4dedd330e938d090c06613f5603b14bca10d2c405705ff2",
+            "pdf": "452a6e4408a16621a0cd3f34f53f3e3e6b5cd4ef7c9bc7ee81955dae4c982573",
+            "svg": "7c9ad39ab31f42a46d6921ac5ad1f4edfd87c1577328b642b7279aa0bef585f6"
+          }
+        }
+      }
     },
     {
       "kind": "dotplot",
-      "data_sha256": "d26758ebab1db683e9745a15b002fc66ad407a38d43231167c4910d7e7ea61a4",
-      "config_sha256": "ee5f0d22bf61b52baaaadea316654857a58aec8dae62d3b775387d928d15fea9",
-      "demo": true
+      "data_sha256": "74c4574c9c1fc8ecf101c67b19ff6c9076e20fe77321dc2e39442cc6d464a381",
+      "config_sha256": "f7a74822dd82cd1488ec21fe7105073c37e075741608bd48c0d0872f6f13c1c3",
+      "modes": {
+        "minimal": {
+          "layers": [
+            {
+              "name": "expression and detection",
+              "fields": [
+                "mean",
+                "fraction"
+              ]
+            }
+          ],
+          "outputs": {
+            "png": "22d036e67da94f3436753a85faad20583a729f7525cb69040bcc786846cfb45b",
+            "pdf": "bea281c495fb1598c070587ab56c397d4aa6f5eb55db03f2bd15a0972e761e83",
+            "svg": "b3008808ed3665657521f2be25e373a939dfd424e9fea7b3ccedf53abfa404a8"
+          }
+        },
+        "advanced": {
+          "layers": [
+            {
+              "name": "expression and detection",
+              "fields": [
+                "mean",
+                "fraction"
+              ]
+            },
+            {
+              "name": "gene modules",
+              "fields": [
+                "module"
+              ]
+            }
+          ],
+          "outputs": {
+            "png": "d941fc6f80a6ff0af7f0a1db331f945059e814ce5aa335665af9c91b592ae623",
+            "pdf": "4e876dd66ea1e71a18a14be1773180ca9fdd94d149c90c85ac77be2c3fa7eb91",
+            "svg": "639ee4c3f7deec6baede113043a695f11a66aa347cb1c24fcb6a0bda3d50c637"
+          }
+        }
+      }
     },
     {
       "kind": "heatmap",
-      "data_sha256": "0117d098b6d41c984640c35225fa59d94884727f9d657fbc797e5d93818a230b",
-      "config_sha256": "c994932dc192a9a9c8276de410858f69677f8e941992a1e3da8ed6b9446cc5dc",
-      "demo": true
+      "data_sha256": "929ce12e4e4707c52dad5dfe9dd5a110508b1ae88482ef7d1db0712652d0302d",
+      "config_sha256": "c254dcfe989f6ba4bc166eabde8ee1960e57578e081d9b61faacac631041ca25",
+      "modes": {
+        "minimal": {
+          "layers": [
+            {
+              "name": "expression matrix",
+              "fields": [
+                "value"
+              ]
+            }
+          ],
+          "outputs": {
+            "png": "a72f739ef297c1ebbd78fe5c91b4342389bd64c943ea6a592651c89ebce7564d",
+            "pdf": "3c09d762e008dd749dcfb4f852bedde6d4e7121a3209fd812acecee7abe4217c",
+            "svg": "ef953734ef6d48c85fe9dc823b03fb8406e50a97fcdd2b713aae987222585d10"
+          }
+        },
+        "advanced": {
+          "layers": [
+            {
+              "name": "expression matrix",
+              "fields": [
+                "value"
+              ]
+            },
+            {
+              "name": "row modules",
+              "fields": [
+                "module"
+              ]
+            },
+            {
+              "name": "aligned cell counts",
+              "fields": [
+                "n"
+              ]
+            },
+            {
+              "name": "column condition",
+              "fields": [
+                "condition"
+              ]
+            }
+          ],
+          "outputs": {
+            "png": "fcb4403bbe7eafecaa17fb89df2a7536b6effc25458257afd20373e15d9645bc",
+            "pdf": "f5d6b6b8b262c9fd55ed821d9c994efb6786b05f962aa28f1a9fd0e332f354c7",
+            "svg": "70c3d9fe55883cfa47ba19ec21b882672b1272e2f607b7c0b358324abca45954"
+          }
+        }
+      }
     },
     {
       "kind": "distribution",
-      "data_sha256": "b92026837e217b0e48b9b2ae4db81fe86bfc468d342999281ed3e21ce973da56",
-      "config_sha256": "9c372e1d826e0e4c679d622fa293a7e97e2237fd66515433aa81af90af46c40c",
-      "demo": true
+      "data_sha256": "650d60973d54e1ab7f632d271012b735e9a4829429519c14e881ab78d1cd2e36",
+      "config_sha256": "232ee2f7cb1df19876c4e718be8bb137d501367e0b00b1472014111881b60d87",
+      "modes": {
+        "minimal": {
+          "layers": [
+            {
+              "name": "observations",
+              "fields": [
+                "value",
+                "id"
+              ]
+            }
+          ],
+          "outputs": {
+            "png": "6aff83feb67b7524c5a2dd2fd6af593d15b1944c77556751e05ff60d6b690f12",
+            "pdf": "66e89961b0d65c53816fe4a527dd7ce3706bfee02e6bd30bb98f26081c07e131",
+            "svg": "5ca808eee53d61370217f44a495da33852be219b8dd214bc2fdb0456b4f2a187"
+          }
+        },
+        "advanced": {
+          "layers": [
+            {
+              "name": "observations",
+              "fields": [
+                "value",
+                "id"
+              ]
+            },
+            {
+              "name": "density, median and IQR",
+              "fields": [
+                "value"
+              ]
+            },
+            {
+              "name": "stratified distributions",
+              "fields": [
+                "condition"
+              ]
+            }
+          ],
+          "outputs": {
+            "png": "db69c66df26eed02bb5e9d62fa0d4d7d7dde42502f19c0971d957c9a348a01a6",
+            "pdf": "2bddeb73252b966503cd0e5204a4bf3c3ccb07e966b77ab51116229bc2f3e113",
+            "svg": "b7fc0bf445c95a4d2ba5af28e806c37c83414f943eafe7f9eb4f64efe6a2ef6b"
+          }
+        }
+      }
     },
     {
       "kind": "composition",
-      "data_sha256": "637b9799cb476c1090380de8e85133a21de7b127b01570cfae579baf209406f7",
-      "config_sha256": "8a050aa5dd7302e0e01fe7a2e4cf42fd4008f43a04bfa42cb5c14c407dd79595",
-      "demo": true
+      "data_sha256": "8dd274447c24c3f9bbb249aa935ca2acaef63987ad000bb8b2d1133a8d286ea1",
+      "config_sha256": "941452571fcf2ba55c038931dc4e27068d8f6f425ad3bb7585d7de05e39723e3",
+      "modes": {
+        "minimal": {
+          "layers": [
+            {
+              "name": "same sample-by-cell-type proportions",
+              "fields": [
+                "fraction"
+              ]
+            }
+          ],
+          "outputs": {
+            "png": "a937820c051f245d644942eb6bd78d1cfcffb00155666ebda98a0b66dcb8e3ea",
+            "pdf": "cf92c21e78b68d5b0ab19acc9caf01bd5d825a0fc607bfc6254da9ee10ec562f",
+            "svg": "166d3a28f05e26ee11f3be721c45a9d509bd8a318e473ee923495ad6bec5be63"
+          }
+        },
+        "advanced": {
+          "layers": [
+            {
+              "name": "sample condition blocks",
+              "fields": [
+                "condition"
+              ]
+            },
+            {
+              "name": "sample denominators",
+              "fields": [
+                "n"
+              ]
+            },
+            {
+              "name": "same sample-by-cell-type proportions",
+              "fields": [
+                "fraction"
+              ]
+            }
+          ],
+          "outputs": {
+            "png": "f324be61617095ba12e2ef6f37af8d8b53bed3ab7a0f7631e4b9046cacb4583e",
+            "pdf": "7a179dd353b9806389eaf8c6b7217dcea3338bfc610f67cd072c8bc39678ce89",
+            "svg": "19ee6fe299e666d0ab31774b15f25785d6c4718d9b271e311f27116acbe0787a"
+          }
+        }
+      }
     },
     {
       "kind": "paired",
-      "data_sha256": "b8e119beef8b85bdee51b170101e0427eec9f584e0190db32b58b0b5b02b911d",
-      "config_sha256": "46ba4c0d0c1f8b68e06352bc4e515e31c0ac84d976f4c192643f3589f9bf3774",
-      "demo": true
+      "data_sha256": "f39023daaa30ef226f2cbcceb682c728a2e2775cde1af43f99b6b5de6d9e3ef2",
+      "config_sha256": "8bf5a79a21fc723192f2706ba5b999934c70f94c6426882641774f3cdc97467b",
+      "modes": {
+        "minimal": {
+          "layers": [
+            {
+              "name": "matched observations",
+              "fields": [
+                "sample",
+                "condition",
+                "value"
+              ]
+            }
+          ],
+          "outputs": {
+            "png": "d1e0f0a0e94c755484ca63fa57eab8d35ced70f095a301b697589839d9afef29",
+            "pdf": "4c634cf0497adc7fd7749fec22ed830ddc48fc06d913b25616cb85a1980a8c63",
+            "svg": "4e37b645aeb37ae5439e43db3d20b568a0e0d92720ffb8b44b9754b3aeda2b57"
+          }
+        },
+        "advanced": {
+          "layers": [
+            {
+              "name": "within-sample difference",
+              "fields": [
+                "sample",
+                "condition",
+                "value"
+              ]
+            },
+            {
+              "name": "matched observations",
+              "fields": [
+                "sample",
+                "condition",
+                "value"
+              ]
+            }
+          ],
+          "outputs": {
+            "png": "0708b3ce45a13459bb71a70789a7c31f4b3a2a65a7f3c7e1c86e5a1811d4eff9",
+            "pdf": "f30a7c4c3e86d3abbd92ac31b21a201e7cdb5ee0209973f7999406e69afadeff",
+            "svg": "ae54a5d273995cc028f859e2c76cb3d1892080cc1f728333350262d061e4b569"
+          }
+        }
+      }
     },
     {
       "kind": "volcano",
-      "data_sha256": "e06975ad87a0c5f7adc077003997b7efbba5c6dc6aeef6a6c299c2a452abc9c4",
-      "config_sha256": "8e7b8480bf9f032a1b696d031b0dfd20d9100b339570698667b8a6e4baa05d8e",
-      "demo": true
+      "data_sha256": "c0aa9b87a7a67996fe23275185f43f5ed2930df2018447aad63f7edf4dce115c",
+      "config_sha256": "7e5e87a7988301622f837d88d8c197070d67fe8e205462dd0b76ee3b6db6d1ed",
+      "modes": {
+        "minimal": {
+          "layers": [
+            {
+              "name": "effect and adjusted evidence",
+              "fields": [
+                "effect",
+                "q"
+              ]
+            }
+          ],
+          "outputs": {
+            "png": "bb142a6908615a9d43d15f6e86ddf78063d742a4099ad936bf8ad9b2c5247689",
+            "pdf": "bd74f34a029b435b24ed5aade2f390489ec7c610b1742de2ff1a1c8049daa6db",
+            "svg": "9e964720bd034794b24a7b80b68f994c2bae91fbfebd9f0fc0bc9e85e430f8b7"
+          }
+        },
+        "advanced": {
+          "layers": [
+            {
+              "name": "effect and adjusted evidence",
+              "fields": [
+                "effect",
+                "q"
+              ]
+            },
+            {
+              "name": "supplied gene-set membership",
+              "fields": [
+                "feature_set"
+              ]
+            },
+            {
+              "name": "fixed rule labels and direction counts",
+              "fields": [
+                "feature",
+                "effect",
+                "q"
+              ]
+            }
+          ],
+          "outputs": {
+            "png": "e122a184c462b5c98864ae39c0c7a2574d80d6bd899190a00018598ac78f560b",
+            "pdf": "70d9d7881d04ab46c7350d350775eafe43d7dbb64d166aa485c7b64271a901dd",
+            "svg": "d6a0a5882ed2e291201b3126dc58135a822f0f4c90419634b9e7712332abbf5f"
+          }
+        }
+      }
     },
     {
       "kind": "enrichment",
-      "data_sha256": "252f9611da6635be9ce7419b097a6a731c077f7c40465348dbfa0b14ad861e68",
-      "config_sha256": "b23e7d1d5451ad494c145ccf54987b5e168759dba36b6a5e4eb467fa4f1bc692",
-      "demo": true
+      "data_sha256": "e9cd0352f1ad50a2809193c7e242c4d94e17468d778aea66f177cdcb9a0bc793",
+      "config_sha256": "dc68603df246c9d232a0125260e2fa48aa402df0def9dc7ff51bcaab0490962d",
+      "modes": {
+        "minimal": {
+          "layers": [
+            {
+              "name": "supplied effect intervals",
+              "fields": [
+                "lower",
+                "upper"
+              ]
+            },
+            {
+              "name": "signed effects",
+              "fields": [
+                "effect"
+              ]
+            }
+          ],
+          "outputs": {
+            "png": "4a9985a227c7de9d47f8a77da2b65991cb1fa598c1d33fb0fed112e3c8ac76dc",
+            "pdf": "a91419a7b1fd72e9a04f97247f11784420f9ac5860f883044c9561f12737b769",
+            "svg": "eefbdb64613d7c7cd7eb19d526c5fe32e827e546c0b6ad70f2182e1c57057b80"
+          }
+        },
+        "advanced": {
+          "layers": [
+            {
+              "name": "supplied effect intervals",
+              "fields": [
+                "lower",
+                "upper"
+              ]
+            },
+            {
+              "name": "pathway groupings",
+              "fields": [
+                "module"
+              ]
+            },
+            {
+              "name": "evidence and gene count",
+              "fields": [
+                "q",
+                "count"
+              ]
+            },
+            {
+              "name": "signed effects",
+              "fields": [
+                "effect"
+              ]
+            }
+          ],
+          "outputs": {
+            "png": "e8f3c01fbb223ab68463da4a85353787c086d393d7b0f61bb6a736f7c089eb3a",
+            "pdf": "89bcd4a6311fdb7384a70a49e165c007d423110d6fb5b2843d9f8abb02cbaff2",
+            "svg": "646a4377bdb662834cc7d172049e38a0c3f48f4bca3a0b606a2dd643f003b84a"
+          }
+        }
+      }
     },
     {
       "kind": "trajectory",
-      "data_sha256": "a1025189208966373b5a8b1de9b2a43804bb2e9e53ac2767e7036ea52f945f48",
-      "config_sha256": "a08577ec859969a8f118647555ce2c4cb82f5448439cf635ff2edc098c48f805",
-      "demo": true
+      "data_sha256": "eb6d9489af0c68e81823ecc19848379d6e41cd7fd471ca50353a0581d9b2bf56",
+      "config_sha256": "e4fc63c9d2c01b5778e537db33b6dbcc7ffc47b1fb63bbe193cc3bf613d0e690",
+      "modes": {
+        "minimal": {
+          "layers": [
+            {
+              "name": "supplied trends and uncertainty",
+              "fields": [
+                "mean",
+                "lower",
+                "upper"
+              ]
+            }
+          ],
+          "outputs": {
+            "png": "70be2383b97a7ef1b754e2621d1f5cad888062caed9f7fe7c9872f3f1387c546",
+            "pdf": "8810e9a72576b530e3a120da1ef00c082c572ebde7785cc065e8255508408526",
+            "svg": "b185b0cf91068b034efa35ef78115d8cff9babe6092aa16c2c13d81a252fbb18"
+          }
+        },
+        "advanced": {
+          "layers": [
+            {
+              "name": "declared stages and trend peaks",
+              "fields": [
+                "config.stages",
+                "mean",
+                "time"
+              ]
+            },
+            {
+              "name": "supplied trends and uncertainty",
+              "fields": [
+                "mean",
+                "lower",
+                "upper"
+              ]
+            }
+          ],
+          "outputs": {
+            "png": "3ef69456adf765d346e6fd57480aabb54dd6afe49c9996d86187ce3ae8f038e2",
+            "pdf": "cea49edee978a30bd9634447b07211089b22ab4f48e9c50456480e652911f683",
+            "svg": "7db1f2fedff3d13af6b2a7b26bbd9e905bcbad76b94ae4188565276f326b9636"
+          }
+        }
+      }
     },
     {
       "kind": "network",
-      "data_sha256": "1af1bd681ba1ab93ff9345b07b4ac038b24d2f8fabae73cad9ce0305dd88749b",
-      "config_sha256": "181fac6c83f2b3e4ed5ca68c1ef5b9663a12390df869331e524a08a7c9e5083a",
-      "demo": true
+      "data_sha256": "402e4d36acf8c9a3db84e2dc48e72a67be4c1e798321f98988f492dea21b940b",
+      "config_sha256": "a890628007e8e10fd7589f3ac61bb616c3b1bd54cbe1f899c714efc148a893f5",
+      "modes": {
+        "minimal": {
+          "layers": [
+            {
+              "name": "weighted candidate edges",
+              "fields": [
+                "weight",
+                "source",
+                "target"
+              ]
+            }
+          ],
+          "outputs": {
+            "png": "b2c2121b05fa8a8fac8086c5df79556bf7f81ba8f3f0baa90d0949ada7eff3cf",
+            "pdf": "e67c563c5cfd312b2ac2c39d6065fc7e5060ce4513a146025be923812a28590c",
+            "svg": "bfe374f005ef1c2ebaacc7c36b0475773980802245ea337f27418369c3b23760"
+          }
+        },
+        "advanced": {
+          "layers": [
+            {
+              "name": "mass-allocated chord endpoints and node totals",
+              "fields": [
+                "weight",
+                "source",
+                "target"
+              ]
+            },
+            {
+              "name": "weighted candidate edges",
+              "fields": [
+                "weight",
+                "source",
+                "target"
+              ]
+            }
+          ],
+          "outputs": {
+            "png": "321dae9b03689c62e8931b0395d3ed945924f80e15710529a2cb0bad11fd85cd",
+            "pdf": "acd5e6998713416cf41df78e6dfb3c8412a797d98d3db7a8aa70a8583f79e127",
+            "svg": "16062c803ff5ef1b5ab9f60117c94e495f3b11bca9af57fba85a515e5615617d"
+          }
+        }
+      }
     },
     {
       "kind": "flow",
-      "data_sha256": "d521301f22c62067fed2d305f59db780691cafc64e0c66916996eaec4d917eda",
-      "config_sha256": "a985853b56bcb4c241a9458436ac511206bc2cea91cf1788b6dbd4c20f960265",
-      "demo": true
+      "data_sha256": "91e2d545b628d1792d987dc8ebe49558b6da5d469aa6077127e74b9d4d09bb8e",
+      "config_sha256": "a7c74432701567cb1fdac10ccf0fdc58cb6a44293999ff6ee8e62ea568dd7823",
+      "modes": {
+        "minimal": {
+          "layers": [
+            {
+              "name": "conserved multistage edge mass",
+              "fields": [
+                "source",
+                "target",
+                "mass",
+                "stage"
+              ]
+            }
+          ],
+          "outputs": {
+            "png": "49221636ed97b922bd5af4057a98c406d6778354381282783ff3b9f616882a21",
+            "pdf": "a9ad641605c9c90f31f69cf4bf0ab542a915d1225290f3d27bccd9c0a2305114",
+            "svg": "05a7c1576cf57fc5e2d2168d286a978c4601569f4b4c4ea539b8478f6ca71652"
+          }
+        },
+        "advanced": {
+          "layers": [
+            {
+              "name": "conserved multistage edge mass",
+              "fields": [
+                "source",
+                "target",
+                "mass",
+                "stage"
+              ]
+            },
+            {
+              "name": "per-stage node totals",
+              "fields": [
+                "mass"
+              ]
+            }
+          ],
+          "outputs": {
+            "png": "fc2f724545394cc6c8760575f9e84d5199ea1530c814542e8de5d07cf1bca6e6",
+            "pdf": "eabf0d7728afff5e7179d7d25baca76d9b52b9b02cb2be7513db34b4e61c6080",
+            "svg": "8a070575e0eef5be56ee8ff8e89e568c977c7584449cb9cc9fe1a8f7624bbd3c"
+          }
+        }
+      }
     },
     {
       "kind": "benchmark",
-      "data_sha256": "6d7ea7227f3cc39a1bef6357555b5058b13ec7fbdcfce2ffe165fa2fd5b659ff",
-      "config_sha256": "888f9d762f3526c61a0bcbcf008f53bc248184df75715f7c60f74bb4b35631e9",
-      "demo": true
+      "data_sha256": "9d6a15ff24e6f56b390236940bbb542d5246a581f96591ccdf75a5e947daf4a4",
+      "config_sha256": "8a34d1889bb00f787797c674b2e35b6352e308892a407a3fb39de5a9ca6c4ffa",
+      "modes": {
+        "minimal": {
+          "layers": [
+            {
+              "name": "dataset-level performance",
+              "fields": [
+                "dataset",
+                "method",
+                "score"
+              ]
+            }
+          ],
+          "outputs": {
+            "png": "10c1e9dd264a61a4b02aeafb9115189e143c1bc1fcd60775e7c9c84f27bad311",
+            "pdf": "2dc6dcf91fb6c7743e29243d9cbc2859b33ffb8e60c47b947589d8fbeb519563",
+            "svg": "bf6b4cf4746f01be49b1776a43eb8408d9e79b2cd729507533e4f3ff24741210"
+          }
+        },
+        "advanced": {
+          "layers": [
+            {
+              "name": "matched reference differences and raw scores",
+              "fields": [
+                "dataset",
+                "method",
+                "score"
+              ]
+            },
+            {
+              "name": "dataset-level performance",
+              "fields": [
+                "dataset",
+                "method",
+                "score"
+              ]
+            }
+          ],
+          "outputs": {
+            "png": "c5bec08bd4d1eb8095228a4d6fdaa36d5fcce4fbaa25c2839a913e36d1f82cb6",
+            "pdf": "86c059419cdf58570e26d6b73cfdabe85e5fb980a7a9e19c80078427b902a67a",
+            "svg": "0cc1436f6fbeb6c5a48273c2f4d60c66e0b37a7f7663a3df51ba0c9b0c22e082"
+          }
+        }
+      }
     },
     {
       "kind": "correlation",
-      "data_sha256": "8c4c471a4b58fd8af9134e93a700b8f9144a902098d3cfab5ee4843e7d207575",
-      "config_sha256": "5a5242711707f7047417645eabf3f981f333fb5a1cd64e8b3063162b8fcbe7ce",
-      "demo": true
+      "data_sha256": "84efc30e7587065a36094898b3b8c2fe01d5ff4407e2e8bcdaaf0208eeaf3248",
+      "config_sha256": "93132f1a49d41a9ef206103fd3e826ec103ef9f60ff6db9fd38d272fd9183864",
+      "modes": {
+        "minimal": {
+          "layers": [
+            {
+              "name": "fixed-scale correlation",
+              "fields": [
+                "value"
+              ]
+            }
+          ],
+          "outputs": {
+            "png": "cf7e0d5d708a8be5175d54b4613bca6798c54de4a6d27b732d91d278d9a254a4",
+            "pdf": "9080f0c66b0f49949848d7e005f05821f86e69b9e5e7ac6967611d8647d02035",
+            "svg": "d4208f116346bf8b43a157bdafb790819422b0df660f35b49e76b3c2cdd41126"
+          }
+        },
+        "advanced": {
+          "layers": [
+            {
+              "name": "explicit display clustering",
+              "fields": [
+                "value"
+              ]
+            },
+            {
+              "name": "upper-triangle magnitude and lower-triangle numeric r",
+              "fields": [
+                "value"
+              ]
+            },
+            {
+              "name": "fixed-scale correlation",
+              "fields": [
+                "value"
+              ]
+            }
+          ],
+          "outputs": {
+            "png": "9da7a0b10a03b52e8e5ed27a4dae0cf793096750089dcaa95bb0c3ee92195f08",
+            "pdf": "95d9df3f670227f18369a0273a3c3c583e8f8bf66402b5b8f40d4c5f00cc79fa",
+            "svg": "77797abfef2449890575c1fa21d9f0703da62370dbc733089043a8a5013ef9ff"
+          }
+        }
+      }
+    },
+    {
+      "kind": "forest",
+      "data_sha256": "ec25026cd195ccbe524092c8dab2ecd556b243b3d627d5825f3ba54821701342",
+      "config_sha256": "67d9d7041c5dd445a844f01d8105c746fd66a999dd350a62d7beb2f73153cfa4",
+      "modes": {
+        "minimal": {
+          "layers": [
+            {
+              "name": "supplied effect intervals",
+              "fields": [
+                "estimate",
+                "lower",
+                "upper"
+              ]
+            }
+          ],
+          "outputs": {
+            "png": "4082c672969bc07b817aa8c8dce64dfa077fad22420ab314380d737b7c79ca4d",
+            "pdf": "8c6457fb5995c7a33dd5f6ea9622a5dac69a0bfe07cd24dad6248296f34e9024",
+            "svg": "631114280bca7f3e8ef80ef30ab48d770ce2bcb124ef176209c53c2815bf7a42"
+          }
+        },
+        "advanced": {
+          "layers": [
+            {
+              "name": "exact effect/interval table",
+              "fields": [
+                "estimate",
+                "lower",
+                "upper"
+              ]
+            },
+            {
+              "name": "supplied effect intervals",
+              "fields": [
+                "estimate",
+                "lower",
+                "upper"
+              ]
+            }
+          ],
+          "outputs": {
+            "png": "66fa631093f05a15acc3922a1daea745ec351ac5c18e577c82db11bf2c84a7a7",
+            "pdf": "0758b5ea8eefcac662f61a88e674c460daa1023f391c073be1af56f6bc2827b2",
+            "svg": "b0aa4e217b608c2e4f2d78a0a77cc133d0760ca75986ea76a6aa29e5475947d3"
+          }
+        }
+      }
+    },
+    {
+      "kind": "upset",
+      "data_sha256": "3885d4a7ca356e78ce95f9737e6666bb094552e94b4f246969106a9e45f03cfb",
+      "config_sha256": "d6e4aa145a5d384afa651119525b6e49faff32b3581b645e6e690a439c431f5a",
+      "modes": {
+        "minimal": {
+          "layers": [
+            {
+              "name": "exclusive set intersections",
+              "fields": [
+                "item",
+                "set"
+              ]
+            }
+          ],
+          "outputs": {
+            "png": "c62409b34d5ed9636c8037131483b765596b49e367cf3ea0c0cbfb1bdc0bf18d",
+            "pdf": "62e99c8ceaa80244681f0e4524cd6227b3146034efd5eca9bf25c94b04004e29",
+            "svg": "2e20176f215d0b4b93384f2b00b9a598b207a1cd4dbdcd58a8dd9411a7506176"
+          }
+        },
+        "advanced": {
+          "layers": [
+            {
+              "name": "aligned membership matrix",
+              "fields": [
+                "set",
+                "item"
+              ]
+            },
+            {
+              "name": "exclusive set intersections",
+              "fields": [
+                "item",
+                "set"
+              ]
+            }
+          ],
+          "outputs": {
+            "png": "f6ccc0249cbc91e196961cba65319357ca7b0db10f040913bdb660ae44277967",
+            "pdf": "a6660e725656b5d0eceed1b7bbfc873d822f0bb41be09e170f47cdaf21a820ac",
+            "svg": "249b628759f7bc4426f3e6fc3a1ba2018961c6fecb525f8ad8c9ed3e4b805857"
+          }
+        }
+      }
+    },
+    {
+      "kind": "ridge",
+      "data_sha256": "e6b72e2de457f75f8842d6ad5ea5e114c4c3883b2c2795cc1772389c6ac72686",
+      "config_sha256": "97c30b4db08843cce90ef1c8a80973e428977651568da0477be17ed7dbbc8138",
+      "modes": {
+        "minimal": {
+          "layers": [
+            {
+              "name": "per-group KDE",
+              "fields": [
+                "value",
+                "group"
+              ]
+            }
+          ],
+          "outputs": {
+            "png": "3e4be901cd2ac7ebd09e29656b306633f47db808dfc01ad1d83136e97a73dd30",
+            "pdf": "bb0f00b7b4baf357a26c48062f920ab55653faf6c0330066a0a16e1b8ac86e5e",
+            "svg": "521dd53462179527d1edc8b2b8bb892323f9a47a432f6df31be53101b70a7838"
+          }
+        },
+        "advanced": {
+          "layers": [
+            {
+              "name": "per-group KDE",
+              "fields": [
+                "value",
+                "group"
+              ]
+            },
+            {
+              "name": "quartiles and sample support",
+              "fields": [
+                "value",
+                "id"
+              ]
+            }
+          ],
+          "outputs": {
+            "png": "e2b5416c3197eccc179222efa7e9d0b94ecbe29cfc6fe93d8127401264fee94f",
+            "pdf": "79e8ec76197467854a644e0b26550b3523ede9364fbd68b8cdc059055685607d",
+            "svg": "695fa6d9b6e3fc6f7e34a6138094886cf9f75567015c758d9fd86087c8ee20da"
+          }
+        }
+      }
+    },
+    {
+      "kind": "ecdf",
+      "data_sha256": "5a5961eea21a68247da063fed3a18f5fae5eb0168b0adb25ca28e94da2a33d85",
+      "config_sha256": "3015f434240f0d19be3da2031d3c1cc028e36f2ef1f9936f89f882f441b25873",
+      "modes": {
+        "minimal": {
+          "layers": [
+            {
+              "name": "empirical cumulative probabilities",
+              "fields": [
+                "value",
+                "group"
+              ]
+            }
+          ],
+          "outputs": {
+            "png": "1dbdc1bfe93a8db1234e4eafe4a99214aadcc13deabaf3687043cca24c0348bf",
+            "pdf": "8d45ff534bb7e3fabd35a4d4528cb4c24aa8d3a8ee3bc1d045a49bed84b956d5",
+            "svg": "559eb285a6769ef9cbc19a756fe30e19eb927238509d028fbd0e8760560c5b1d"
+          }
+        },
+        "advanced": {
+          "layers": [
+            {
+              "name": "quantile locations",
+              "fields": [
+                "value"
+              ]
+            },
+            {
+              "name": "empirical cumulative probabilities",
+              "fields": [
+                "value",
+                "group"
+              ]
+            }
+          ],
+          "outputs": {
+            "png": "fc815d0b18c41074317916b8e2b87137cd47487491eef1c48e130a1905875ff9",
+            "pdf": "c8749db5c36c07e3e1bbfdb5d7598602c02a2083b8721503dafb781bf1236252",
+            "svg": "1ab024c1aba1521f6beb35a8a40c86a35cfd67554667714300a8611801062799"
+          }
+        }
+      }
+    },
+    {
+      "kind": "hexbin",
+      "data_sha256": "f6e658a58cd387a3e80d38e3341c698cc23545af9e70e3314332fb0e07ea479e",
+      "config_sha256": "702f4399f132d9b9fe000b51e81b4eba41a4fe5adfc58226cb266efd7c0ab0e8",
+      "modes": {
+        "minimal": {
+          "layers": [
+            {
+              "name": "paired observations",
+              "fields": [
+                "x",
+                "y"
+              ]
+            }
+          ],
+          "outputs": {
+            "png": "88157a0cbf23de9902d05ad9e5f62c3855aecc1ba21f06393477d2653df2c63b",
+            "pdf": "4821aa62673ad04a65361a1c3ada9c2d018e5ca18a67b5fdca3ed2270b0cd9d8",
+            "svg": "b24af6e8ad4880d8b0dcd35594d67ffbd72108356d14439b9c03f9be3a062ee9"
+          }
+        },
+        "advanced": {
+          "layers": [
+            {
+              "name": "binned density and declared QC cutoffs",
+              "fields": [
+                "x",
+                "y",
+                "config.thresholds"
+              ]
+            },
+            {
+              "name": "paired observations",
+              "fields": [
+                "x",
+                "y"
+              ]
+            }
+          ],
+          "outputs": {
+            "png": "b89947d60c3683233a754998cd8f97e5a4477ae4f0a6fb90fbd2fd67b6237dea",
+            "pdf": "d68a266ddc8141fe2681ceaa885711a877a09ed6e5e02224b32387e05e6ee74a",
+            "svg": "d3f3874bf93b09de92260f6e649ad93dbf228ce4c76b922737264bbf1fcfd0d8"
+          }
+        }
+      }
+    },
+    {
+      "kind": "roc",
+      "data_sha256": "1e0b4be9c74edd53a8a99085874b93e3d19cb3b69c62b1393b40a7a36b2e15ff",
+      "config_sha256": "1c2dbd50a7733aa00c77599de8edccd777acb6d86093bb1a9c683f47515a4107",
+      "modes": {
+        "minimal": {
+          "layers": [
+            {
+              "name": "supplied evaluation curves",
+              "fields": [
+                "model",
+                "fpr",
+                "tpr"
+              ]
+            }
+          ],
+          "outputs": {
+            "png": "231601626aef512d8804d8cd82a8b228163dd1a438dd7b0880ad12776a9c5149",
+            "pdf": "153c3a4f640e3d896719d65e1d05400058c70cc69a1cd569bec46e179639e2c1",
+            "svg": "15d58cfd71c1c649c46d76f8d60d77c6b4e0e0c405b9d40c56f98372350cf8f9"
+          }
+        },
+        "advanced": {
+          "layers": [
+            {
+              "name": "supplied evaluation curves",
+              "fields": [
+                "model",
+                "fpr",
+                "tpr"
+              ]
+            },
+            {
+              "name": "supplied interval and operating thresholds",
+              "fields": [
+                "lower",
+                "upper",
+                "threshold",
+                "operating_point"
+              ]
+            }
+          ],
+          "outputs": {
+            "png": "9fc793ace25ff3cec802d1ac07da6fea5a57b1cf130e106144d397fb13cb511c",
+            "pdf": "2c60d2b1a07c6b6830f544b3c6b24e02680ea76c51426799095535ded6f97111",
+            "svg": "c1e5e0c13ecbc4ded14644dc846f9821462868cde1f07717fdcb43c168887c19"
+          }
+        }
+      }
+    },
+    {
+      "kind": "precision_recall",
+      "data_sha256": "8b68ed41cdc7be541bdce2f1e0c1105f790131b846323bce714ceba4ec838b6a",
+      "config_sha256": "1c2dbd50a7733aa00c77599de8edccd777acb6d86093bb1a9c683f47515a4107",
+      "modes": {
+        "minimal": {
+          "layers": [
+            {
+              "name": "supplied evaluation curves",
+              "fields": [
+                "model",
+                "recall",
+                "precision"
+              ]
+            }
+          ],
+          "outputs": {
+            "png": "bc6bf2071ac897665181eaba166abed08457e0c3b3ab1538ea024a06d97476ab",
+            "pdf": "a0b3a2ac43e85f050ddc0cf8d8670f465ceb98624d219b5765c3ba630f786639",
+            "svg": "bce22ab6b9d00e6556a38f835fa93fc7ed805db30fb927f55acdb396f834c49b"
+          }
+        },
+        "advanced": {
+          "layers": [
+            {
+              "name": "supplied evaluation curves",
+              "fields": [
+                "model",
+                "recall",
+                "precision"
+              ]
+            },
+            {
+              "name": "supplied interval and operating thresholds",
+              "fields": [
+                "lower",
+                "upper",
+                "threshold",
+                "operating_point"
+              ]
+            }
+          ],
+          "outputs": {
+            "png": "1430c2a344e4e76ea66436646ec654450551364b46e5a1261bae8d0663e21988",
+            "pdf": "24c60632f3a26644343aed5786e92ed147abb434856a95ea1042d36f5ed61326",
+            "svg": "5ecfd022bd15f6bd7e79aebc62093782e894dba631a0ce9474501e49b04b35cf"
+          }
+        }
+      }
+    },
+    {
+      "kind": "calibration",
+      "data_sha256": "b65d6d0207b7c901573a8bb46092cda51e9b043811fe0849357382cf86d0d94f",
+      "config_sha256": "a10af2da5bae8e0b023dd8c28e6592f0ebec9a4c3580519c636a53d9c4c9470b",
+      "modes": {
+        "minimal": {
+          "layers": [
+            {
+              "name": "bin calibration",
+              "fields": [
+                "predicted",
+                "observed"
+              ]
+            }
+          ],
+          "outputs": {
+            "png": "ef641c106a4a14b4413a00f8a4acf74dc8c0d85e470c04975ae9bfbae637ca92",
+            "pdf": "ad51a2f15f0e37be6dde88b56e28c900bb1c2d737ee375860a51e4739c6f8f42",
+            "svg": "a7ec29b8876bd3c740e3821016d3c8d48409f2163e67eefe0b9a32fce5ca161b"
+          }
+        },
+        "advanced": {
+          "layers": [
+            {
+              "name": "bin calibration",
+              "fields": [
+                "predicted",
+                "observed"
+              ]
+            },
+            {
+              "name": "bin support and calibration error",
+              "fields": [
+                "n",
+                "predicted",
+                "observed"
+              ]
+            },
+            {
+              "name": "supplied bin intervals",
+              "fields": [
+                "lower",
+                "upper"
+              ]
+            }
+          ],
+          "outputs": {
+            "png": "5a6663ec01444f7a43d82b85ac195c695e7730dc181c530ee8cf84a586ca7f89",
+            "pdf": "17597cd7a720b90f5ef09bdfb195faa001bc3e0296d7778fa068a1a45978e0fb",
+            "svg": "d539eae0d9feced69087b3421249efe39661ac3f1b7c01666b912b298afe5e6a"
+          }
+        }
+      }
+    },
+    {
+      "kind": "confusion",
+      "data_sha256": "d2cc9c2e72a97e8dc8a7f19f166316301f216f686541b7c8d82d1f9367abd0b8",
+      "config_sha256": "221b20917715ae269099c414f2c275e0ed39b1b42a5b478451034e41575118ff",
+      "modes": {
+        "minimal": {
+          "layers": [
+            {
+              "name": "classification counts",
+              "fields": [
+                "count",
+                "actual",
+                "predicted"
+              ]
+            }
+          ],
+          "outputs": {
+            "png": "a7fd3b1cccdce918612e95ec5c270e9b70b1a9b840cf0e077c550c14120cb9d4",
+            "pdf": "7d9a042fbd6e056f8c20378ec55513c48784415bd5d904633e8296d740da382b",
+            "svg": "672f0de8d1481612252d35e6b679d0f8a6147382822ceb20e91858566efd7484"
+          }
+        },
+        "advanced": {
+          "layers": [
+            {
+              "name": "row denominators with retained raw counts",
+              "fields": [
+                "count",
+                "actual"
+              ]
+            },
+            {
+              "name": "classification counts",
+              "fields": [
+                "count",
+                "actual",
+                "predicted"
+              ]
+            }
+          ],
+          "outputs": {
+            "png": "6aeb37c787ed50b369538e937da49960e1de00644e8c39472f5d7193506b84b7",
+            "pdf": "56aec3cc8901f78ff89a5f75269c12fc88d0e98f227054e7b87c972a0b368252",
+            "svg": "691bf4d544a7e5c95f0cd8f08fd8173b5288482b747eb740a44d276cbed72662"
+          }
+        }
+      }
+    },
+    {
+      "kind": "gsea",
+      "data_sha256": "e4905879e96b2f1137942c12f14e5791dc690a34b6825e22b0727b67311b69ef",
+      "config_sha256": "b46c4d168bf2eae771ffc4488c4171429295f7936d3ca73125a7249521757d2b",
+      "modes": {
+        "minimal": {
+          "layers": [
+            {
+              "name": "upstream enrichment profile",
+              "fields": [
+                "running_score",
+                "rank"
+              ]
+            }
+          ],
+          "outputs": {
+            "png": "a28f227c88bee0dd60eb6c98fd898245803cc7c97276dc9dff5a5bf4d1088b96",
+            "pdf": "252d093db1cd232962a0da30f892b51d65d89472a1a4fd9dc2d9d6a7854156f6",
+            "svg": "2285e6e59ebef9c21d6aafc54adfc0d338bcd827f8e78548038e6d8c9ea45781"
+          }
+        },
+        "advanced": {
+          "layers": [
+            {
+              "name": "aligned hit and ranking tracks",
+              "fields": [
+                "hit",
+                "rank_metric",
+                "rank"
+              ]
+            },
+            {
+              "name": "upstream enrichment profile",
+              "fields": [
+                "running_score",
+                "rank"
+              ]
+            }
+          ],
+          "outputs": {
+            "png": "db67aca939df7f97f17c4e3e8935e2afdeacc8f12799039ca544d3daa8db1396",
+            "pdf": "e406ba1ad0de75e1f5e8cf0f1c183651a7bb453136a419668b1420b477996920",
+            "svg": "be68fde96d514fd8bcca09c50a87a929393e085f05c03a281c2b8dfab79f357f"
+          }
+        }
+      }
+    },
+    {
+      "kind": "spatial_composition",
+      "data_sha256": "efbac2373531b8a3fe3ab37b0369fc7f2a96bc9597b66798f59ae8453fd366bd",
+      "config_sha256": "92153e599e856d5f87d6d1cb6ce561a2122bc00c6c8110323ecc148292298369",
+      "modes": {
+        "minimal": {
+          "layers": [
+            {
+              "name": "dominant component",
+              "fields": [
+                "fraction",
+                "group"
+              ]
+            }
+          ],
+          "outputs": {
+            "png": "06c8892d589c218889cec946ec1b439167f8964e6cd63b2912ddad2d7a5fe1f2",
+            "pdf": "6c52e10ab96b72aec6648c09e0490f12771ce0fd8d025084d3a230edde05fb63",
+            "svg": "1d8087e1bcb64e25ed65d526faf443bcd3f3341585984044e5995f638c1fe170"
+          }
+        },
+        "advanced": {
+          "layers": [
+            {
+              "name": "full mixtures",
+              "fields": [
+                "fraction",
+                "group"
+              ]
+            },
+            {
+              "name": "mass-preserving spot sectors",
+              "fields": [
+                "fraction"
+              ]
+            }
+          ],
+          "outputs": {
+            "png": "9ddeee034a1771c0325de246b4105a6d4a8f8c47826049405a460ecdfffffd79",
+            "pdf": "032873b4728648cf1711f8a5734ae5b9991e2481788b2f7b049120ade08c14cd",
+            "svg": "a265dbac76608b53ba0cfa0eff6122b8406d799a0786ef3a0ac9fb9242477bed"
+          }
+        }
+      }
+    },
+    {
+      "kind": "trajectory_heatmap",
+      "data_sha256": "94368f2f49d01921e9cc712afc466c55f89d33f2804c6ebf2bc356dca7c7b68d",
+      "config_sha256": "de32cc7855c58f2f926beb521a47dae326b4a7ad6f1837eb52dfc4b660e50f78",
+      "modes": {
+        "minimal": {
+          "layers": [
+            {
+              "name": "same supplied temporal matrix",
+              "fields": [
+                "time",
+                "value",
+                "gene"
+              ]
+            }
+          ],
+          "outputs": {
+            "png": "0785663364b028360f45d4fa724958ca17ec5a0e9af2e50ae49b2acd38ec1958",
+            "pdf": "e4c337df071e0f3a0d44954c75ec058aaedc7070768087b279e30e2218a9ce79",
+            "svg": "19074fd6a3dfe35debcdaf3f7388161bf1fa5ba600764cba8fcff54d93cae579"
+          }
+        },
+        "advanced": {
+          "layers": [
+            {
+              "name": "stable peak-time ordering and modules",
+              "fields": [
+                "time",
+                "value",
+                "module"
+              ]
+            },
+            {
+              "name": "same supplied temporal matrix",
+              "fields": [
+                "time",
+                "value",
+                "gene"
+              ]
+            }
+          ],
+          "outputs": {
+            "png": "ca1c5a2fe0a882f10ca822f939db70d5c7b0c7c3c68f840e51152b5b41d20afe",
+            "pdf": "ab68c25c76a33a12376f24c0a5215d24a398beb64ea97aa73532ac3c13f46603",
+            "svg": "4f7526b002d5e208914508087fd3e8380ca23974b9b8f565048046753f8d9e65"
+          }
+        }
+      }
     }
   ]
 }

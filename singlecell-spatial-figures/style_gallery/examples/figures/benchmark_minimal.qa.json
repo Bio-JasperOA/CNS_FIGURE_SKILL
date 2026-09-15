@@ -1,8 +1,79 @@
 {
   "outside_canvas": [],
-  "axes_count": 1,
+  "subtitle_count": 0,
+  "rendered_text": [
+    {
+      "text": "Baseline",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Model B",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Model C",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Model D",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Score",
+      "size_pt": 8.0,
+      "gid": null
+    },
+    {
+      "text": "0.64",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0.72",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0.80",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Matched-dataset method performance",
+      "size_pt": 11.5,
+      "gid": "main_title"
+    },
+    {
+      "text": "SYNTHETIC EXAMPLE",
+      "size_pt": 6.0,
+      "gid": "synthetic_disclosure"
+    }
+  ],
+  "semantic_layers": [
+    {
+      "name": "dataset-level performance",
+      "fields": [
+        "dataset",
+        "method",
+        "score"
+      ]
+    }
+  ],
   "font": "DejaVu Sans",
-  "width_mm": 183.0,
-  "height_mm": 118.00000000000001,
-  "scope": "canvas text bounds only; visual and scientific review remain required"
+  "width_mm": 190.0,
+  "height_mm": 135.0,
+  "input_csv_sha256": "9d6a15ff24e6f56b390236940bbb542d5246a581f96591ccdf75a5e947daf4a4",
+  "derived_order": null,
+  "omitted_intersections": null,
+  "axes_count": 1,
+  "scope": "canvas bounds and subtitle policy; not a scientific or universal collision certificate",
+  "outputs": {
+    "png": "10c1e9dd264a61a4b02aeafb9115189e143c1bc1fcd60775e7c9c84f27bad311",
+    "pdf": "2dc6dcf91fb6c7743e29243d9cbc2859b33ffb8e60c47b947589d8fbeb519563",
+    "svg": "bf6b4cf4746f01be49b1776a43eb8408d9e79b2cd729507533e4f3ff24741210"
+  }
 }

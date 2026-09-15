@@ -1,0 +1,163 @@
+{
+  "outside_canvas": [],
+  "subtitle_count": 0,
+  "rendered_text": [
+    {
+      "text": "Supplied illustrative bin interval",
+      "size_pt": 7.5,
+      "gid": null
+    },
+    {
+      "text": "Uncalibrated",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Calibrated",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Area ∝ bin n\nSegments = calibration gap",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Mean predicted probability",
+      "size_pt": 8.0,
+      "gid": null
+    },
+    {
+      "text": "0.0",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0.2",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0.4",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0.6",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0.8",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "1.0",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Observed fraction positive",
+      "size_pt": 8.0,
+      "gid": null
+    },
+    {
+      "text": "0.0",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0.2",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0.4",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0.6",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0.8",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "1.0",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Bin n",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "66",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "133",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "266",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Probability calibration",
+      "size_pt": 11.5,
+      "gid": "main_title"
+    },
+    {
+      "text": "SYNTHETIC EXAMPLE",
+      "size_pt": 6.0,
+      "gid": "synthetic_disclosure"
+    }
+  ],
+  "semantic_layers": [
+    {
+      "name": "bin calibration",
+      "fields": [
+        "predicted",
+        "observed"
+      ]
+    },
+    {
+      "name": "bin support and calibration error",
+      "fields": [
+        "n",
+        "predicted",
+        "observed"
+      ]
+    },
+    {
+      "name": "supplied bin intervals",
+      "fields": [
+        "lower",
+        "upper"
+      ]
+    }
+  ],
+  "font": "DejaVu Sans",
+  "width_mm": 190.0,
+  "height_mm": 135.0,
+  "input_csv_sha256": "b65d6d0207b7c901573a8bb46092cda51e9b043811fe0849357382cf86d0d94f",
+  "derived_order": null,
+  "omitted_intersections": null,
+  "axes_count": 1,
+  "scope": "canvas bounds and subtitle policy; not a scientific or universal collision certificate",
+  "outputs": {
+    "png": "5a6663ec01444f7a43d82b85ac195c695e7730dc181c530ee8cf84a586ca7f89",
+    "pdf": "17597cd7a720b90f5ef09bdfb195faa001bc3e0296d7778fa068a1a45978e0fb",
+    "svg": "d539eae0d9feced69087b3421249efe39661ac3f1b7c01666b912b298afe5e6a"
+  }
+}

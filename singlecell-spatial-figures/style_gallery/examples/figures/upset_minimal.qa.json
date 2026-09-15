@@ -1,0 +1,113 @@
+{
+  "outside_canvas": [],
+  "subtitle_count": 0,
+  "rendered_text": [
+    {
+      "text": "RNA",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "ATAC",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Protein",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Spatial",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "RNA & ATAC",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "RNA & Protein",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "RNA & Spatial",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "RNA & ATAC &\nProtein",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "RNA & ATAC &\nProtein &\nSpatial",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Exact intersection size",
+      "size_pt": 8.0,
+      "gid": null
+    },
+    {
+      "text": "0",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "10",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "20",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "30",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "40",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Exact intersections between gene sets",
+      "size_pt": 11.5,
+      "gid": "main_title"
+    },
+    {
+      "text": "SYNTHETIC EXAMPLE",
+      "size_pt": 6.0,
+      "gid": "synthetic_disclosure"
+    }
+  ],
+  "semantic_layers": [
+    {
+      "name": "exclusive set intersections",
+      "fields": [
+        "item",
+        "set"
+      ]
+    }
+  ],
+  "font": "DejaVu Sans",
+  "width_mm": 204.99999999999997,
+  "height_mm": 150.0,
+  "input_csv_sha256": "3885d4a7ca356e78ce95f9737e6666bb094552e94b4f246969106a9e45f03cfb",
+  "derived_order": null,
+  "omitted_intersections": null,
+  "axes_count": 1,
+  "scope": "canvas bounds and subtitle policy; not a scientific or universal collision certificate",
+  "outputs": {
+    "png": "c62409b34d5ed9636c8037131483b765596b49e367cf3ea0c0cbfb1bdc0bf18d",
+    "pdf": "62e99c8ceaa80244681f0e4524cd6227b3146034efd5eca9bf25c94b04004e29",
+    "svg": "2e20176f215d0b4b93384f2b00b9a598b207a1cd4dbdcd58a8dd9411a7506176"
+  }
+}

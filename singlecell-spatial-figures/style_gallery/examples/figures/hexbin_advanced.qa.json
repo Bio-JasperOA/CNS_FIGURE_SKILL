@@ -1,0 +1,121 @@
+{
+  "outside_canvas": [],
+  "subtitle_count": 0,
+  "rendered_text": [
+    {
+      "text": "Library size (counts)",
+      "size_pt": 8.0,
+      "gid": null
+    },
+    {
+      "text": "0",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "4000",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "8000",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "12000",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "16000",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Detected genes",
+      "size_pt": 8.0,
+      "gid": null
+    },
+    {
+      "text": "1500",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "3000",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "4500",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "6000",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Observations per hexagon",
+      "size_pt": 8.0,
+      "gid": null
+    },
+    {
+      "text": "$\\mathdefault{10^{0}}$",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "$\\mathdefault{10^{1}}$",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "$\\mathdefault{10^{2}}$",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Density and quality-control thresholds",
+      "size_pt": 11.5,
+      "gid": "main_title"
+    },
+    {
+      "text": "SYNTHETIC EXAMPLE",
+      "size_pt": 6.0,
+      "gid": "synthetic_disclosure"
+    }
+  ],
+  "semantic_layers": [
+    {
+      "name": "binned density and declared QC cutoffs",
+      "fields": [
+        "x",
+        "y",
+        "config.thresholds"
+      ]
+    },
+    {
+      "name": "paired observations",
+      "fields": [
+        "x",
+        "y"
+      ]
+    }
+  ],
+  "font": "DejaVu Sans",
+  "width_mm": 190.0,
+  "height_mm": 135.0,
+  "input_csv_sha256": "f6e658a58cd387a3e80d38e3341c698cc23545af9e70e3314332fb0e07ea479e",
+  "derived_order": null,
+  "omitted_intersections": null,
+  "axes_count": 2,
+  "scope": "canvas bounds and subtitle policy; not a scientific or universal collision certificate",
+  "outputs": {
+    "png": "b89947d60c3683233a754998cd8f97e5a4477ae4f0a6fb90fbd2fd67b6237dea",
+    "pdf": "d68a266ddc8141fe2681ceaa885711a877a09ed6e5e02224b32387e05e6ee74a",
+    "svg": "d3f3874bf93b09de92260f6e649ad93dbf228ce4c76b922737264bbf1fcfd0d8"
+  }
+}

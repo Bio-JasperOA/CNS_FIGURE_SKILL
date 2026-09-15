@@ -1,0 +1,135 @@
+{
+  "outside_canvas": [],
+  "subtitle_count": 0,
+  "rendered_text": [
+    {
+      "text": "42",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "39",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "36",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "33",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "30",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "27",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "24",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "21",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "18",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "RNA",
+      "size_pt": 7.5,
+      "gid": null
+    },
+    {
+      "text": "ATAC",
+      "size_pt": 7.5,
+      "gid": null
+    },
+    {
+      "text": "Protein",
+      "size_pt": 7.5,
+      "gid": null
+    },
+    {
+      "text": "Spatial",
+      "size_pt": 7.5,
+      "gid": null
+    },
+    {
+      "text": "Exact intersection size",
+      "size_pt": 8.0,
+      "gid": null
+    },
+    {
+      "text": "0",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "14",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "28",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "42",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Exact intersections between gene sets",
+      "size_pt": 11.5,
+      "gid": "main_title"
+    },
+    {
+      "text": "SYNTHETIC EXAMPLE",
+      "size_pt": 6.0,
+      "gid": "synthetic_disclosure"
+    }
+  ],
+  "semantic_layers": [
+    {
+      "name": "aligned membership matrix",
+      "fields": [
+        "set",
+        "item"
+      ]
+    },
+    {
+      "name": "exclusive set intersections",
+      "fields": [
+        "item",
+        "set"
+      ]
+    }
+  ],
+  "font": "DejaVu Sans",
+  "width_mm": 204.99999999999997,
+  "height_mm": 150.0,
+  "input_csv_sha256": "3885d4a7ca356e78ce95f9737e6666bb094552e94b4f246969106a9e45f03cfb",
+  "derived_order": null,
+  "omitted_intersections": null,
+  "axes_count": 1,
+  "scope": "canvas bounds and subtitle policy; not a scientific or universal collision certificate",
+  "outputs": {
+    "png": "f6ccc0249cbc91e196961cba65319357ca7b0db10f040913bdb660ae44277967",
+    "pdf": "a6660e725656b5d0eceed1b7bbfc873d822f0bb41be09e170f47cdaf21a820ac",
+    "svg": "249b628759f7bc4426f3e6fc3a1ba2018961c6fecb525f8ad8c9ed3e4b805857"
+  }
+}

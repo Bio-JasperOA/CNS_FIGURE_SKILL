@@ -1,8 +1,90 @@
 {
   "outside_canvas": [],
-  "axes_count": 1,
+  "subtitle_count": 0,
+  "rendered_text": [
+    {
+      "text": "Progenitor",
+      "size_pt": 7.5,
+      "gid": null
+    },
+    {
+      "text": "Intermediate",
+      "size_pt": 7.5,
+      "gid": null
+    },
+    {
+      "text": "Committed",
+      "size_pt": 7.5,
+      "gid": null
+    },
+    {
+      "text": "Input state",
+      "size_pt": 8.0,
+      "gid": null
+    },
+    {
+      "text": "Lineage branch",
+      "size_pt": 8.0,
+      "gid": null
+    },
+    {
+      "text": "Fate A",
+      "size_pt": 7.5,
+      "gid": null
+    },
+    {
+      "text": "Fate B",
+      "size_pt": 7.5,
+      "gid": null
+    },
+    {
+      "text": "Fate C",
+      "size_pt": 7.5,
+      "gid": null
+    },
+    {
+      "text": "Outcome",
+      "size_pt": 8.0,
+      "gid": null
+    },
+    {
+      "text": "Total 300 coupling units",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "State transitions and conserved mass",
+      "size_pt": 11.5,
+      "gid": "main_title"
+    },
+    {
+      "text": "SYNTHETIC EXAMPLE",
+      "size_pt": 6.0,
+      "gid": "synthetic_disclosure"
+    }
+  ],
+  "semantic_layers": [
+    {
+      "name": "conserved multistage edge mass",
+      "fields": [
+        "source",
+        "target",
+        "mass",
+        "stage"
+      ]
+    }
+  ],
   "font": "DejaVu Sans",
-  "width_mm": 183.0,
-  "height_mm": 118.00000000000001,
-  "scope": "canvas text bounds only; visual and scientific review remain required"
+  "width_mm": 210.00000000000003,
+  "height_mm": 135.0,
+  "input_csv_sha256": "91e2d545b628d1792d987dc8ebe49558b6da5d469aa6077127e74b9d4d09bb8e",
+  "derived_order": null,
+  "omitted_intersections": null,
+  "axes_count": 1,
+  "scope": "canvas bounds and subtitle policy; not a scientific or universal collision certificate",
+  "outputs": {
+    "png": "49221636ed97b922bd5af4057a98c406d6778354381282783ff3b9f616882a21",
+    "pdf": "a9ad641605c9c90f31f69cf4bf0ab542a915d1225290f3d27bccd9c0a2305114",
+    "svg": "05a7c1576cf57fc5e2d2168d286a978c4601569f4b4c4ea539b8478f6ca71652"
+  }
 }

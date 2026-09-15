@@ -1,10 +1,15 @@
 {
   "demo": true,
-  "font_family": "DejaVu Sans",
-  "width_mm": 183,
-  "height_mm": 118,
-  "subtitle": "Synthetic embedding coordinates | not a computed UMAP",
-  "title": "Cell identities on shared coordinates",
+  "width_mm": 190,
+  "height_mm": 135,
+  "colors": {
+    "T cells": "#729ECE",
+    "B cells": "#FF9E4A",
+    "Myeloid": "#67BF5C",
+    "Stromal": "#AD8BC9",
+    "Endothelial": "#6DCCDA",
+    "Epithelial": "#ED665D"
+  },
   "group_order": [
     "T cells",
     "B cells",
@@ -13,12 +18,36 @@
     "Endothelial",
     "Epithelial"
   ],
-  "colors": {
-    "T cells": "#729ECE",
-    "B cells": "#FF9E4A",
-    "Myeloid": "#67BF5C",
-    "Stromal": "#ED665D",
-    "Endothelial": "#AD8BC9",
-    "Epithelial": "#A8786E"
-  }
+  "label_groups": [
+    "T cells",
+    "B cells",
+    "Myeloid",
+    "Stromal",
+    "Endothelial",
+    "Epithelial"
+  ],
+  "point_area": 4,
+  "edge_definition": "Supplied illustrative state connectivity, not inferred migration",
+  "abstract_edges": [
+    {
+      "source": "T cells",
+      "target": "B cells",
+      "weight": 0.75
+    },
+    {
+      "source": "T cells",
+      "target": "Myeloid",
+      "weight": 0.45
+    },
+    {
+      "source": "Stromal",
+      "target": "Endothelial",
+      "weight": 0.7
+    },
+    {
+      "source": "Stromal",
+      "target": "Epithelial",
+      "weight": 0.3
+    }
+  ]
 }

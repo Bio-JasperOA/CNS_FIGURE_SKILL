@@ -1,0 +1,123 @@
+{
+  "outside_canvas": [],
+  "subtitle_count": 0,
+  "rendered_text": [
+    {
+      "text": "Mean predicted probability",
+      "size_pt": 8.0,
+      "gid": null
+    },
+    {
+      "text": "0.0",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0.2",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0.4",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0.6",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0.8",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "1.0",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Observed fraction positive",
+      "size_pt": 8.0,
+      "gid": null
+    },
+    {
+      "text": "0.0",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0.2",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0.4",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0.6",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0.8",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "1.0",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Supplied illustrative bin interval",
+      "size_pt": 7.5,
+      "gid": null
+    },
+    {
+      "text": "Uncalibrated",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Calibrated",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Probability calibration",
+      "size_pt": 11.5,
+      "gid": "main_title"
+    },
+    {
+      "text": "SYNTHETIC EXAMPLE",
+      "size_pt": 6.0,
+      "gid": "synthetic_disclosure"
+    }
+  ],
+  "semantic_layers": [
+    {
+      "name": "bin calibration",
+      "fields": [
+        "predicted",
+        "observed"
+      ]
+    }
+  ],
+  "font": "DejaVu Sans",
+  "width_mm": 190.0,
+  "height_mm": 135.0,
+  "input_csv_sha256": "b65d6d0207b7c901573a8bb46092cda51e9b043811fe0849357382cf86d0d94f",
+  "derived_order": null,
+  "omitted_intersections": null,
+  "axes_count": 1,
+  "scope": "canvas bounds and subtitle policy; not a scientific or universal collision certificate",
+  "outputs": {
+    "png": "ef641c106a4a14b4413a00f8a4acf74dc8c0d85e470c04975ae9bfbae637ca92",
+    "pdf": "ad51a2f15f0e37be6dde88b56e28c900bb1c2d737ee375860a51e4739c6f8f42",
+    "svg": "a7ec29b8876bd3c740e3821016d3c8d48409f2163e67eefe0b9a32fce5ca161b"
+  }
+}

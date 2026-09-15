@@ -1,8 +1,8 @@
-<!-- STYLE_GALLERY_V3_1:START -->
-# v3.1 样式模块增量验证
+<!-- STYLE_GALLERY_V3_2:START -->
+# v3.2 当前样式检查
 
-最新样式模块的实际记录见 [style_gallery/QA_REPORT.md](style_gallery/QA_REPORT.md)，服务器构建结果见 [style_gallery/CI_REPORT.txt](style_gallery/CI_REPORT.txt)。本地新增样式测试87项通过；不要把历史213项重复计为本轮运行结果。下文保留既有v3/v3.0.1审核记录。R入口不声称原生后端已验证。
-<!-- STYLE_GALLERY_V3_1:END -->
+本轮实际运行范围见 [style_gallery/QA_REPORT.md](style_gallery/QA_REPORT.md)。此前 v3.1 与 v3.0 的报告为历史记录，不能算本轮 CI。下面保留原流水线的历史验证，不以本轮样式测试替代原生 R 或真实数据检验。
+<!-- STYLE_GALLERY_V3_2:END -->
 
 # v3.0 当前验证记录
 

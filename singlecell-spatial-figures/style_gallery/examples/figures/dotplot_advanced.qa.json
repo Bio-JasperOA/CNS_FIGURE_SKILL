@@ -1,8 +1,219 @@
 {
   "outside_canvas": [],
-  "axes_count": 2,
+  "subtitle_count": 0,
+  "rendered_text": [
+    {
+      "text": "Row order: Baseline / Stimulated",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Lymphoid",
+      "size_pt": 7.5,
+      "gid": null
+    },
+    {
+      "text": "Myeloid",
+      "size_pt": 7.5,
+      "gid": null
+    },
+    {
+      "text": "Matrix",
+      "size_pt": 7.5,
+      "gid": null
+    },
+    {
+      "text": "Vascular",
+      "size_pt": 7.5,
+      "gid": null
+    },
+    {
+      "text": "Epithelial",
+      "size_pt": 7.5,
+      "gid": null
+    },
+    {
+      "text": "CD3D",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "IL7R",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "MS4A1",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "CD79A",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "LYZ",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "LST1",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "COL1A1",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "DCN",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "PECAM1",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "VWF",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "EPCAM",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "KRT8",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "T cells",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "B cells",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Myeloid",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Stromal",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Endothelial",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Epithelial",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Detected",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "25%",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "50%",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "100%",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Mean expression",
+      "size_pt": 8.0,
+      "gid": null
+    },
+    {
+      "text": "0",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "1",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "2",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "3",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "4",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "5",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Marker programmes across cell states",
+      "size_pt": 11.5,
+      "gid": "main_title"
+    },
+    {
+      "text": "SYNTHETIC EXAMPLE",
+      "size_pt": 6.0,
+      "gid": "synthetic_disclosure"
+    }
+  ],
+  "semantic_layers": [
+    {
+      "name": "expression and detection",
+      "fields": [
+        "mean",
+        "fraction"
+      ]
+    },
+    {
+      "name": "gene modules",
+      "fields": [
+        "module"
+      ]
+    }
+  ],
   "font": "DejaVu Sans",
-  "width_mm": 183.0,
-  "height_mm": 118.00000000000001,
-  "scope": "canvas text bounds only; visual and scientific review remain required"
+  "width_mm": 190.0,
+  "height_mm": 145.0,
+  "input_csv_sha256": "74c4574c9c1fc8ecf101c67b19ff6c9076e20fe77321dc2e39442cc6d464a381",
+  "derived_order": null,
+  "omitted_intersections": null,
+  "axes_count": 2,
+  "scope": "canvas bounds and subtitle policy; not a scientific or universal collision certificate",
+  "outputs": {
+    "png": "d941fc6f80a6ff0af7f0a1db331f945059e814ce5aa335665af9c91b592ae623",
+    "pdf": "4e876dd66ea1e71a18a14be1773180ca9fdd94d149c90c85ac77be2c3fa7eb91",
+    "svg": "639ee4c3f7deec6baede113043a695f11a66aa347cb1c24fcb6a0bda3d50c637"
+  }
 }

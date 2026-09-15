@@ -1,0 +1,148 @@
+{
+  "outside_canvas": [],
+  "subtitle_count": 0,
+  "rendered_text": [
+    {
+      "text": "0.73",
+      "size_pt": 6.5,
+      "gid": null
+    },
+    {
+      "text": "0.61",
+      "size_pt": 6.5,
+      "gid": null
+    },
+    {
+      "text": "0.50",
+      "size_pt": 6.5,
+      "gid": null
+    },
+    {
+      "text": "False positive rate",
+      "size_pt": 8.0,
+      "gid": null
+    },
+    {
+      "text": "0.0",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0.2",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0.4",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0.6",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0.8",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "1.0",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "True positive rate",
+      "size_pt": 8.0,
+      "gid": null
+    },
+    {
+      "text": "0.00",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0.25",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0.50",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0.75",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "1.00",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Supplied illustrative band",
+      "size_pt": 7.5,
+      "gid": null
+    },
+    {
+      "text": "Baseline",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Multimodal",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Fine-tuned",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Discrimination across models",
+      "size_pt": 11.5,
+      "gid": "main_title"
+    },
+    {
+      "text": "SYNTHETIC EXAMPLE",
+      "size_pt": 6.0,
+      "gid": "synthetic_disclosure"
+    }
+  ],
+  "semantic_layers": [
+    {
+      "name": "supplied evaluation curves",
+      "fields": [
+        "model",
+        "fpr",
+        "tpr"
+      ]
+    },
+    {
+      "name": "supplied interval and operating thresholds",
+      "fields": [
+        "lower",
+        "upper",
+        "threshold",
+        "operating_point"
+      ]
+    }
+  ],
+  "font": "DejaVu Sans",
+  "width_mm": 190.0,
+  "height_mm": 135.0,
+  "input_csv_sha256": "1e0b4be9c74edd53a8a99085874b93e3d19cb3b69c62b1393b40a7a36b2e15ff",
+  "derived_order": null,
+  "omitted_intersections": null,
+  "axes_count": 1,
+  "scope": "canvas bounds and subtitle policy; not a scientific or universal collision certificate",
+  "outputs": {
+    "png": "9fc793ace25ff3cec802d1ac07da6fea5a57b1cf130e106144d397fb13cb511c",
+    "pdf": "2c60d2b1a07c6b6830f544b3c6b24e02680ea76c51426799095535ded6f97111",
+    "svg": "c1e5e0c13ecbc4ded14644dc846f9821462868cde1f07717fdcb43c168887c19"
+  }
+}

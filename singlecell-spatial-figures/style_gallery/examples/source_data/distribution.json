@@ -1,12 +1,10 @@
 {
   "demo": true,
-  "font_family": "DejaVu Sans",
-  "width_mm": 183,
-  "height_mm": 118,
-  "subtitle": "48 synthetic independent samples | 16 per group",
-  "group_order": [
-    "Reference",
-    "Early",
-    "Late"
-  ]
+  "width_mm": 190,
+  "height_mm": 135,
+  "condition_order": [
+    "Control",
+    "Perturbed"
+  ],
+  "value_label": "Sample-level module score"
 }

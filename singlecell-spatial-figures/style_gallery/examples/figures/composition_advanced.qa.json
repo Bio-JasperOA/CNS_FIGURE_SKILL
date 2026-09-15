@@ -1,8 +1,244 @@
 {
   "outside_canvas": [],
-  "axes_count": 1,
+  "subtitle_count": 0,
+  "rendered_text": [
+    {
+      "text": "Reference",
+      "size_pt": 8.0,
+      "gid": null
+    },
+    {
+      "text": "Disease",
+      "size_pt": 8.0,
+      "gid": null
+    },
+    {
+      "text": "1,157",
+      "size_pt": 6.2,
+      "gid": null
+    },
+    {
+      "text": "1,410",
+      "size_pt": 6.2,
+      "gid": null
+    },
+    {
+      "text": "2,767",
+      "size_pt": 6.2,
+      "gid": null
+    },
+    {
+      "text": "1,264",
+      "size_pt": 6.2,
+      "gid": null
+    },
+    {
+      "text": "2,067",
+      "size_pt": 6.2,
+      "gid": null
+    },
+    {
+      "text": "1,488",
+      "size_pt": 6.2,
+      "gid": null
+    },
+    {
+      "text": "2,873",
+      "size_pt": 6.2,
+      "gid": null
+    },
+    {
+      "text": "1,675",
+      "size_pt": 6.2,
+      "gid": null
+    },
+    {
+      "text": "1,495",
+      "size_pt": 6.2,
+      "gid": null
+    },
+    {
+      "text": "1,350",
+      "size_pt": 6.2,
+      "gid": null
+    },
+    {
+      "text": "2,928",
+      "size_pt": 6.2,
+      "gid": null
+    },
+    {
+      "text": "1,916",
+      "size_pt": 6.2,
+      "gid": null
+    },
+    {
+      "text": "D01",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "D02",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "D03",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "D04",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "D05",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "D06",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "D07",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "D08",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "D09",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "D10",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "D11",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "D12",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "T cells",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "B cells",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Myeloid",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Stromal",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Endothelial",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Epithelial",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Within-sample fraction",
+      "size_pt": 8.0,
+      "gid": null
+    },
+    {
+      "text": "0.0",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0.2",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0.4",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0.6",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0.8",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "1.0",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Cell composition across samples",
+      "size_pt": 11.5,
+      "gid": "main_title"
+    },
+    {
+      "text": "SYNTHETIC EXAMPLE",
+      "size_pt": 6.0,
+      "gid": "synthetic_disclosure"
+    }
+  ],
+  "semantic_layers": [
+    {
+      "name": "sample condition blocks",
+      "fields": [
+        "condition"
+      ]
+    },
+    {
+      "name": "sample denominators",
+      "fields": [
+        "n"
+      ]
+    },
+    {
+      "name": "same sample-by-cell-type proportions",
+      "fields": [
+        "fraction"
+      ]
+    }
+  ],
   "font": "DejaVu Sans",
-  "width_mm": 183.0,
-  "height_mm": 118.00000000000001,
-  "scope": "canvas text bounds only; visual and scientific review remain required"
+  "width_mm": 190.0,
+  "height_mm": 145.0,
+  "input_csv_sha256": "8dd274447c24c3f9bbb249aa935ca2acaef63987ad000bb8b2d1133a8d286ea1",
+  "derived_order": null,
+  "omitted_intersections": null,
+  "axes_count": 2,
+  "scope": "canvas bounds and subtitle policy; not a scientific or universal collision certificate",
+  "outputs": {
+    "png": "f324be61617095ba12e2ef6f37af8d8b53bed3ab7a0f7631e4b9046cacb4583e",
+    "pdf": "7a179dd353b9806389eaf8c6b7217dcea3338bfc610f67cd072c8bc39678ce89",
+    "svg": "19ee6fe299e666d0ab31774b15f25785d6c4718d9b271e311f27116acbe0787a"
+  }
 }

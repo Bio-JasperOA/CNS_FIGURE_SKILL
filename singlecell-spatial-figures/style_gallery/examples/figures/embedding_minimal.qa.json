@@ -1,8 +1,79 @@
 {
   "outside_canvas": [],
-  "axes_count": 1,
+  "subtitle_count": 0,
+  "rendered_text": [
+    {
+      "text": "Embedding 1",
+      "size_pt": 8.0,
+      "gid": null
+    },
+    {
+      "text": "Embedding 2",
+      "size_pt": 8.0,
+      "gid": null
+    },
+    {
+      "text": "T cells",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "B cells",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Myeloid",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Stromal",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Endothelial",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Epithelial",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Cell identity and lineage hierarchy",
+      "size_pt": 11.5,
+      "gid": "main_title"
+    },
+    {
+      "text": "SYNTHETIC EXAMPLE",
+      "size_pt": 6.0,
+      "gid": "synthetic_disclosure"
+    }
+  ],
+  "semantic_layers": [
+    {
+      "name": "identity",
+      "fields": [
+        "x",
+        "y",
+        "group"
+      ]
+    }
+  ],
   "font": "DejaVu Sans",
-  "width_mm": 183.0,
-  "height_mm": 118.00000000000001,
-  "scope": "canvas text bounds only; visual and scientific review remain required"
+  "width_mm": 190.0,
+  "height_mm": 135.0,
+  "input_csv_sha256": "117f56e83eb779e2477fe6e131fbcd58f4ddfb5c10f0450ea18fdf44dcf93223",
+  "derived_order": null,
+  "omitted_intersections": null,
+  "axes_count": 1,
+  "scope": "canvas bounds and subtitle policy; not a scientific or universal collision certificate",
+  "outputs": {
+    "png": "0bcf321bfad5f465c0f3f4f0117a9d57cc6673c2fbf1ed6540686cf52034433f",
+    "pdf": "1e802e3c420519709e78a08b709fdc0edde2a2b8cde4ec916c73de39be46f4f3",
+    "svg": "24b361cc9852f319a3d87609dedec1be2538ad34733d9f979fed3de8c498133a"
+  }
 }

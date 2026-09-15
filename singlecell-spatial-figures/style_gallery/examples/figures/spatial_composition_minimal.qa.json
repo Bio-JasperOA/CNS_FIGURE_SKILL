@@ -1,0 +1,108 @@
+{
+  "outside_canvas": [],
+  "subtitle_count": 0,
+  "rendered_text": [
+    {
+      "text": "x (µm)",
+      "size_pt": 8.0,
+      "gid": null
+    },
+    {
+      "text": "0",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "60",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "120",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "180",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "y (µm)",
+      "size_pt": 8.0,
+      "gid": null
+    },
+    {
+      "text": "30",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "60",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "90",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "120",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Dominant type",
+      "size_pt": 7.5,
+      "gid": null
+    },
+    {
+      "text": "T cells",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "B cells",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Myeloid",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Spatial mixtures of cell identities",
+      "size_pt": 11.5,
+      "gid": "main_title"
+    },
+    {
+      "text": "SYNTHETIC EXAMPLE",
+      "size_pt": 6.0,
+      "gid": "synthetic_disclosure"
+    }
+  ],
+  "semantic_layers": [
+    {
+      "name": "dominant component",
+      "fields": [
+        "fraction",
+        "group"
+      ]
+    }
+  ],
+  "font": "DejaVu Sans",
+  "width_mm": 190.0,
+  "height_mm": 135.0,
+  "input_csv_sha256": "efbac2373531b8a3fe3ab37b0369fc7f2a96bc9597b66798f59ae8453fd366bd",
+  "derived_order": null,
+  "omitted_intersections": null,
+  "axes_count": 1,
+  "scope": "canvas bounds and subtitle policy; not a scientific or universal collision certificate",
+  "outputs": {
+    "png": "06c8892d589c218889cec946ec1b439167f8964e6cd63b2912ddad2d7a5fe1f2",
+    "pdf": "6c52e10ab96b72aec6648c09e0490f12771ce0fd8d025084d3a230edde05fb63",
+    "svg": "1d8087e1bcb64e25ed65d526faf443bcd3f3341585984044e5995f638c1fe170"
+  }
+}

@@ -1,8 +1,167 @@
 {
   "outside_canvas": [],
-  "axes_count": 2,
+  "subtitle_count": 0,
+  "rendered_text": [
+    {
+      "text": "Module 1",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Module 2",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Module 3",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Module 4",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Module 5",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Module 6",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Module 7",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Module 8",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Module 1",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Module 2",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Module 3",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Module 4",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Module 5",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Module 6",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Module 7",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Module 8",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Pearson r",
+      "size_pt": 8.0,
+      "gid": null
+    },
+    {
+      "text": "−1.00",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "−0.75",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "−0.50",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "−0.25",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0.00",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0.25",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0.50",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0.75",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "1.00",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Correlation structure",
+      "size_pt": 11.5,
+      "gid": "main_title"
+    },
+    {
+      "text": "SYNTHETIC EXAMPLE",
+      "size_pt": 6.0,
+      "gid": "synthetic_disclosure"
+    }
+  ],
+  "semantic_layers": [
+    {
+      "name": "fixed-scale correlation",
+      "fields": [
+        "value"
+      ]
+    }
+  ],
   "font": "DejaVu Sans",
-  "width_mm": 183.0,
-  "height_mm": 118.00000000000001,
-  "scope": "canvas text bounds only; visual and scientific review remain required"
+  "width_mm": 190.0,
+  "height_mm": 135.0,
+  "input_csv_sha256": "84efc30e7587065a36094898b3b8c2fe01d5ff4407e2e8bcdaaf0208eeaf3248",
+  "derived_order": null,
+  "omitted_intersections": null,
+  "axes_count": 2,
+  "scope": "canvas bounds and subtitle policy; not a scientific or universal collision certificate",
+  "outputs": {
+    "png": "cf7e0d5d708a8be5175d54b4613bca6798c54de4a6d27b732d91d278d9a254a4",
+    "pdf": "9080f0c66b0f49949848d7e005f05821f86e69b9e5e7ac6967611d8647d02035",
+    "svg": "d4208f116346bf8b43a157bdafb790819422b0df660f35b49e76b3c2cdd41126"
+  }
 }

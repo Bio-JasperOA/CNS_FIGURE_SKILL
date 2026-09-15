@@ -1,0 +1,26 @@
+actual,predicted,count
+T cells,T cells,107
+T cells,B cells,0
+T cells,Myeloid,8
+T cells,Stromal,3
+T cells,Endothelial,1
+B cells,T cells,3
+B cells,B cells,78
+B cells,Myeloid,10
+B cells,Stromal,1
+B cells,Endothelial,6
+Myeloid,T cells,0
+Myeloid,B cells,1
+Myeloid,Myeloid,139
+Myeloid,Stromal,6
+Myeloid,Endothelial,4
+Stromal,T cells,9
+Stromal,B cells,10
+Stromal,Myeloid,2
+Stromal,Stromal,123
+Stromal,Endothelial,0
+Endothelial,T cells,5
+Endothelial,B cells,10
+Endothelial,Myeloid,8
+Endothelial,Stromal,5
+Endothelial,Endothelial,101

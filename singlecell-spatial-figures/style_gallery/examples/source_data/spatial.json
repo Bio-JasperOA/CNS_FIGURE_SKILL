@@ -1,15 +1,35 @@
 {
   "demo": true,
-  "font_family": "DejaVu Sans",
-  "width_mm": 183,
-  "height_mm": 118,
-  "subtitle": "Synthetic style fixture | identical data in both versions",
+  "width_mm": 190,
+  "height_mm": 135,
+  "coordinate_unit": "µm",
   "limits": [
-    0,
-    3.2
+    -1.5,
+    5.5
   ],
-  "coordinate_unit": "um",
-  "scale_bar": 200,
-  "point_area": 12,
-  "value_label": "Supplied expression score"
+  "scale_bar": 80,
+  "rois": [
+    {
+      "label": "Region A",
+      "vertices": [
+        [
+          75,
+          55
+        ],
+        [
+          175,
+          55
+        ],
+        [
+          175,
+          150
+        ],
+        [
+          75,
+          150
+        ]
+      ]
+    }
+  ],
+  "point_area": 10
 }

@@ -1,14 +1,13 @@
 {
   "demo": true,
-  "font_family": "DejaVu Sans",
-  "width_mm": 183,
-  "height_mm": 118,
-  "subtitle": "8 synthetic matched datasets | each method uses the same evaluation set",
+  "width_mm": 190,
+  "height_mm": 135,
   "method_order": [
     "Baseline",
-    "Method A",
-    "Method B",
-    "Proposed"
+    "Model B",
+    "Model C",
+    "Model D"
   ],
-  "value_label": "Supplied held-out score"
+  "baseline_method": "Baseline",
+  "continuous_preset": "D03"
 }

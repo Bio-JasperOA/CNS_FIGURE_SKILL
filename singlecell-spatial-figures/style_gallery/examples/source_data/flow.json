@@ -1,8 +1,15 @@
 {
   "demo": true,
-  "font_family": "DejaVu Sans",
-  "width_mm": 183,
-  "height_mm": 118,
-  "subtitle": "Synthetic coupling table | widths retain the original aggregate mass",
-  "mass_unit": "arbitrary mass units"
+  "width_mm": 210,
+  "height_mm": 135,
+  "mass_unit": "coupling units",
+  "stage_order": [
+    0,
+    1
+  ],
+  "stage_labels": [
+    "Input state",
+    "Lineage branch",
+    "Outcome"
+  ]
 }

@@ -1,5 +1,5 @@
 {
-  "version": "3.1.0",
+  "version": "3.2.0",
   "date": "2026-09-15",
   "authority": "Current implementation boundary; runtime evidence in QA_REPORT.md",
   "python_v3_renderers": [
@@ -277,7 +277,7 @@
     ]
   },
   "style_gallery": {
-    "version": "3.1.0",
+    "version": "3.2.0",
     "path": "style_gallery/README.md",
     "kinds": [
       "embedding",
@@ -293,19 +293,36 @@
       "network",
       "flow",
       "benchmark",
-      "correlation"
+      "correlation",
+      "forest",
+      "upset",
+      "ridge",
+      "ecdf",
+      "hexbin",
+      "roc",
+      "precision_recall",
+      "calibration",
+      "confusion",
+      "gsea",
+      "spatial_composition",
+      "trajectory_heatmap"
     ],
     "implementation": "style_gallery/render.py",
+    "modules": [
+      "style_gallery/chart_core.py",
+      "style_gallery/chart_types.py"
+    ],
     "test": "style_gallery/tests/test_gallery.py",
-    "catalogue": "style_gallery/catalogue.py",
+    "catalogue": "style_gallery/catalogue_v32.json",
     "gallery": "style_gallery/examples/README.md",
-    "status": "standalone_table_driven_python_renderers",
-    "examples": "14 minimal/advanced pairs + 100-category stress pair; all synthetic",
-    "R": "shared Python entry point only; native R not tested",
+    "examples": "26 paired families + two 100-category stress figures; synthetic only",
+    "subtitle_policy": "Never rendered, including legacy subtitle keys",
+    "status": "implemented and locally tested; remote CI not claimed by this metadata",
+    "R": "Python wrapper only; not executed in authoring environment",
     "limits": [
-      "Not additional FigureSpec registrations; existing four remain unchanged",
+      "The original four FigureSpec renderers and schema 3.0 remain unchanged",
       "Not original-paper numerical reproduction",
-      "Canvas text bounds are not a full perception or collision audit"
+      "No universal label/perception/scientific audit"
     ]
   }
 }

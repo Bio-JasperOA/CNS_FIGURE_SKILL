@@ -1,8 +1,368 @@
 {
   "outside_canvas": [],
-  "axes_count": 2,
+  "subtitle_count": 0,
+  "rendered_text": [
+    {
+      "text": "1.00",
+      "size_pt": 6.5,
+      "gid": null
+    },
+    {
+      "text": "0.91",
+      "size_pt": 6.5,
+      "gid": null
+    },
+    {
+      "text": "1.00",
+      "size_pt": 6.5,
+      "gid": null
+    },
+    {
+      "text": "-0.02",
+      "size_pt": 6.5,
+      "gid": null
+    },
+    {
+      "text": "0.02",
+      "size_pt": 6.5,
+      "gid": null
+    },
+    {
+      "text": "1.00",
+      "size_pt": 6.5,
+      "gid": null
+    },
+    {
+      "text": "0.14",
+      "size_pt": 6.5,
+      "gid": null
+    },
+    {
+      "text": "0.11",
+      "size_pt": 6.5,
+      "gid": null
+    },
+    {
+      "text": "0.16",
+      "size_pt": 6.5,
+      "gid": null
+    },
+    {
+      "text": "1.00",
+      "size_pt": 6.5,
+      "gid": null
+    },
+    {
+      "text": "0.04",
+      "size_pt": 6.5,
+      "gid": null
+    },
+    {
+      "text": "0.04",
+      "size_pt": 6.5,
+      "gid": null
+    },
+    {
+      "text": "-0.04",
+      "size_pt": 6.5,
+      "gid": null
+    },
+    {
+      "text": "-0.01",
+      "size_pt": 6.5,
+      "gid": null
+    },
+    {
+      "text": "1.00",
+      "size_pt": 6.5,
+      "gid": null
+    },
+    {
+      "text": "0.07",
+      "size_pt": 6.5,
+      "gid": null
+    },
+    {
+      "text": "0.03",
+      "size_pt": 6.5,
+      "gid": null
+    },
+    {
+      "text": "-0.08",
+      "size_pt": 6.5,
+      "gid": null
+    },
+    {
+      "text": "0.00",
+      "size_pt": 6.5,
+      "gid": null
+    },
+    {
+      "text": "-0.01",
+      "size_pt": 6.5,
+      "gid": null
+    },
+    {
+      "text": "1.00",
+      "size_pt": 6.5,
+      "gid": null
+    },
+    {
+      "text": "-0.17",
+      "size_pt": 6.5,
+      "gid": null
+    },
+    {
+      "text": "-0.18",
+      "size_pt": 6.5,
+      "gid": null
+    },
+    {
+      "text": "-0.09",
+      "size_pt": 6.5,
+      "gid": null
+    },
+    {
+      "text": "-0.12",
+      "size_pt": 6.5,
+      "gid": null
+    },
+    {
+      "text": "0.12",
+      "size_pt": 6.5,
+      "gid": null
+    },
+    {
+      "text": "0.14",
+      "size_pt": 6.5,
+      "gid": null
+    },
+    {
+      "text": "1.00",
+      "size_pt": 6.5,
+      "gid": null
+    },
+    {
+      "text": "-0.16",
+      "size_pt": 6.5,
+      "gid": null
+    },
+    {
+      "text": "-0.13",
+      "size_pt": 6.5,
+      "gid": null
+    },
+    {
+      "text": "-0.12",
+      "size_pt": 6.5,
+      "gid": null
+    },
+    {
+      "text": "-0.85",
+      "size_pt": 6.5,
+      "gid": null
+    },
+    {
+      "text": "-0.05",
+      "size_pt": 6.5,
+      "gid": null
+    },
+    {
+      "text": "0.02",
+      "size_pt": 6.5,
+      "gid": null
+    },
+    {
+      "text": "0.16",
+      "size_pt": 6.5,
+      "gid": null
+    },
+    {
+      "text": "1.00",
+      "size_pt": 6.5,
+      "gid": null
+    },
+    {
+      "text": "Module 1",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Module 2",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Module 4",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Module 5",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Module 8",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Module 7",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Module 3",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Module 6",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Module 1",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Module 2",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Module 4",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Module 5",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Module 8",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Module 7",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Module 3",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Module 6",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Pearson r",
+      "size_pt": 8.0,
+      "gid": null
+    },
+    {
+      "text": "−1.00",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "−0.75",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "−0.50",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "−0.25",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0.00",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0.25",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0.50",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0.75",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "1.00",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Correlation structure",
+      "size_pt": 11.5,
+      "gid": "main_title"
+    },
+    {
+      "text": "SYNTHETIC EXAMPLE",
+      "size_pt": 6.0,
+      "gid": "synthetic_disclosure"
+    }
+  ],
+  "semantic_layers": [
+    {
+      "name": "explicit display clustering",
+      "fields": [
+        "value"
+      ]
+    },
+    {
+      "name": "upper-triangle magnitude and lower-triangle numeric r",
+      "fields": [
+        "value"
+      ]
+    },
+    {
+      "name": "fixed-scale correlation",
+      "fields": [
+        "value"
+      ]
+    }
+  ],
   "font": "DejaVu Sans",
-  "width_mm": 183.0,
-  "height_mm": 118.00000000000001,
-  "scope": "canvas text bounds only; visual and scientific review remain required"
+  "width_mm": 190.0,
+  "height_mm": 135.0,
+  "input_csv_sha256": "84efc30e7587065a36094898b3b8c2fe01d5ff4407e2e8bcdaaf0208eeaf3248",
+  "derived_order": [
+    "Module 1",
+    "Module 2",
+    "Module 4",
+    "Module 5",
+    "Module 8",
+    "Module 7",
+    "Module 3",
+    "Module 6"
+  ],
+  "omitted_intersections": null,
+  "axes_count": 2,
+  "scope": "canvas bounds and subtitle policy; not a scientific or universal collision certificate",
+  "outputs": {
+    "png": "9da7a0b10a03b52e8e5ed27a4dae0cf793096750089dcaa95bb0c3ee92195f08",
+    "pdf": "95d9df3f670227f18369a0273a3c3c583e8f8bf66402b5b8f40d4c5f00cc79fa",
+    "svg": "77797abfef2449890575c1fa21d9f0703da62370dbc733089043a8a5013ef9ff"
+  }
 }

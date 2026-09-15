@@ -3,6 +3,23 @@ name: singlecell-spatial-figures
 description: "Render reviewed single-cell and spatial transcriptomics results with explicit visual scales, measured layouts, independent guides, export audits and artifact-bound human review. Use Python's tested v3 pipeline or the explicitly unverified R bridge; do not treat scientific conclusions or journal approval as automated capabilities."
 ---
 
+<!-- STYLE_GALLERY_V3_2:START -->
+## 图形样式执行规则 · v3.2
+
+**所有绘图均不显示 subtitle。** 不将副标题搬成主标题下的另一行说明，也不保留副标题空白。主标题、坐标名称、单位、图例和必要的真实/合成标识是不同概念，不得为删副标题而删掉数值语义。
+
+先读 `style_gallery/examples/README.md` 选择 26 类之一，再读 `style_gallery/DESIGN_GUIDE.md`。同一个 `style_gallery/render.py` 的 minimal/advanced 入口已更新，不另建平行绘图路线。原 FigureSpec schema 3.0、四类 renderer、52 个色卡家族保留。
+
+高级版必须有输入支持的结构性新增：真实条件对照、共索引注释轨道、配对差值、多阶段质量、空间轮廓、给定区间或错误结构。只增加标签/边框不算高级。缺少数据列时不要伪造，必要时退回最简版并解释缺口。图型与对应数据字段见 `style_gallery/catalogue_v32.json`；范例 CSV 只是合成测试，不得代替实验结果。
+
+```bash
+python style_gallery/render.py plot --kind heatmap --input reviewed.csv --config reviewed.json --mode advanced --out results/Fig1
+python -m pytest style_gallery/tests -q
+```
+
+必须检查数值、共同分母、变换与不确定性；高级版如改画配对差值/行比例，轴与图例必须同步改名。每次导出保存输入哈希与语义图层记录。旧版最终 PDF/载体审核仍使用 `scripts/render_v3.py inspect-pdf` / `bind-report`，不把新增 Canvas 检查称为全自动科学审阅。R 仅为共享 Python 引擎的 wrapper，未声明原生 R 等价。
+<!-- STYLE_GALLERY_V3_2:END -->
+
 # Single-cell / Spatial Figures · v3
 
 ## 1. 定位与能力边界
@@ -102,20 +119,3 @@ python scripts/render_v3.py bind-report build/Fig1 build/Fig1/carrier_audit.json
 保留 `spec_version: '3.0'`。本次增加 52 个可选色卡家族，原有默认色和六种 norm 不变。使用前读 [色卡索引与调用规则](assets/palettes/README.md)。类别尺度可写 `preset: C19` 加固定 `order`；连续尺度可写 `preset: M02`，中心发散可用 `preset: D03` 加 `norm: {type: two_slope, center: 0}`。`preset` 不可与显式 colors/cmap 混用。C06 必须选具体变体；C21 是衍生试选，不标为论文原色。
 
 `render_v3.py` 自动编译预设并保留 `palette_bindings.json`、原始配置及色卡依赖哈希。类别颜色不足时停止，不循环或插值；只筛选群组时重用已保存的命名颜色字典。R 的 `scripts/palette_presets.R` 读取同一 RGB8 表，但当前未运行原生 R 测试，不能扩张为跨后端等价验证。
-
-<!-- STYLE_GALLERY_V3_1:START -->
-## 图形样式库 · v3.1（不更改大版本 / schema）
-
-先按图型阅读 [最简版与高级版实例](style_gallery/examples/README.md) 和 [设计操作手册](style_gallery/DESIGN_GUIDE.md)，再编写项目图。不要先执行默认绘图函数、最后仅修改字体。此路线新增14类表格驱动的独立Figure；原有FigureSpec四类与schema 3.0保持不变。
-
-从 `style_gallery/catalogue.py` 选择对应问题、最低必要编码、高级信息层和失败条件。优先复用现有命名色卡；类别颜色在嵌入、组成、通信图中必须一致。高级版增加真实输入支持的模块/计数、分布、配对、方向或不确定性，不增加装饰性复杂度。内置CSV和图全部是合成样式fixture，不是研究结果，不能用于填补缺少的实验数据。
-
-```bash
-python style_gallery/render.py plot --kind dotplot --input reviewed.csv --config reviewed.json --mode advanced --out results/Fig1
-python -m pytest style_gallery/tests -q
-```
-
-配置结构参照对应 `style_gallery/examples/source_data/*.json`；真实任务设置 `demo: false`并给出`provenance`、值的定义与固定尺度。先保留最简必要编码，再使用高级层次；与论文对照时区分实际看图、读图注和读源码，禁止称为逐图复现。100类别嵌入示例使用C19、重点编号及独立完整色键，不保证100色可由人眼完全区分。
-
-`style_gallery/render_from_R.R`调用同一Python渲染器，不是14套原生R后端。需要旧版最终PDF与载体审核时继续用 `scripts/render_v3.py inspect-pdf` / `bind-report`；新的Canvas边界检查不替代正式人工审核。
-<!-- STYLE_GALLERY_V3_1:END -->

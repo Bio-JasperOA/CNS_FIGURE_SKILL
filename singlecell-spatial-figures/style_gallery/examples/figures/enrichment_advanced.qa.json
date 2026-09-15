@@ -1,8 +1,187 @@
 {
   "outside_canvas": [],
-  "axes_count": 2,
+  "subtitle_count": 0,
+  "rendered_text": [
+    {
+      "text": "Supplied illustrative interval",
+      "size_pt": 6.5,
+      "gid": null
+    },
+    {
+      "text": "Supplied enrichment effect",
+      "size_pt": 8.0,
+      "gid": null
+    },
+    {
+      "text": "−1.5",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0.0",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "1.5",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Cytokine signalling",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Antigen presentation",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Interferon response",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "T cell activation",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Matrix organisation",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Collagen assembly",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Cell adhesion",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Vascular development",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Oxidative metabolism",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Fatty acid transport",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Genes",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "34",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "52",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "59",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "−log₁₀(q)",
+      "size_pt": 8.0,
+      "gid": null
+    },
+    {
+      "text": "1",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "2",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "3",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "4",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "5",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "6",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Pathway effects and supporting evidence",
+      "size_pt": 11.5,
+      "gid": "main_title"
+    },
+    {
+      "text": "SYNTHETIC EXAMPLE",
+      "size_pt": 6.0,
+      "gid": "synthetic_disclosure"
+    }
+  ],
+  "semantic_layers": [
+    {
+      "name": "supplied effect intervals",
+      "fields": [
+        "lower",
+        "upper"
+      ]
+    },
+    {
+      "name": "pathway groupings",
+      "fields": [
+        "module"
+      ]
+    },
+    {
+      "name": "evidence and gene count",
+      "fields": [
+        "q",
+        "count"
+      ]
+    },
+    {
+      "name": "signed effects",
+      "fields": [
+        "effect"
+      ]
+    }
+  ],
   "font": "DejaVu Sans",
-  "width_mm": 183.0,
-  "height_mm": 118.00000000000001,
-  "scope": "canvas text bounds only; visual and scientific review remain required"
+  "width_mm": 190.0,
+  "height_mm": 145.0,
+  "input_csv_sha256": "e9cd0352f1ad50a2809193c7e242c4d94e17468d778aea66f177cdcb9a0bc793",
+  "derived_order": null,
+  "omitted_intersections": null,
+  "axes_count": 2,
+  "scope": "canvas bounds and subtitle policy; not a scientific or universal collision certificate",
+  "outputs": {
+    "png": "e8f3c01fbb223ab68463da4a85353787c086d393d7b0f61bb6a736f7c089eb3a",
+    "pdf": "89bcd4a6311fdb7384a70a49e165c007d423110d6fb5b2843d9f8abb02cbaff2",
+    "svg": "646a4377bdb662834cc7d172049e38a0c3f48f4bca3a0b606a2dd643f003b84a"
+  }
 }

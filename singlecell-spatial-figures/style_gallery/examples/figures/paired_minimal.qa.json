@@ -1,8 +1,74 @@
 {
   "outside_canvas": [],
-  "axes_count": 1,
+  "subtitle_count": 0,
+  "rendered_text": [
+    {
+      "text": "Before",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "After",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Value",
+      "size_pt": 8.0,
+      "gid": null
+    },
+    {
+      "text": "1.6",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "2.4",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "3.2",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "4.0",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Matched sample responses",
+      "size_pt": 11.5,
+      "gid": "main_title"
+    },
+    {
+      "text": "SYNTHETIC EXAMPLE",
+      "size_pt": 6.0,
+      "gid": "synthetic_disclosure"
+    }
+  ],
+  "semantic_layers": [
+    {
+      "name": "matched observations",
+      "fields": [
+        "sample",
+        "condition",
+        "value"
+      ]
+    }
+  ],
   "font": "DejaVu Sans",
-  "width_mm": 183.0,
-  "height_mm": 118.00000000000001,
-  "scope": "canvas text bounds only; visual and scientific review remain required"
+  "width_mm": 190.0,
+  "height_mm": 145.0,
+  "input_csv_sha256": "f39023daaa30ef226f2cbcceb682c728a2e2775cde1af43f99b6b5de6d9e3ef2",
+  "derived_order": null,
+  "omitted_intersections": null,
+  "axes_count": 1,
+  "scope": "canvas bounds and subtitle policy; not a scientific or universal collision certificate",
+  "outputs": {
+    "png": "d1e0f0a0e94c755484ca63fa57eab8d35ced70f095a301b697589839d9afef29",
+    "pdf": "4c634cf0497adc7fd7749fec22ed830ddc48fc06d913b25616cb85a1980a8c63",
+    "svg": "4e37b645aeb37ae5439e43db3d20b568a0e0d92720ffb8b44b9754b3aeda2b57"
+  }
 }

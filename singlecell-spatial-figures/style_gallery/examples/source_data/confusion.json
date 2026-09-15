@@ -1,0 +1,19 @@
+{
+  "demo": true,
+  "width_mm": 190,
+  "height_mm": 135,
+  "actual_order": [
+    "T cells",
+    "B cells",
+    "Myeloid",
+    "Stromal",
+    "Endothelial"
+  ],
+  "predicted_order": [
+    "T cells",
+    "B cells",
+    "Myeloid",
+    "Stromal",
+    "Endothelial"
+  ]
+}

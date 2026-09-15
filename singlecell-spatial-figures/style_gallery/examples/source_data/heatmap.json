@@ -1,34 +1,38 @@
 {
   "demo": true,
-  "font_family": "DejaVu Sans",
-  "width_mm": 183,
-  "height_mm": 118,
-  "subtitle": "Synthetic style fixture | identical data in both versions",
+  "width_mm": 190,
+  "height_mm": 135,
   "group_order": [
-    "T cells",
-    "B cells",
-    "Myeloid",
-    "Stromal",
-    "Endothelial",
-    "Epithelial"
+    "Early1",
+    "Early2",
+    "Early3",
+    "Mid1",
+    "Mid2",
+    "Mid3",
+    "Late1",
+    "Late2",
+    "Late3"
   ],
   "feature_order": [
-    "G01",
-    "G02",
-    "G03",
-    "G04",
-    "G05",
-    "G06",
-    "G07",
-    "G08",
-    "G09",
-    "G10",
-    "G11",
-    "G12"
+    "TF-1",
+    "TF-2",
+    "TF-3",
+    "TF-4",
+    "TF-5",
+    "Cycle-1",
+    "Cycle-2",
+    "Cycle-3",
+    "Cycle-4",
+    "Cycle-5",
+    "Matrix-1",
+    "Matrix-2",
+    "Matrix-3",
+    "Matrix-4",
+    "Matrix-5"
   ],
   "limits": [
     -2.5,
     2.5
   ],
-  "title": "Expression modules with aligned annotations"
+  "value_label": "Supplied expression z-score"
 }

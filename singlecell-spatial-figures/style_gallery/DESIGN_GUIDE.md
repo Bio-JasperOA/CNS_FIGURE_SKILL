@@ -1,55 +1,55 @@
-# 图形设计操作手册 · v3.1
+# v3.2 图型和验收清单
 
-本册补的是可执行样式，不更改已审核的分析结果。`catalogue.py` 是图型、论文对应面板、实施边界的唯一清单；`examples/README.md` 和 HTML 由它生成。每一种图都有同一份合成输入的最简版、高级版。它们是原创实现，不是原论文的数值复现，也不是 Nature/Cell/Science 官方模板。
+所有图片禁止 subtitle。主标题、坐标、图例、样本量和必要的编码说明仍可保留。图片不承载论文背景段落。
 
-## 先选任务，再选图
+原v3.1的14类已重做；新增12类。变体不是为了堆砌装饰，同一数据对比保留原表及变换记录。新增图形的CNS归因不得超过下表的证据等级。
 
-身份/定位优先 embedding 或 spatial；两种 marker 统计量用 dotplot；协同模块用 heatmap；分布用 distribution，配对变化用 paired；样本组成用 composition；差异统计用 volcano；有符号富集用 enrichment；已经拟合的趋势用 trajectory；发送者/接收者关系用 network；非负聚合对应用 flow；匹配测试集性能用 benchmark；对称相关矩阵用 correlation。未列出的图型不能冒称已经支持。
+| 图型 | 最简 | 高级增加的有效信息 | 数据边界 / 文献对照 |
+|---|---|---|---|
+| 01 嵌入 / UMAP | 固定坐标、固定具名色键 | 输入的状态图 + 明确的父类分层 + 直接身份标注 | abstract_edges、edge_definition、parent；不从点云虚构谱系；BANKSY Fig.3a–b；图型对照继承v3.1，非本轮逐图复现 |
+| 02 空间表达 | 位置与共同色标 | 真实输入的分割多边形 + 指定ROI + 物理比例尺 | vertices、rois、coordinate_unit；缺少分割只能画点；Squidpy Fig.3–4；本轮读图注/方法，不声称像素复现 |
+| 03 Marker 点阵 | 均值颜色与检测面积，保留双图例 | 条件内成对行 + 基因模块括号 + 独立身份色带 | condition、module；大小是面积而非半径；spatialDLPFC Fig.5–6；继承作者代码和图注对照 |
+| 04 多注释热图 | 固定矩阵、范围、缺失值 | 模块分块 + 样本条件轨道 + 对齐计数；可显示另一个已声明效应 | module、condition、n、可选effect；索引不可错位；spatialDLPFC Fig.3D/6C–D；继承对照 |
+| 05 分布 / 分层雨云 | 所有样本观测 | 条件分层半密度 + 全部点 + median/IQR + n | condition可选；KDE不是统计区间；BANKSY Fig.3j；violin为图型对照，不称作者画过本雨云布局 |
+| 06 细胞组成 | 逐样本堆叠比例 | 逐样本×类型比例矩阵 + 条件块 + 实际分母 | fraction是上游比例；显式零与缺失不同；HNOCA Fig.5g–h；组成及样本注释思路，矩阵为原创变体 |
+| 07 配对比较 | 配对观测与连接 | 全部配对差值、排序、零参考和样本IQR | sample对应真实配对；median/IQR是描述不是CI；LIANA+ Extended Data Fig.3；统计单位对照，差值版原创 |
+| 08 火山图 | 双阈值效应—q分布 | 基因集圈选 + 预先声明标签 + 双向数量 | feature_set须输入；不以美观决定阈值；HNOCA Fig.5m；继承图注对照 |
+| 09 富集图 | 效应、q、已有区间 | 基因数面积 + 通路分组 + 区间和标签 | lower/upper、interval_label；不计算富集；LIANA+ Fig.5d；继承图注对照 |
+| 10 谱系曲线 | 输入趋势与全部区间 | 指定阶段 + 关键峰 + 末端直标 | stages、lower/upper；图不拟合GAM；CellRank 2 Fig.3；继承作图源码对照 |
+| 11 候选通信 | 双列加权边 | 按输入权重分配弧长的弦带 + 接收端箭头 + 节点流入/流出 | source、target、weight、edge_unit；非因果边；spatialDLPFC Fig.5B；圆形网络的设计对照，不宣称原图算法一致 |
+| 12 多阶段转移 | 保留所有阶段的流带 | 中间节点核对质量守恒、阶段名与节点总质量 | stage可选；中间质量不守恒直接报错；moscot Fig.5f；继承图注对照 |
+| 13 模型基准 | 全部测试集的分数 | 基线配对差值矩阵 + 格内原始分数 + 中位差值 | 同一dataset集合；raw score与delta分开；BANKSY Fig.5b；配对比较思路，矩阵布局原创 |
+| 14 相关矩阵 | 完整对称矩阵 | 可选一次排序 + 下三角数字 + 上三角幅度点 | 仅对称数据；排序属于显式显示变换；spatialDLPFC Fig.3；继承对照，双编码为原创 |
+| 15 效应量森林图 | 输入效应与区间 | 同行数值/区间表 + 零或比值参考 + 行定位 | interval_label必填；不估计置信区间；补充通用统计图形；未指定CNS对应panel |
+| 16 集合交集 | 精确交集大小 | 与交集柱共用列索引的成员矩阵 | item/set；exclusive intersection，不混同inclusive；UpSetPlot官方文档；补充软件依据，非CNS归因 |
+| 17 山脊图 | 有序分布轮廓 | 四分位段 + 样本支持 + 中位位置 | 每组至少5个非恒定值；密度高度按组归一化；补充通用分布图形；非论文数值复现 |
+| 18 经验累积分布 | 全部经验阶梯曲线 | 分位位置与中位值投影 | 不进行假设分布拟合；分位插值方法明确；补充通用分布图形；非CNS特定版式 |
+| 19 密度 / QC | 全部观测散点 | 六边形计数与声明阈值 | gridsize、log_counts；图不筛除细胞；Matplotlib hexbin官方接口；补充技术依据 |
+| 20 ROC | 输入ROC及已有区间 | 预先指定的工作点与阈值 | 不在渲染器中重新训练或选择最优阈值；scikit-learn官方ROC文档；补充技术依据 |
+| 21 PR曲线 | 输入PR及已有区间 | 工作点、阈值及显式阳性比例参考 | prevalence须输入；不把PR-AUC当AP；scikit-learn官方PR文档；补充技术依据 |
+| 22 校准图 | 实际分箱预测/观测与区间 | 分箱样本量面积、误差线和校准偏差段 | bin/n/interval；不生成未估计的误差线；scikit-learn CalibrationDisplay官方文档；补充技术依据 |
+| 23 混淆矩阵 | 原始计数 | 同一原始表的行比例 + 保留原始n + 行分母 | 每个实际类的分母；零必须显式给出；scikit-learn混淆矩阵官方文档；补充技术依据 |
+| 24 富集运行曲线 | 上游运行得分 | 与排名对齐的命中rug、rank-metric轨道、峰 | 不在作图阶段进行GSEA检验；轨道尺度单独声明；GSEA开发者文档；补充方法依据，非CNSpanel归因 |
+| 25 空间去卷积混合 | dominant type分类位置 | 完整比例扇区 + 固定实际空间半径 | 每个spot总量为1；不把top-k等权成员当比例；spatialDLPFC作者scatter-pie代码为对照；完整比例实现是原创 |
+| 26 时间基因程序 | 输入gene×time矩阵 | 稳定峰时排序 + 峰位置 + 模块轨道 | value为给定趋势；不把gene z-score冒称原始表达；CellRank 2 Fig.3/作者heatmap接口对照 |
 
-最简版不是删掉单位、阈值或不确定性。每次增加一个信息层，都要能回答一个额外问题。只增加边框、渐变填充或更多色彩不构成高级版。
+## 默认、失败条件与验收
 
-## 四类问题怎样修
+字号与画布是可改项目默认，不是期刊规范。新默认190×135 mm；高密度图允许更高画布。不能强制把所有图压成方形。高级版若没有额外输入，应选择最简或报告缺少的数据，不能补造分割、基因集、区间或状态连接。
 
-**不和谐：**先冻结命名颜色字典。图谱、组成和通信里同一细胞类型保持同一个 HEX，而不是每次按出现顺序分配。主数据用彩色；定位网格、连接配对、参考线用中性灰。背景、标题、轴、图例只使用一套字体尺寸层级。示例采用 C03 类别色，M02 反向顺序色用于白底，D03 用于正负效应；反向显示只是方向设置，不计为新色卡，也不冒称作者采用反转。
+检验包括：图和表一致；所有区间保留；面积/比例分母明确；主键唯一；比例与中间流量守恒；旧subtitle键不显示；最终PNG/PDF/SVG无画布外文字；色键按名称稳定；真实数据必须有provenance。自动层登记不证明美观或科学解释正确。
 
-**不美观：**先确定最终毫米画布再看字。示例画布 183×118 mm、正文8 pt、刻度7 pt是可改的工作默认，不是投稿硬规定。弱辅助线约0.5 pt、主趋势线1.8 pt。用空白分组而不是包框套框。优先扩大画布或变更数据区，不通过删掉长标签、伪造缩写或降低字号来“修好”图。
+在真实项目中还必须人工检查邻近标签碰撞、小点可辨认性、颜色对比、主问题是否清楚和额外层是否有用。未进行完整色觉缺陷模拟或任意数据规模测试。
 
-**不复杂：**复杂度应来自真实输入。热图可加入模块、细胞数等共用索引的轨道；分布图可加入所有样本与中位数/IQR；转移图可显示真实边质量和节点总量。缺少对应的数据列时停止添加该信息层，不生成装饰性注释。
+## 执行边界
 
-**不明确：**所有颜色、大小、边宽都对应一个明确变量。dotplot 面积正比检测比例，富集点面积正比基因数，通信边宽正比输入得分，转移两端使用同一个质量单位。q、P、NES、OR、z-score不能换名使用。高级图若让主比较更难读，退回更简单的图型。
+仍然属于v3；spec_version 3.0不变。新增与升级图型通过同一个style_gallery/render.py入口调用。旧FigureSpec仅支持其已登记的四种渲染器；未把26类全部接入FigureSpec。R入口调用同一Python渲染器，本环境无Rscript，未运行原生R验证。
 
-## 复杂图的可迁移代码思想
+## 公开技术来源
 
-|图型|Python 实现思想|R 中的常见等价工具（不是本次新增并验证的原生后端）|
-|---|---|---|
-|Embedding/Spatial|保留坐标、确定性绘制顺序；类别名→颜色，不改点云|Seurat/ggplot2，空间对象保持等比例|
-|Dotplot|长表映射位置；面积与颜色两条通道，两张图例|ggplot2 `scale_size_area`|
-|Annotated heatmap|pivot后只定义一次行列顺序；注释使用混合坐标变换|ComplexHeatmap/circlize/grid|
-|Raincloud|半KDE只是显示；原始点与中位数/IQR同时存在|ggplot2/ggdist；区分样本单位|
-|Composition|样本×类别矩阵，共同底部累计值，零与缺失分开|ggplot2 stacked bars|
-|Paired/Benchmark|以样本/数据集为主键pivot，连接真实匹配行|ggplot2 `group=sample`|
-|Volcano/Enrichment|统计值来自上游，阈值/选标签规则固定，渲染不跑检验|ggplot2/ggrepel|
-|Trajectory|已有趋势、上下界按同一time排序；末端直标|ggplot2 geom_line/ribbon；模型上游完成|
-|Network|固定双列几何，边属性与节点属性分开管理|igraph/ggraph|
-|Alluvial|累计源/目标质量构造Bezier带；宽度相同单位|ggalluvial；不独立归一化两端|
-|Correlation|先验证对称才隐藏重复三角；固定[-1,1]|ComplexHeatmap或ggplot2|
-
-## 高类别 UMAP
-
-`examples/figures/embedding_100_advanced.png` 使用100个合成类别和8,000个点，仅验证显示策略，并非真实UMAP。采用 C19 前100个离散颜色，不进行连续插值或循环。主图只标预先选定的10个编号，完整身份键另外输出到 `.colors.csv` 和 `.key.pdf`。如果要在一张很小的图上读出所有100个类型，应改用概览→亚群分图，而不是假定100个RGB都可被可靠辨认。
-
-## 何时重构而不是继续微调
-
-连续两次出现同一标签冲突；改一个图例导致另一部分被挤压；需要缩到项目字号底线以下；或增加的信息层无法用一句话说明用途时，停止局部调整。依次尝试：缩减非必要标注→换行完整标签→扩大该图型画布→单独色键→按科学分组拆图→换图型。不要重算分析值。
-
-## 最终验收
-
-实际打开每张最终尺寸PNG和PDF，核查源表与图中点/柱/矩阵是否一一对应；最简与高级的分母、数值范围、阈值、数据版本是否相同；标签是否覆盖轴、数据或模块带；颜色灰阶和小点是否可区分；图例是否完整；标注是预测还是观察；配对线是否真实匹配；区间是什么；导出是否保持可检索文字。`render.audit`只自动检查文字是否出画布，不冒称完整碰撞或科学审阅。需要正式交付闸门时，继续使用现有 `scripts/render_v3.py inspect-pdf` / `bind-report`，人工完成旧版的审阅协议。
-
-## 能力边界
-
-v3.0 的四个 FigureSpec renderer 和 schema 3.0保持不变。本册增加的是另一条 **14类表格→独立Figure** 的样式路线，不冒称全部已接入原有多面板布局编译器。`render_from_R.R`调用相同Python引擎，不是14类原生R实现；当前没有Rscript，R入口未运行。字体光学间距、任意100群显示、任意标签长度或原论文复现不在自动验证范围内。
-
-## Cell 论文的对照边界
-
-dynamo（Cell 2022，DOI:10.1016/j.cell.2021.12.045）的 Fig.5 用从向量场导出的 Jacobian 关系解释调控，Fig.6 将转录因子趋势放回时间顺序。这里可迁移的是“先定义边的含义，再画方向”和“先有趋势估计，再做时间编码”。本库的 network 是非负候选细胞通信得分，不能冒充该论文的有符号调控 Jacobian；trajectory 也不提供 dynamo 的动态模型。该对照基于原始图注及方法，不声称已逐幅核对 Cell 正文所有图像。
+- Squidpy (Nature Methods 2022): https://doi.org/10.1038/s41592-021-01358-2 — 本轮读图注与方法，支持图像/空间/邻域上下文设计，不声称新增数据复现。
+- CellRank 2: https://www.nature.com/articles/s41592-024-02303-9 — 继承仓库v3.1审计，当前图为原创合成范例。
+- UpSetPlot: https://upsetplot.readthedocs.io/en/stable/
+- CalibrationDisplay: https://scikit-learn.org/stable/modules/generated/sklearn.calibration.CalibrationDisplay.html
+- Matplotlib hexbin: https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.hexbin.html
+- GSEA: https://www.gsea-msigdb.org/gsea/doc/GSEAUserGuideFrame.html

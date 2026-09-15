@@ -1,0 +1,229 @@
+{
+  "outside_canvas": [],
+  "subtitle_count": 0,
+  "rendered_text": [
+    {
+      "text": "Pseudotime",
+      "size_pt": 8.0,
+      "gid": null
+    },
+    {
+      "text": "0.00",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0.25",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0.51",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0.75",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "1.00",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Gene 13",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Gene 12",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Gene 14",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Gene 10",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Gene 20",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Gene 11",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Gene 06",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Gene 16",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Gene 09",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Gene 02",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Gene 21",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Gene 19",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Gene 08",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Gene 04",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Gene 18",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Gene 24",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Gene 01",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Gene 07",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Gene 23",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Gene 17",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Gene 22",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Gene 15",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Gene 03",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Gene 05",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Supplied fitted expression",
+      "size_pt": 8.0,
+      "gid": null
+    },
+    {
+      "text": "0.0",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0.5",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "1.0",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "1.5",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "2.0",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "2.5",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "3.0",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Temporal gene programmes",
+      "size_pt": 11.5,
+      "gid": "main_title"
+    },
+    {
+      "text": "SYNTHETIC EXAMPLE",
+      "size_pt": 6.0,
+      "gid": "synthetic_disclosure"
+    }
+  ],
+  "semantic_layers": [
+    {
+      "name": "same supplied temporal matrix",
+      "fields": [
+        "time",
+        "value",
+        "gene"
+      ]
+    }
+  ],
+  "font": "DejaVu Sans",
+  "width_mm": 190.0,
+  "height_mm": 155.0,
+  "input_csv_sha256": "94368f2f49d01921e9cc712afc466c55f89d33f2804c6ebf2bc356dca7c7b68d",
+  "derived_order": null,
+  "omitted_intersections": null,
+  "axes_count": 2,
+  "scope": "canvas bounds and subtitle policy; not a scientific or universal collision certificate",
+  "outputs": {
+    "png": "0785663364b028360f45d4fa724958ca17ec5a0e9af2e50ae49b2acd38ec1958",
+    "pdf": "e4c337df071e0f3a0d44954c75ec058aaedc7070768087b279e30e2218a9ce79",
+    "svg": "19074fd6a3dfe35debcdaf3f7388161bf1fa5ba600764cba8fcff54d93cae579"
+  }
+}

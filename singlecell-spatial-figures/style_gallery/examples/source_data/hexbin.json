@@ -1,0 +1,15 @@
+{
+  "demo": true,
+  "width_mm": 190,
+  "height_mm": 135,
+  "x_label": "Library size (counts)",
+  "y_label": "Detected genes",
+  "x_thresholds": [
+    1200,
+    8500
+  ],
+  "y_thresholds": [
+    1000
+  ],
+  "gridsize": 40
+}

@@ -1,0 +1,111 @@
+{
+  "outside_canvas": [],
+  "subtitle_count": 0,
+  "rendered_text": [
+    {
+      "text": "Set hits",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Rank metric\n(scaled track)",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Position in ranked list",
+      "size_pt": 8.0,
+      "gid": null
+    },
+    {
+      "text": "0",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "50",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "100",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "150",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "200",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Supplied running enrichment score",
+      "size_pt": 8.0,
+      "gid": null
+    },
+    {
+      "text": "0.0000",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0.1612",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0.3224",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0.4835",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Ranked enrichment profile",
+      "size_pt": 11.5,
+      "gid": "main_title"
+    },
+    {
+      "text": "SYNTHETIC EXAMPLE",
+      "size_pt": 6.0,
+      "gid": "synthetic_disclosure"
+    }
+  ],
+  "semantic_layers": [
+    {
+      "name": "aligned hit and ranking tracks",
+      "fields": [
+        "hit",
+        "rank_metric",
+        "rank"
+      ]
+    },
+    {
+      "name": "upstream enrichment profile",
+      "fields": [
+        "running_score",
+        "rank"
+      ]
+    }
+  ],
+  "font": "DejaVu Sans",
+  "width_mm": 190.0,
+  "height_mm": 135.0,
+  "input_csv_sha256": "e4905879e96b2f1137942c12f14e5791dc690a34b6825e22b0727b67311b69ef",
+  "derived_order": null,
+  "omitted_intersections": null,
+  "axes_count": 1,
+  "scope": "canvas bounds and subtitle policy; not a scientific or universal collision certificate",
+  "outputs": {
+    "png": "db67aca939df7f97f17c4e3e8935e2afdeacc8f12799039ca544d3daa8db1396",
+    "pdf": "e406ba1ad0de75e1f5e8cf0f1c183651a7bb453136a419668b1420b477996920",
+    "svg": "be68fde96d514fd8bcca09c50a87a929393e085f05c03a281c2b8dfab79f357f"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "demo": true,
+  "width_mm": 205,
+  "height_mm": 150,
+  "set_order": [
+    "RNA",
+    "ATAC",
+    "Protein",
+    "Spatial"
+  ]
+}

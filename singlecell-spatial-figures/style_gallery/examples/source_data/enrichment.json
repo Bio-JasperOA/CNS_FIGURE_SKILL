@@ -1,12 +1,23 @@
 {
   "demo": true,
-  "font_family": "DejaVu Sans",
-  "width_mm": 183,
-  "height_mm": 118,
-  "subtitle": "Synthetic style fixture | identical data in both versions",
-  "effect_label": "Supplied normalized enrichment score",
-  "q_color_limits": [
-    0,
-    5
+  "width_mm": 190,
+  "height_mm": 145,
+  "term_order": [
+    "Cytokine signalling",
+    "Antigen presentation",
+    "Interferon response",
+    "T cell activation",
+    "Matrix organisation",
+    "Collagen assembly",
+    "Cell adhesion",
+    "Vascular development",
+    "Oxidative metabolism",
+    "Fatty acid transport"
+  ],
+  "interval_label": "Supplied illustrative interval",
+  "effect_label": "Supplied enrichment effect",
+  "limits": [
+    1,
+    6
   ]
 }

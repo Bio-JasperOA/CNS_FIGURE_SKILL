@@ -1,8 +1,167 @@
 {
   "outside_canvas": [],
-  "axes_count": 1,
+  "subtitle_count": 0,
+  "rendered_text": [
+    {
+      "text": "Median Δ = 0.99\nIQR = 0.46 to 1.23",
+      "size_pt": 7.5,
+      "gid": null
+    },
+    {
+      "text": "After − Before",
+      "size_pt": 8.0,
+      "gid": null
+    },
+    {
+      "text": "0.0",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0.4",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0.8",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "1.2",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "1.6",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Matched sample",
+      "size_pt": 8.0,
+      "gid": null
+    },
+    {
+      "text": "Donor 01",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Donor 15",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Donor 12",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Donor 04",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Donor 03",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Donor 09",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Donor 10",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Donor 13",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Donor 14",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Donor 11",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Donor 16",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Donor 06",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Donor 07",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Donor 02",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Donor 08",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Donor 05",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Matched sample responses",
+      "size_pt": 11.5,
+      "gid": "main_title"
+    },
+    {
+      "text": "SYNTHETIC EXAMPLE",
+      "size_pt": 6.0,
+      "gid": "synthetic_disclosure"
+    }
+  ],
+  "semantic_layers": [
+    {
+      "name": "within-sample difference",
+      "fields": [
+        "sample",
+        "condition",
+        "value"
+      ]
+    },
+    {
+      "name": "matched observations",
+      "fields": [
+        "sample",
+        "condition",
+        "value"
+      ]
+    }
+  ],
   "font": "DejaVu Sans",
-  "width_mm": 183.0,
-  "height_mm": 118.00000000000001,
-  "scope": "canvas text bounds only; visual and scientific review remain required"
+  "width_mm": 190.0,
+  "height_mm": 145.0,
+  "input_csv_sha256": "f39023daaa30ef226f2cbcceb682c728a2e2775cde1af43f99b6b5de6d9e3ef2",
+  "derived_order": null,
+  "omitted_intersections": null,
+  "axes_count": 1,
+  "scope": "canvas bounds and subtitle policy; not a scientific or universal collision certificate",
+  "outputs": {
+    "png": "0708b3ce45a13459bb71a70789a7c31f4b3a2a65a7f3c7e1c86e5a1811d4eff9",
+    "pdf": "f30a7c4c3e86d3abbd92ac31b21a201e7cdb5ee0209973f7999406e69afadeff",
+    "svg": "ae54a5d273995cc028f859e2c76cb3d1892080cc1f728333350262d061e4b569"
+  }
 }

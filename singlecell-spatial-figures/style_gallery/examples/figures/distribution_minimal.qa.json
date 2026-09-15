@@ -1,8 +1,88 @@
 {
   "outside_canvas": [],
-  "axes_count": 1,
+  "subtitle_count": 0,
+  "rendered_text": [
+    {
+      "text": "Within group: Control / Perturbed",
+      "size_pt": 8.0,
+      "gid": null
+    },
+    {
+      "text": "State A",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "State B",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "State C",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "State D",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Sample-level module score",
+      "size_pt": 8.0,
+      "gid": null
+    },
+    {
+      "text": "1",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "2",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "3",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "4",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Distribution across biological samples",
+      "size_pt": 11.5,
+      "gid": "main_title"
+    },
+    {
+      "text": "SYNTHETIC EXAMPLE",
+      "size_pt": 6.0,
+      "gid": "synthetic_disclosure"
+    }
+  ],
+  "semantic_layers": [
+    {
+      "name": "observations",
+      "fields": [
+        "value",
+        "id"
+      ]
+    }
+  ],
   "font": "DejaVu Sans",
-  "width_mm": 183.0,
-  "height_mm": 118.00000000000001,
-  "scope": "canvas text bounds only; visual and scientific review remain required"
+  "width_mm": 190.0,
+  "height_mm": 135.0,
+  "input_csv_sha256": "650d60973d54e1ab7f632d271012b735e9a4829429519c14e881ab78d1cd2e36",
+  "derived_order": null,
+  "omitted_intersections": null,
+  "axes_count": 1,
+  "scope": "canvas bounds and subtitle policy; not a scientific or universal collision certificate",
+  "outputs": {
+    "png": "6aff83feb67b7524c5a2dd2fd6af593d15b1944c77556751e05ff60d6b690f12",
+    "pdf": "66e89961b0d65c53816fe4a527dd7ce3706bfee02e6bd30bb98f26081c07e131",
+    "svg": "5ca808eee53d61370217f44a495da33852be219b8dd214bc2fdb0456b4f2a187"
+  }
 }

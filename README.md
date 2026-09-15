@@ -43,10 +43,19 @@ order: [T_cell, B_cell, Myeloid]
 # 某个 continuous scale 内则使用 preset: M02，limits 与 norm 仍显式定义。
 ```
 
-<!-- STYLE_GALLERY_V3_1:START -->
-## v3.1 · 图形样式与实例
+<!-- STYLE_GALLERY_V3_2:START -->
+## v3.2 · 26 类无副标题图形
 
-**[浏览14类最简版 / 高级版](singlecell-spatial-figures/style_gallery/examples/README.md)** · [设计手册](singlecell-spatial-figures/style_gallery/DESIGN_GUIDE.md) · [运行代码](singlecell-spatial-figures/style_gallery/README.md) · [新增测试记录](singlecell-spatial-figures/style_gallery/QA_REPORT.md)
+[最简 / 高级实图对照](singlecell-spatial-figures/style_gallery/examples/README.md) · [设计与来源](singlecell-spatial-figures/style_gallery/DESIGN_GUIDE.md) · [验证](singlecell-spatial-figures/style_gallery/QA_REPORT.md)
 
-每类含同一输入的两版图、PNG/PDF/SVG、源表和配置，以及CNS及子刊论文具体panel的设计对照。另有100类别嵌入图与完整色键。所有实例均为合成样式测试，不是生物学结果或论文数值复现。保留v3大版本、schema 3.0及52个色卡家族；不覆盖现有分析流程。
-<!-- STYLE_GALLERY_V3_1:END -->
+原入口升级为 26 类图；高级版补充数据支持的比较、分层、空间轮廓和质量结构，不只是额外标签。所有图无 subtitle。附 52 张常规范例、100 类别的两版图与完整色键；附带数据全部是合成测试。保留 v3 大版本、schema 3.0 和已有 52 色卡家族。本地更新不等于 GitHub 已推送；远端状态另查提交。
+<!-- STYLE_GALLERY_V3_2:END -->
+
+
+<!-- V3_2_PUBLICATION_NAV -->
+
+## v3.2 publication gallery
+
+**[26 类最简／高级图库](docs/GALLERY.md)** · [并排对照 PDF](singlecell-spatial-figures/style_gallery/examples/paired_gallery.pdf)
+
+![Advanced figure overview](docs/preview.png)

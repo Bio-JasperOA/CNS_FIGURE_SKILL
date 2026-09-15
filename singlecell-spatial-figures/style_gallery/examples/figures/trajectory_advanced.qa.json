@@ -1,8 +1,137 @@
 {
   "outside_canvas": [],
-  "axes_count": 1,
+  "subtitle_count": 0,
+  "rendered_text": [
+    {
+      "text": "Transient programme",
+      "size_pt": 8.0,
+      "gid": null
+    },
+    {
+      "text": "Early programme",
+      "size_pt": 8.0,
+      "gid": null
+    },
+    {
+      "text": "Late programme",
+      "size_pt": 8.0,
+      "gid": null
+    },
+    {
+      "text": "Early",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Transition",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Late",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Pseudotime",
+      "size_pt": 8.0,
+      "gid": null
+    },
+    {
+      "text": "0.00",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0.25",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0.50",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0.75",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "1.00",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Supplied fitted expression",
+      "size_pt": 8.0,
+      "gid": null
+    },
+    {
+      "text": "0.0",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0.8",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "1.6",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "2.4",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Supplied illustrative interval",
+      "size_pt": 6.7,
+      "gid": null
+    },
+    {
+      "text": "Lineage programmes over time",
+      "size_pt": 11.5,
+      "gid": "main_title"
+    },
+    {
+      "text": "SYNTHETIC EXAMPLE",
+      "size_pt": 6.0,
+      "gid": "synthetic_disclosure"
+    }
+  ],
+  "semantic_layers": [
+    {
+      "name": "declared stages and trend peaks",
+      "fields": [
+        "config.stages",
+        "mean",
+        "time"
+      ]
+    },
+    {
+      "name": "supplied trends and uncertainty",
+      "fields": [
+        "mean",
+        "lower",
+        "upper"
+      ]
+    }
+  ],
   "font": "DejaVu Sans",
-  "width_mm": 183.0,
-  "height_mm": 118.00000000000001,
-  "scope": "canvas text bounds only; visual and scientific review remain required"
+  "width_mm": 190.0,
+  "height_mm": 135.0,
+  "input_csv_sha256": "eb6d9489af0c68e81823ecc19848379d6e41cd7fd471ca50353a0581d9b2bf56",
+  "derived_order": null,
+  "omitted_intersections": null,
+  "axes_count": 1,
+  "scope": "canvas bounds and subtitle policy; not a scientific or universal collision certificate",
+  "outputs": {
+    "png": "3ef69456adf765d346e6fd57480aabb54dd6afe49c9996d86187ce3ae8f038e2",
+    "pdf": "cea49edee978a30bd9634447b07211089b22ab4f48e9c50456480e652911f683",
+    "svg": "7db1f2fedff3d13af6b2a7b26bbd9e905bcbad76b94ae4188565276f326b9636"
+  }
 }

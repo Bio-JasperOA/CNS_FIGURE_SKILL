@@ -1,0 +1,37 @@
+{
+  "demo": true,
+  "width_mm": 190,
+  "height_mm": 155,
+  "gene_order": [
+    "Gene 13",
+    "Gene 12",
+    "Gene 14",
+    "Gene 10",
+    "Gene 20",
+    "Gene 11",
+    "Gene 06",
+    "Gene 16",
+    "Gene 09",
+    "Gene 02",
+    "Gene 21",
+    "Gene 19",
+    "Gene 08",
+    "Gene 04",
+    "Gene 18",
+    "Gene 24",
+    "Gene 01",
+    "Gene 07",
+    "Gene 23",
+    "Gene 17",
+    "Gene 22",
+    "Gene 15",
+    "Gene 03",
+    "Gene 05"
+  ],
+  "limits": [
+    0,
+    3.2
+  ],
+  "value_label": "Supplied fitted expression",
+  "order_by_peak": true
+}

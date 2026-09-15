@@ -1,0 +1,98 @@
+{
+  "outside_canvas": [],
+  "subtitle_count": 0,
+  "rendered_text": [
+    {
+      "text": "Supplied expression value",
+      "size_pt": 8.0,
+      "gid": null
+    },
+    {
+      "text": "0",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "2",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "4",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "6",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Day 1",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Day 2",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Day 3",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Day 4",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Day 5",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Day 6",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Day 7",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Expression distributions across ordered states",
+      "size_pt": 11.5,
+      "gid": "main_title"
+    },
+    {
+      "text": "SYNTHETIC EXAMPLE",
+      "size_pt": 6.0,
+      "gid": "synthetic_disclosure"
+    }
+  ],
+  "semantic_layers": [
+    {
+      "name": "per-group KDE",
+      "fields": [
+        "value",
+        "group"
+      ]
+    }
+  ],
+  "font": "DejaVu Sans",
+  "width_mm": 190.0,
+  "height_mm": 135.0,
+  "input_csv_sha256": "e6b72e2de457f75f8842d6ad5ea5e114c4c3883b2c2795cc1772389c6ac72686",
+  "derived_order": null,
+  "omitted_intersections": null,
+  "axes_count": 1,
+  "scope": "canvas bounds and subtitle policy; not a scientific or universal collision certificate",
+  "outputs": {
+    "png": "3e4be901cd2ac7ebd09e29656b306633f47db808dfc01ad1d83136e97a73dd30",
+    "pdf": "bb0f00b7b4baf357a26c48062f920ab55653faf6c0330066a0a16e1b8ac86e5e",
+    "svg": "521dd53462179527d1edc8b2b8bb892323f9a47a432f6df31be53101b70a7838"
+  }
+}

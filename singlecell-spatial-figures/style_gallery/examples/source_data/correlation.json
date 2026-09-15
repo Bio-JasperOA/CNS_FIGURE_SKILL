@@ -1,27 +1,26 @@
 {
   "demo": true,
-  "font_family": "DejaVu Sans",
-  "width_mm": 183,
-  "height_mm": 118,
-  "subtitle": "Synthetic symmetric matrix | fixed range -1 to 1",
+  "width_mm": 190,
+  "height_mm": 135,
   "row_order": [
-    "Program 1",
-    "Program 2",
-    "Program 3",
-    "Program 4",
-    "Program 5",
-    "Program 6",
-    "Program 7",
-    "Program 8"
+    "Module 1",
+    "Module 2",
+    "Module 3",
+    "Module 4",
+    "Module 5",
+    "Module 6",
+    "Module 7",
+    "Module 8"
   ],
   "column_order": [
-    "Program 1",
-    "Program 2",
-    "Program 3",
-    "Program 4",
-    "Program 5",
-    "Program 6",
-    "Program 7",
-    "Program 8"
-  ]
+    "Module 1",
+    "Module 2",
+    "Module 3",
+    "Module 4",
+    "Module 5",
+    "Module 6",
+    "Module 7",
+    "Module 8"
+  ],
+  "cluster": true
 }

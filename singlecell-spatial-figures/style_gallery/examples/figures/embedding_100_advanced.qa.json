@@ -1,8 +1,105 @@
 {
   "outside_canvas": [],
-  "axes_count": 1,
+  "subtitle_count": 0,
+  "rendered_text": [
+    {
+      "text": "Type 001",
+      "size_pt": 7.3,
+      "gid": null
+    },
+    {
+      "text": "Type 011",
+      "size_pt": 7.3,
+      "gid": null
+    },
+    {
+      "text": "Type 021",
+      "size_pt": 7.3,
+      "gid": null
+    },
+    {
+      "text": "Type 031",
+      "size_pt": 7.3,
+      "gid": null
+    },
+    {
+      "text": "Type 041",
+      "size_pt": 7.3,
+      "gid": null
+    },
+    {
+      "text": "Type 051",
+      "size_pt": 7.3,
+      "gid": null
+    },
+    {
+      "text": "Type 061",
+      "size_pt": 7.3,
+      "gid": null
+    },
+    {
+      "text": "Type 071",
+      "size_pt": 7.3,
+      "gid": null
+    },
+    {
+      "text": "Type 081",
+      "size_pt": 7.3,
+      "gid": null
+    },
+    {
+      "text": "Type 091",
+      "size_pt": 7.3,
+      "gid": null
+    },
+    {
+      "text": "Embedding 1",
+      "size_pt": 8.0,
+      "gid": null
+    },
+    {
+      "text": "Embedding 2",
+      "size_pt": 8.0,
+      "gid": null
+    },
+    {
+      "text": "Cell identity and lineage hierarchy",
+      "size_pt": 11.5,
+      "gid": "main_title"
+    },
+    {
+      "text": "SYNTHETIC EXAMPLE",
+      "size_pt": 6.0,
+      "gid": "synthetic_disclosure"
+    }
+  ],
+  "semantic_layers": [
+    {
+      "name": "identity",
+      "fields": [
+        "x",
+        "y",
+        "group"
+      ]
+    },
+    {
+      "name": "direct identity lookup",
+      "fields": [
+        "group"
+      ]
+    }
+  ],
   "font": "DejaVu Sans",
-  "width_mm": 183.0,
-  "height_mm": 118.00000000000001,
-  "scope": "canvas text bounds only; visual and scientific review remain required"
+  "width_mm": 190.0,
+  "height_mm": 160.0,
+  "input_csv_sha256": "41a72656f42b75837ae85edc46c9afda27479e797e27cb91a6452963a0a7a9e9",
+  "derived_order": null,
+  "omitted_intersections": null,
+  "axes_count": 1,
+  "scope": "canvas bounds and subtitle policy; not a scientific or universal collision certificate",
+  "outputs": {
+    "png": "0256805e61030deb3459ac47e7baf9ac50fec2d01520e26badd0e1f5438d78f1",
+    "pdf": "d3a817393caeae072b2f03be2b4bf5ff71f9f98d414bd27397baf01ffa28fce2",
+    "svg": "beff8dd67644da19be97990c47187091a92e8949423a0286a1588e9ad13dfbb6"
+  }
 }

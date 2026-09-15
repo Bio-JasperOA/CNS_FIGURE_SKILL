@@ -1,0 +1,113 @@
+{
+  "outside_canvas": [],
+  "subtitle_count": 0,
+  "rendered_text": [
+    {
+      "text": "Sample response",
+      "size_pt": 8.0,
+      "gid": null
+    },
+    {
+      "text": "0",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "2",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "4",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "6",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "8",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Cumulative fraction",
+      "size_pt": 8.0,
+      "gid": null
+    },
+    {
+      "text": "0.00",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0.25",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0.50",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0.75",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "1.00",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Control",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Low dose",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "High dose",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Cumulative sample distributions",
+      "size_pt": 11.5,
+      "gid": "main_title"
+    },
+    {
+      "text": "SYNTHETIC EXAMPLE",
+      "size_pt": 6.0,
+      "gid": "synthetic_disclosure"
+    }
+  ],
+  "semantic_layers": [
+    {
+      "name": "empirical cumulative probabilities",
+      "fields": [
+        "value",
+        "group"
+      ]
+    }
+  ],
+  "font": "DejaVu Sans",
+  "width_mm": 190.0,
+  "height_mm": 135.0,
+  "input_csv_sha256": "5a5961eea21a68247da063fed3a18f5fae5eb0168b0adb25ca28e94da2a33d85",
+  "derived_order": null,
+  "omitted_intersections": null,
+  "axes_count": 1,
+  "scope": "canvas bounds and subtitle policy; not a scientific or universal collision certificate",
+  "outputs": {
+    "png": "1dbdc1bfe93a8db1234e4eafe4a99214aadcc13deabaf3687043cca24c0348bf",
+    "pdf": "8d45ff534bb7e3fabd35a4d4528cb4c24aa8d3a8ee3bc1d045a49bed84b956d5",
+    "svg": "559eb285a6769ef9cbc19a756fe30e19eb927238509d028fbd0e8760560c5b1d"
+  }
+}

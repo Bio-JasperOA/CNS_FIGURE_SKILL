@@ -1,8 +1,290 @@
 {
   "outside_canvas": [],
-  "axes_count": 2,
+  "subtitle_count": 0,
+  "rendered_text": [
+    {
+      "text": "TF",
+      "size_pt": 7.5,
+      "gid": null
+    },
+    {
+      "text": "Cycle",
+      "size_pt": 7.5,
+      "gid": null
+    },
+    {
+      "text": "Matrix",
+      "size_pt": 7.5,
+      "gid": null
+    },
+    {
+      "text": "900",
+      "size_pt": 6.7,
+      "gid": null
+    },
+    {
+      "text": "1581",
+      "size_pt": 6.7,
+      "gid": null
+    },
+    {
+      "text": "512",
+      "size_pt": 6.7,
+      "gid": null
+    },
+    {
+      "text": "1340",
+      "size_pt": 6.7,
+      "gid": null
+    },
+    {
+      "text": "1482",
+      "size_pt": 6.7,
+      "gid": null
+    },
+    {
+      "text": "1011",
+      "size_pt": 6.7,
+      "gid": null
+    },
+    {
+      "text": "1424",
+      "size_pt": 6.7,
+      "gid": null
+    },
+    {
+      "text": "661",
+      "size_pt": 6.7,
+      "gid": null
+    },
+    {
+      "text": "1399",
+      "size_pt": 6.7,
+      "gid": null
+    },
+    {
+      "text": "n",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Early1",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Early2",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Early3",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Mid1",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Mid2",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Mid3",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Late1",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Late2",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Late3",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "TF-1",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "TF-2",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "TF-3",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "TF-4",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "TF-5",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Cycle-1",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Cycle-2",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Cycle-3",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Cycle-4",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Cycle-5",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Matrix-1",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Matrix-2",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Matrix-3",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Matrix-4",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Matrix-5",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Condition",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Early",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Mid",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Late",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Supplied expression z-score",
+      "size_pt": 8.0,
+      "gid": null
+    },
+    {
+      "text": "−2",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "−1",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "1",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "2",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Expression modules and sample context",
+      "size_pt": 11.5,
+      "gid": "main_title"
+    },
+    {
+      "text": "SYNTHETIC EXAMPLE",
+      "size_pt": 6.0,
+      "gid": "synthetic_disclosure"
+    }
+  ],
+  "semantic_layers": [
+    {
+      "name": "expression matrix",
+      "fields": [
+        "value"
+      ]
+    },
+    {
+      "name": "row modules",
+      "fields": [
+        "module"
+      ]
+    },
+    {
+      "name": "aligned cell counts",
+      "fields": [
+        "n"
+      ]
+    },
+    {
+      "name": "column condition",
+      "fields": [
+        "condition"
+      ]
+    }
+  ],
   "font": "DejaVu Sans",
-  "width_mm": 183.0,
-  "height_mm": 118.00000000000001,
-  "scope": "canvas text bounds only; visual and scientific review remain required"
+  "width_mm": 190.0,
+  "height_mm": 135.0,
+  "input_csv_sha256": "929ce12e4e4707c52dad5dfe9dd5a110508b1ae88482ef7d1db0712652d0302d",
+  "derived_order": null,
+  "omitted_intersections": null,
+  "axes_count": 2,
+  "scope": "canvas bounds and subtitle policy; not a scientific or universal collision certificate",
+  "outputs": {
+    "png": "fcb4403bbe7eafecaa17fb89df2a7536b6effc25458257afd20373e15d9645bc",
+    "pdf": "f5d6b6b8b262c9fd55ed821d9c994efb6786b05f962aa28f1a9fd0e332f354c7",
+    "svg": "70c3d9fe55883cfa47ba19ec21b882672b1272e2f607b7c0b358324abca45954"
+  }
 }

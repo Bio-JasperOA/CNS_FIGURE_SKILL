@@ -1,8 +1,134 @@
 {
   "outside_canvas": [],
-  "axes_count": 2,
+  "subtitle_count": 0,
+  "rendered_text": [
+    {
+      "text": "x (µm)",
+      "size_pt": 8.0,
+      "gid": null
+    },
+    {
+      "text": "0",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "100",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "200",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "300",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "400",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "y (µm)",
+      "size_pt": 8.0,
+      "gid": null
+    },
+    {
+      "text": "60",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "120",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "180",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "240",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Expression",
+      "size_pt": 8.0,
+      "gid": null
+    },
+    {
+      "text": "−1",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "1",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "2",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "3",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "4",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "5",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Spatial expression and tissue compartments",
+      "size_pt": 11.5,
+      "gid": "main_title"
+    },
+    {
+      "text": "SYNTHETIC EXAMPLE",
+      "size_pt": 6.0,
+      "gid": "synthetic_disclosure"
+    }
+  ],
+  "semantic_layers": [
+    {
+      "name": "spatial expression",
+      "fields": [
+        "x",
+        "y",
+        "value"
+      ]
+    }
+  ],
   "font": "DejaVu Sans",
-  "width_mm": 183.0,
-  "height_mm": 118.00000000000001,
-  "scope": "canvas text bounds only; visual and scientific review remain required"
+  "width_mm": 190.0,
+  "height_mm": 135.0,
+  "input_csv_sha256": "75454b46aec489fa7aad4c8bfb7376a9daaabe5f36e9e1e702b52225afe1a03a",
+  "derived_order": null,
+  "omitted_intersections": null,
+  "axes_count": 2,
+  "scope": "canvas bounds and subtitle policy; not a scientific or universal collision certificate",
+  "outputs": {
+    "png": "0dc401178132be4a840120295e54006977684b62955871dc5f7ba52a6f086e5e",
+    "pdf": "812bb4f87b1909c131ee3bed0b06ac937e6db27d1afa7c814803a437d912cafc",
+    "svg": "a81c1d0a536af252c5e62a28629b8ad9bcf815d409ff9bb829baec98623870d5"
+  }
 }

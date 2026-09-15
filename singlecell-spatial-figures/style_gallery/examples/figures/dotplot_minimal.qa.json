@@ -1,8 +1,188 @@
 {
   "outside_canvas": [],
-  "axes_count": 2,
+  "subtitle_count": 0,
+  "rendered_text": [
+    {
+      "text": "Row order: Baseline / Stimulated",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "CD3D",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "IL7R",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "MS4A1",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "CD79A",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "LYZ",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "LST1",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "COL1A1",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "DCN",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "PECAM1",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "VWF",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "EPCAM",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "KRT8",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "T cells",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "B cells",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Myeloid",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Stromal",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Endothelial",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Epithelial",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Detected",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "25%",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "50%",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "100%",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Mean expression",
+      "size_pt": 8.0,
+      "gid": null
+    },
+    {
+      "text": "0",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "1",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "2",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "3",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "4",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "5",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Marker programmes across cell states",
+      "size_pt": 11.5,
+      "gid": "main_title"
+    },
+    {
+      "text": "SYNTHETIC EXAMPLE",
+      "size_pt": 6.0,
+      "gid": "synthetic_disclosure"
+    }
+  ],
+  "semantic_layers": [
+    {
+      "name": "expression and detection",
+      "fields": [
+        "mean",
+        "fraction"
+      ]
+    }
+  ],
   "font": "DejaVu Sans",
-  "width_mm": 183.0,
-  "height_mm": 118.00000000000001,
-  "scope": "canvas text bounds only; visual and scientific review remain required"
+  "width_mm": 190.0,
+  "height_mm": 145.0,
+  "input_csv_sha256": "74c4574c9c1fc8ecf101c67b19ff6c9076e20fe77321dc2e39442cc6d464a381",
+  "derived_order": null,
+  "omitted_intersections": null,
+  "axes_count": 2,
+  "scope": "canvas bounds and subtitle policy; not a scientific or universal collision certificate",
+  "outputs": {
+    "png": "22d036e67da94f3436753a85faad20583a729f7525cb69040bcc786846cfb45b",
+    "pdf": "bea281c495fb1598c070587ab56c397d4aa6f5eb55db03f2bd15a0972e761e83",
+    "svg": "b3008808ed3665657521f2be25e373a939dfd424e9fea7b3ccedf53abfa404a8"
+  }
 }

@@ -1,8 +1,49 @@
 {
   "outside_canvas": [],
-  "axes_count": 1,
+  "subtitle_count": 0,
+  "rendered_text": [
+    {
+      "text": "Embedding 1",
+      "size_pt": 8.0,
+      "gid": null
+    },
+    {
+      "text": "Embedding 2",
+      "size_pt": 8.0,
+      "gid": null
+    },
+    {
+      "text": "Cell identity and lineage hierarchy",
+      "size_pt": 11.5,
+      "gid": "main_title"
+    },
+    {
+      "text": "SYNTHETIC EXAMPLE",
+      "size_pt": 6.0,
+      "gid": "synthetic_disclosure"
+    }
+  ],
+  "semantic_layers": [
+    {
+      "name": "identity",
+      "fields": [
+        "x",
+        "y",
+        "group"
+      ]
+    }
+  ],
   "font": "DejaVu Sans",
-  "width_mm": 183.0,
-  "height_mm": 118.00000000000001,
-  "scope": "canvas text bounds only; visual and scientific review remain required"
+  "width_mm": 190.0,
+  "height_mm": 160.0,
+  "input_csv_sha256": "41a72656f42b75837ae85edc46c9afda27479e797e27cb91a6452963a0a7a9e9",
+  "derived_order": null,
+  "omitted_intersections": null,
+  "axes_count": 1,
+  "scope": "canvas bounds and subtitle policy; not a scientific or universal collision certificate",
+  "outputs": {
+    "png": "7feb3d951a41e282fecc84fc88644aea81653732890fd32d5e5a07aa0e0468f7",
+    "pdf": "15ad21153c230c9df6282a0722035f46cf5ea989c031342b8e25bb770f4683b0",
+    "svg": "a3655e6d4cd3a4f16b174a9a5e60b91f0577f5f46b405960ae7710e3aaae390c"
+  }
 }

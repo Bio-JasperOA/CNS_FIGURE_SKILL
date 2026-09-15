@@ -1,0 +1,104 @@
+{
+  "outside_canvas": [],
+  "subtitle_count": 0,
+  "rendered_text": [
+    {
+      "text": "Supplied effect estimate",
+      "size_pt": 8.0,
+      "gid": null
+    },
+    {
+      "text": "−0.8",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0.0",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "0.8",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "1.6",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "T-cell abundance",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "B-cell abundance",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Myeloid state",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Matrix programme",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Vascular score",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Inflammation",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Differentiation",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Stress response",
+      "size_pt": 7.0,
+      "gid": null
+    },
+    {
+      "text": "Effect sizes and uncertainty",
+      "size_pt": 11.5,
+      "gid": "main_title"
+    },
+    {
+      "text": "SYNTHETIC EXAMPLE",
+      "size_pt": 6.0,
+      "gid": "synthetic_disclosure"
+    }
+  ],
+  "semantic_layers": [
+    {
+      "name": "supplied effect intervals",
+      "fields": [
+        "estimate",
+        "lower",
+        "upper"
+      ]
+    }
+  ],
+  "font": "DejaVu Sans",
+  "width_mm": 210.00000000000003,
+  "height_mm": 135.0,
+  "input_csv_sha256": "ec25026cd195ccbe524092c8dab2ecd556b243b3d627d5825f3ba54821701342",
+  "derived_order": null,
+  "omitted_intersections": null,
+  "axes_count": 1,
+  "scope": "canvas bounds and subtitle policy; not a scientific or universal collision certificate",
+  "outputs": {
+    "png": "4082c672969bc07b817aa8c8dce64dfa077fad22420ab314380d737b7c79ca4d",
+    "pdf": "8c6457fb5995c7a33dd5f6ea9622a5dac69a0bfe07cd24dad6248296f34e9024",
+    "svg": "631114280bca7f3e8ef80ef30ab48d770ce2bcb124ef176209c53c2815bf7a42"
+  }
+}
