@@ -75,10 +75,12 @@ def _render_style(target: str, kind: str, df: pd.DataFrame, cfg: dict, mode: str
     if post is not None:
         post(fig)
         fig.canvas.draw()
-    report = style_render.export(fig, out / target)
-    plt.close(fig)
+    base = out / target
+    report = style_render.export(fig, base)
+    outputs = {ext: str(base.with_suffix("." + ext)) for ext in ("png", "pdf", "svg")}
     return {"target": target, "engine": "style_gallery", "kind": kind, "mode": mode,
-            "outputs": report["outputs"], "semantic_layers": report["semantic_layers"]}
+            "outputs": outputs, "sha256": report["outputs"],
+            "semantic_layers": report["semantic_layers"]}
 
 
 def _custom_figure(target: str, maker: Callable, out: Path) -> dict:
@@ -195,7 +197,7 @@ def render_scrna_qc(inputs: dict[str, pd.DataFrame], config: dict, out: Path):
     samples = list(dict.fromkeys(d["sample"].astype(str)))
     base = _base_cfg(config)
 
-    counts = pd.DataFrame({"id": d.cell_id, "group": d.sample.astype(str), "value": d.n_counts})
+    counts = pd.DataFrame({"id": d.cell_id, "group": d["sample"].astype(str), "value": d.n_counts})
     c = dict(base, title="Library size across cells", group_order=samples, value_label="RNA counts")
     records.append(_render_style("qc_violin", "distribution", counts, c, "minimal", out))
 
@@ -203,7 +205,7 @@ def render_scrna_qc(inputs: dict[str, pd.DataFrame], config: dict, out: Path):
     c = dict(base, title="Detected genes versus library size", x_label="RNA counts", y_label="Detected genes")
     records.append(_render_style("qc_counts_vs_genes", "hexbin", hg, c, "advanced", out))
 
-    mito = pd.DataFrame({"id": d.cell_id, "group": d.sample.astype(str), "value": d.pct_mito})
+    mito = pd.DataFrame({"id": d.cell_id, "group": d["sample"].astype(str), "value": d.pct_mito})
     c = dict(base, title="Mitochondrial fraction across cells", group_order=samples,
              value_label="Mitochondrial fraction (%)")
     records.append(_render_style("qc_mito_distribution", "distribution", mito, c, "minimal", out))
@@ -234,7 +236,7 @@ def render_scrna_qc(inputs: dict[str, pd.DataFrame], config: dict, out: Path):
         ok = both[both == 2].index
         tmp = tmp[tmp["sample"].isin(ok)]
         if len(tmp):
-            ba = pd.DataFrame({"id": tmp.cell_id, "group": tmp.sample.astype(str),
+            ba = pd.DataFrame({"id": tmp.cell_id, "group": tmp["sample"].astype(str),
                                "condition": tmp.condition, "value": tmp.pct_mito})
             c = dict(base, title="Filtering effect on mitochondrial fraction",
                      group_order=[str(x) for x in ok], condition_order=["Kept", "Filtered"],
