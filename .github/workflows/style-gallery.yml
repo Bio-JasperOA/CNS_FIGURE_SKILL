@@ -3,9 +3,13 @@ on:
   push:
     branches: [main]
     paths:
-      - '.delivery/style-gallery-v32/**'
+      - '.delivery/style-gallery-v32-26/**'
       - '.github/workflows/style-gallery.yml'
-      - 'singlecell-spatial-figures/style_gallery/**'
+      - '.github/scripts/publish_style_gallery.py'
+      - 'singlecell-spatial-figures/style_gallery/*.py'
+      - 'singlecell-spatial-figures/style_gallery/*.json'
+      - 'singlecell-spatial-figures/style_gallery/tests/*.py'
+      - 'singlecell-spatial-figures/style_gallery/requirements*.txt'
   workflow_dispatch:
 permissions:
   contents: write
@@ -18,9 +22,9 @@ jobs:
     timeout-minutes: 15
     env:
       MPLBACKEND: Agg
+      MPLCONFIGDIR: /tmp/cns-style-mpl
       OPENBLAS_NUM_THREADS: '1'
       OMP_NUM_THREADS: '1'
-      MPLCONFIGDIR: ${{ runner.temp }}/mpl-config
     defaults:
       run:
         shell: bash
@@ -29,66 +33,31 @@ jobs:
       - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
         with:
           python-version: '3.13'
-      - name: Materialize checksum-verified v3.2 source overlay
-        run: |
-          python - <<'PY'
-          from pathlib import Path, PurePosixPath
-          import hashlib, io, tarfile
-          root=Path('.delivery/style-gallery-v32')
-          if root.exists():
-              paths=[root/f'part_{i}.bin' for i in range(7)]
-              blob=b''.join(p.read_bytes() for p in paths)
-              expected='347b62a87fda09f4f252bc0ea62d862d33ce64e9adb60fb3453f6266db07cea3'
-              assert hashlib.sha256(blob).hexdigest()==expected,'Source checksum mismatch'
-              with tarfile.open(fileobj=io.BytesIO(blob),mode='r:xz') as archive:
-                  members=archive.getmembers()
-                  assert len(members)==13 and sum(m.size for m in members)==114151
-                  for m in members:
-                      p=PurePosixPath(m.name)
-                      assert m.isfile() and not p.is_absolute() and '..' not in p.parts
-                      assert p.parts[:2]==('singlecell-spatial-figures','style_gallery')
-                  archive.extractall('.',filter='data')
-              for p in paths:p.unlink()
-              root.rmdir()
-          PY
-      - name: Install isolated render and validation dependencies
-        run: |
-          python -m pip install -r singlecell-spatial-figures/requirements-v3.txt -r singlecell-spatial-figures/style_gallery/requirements-tested.txt -r singlecell-spatial-figures/style_gallery/requirements-v32-tests.txt
-      - name: Update metadata without changing the v3 major or preset values
+      - name: Install only the verified 26-family delivery
+        run: python .github/scripts/publish_style_gallery.py install
+      - name: Install isolated dependencies
+        run: python -m pip install -r singlecell-spatial-figures/requirements-v3.txt -r singlecell-spatial-figures/style_gallery/requirements-tested.txt
+      - name: Synchronize capabilities and verify palette snapshots
         run: |
           python singlecell-spatial-figures/style_gallery/repository_update.py metadata
           python singlecell-spatial-figures/style_gallery/repository_update.py presets
-      - name: Run preserved tests and the new 24-family regression suite
+      - name: Run preserved and new regression tests
         run: |
+          set -o pipefail
           python -m pytest singlecell-spatial-figures/tests singlecell-spatial-figures/style_gallery/tests -q | tee singlecell-spatial-figures/style_gallery/CI_REPORT.txt
-      - name: Render all minimal and advanced examples and verify sidecars
+      - name: Render and verify 26 no-subtitle chart pairs
         run: |
           python singlecell-spatial-figures/style_gallery/render.py demo --out singlecell-spatial-figures/style_gallery/examples
-          python - <<'PY'
-          from pathlib import Path
-          import json
-          root=Path('singlecell-spatial-figures/style_gallery/examples')
-          cat=json.loads((root/'catalogue.json').read_text())
-          assert len(cat)==24
-          for item in cat:
-              for mode in ['minimal','advanced']:
-                  prefix=root/'figures'/f'{item["kind"]}_{mode}'
-                  q=json.loads(prefix.with_suffix('.qa.json').read_text())
-                  assert not q['subtitles_rendered'] and not q['subtitle_violations']
-                  assert not q['outside_canvas'] and not q['footer_collisions']
-                  assert prefix.with_suffix('.source.csv').is_file()
-                  if mode=='advanced':assert len(q['view_roles'])>=2
-          print('Verified 48 no-subtitle charts, original source tables and advanced view audits')
-          PY
+          python .github/scripts/publish_style_gallery.py verify
           python singlecell-spatial-figures/style_gallery/repository_update.py manifest
           git diff --check
-      - name: Commit tested source, examples and current QA
+      - name: Publish tested sources and generated examples
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add singlecell-spatial-figures/style_gallery README.md singlecell-spatial-figures/SKILL.md singlecell-spatial-figures/CAPABILITIES.json singlecell-spatial-figures/QA_REPORT.md singlecell-spatial-figures/MANIFEST.sha256
-          git add -u
+          if git ls-files .delivery | grep -q .; then git add -u .delivery; fi
           if ! git diff --cached --quiet; then
-            git commit -m 'Publish v3.2: 24 no-subtitle chart pairs with auditable comparative views [skip ci]'
+            git commit -m 'Publish 26 no-subtitle chart pairs and verified v3.2 sources [skip ci]'
             git push origin HEAD:main
           fi
