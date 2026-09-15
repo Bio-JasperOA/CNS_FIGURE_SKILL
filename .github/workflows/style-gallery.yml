@@ -7,6 +7,7 @@ on:
       - '.github/workflows/style-gallery.yml'
       - '.github/scripts/publish_style_gallery.py'
       - '.github/scripts/finalize_style_docs.py'
+      - '.github/scripts/test_style_docs_publication.py'
       - 'singlecell-spatial-figures/style_gallery/*.py'
       - 'singlecell-spatial-figures/style_gallery/*.json'
       - 'singlecell-spatial-figures/style_gallery/tests/*.py'
@@ -45,7 +46,7 @@ jobs:
       - name: Run preserved and new regression tests
         run: |
           set -o pipefail
-          python -m pytest singlecell-spatial-figures/tests singlecell-spatial-figures/style_gallery/tests -q | tee singlecell-spatial-figures/style_gallery/CI_REPORT.txt
+          python -m pytest singlecell-spatial-figures/tests singlecell-spatial-figures/style_gallery/tests .github/scripts/test_style_docs_publication.py -q | tee singlecell-spatial-figures/style_gallery/CI_REPORT.txt
       - name: Restore release metadata after isolated tests
         run: |
           git restore --source=HEAD -- README.md singlecell-spatial-figures/SKILL.md singlecell-spatial-figures/CAPABILITIES.json singlecell-spatial-figures/QA_REPORT.md
@@ -64,7 +65,7 @@ jobs:
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add singlecell-spatial-figures/style_gallery README.md singlecell-spatial-figures/SKILL.md singlecell-spatial-figures/CAPABILITIES.json singlecell-spatial-figures/QA_REPORT.md singlecell-spatial-figures/MANIFEST.sha256
+          git add singlecell-spatial-figures/style_gallery README.md README_MAINTAINER.md docs/GALLERY.md docs/preview.png singlecell-spatial-figures/SKILL.md singlecell-spatial-figures/CAPABILITIES.json singlecell-spatial-figures/QA_REPORT.md singlecell-spatial-figures/MANIFEST.sha256
           if git ls-files .delivery | grep -q .; then git add -u .delivery; fi
           if ! git diff --cached --quiet; then
             git commit -m 'Publish 26 no-subtitle chart pairs and verified v3.2 sources [skip ci]'
