@@ -22,7 +22,6 @@ def test_tranche2_real_renderers(module_id,tmp_path):
     assert manifest["generated"]
     targets={r["target"] for r in manifest["generated"]}
     declared=router.IMPLEMENTED["modules"][module_id]
-    # A module must emit at least one required and one advanced route in the fixture.
     assert targets & set(declared["required_targets"])
     assert targets & set(declared["advanced_targets"])
     assert "subtitle" not in json.dumps(manifest["generated"]).lower()
@@ -31,6 +30,19 @@ def test_tranche2_real_renderers(module_id,tmp_path):
             assert ext in rec["outputs"] and Path(rec["outputs"][ext]).is_file()
         if rec["kind"]!="review_contact_sheet" and rec["engine"]!="alias":
             assert Path(rec["outputs"]["svg"]).is_file()
+
+
+def test_trajectory_interval_requires_explicit_program(tmp_path):
+    inputs,cfg=fixtures.trajectory();cfg=dict(cfg);cfg["trend_feature"]="SOX2"
+    m=router.render_module("scrna.trajectory",inputs,cfg,tmp_path/"trajectory")
+    assert "trend_with_interval" in {r["target"] for r in m["generated"]}
+
+
+def test_trajectory_without_program_does_not_average_features(tmp_path):
+    inputs,cfg=fixtures.trajectory()
+    m=router.render_module("scrna.trajectory",inputs,cfg,tmp_path/"trajectory")
+    assert "trend_with_interval" not in {r["target"] for r in m["generated"]}
+    assert any(x["target"]=="trend_with_interval" for x in m["skipped"])
 
 
 def test_router_rejects_missing_named_input(tmp_path):
