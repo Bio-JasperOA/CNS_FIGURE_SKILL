@@ -29,6 +29,17 @@ def test_generate_scaffold(tmp_path):
     assert schema["advanced_plots"]
 
 
+def test_generate_all_scaffolds(tmp_path):
+    paths = module.generate_all(tmp_path)
+    assert len(paths) == len(module.REGISTRY["modules"])
+    assert len({p.as_posix() for p in paths}) == len(paths)
+    for folder in paths:
+        schema = json.loads((folder / "schema.json").read_text())
+        assert schema["required_plots"]
+        assert schema["advanced_plots"]
+        assert schema["subtitle_policy"] == "forbidden"
+
+
 def test_refuses_to_overwrite(tmp_path):
     module.generate("scrna.qc", tmp_path)
     try:
