@@ -1,0 +1,29 @@
+name: Validate pipeline figure tree
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'singlecell-spatial-figures/pipeline_tree/**'
+      - '.github/workflows/pipeline-tree.yml'
+  pull_request:
+    paths:
+      - 'singlecell-spatial-figures/pipeline_tree/**'
+      - '.github/workflows/pipeline-tree.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.13'
+      - name: Validate registry architecture
+        run: python singlecell-spatial-figures/pipeline_tree/validate_registry.py validate
+      - name: Run registry regression tests
+        run: python -m pytest singlecell-spatial-figures/pipeline_tree/tests -q
