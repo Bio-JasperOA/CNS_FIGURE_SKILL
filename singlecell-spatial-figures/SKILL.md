@@ -3,6 +3,26 @@ name: singlecell-spatial-figures
 description: "Render reviewed single-cell and spatial transcriptomics results with explicit visual scales, measured layouts, independent guides, export audits and artifact-bound human review. Use Python's tested v3 pipeline or the explicitly unverified R bridge; do not treat scientific conclusions or journal approval as automated capabilities."
 ---
 
+<!-- PIPELINE_TREE_V3:START -->
+## Pipeline-first 执行规则 · v3 兼容扩展
+
+处理 scRNA-seq、空间转录组、跨模态、发育/胚胎或 foundation-model 结果时，先在 `pipeline_tree/MODULE_REGISTRY.json` 定位分析节点，再选择图。**每个分析过程至少必须产出一类 required figure；每种高级分析至少必须映射一类 advanced figure。** 不允许出现“分析已经完成，但没有任何可审阅图片输出”的空节点。
+
+结果表先对齐 `pipeline_tree/RESULT_CONTRACTS.json`。绘图层不重新运行 Seurat/Scanpy/CellRank/CellChat/LIANA/Milo/scCODA/Squidpy/cell2location/scVI 等分析，也不补造缺失的显著性、区间、轨迹、边界、邻域、转移概率或模型不确定性。
+
+`advanced` 的定义是 minimal 加上真实输入支持的科学维度，例如条件比较、不确定性、配对结构、层级、空间上下文、时间/谱系、转移结构、多模态验证或预测误差；只增加颜色、边框、标签、阴影、装饰性 inset 不算 advanced。全树继承 **禁止 subtitle** 的规则。
+
+完整树见 `pipeline_tree/PIPELINE_TREE.md`，优先级见 `pipeline_tree/IMPLEMENTATION_ROADMAP.md`。注册表中的目标图是能力路线，不等于 renderer 已实现；实际实现边界仍以 `CAPABILITIES.json`、当前代码和测试为准。新增或删除 pipeline 节点后必须运行：
+
+```bash
+python pipeline_tree/validate_registry.py validate
+python pipeline_tree/validate_registry.py tree
+python -m pytest pipeline_tree/tests -q
+```
+
+需要开发新模块时用 `pipeline_tree/scaffold_module.py <module_id>` 生成 `adapter/minimal/advanced/panel/schema/tests` 骨架。生成的 `NotImplementedError` 是故意的硬边界；未替换为经过测试的真实绘图实现前，不得把 scaffold 声称为已实现能力。
+<!-- PIPELINE_TREE_V3:END -->
+
 <!-- STYLE_GALLERY_V3_2:START -->
 ## 图形样式执行规则 · v3.2
 
