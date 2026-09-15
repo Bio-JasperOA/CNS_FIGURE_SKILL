@@ -67,8 +67,24 @@ jobs:
         run: |
           python singlecell-spatial-figures/style_gallery/render.py demo --out singlecell-spatial-figures/style_gallery/examples
           python .github/scripts/publish_style_gallery.py verify
+          python - <<'PY'
+          from pathlib import Path
+          import hashlib
+          path = Path('singlecell-spatial-figures/SKILL.md')
+          raw = path.read_bytes()
+          text = raw.decode('utf-8')
+          assert len(text) > 5000 and len(text.splitlines()) > 100, 'Incomplete Skill document'
+          assert raw.endswith(b'\n') and not raw.endswith(b'\n\n'), 'Unexpected blank EOF'
+          assert all(line == line.rstrip() for line in text.splitlines()), 'Trailing whitespace'
+          assert text.startswith('---\nname: singlecell-spatial-figures\n')
+          assert '所有绘图均不显示 subtitle' in text
+          assert '## 1.' in text and '## 10.' in text
+          print('Final Skill bytes:', len(raw), 'lines:', len(text.splitlines()), 'SHA256:', hashlib.sha256(raw).hexdigest())
+          PY
           python singlecell-spatial-figures/style_gallery/repository_update.py manifest
-          git diff --check
+          # SKILL.md has an explicit full-file whitespace/content check above;
+          # other updated paths retain Git's patch-level whitespace check.
+          git diff --check -- . ':!singlecell-spatial-figures/SKILL.md'
       - name: Publish tested sources and generated examples
         run: |
           git config user.name 'github-actions[bot]'
