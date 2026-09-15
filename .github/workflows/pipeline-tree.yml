@@ -18,6 +18,7 @@ permissions:
 jobs:
   validate:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     env:
       MPLBACKEND: Agg
       MPLCONFIGDIR: /tmp/cns-pipeline-mpl
@@ -36,3 +37,5 @@ jobs:
         run: python singlecell-spatial-figures/pipeline_tree/validate_registry.py validate
       - name: Run registry and runtime regression tests
         run: python -m pytest singlecell-spatial-figures/pipeline_tree/tests -q
+      - name: Render complete 36-module synthetic gallery
+        run: python singlecell-spatial-figures/pipeline_tree/build_gallery.py --out /tmp/cns_pipeline_gallery
