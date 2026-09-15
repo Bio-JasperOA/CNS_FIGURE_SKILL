@@ -17,10 +17,11 @@ import runtime_tranche2 as t2
 import runtime_tranche3 as t3
 import runtime_tranche4 as t4
 import runtime_tranche5 as t5
+import runtime_final_fixes as fixes
 import runtime_foundation as fmrt
 
 EXTRA={
- "scrna.normalization_hvg":t5.render_normalization_hvg,
+ "scrna.normalization_hvg":fixes.render_normalization_hvg,
  "scrna.integration":t5.render_integration,
  "scrna.clustering":t5.render_clustering,
  "scrna.annotation":t2.render_annotation,
@@ -36,7 +37,7 @@ EXTRA={
  "spatial.svg_autocorrelation":t4.render_svg_autocorrelation,
  "spatial.neighborhood_niche":t2.render_spatial_niche,
  "spatial.communication":t3.render_spatial_communication,
- "spatial.gradient_trajectory":t4.render_spatial_gradient_trajectory,
+ "spatial.gradient_trajectory":fixes.render_spatial_gradient_trajectory,
  "spatial.multisection":t5.render_multisection,
  "spatial.histology_morphology":t5.render_histology_morphology,
  "cross_modal.reference_mapping":t3.render_reference_mapping,
@@ -44,7 +45,7 @@ EXTRA={
  "cross_modal.niche_validation":t5.render_niche_validation,
  "cross_modal.communication_validation":t5.render_communication_validation,
  "development.lineage_progression":t3.render_lineage_progression,
- "development.spatial_gradient":t4.render_development_spatial_gradient,
+ "development.spatial_gradient":fixes.render_development_spatial_gradient,
  "development.virtual_embryo_prediction":t4.render_virtual_embryo_prediction,
  "fm.latent_embedding":fmrt.render_latent_embedding,
  "fm.ablation_scaling":t3.render_ablation_scaling,
