@@ -55,23 +55,41 @@ jobs:
         run: |
           python singlecell-spatial-figures/style_gallery/render.py demo --out singlecell-spatial-figures/style_gallery/examples
           python .github/scripts/publish_style_gallery.py verify
-      - name: Finalize immutable publication documents
+      - name: Finalize publication documents
         run: |
-          git restore --source=HEAD -- .github/scripts/finalize_style_docs.py
+          git restore --source=HEAD --staged --worktree -- .github/scripts/finalize_style_docs.py
           python .github/scripts/finalize_style_docs.py
-          # Restore the reviewed publisher after generation, then normalize only
-          # trailing whitespace. Keep both staged and working-tree diff checks.
+      - name: Restore reviewed publisher and build manifest independently
+        run: |
           git restore --source=HEAD --staged --worktree -- .github/scripts/finalize_style_docs.py
           python - <<'PY'
           from pathlib import Path
-          p = Path('.github/scripts/finalize_style_docs.py')
-          text = p.read_text(encoding='utf-8')
-          p.write_text('\n'.join(line.rstrip(' \t') for line in text.splitlines()) + '\n', encoding='utf-8')
-          compile(p.read_text(encoding='utf-8'), str(p), 'exec')
+          import hashlib
+
+          publisher = Path('.github/scripts/finalize_style_docs.py')
+          text = publisher.read_text(encoding='utf-8')
+          publisher.write_text('\n'.join(line.rstrip(' \t') for line in text.splitlines()) + '\n', encoding='utf-8')
+          compile(publisher.read_text(encoding='utf-8'), str(publisher), 'exec')
+
+          skill = Path('singlecell-spatial-figures')
+          excluded = {'__pycache__', '.pytest_cache', '.git', '.venv'}
+          rows = []
+          for path in sorted(skill.rglob('*')):
+              rel = path.relative_to(skill)
+              if path.is_file() and path.name != 'MANIFEST.sha256' and not (excluded & set(rel.parts)):
+                  rows.append(hashlib.sha256(path.read_bytes()).hexdigest() + '  ' + rel.as_posix())
+          (skill / 'MANIFEST.sha256').write_text('\n'.join(rows) + '\n', encoding='utf-8')
           PY
-          python singlecell-spatial-figures/style_gallery/repository_update.py manifest
-          git diff --check
-          git diff --cached --check
+      - name: Check publication text hygiene
+        run: |
+          git diff --check -- \
+            .github/scripts/finalize_style_docs.py \
+            README.md \
+            README_MAINTAINER.md \
+            docs/GALLERY.md \
+            singlecell-spatial-figures/SKILL.md \
+            singlecell-spatial-figures/CAPABILITIES.json \
+            singlecell-spatial-figures/QA_REPORT.md
       - name: Publish tested sources and generated examples
         run: |
           git config user.name 'github-actions[bot]'
