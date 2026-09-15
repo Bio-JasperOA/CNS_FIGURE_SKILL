@@ -45,6 +45,24 @@ jobs:
         run: |
           set -o pipefail
           python -m pytest singlecell-spatial-figures/tests singlecell-spatial-figures/style_gallery/tests -q | tee singlecell-spatial-figures/style_gallery/CI_REPORT.txt
+      - name: Rebuild release metadata from the checked-out documents
+        run: |
+          git restore --source=HEAD -- README.md singlecell-spatial-figures/SKILL.md singlecell-spatial-figures/CAPABILITIES.json singlecell-spatial-figures/QA_REPORT.md
+          python singlecell-spatial-figures/style_gallery/repository_update.py metadata
+          python - <<'PY'
+          from pathlib import Path
+          paths = [Path('README.md'), Path('singlecell-spatial-figures/SKILL.md'), Path('singlecell-spatial-figures/QA_REPORT.md')]
+          for path in paths:
+              text = '\n'.join(line.rstrip() for line in path.read_text().splitlines()).rstrip() + '\n'
+              path.write_text(text)
+          skill = paths[1].read_text()
+          assert len(skill) > 5000, 'Skill body unexpectedly truncated'
+          assert skill.startswith('---\nname: singlecell-spatial-figures\n')
+          assert '所有绘图均不显示 subtitle' in skill
+          assert skill.count('<!-- STYLE_GALLERY_V3_2:START -->') == 1
+          assert '## 1.' in skill and '## 10.' in skill, 'Legacy execution rules missing'
+          print('Verified full Skill body, frontmatter, v3.2 rules and normalized line endings')
+          PY
       - name: Render and verify 26 no-subtitle chart pairs
         run: |
           python singlecell-spatial-figures/style_gallery/render.py demo --out singlecell-spatial-figures/style_gallery/examples
