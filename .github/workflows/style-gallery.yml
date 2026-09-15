@@ -45,45 +45,49 @@ jobs:
         run: |
           set -o pipefail
           python -m pytest singlecell-spatial-figures/tests singlecell-spatial-figures/style_gallery/tests -q | tee singlecell-spatial-figures/style_gallery/CI_REPORT.txt
-      - name: Rebuild release metadata from the checked-out documents
+      - name: Restore release metadata after isolated tests
+        run: |
+          git restore --source=HEAD -- README.md singlecell-spatial-figures/SKILL.md singlecell-spatial-figures/CAPABILITIES.json singlecell-spatial-figures/QA_REPORT.md
+          python singlecell-spatial-figures/style_gallery/repository_update.py metadata
+      - name: Render and verify 26 no-subtitle chart pairs
+        run: |
+          python singlecell-spatial-figures/style_gallery/render.py demo --out singlecell-spatial-figures/style_gallery/examples
+          python .github/scripts/publish_style_gallery.py verify
+      - name: Finalize and validate complete publication documents
         run: |
           git restore --source=HEAD -- README.md singlecell-spatial-figures/SKILL.md singlecell-spatial-figures/CAPABILITIES.json singlecell-spatial-figures/QA_REPORT.md
           python singlecell-spatial-figures/style_gallery/repository_update.py metadata
           python - <<'PY'
           from pathlib import Path
+          import hashlib, json, re, subprocess
           paths = [Path('README.md'), Path('singlecell-spatial-figures/SKILL.md'), Path('singlecell-spatial-figures/QA_REPORT.md')]
           for path in paths:
               text = '\n'.join(line.rstrip() for line in path.read_text().splitlines()).rstrip() + '\n'
               path.write_text(text)
-          skill = paths[1].read_text()
-          assert len(skill) > 5000, 'Skill body unexpectedly truncated'
-          assert skill.startswith('---\nname: singlecell-spatial-figures\n')
-          assert '所有绘图均不显示 subtitle' in skill
-          assert skill.count('<!-- STYLE_GALLERY_V3_2:START -->') == 1
-          assert '## 1.' in skill and '## 10.' in skill, 'Legacy execution rules missing'
-          print('Verified full Skill body, frontmatter, v3.2 rules and normalized line endings')
-          PY
-      - name: Render and verify 26 no-subtitle chart pairs
-        run: |
-          python singlecell-spatial-figures/style_gallery/render.py demo --out singlecell-spatial-figures/style_gallery/examples
-          python .github/scripts/publish_style_gallery.py verify
-          python - <<'PY'
-          from pathlib import Path
-          import hashlib
-          path = Path('singlecell-spatial-figures/SKILL.md')
+          path = paths[1]
           raw = path.read_bytes()
           text = raw.decode('utf-8')
-          assert len(text) > 5000 and len(text.splitlines()) > 100, 'Incomplete Skill document'
-          assert raw.endswith(b'\n') and not raw.endswith(b'\n\n'), 'Unexpected blank EOF'
-          assert all(line == line.rstrip() for line in text.splitlines()), 'Trailing whitespace'
+          original = subprocess.check_output(['git', 'show', 'HEAD:singlecell-spatial-figures/SKILL.md']).decode('utf-8')
+          def unchanged_body(value):
+              for tag in ('STYLE_GALLERY_V3_1', 'STYLE_GALLERY_V3_2'):
+                  value = re.sub(r'<!-- ' + tag + r':START -->.*?<!-- ' + tag + r':END -->\s*', '', value, flags=re.S)
+              return ' '.join(value.split())
+          print('Final Skill bytes:', len(raw), 'characters:', len(text), 'lines:', len(text.splitlines()))
+          assert unchanged_body(text) == unchanged_body(original), 'Original Skill body not preserved'
           assert text.startswith('---\nname: singlecell-spatial-figures\n')
+          assert text.count('<!-- STYLE_GALLERY_V3_2:START -->') == 1
           assert '所有绘图均不显示 subtitle' in text
           assert '## 1.' in text and '## 10.' in text
-          print('Final Skill bytes:', len(raw), 'lines:', len(text.splitlines()), 'SHA256:', hashlib.sha256(raw).hexdigest())
+          assert raw.endswith(b'\n') and not raw.endswith(b'\n\n')
+          assert all(line == line.rstrip() for line in text.splitlines())
+          report_path = Path('singlecell-spatial-figures/style_gallery/PUBLISH_REPORT.json')
+          report = json.loads(report_path.read_text())
+          report['publication_documents'] = {str(p): hashlib.sha256(p.read_bytes()).hexdigest() for p in paths}
+          report['original_skill_body_preserved'] = True
+          report_path.write_text(json.dumps(report, indent=2) + '\n')
+          print('Verified complete retained Skill body, frontmatter, v3.2 rules and final document hashes')
           PY
           python singlecell-spatial-figures/style_gallery/repository_update.py manifest
-          # SKILL.md has an explicit full-file whitespace/content check above;
-          # other updated paths retain Git's patch-level whitespace check.
           git diff --check -- . ':!singlecell-spatial-figures/SKILL.md'
       - name: Publish tested sources and generated examples
         run: |
