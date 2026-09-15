@@ -7,6 +7,7 @@ pipeline runtime modules and preserves one manifest/provenance contract.
 from __future__ import annotations
 import argparse,json,sys
 from pathlib import Path
+import numpy as np
 import pandas as pd
 
 HERE=Path(__file__).resolve().parent
@@ -31,6 +32,30 @@ def api_namespace():
     return vars(base)
 
 
+def _semantic_adapters(module_id,inputs,cfg):
+    """Resolve representation ambiguity without inferring new biology."""
+    adapted={k:v.copy() for k,v in inputs.items()}
+    if module_id=="scrna.trajectory":
+        d=adapted["main"]
+        interval={"lineage","time","mean","lower","upper"}
+        if interval<=set(d):
+            finite=d[["mean","lower","upper"]].notna().all(axis=1)
+            duplicate=d.loc[finite].duplicated(["lineage","time"]).any()
+            if duplicate:
+                chosen=cfg.get("trend_feature")
+                if chosen is not None:
+                    if "feature" not in d:raise ValueError("trend_feature was declared but trajectory table has no feature field")
+                    if str(chosen) not in set(d.feature.dropna().astype(str)):raise ValueError("trend_feature is absent from trajectory input")
+                    keep=d.feature.astype(str)==str(chosen)
+                    d.loc[~keep,["mean","lower","upper"]]=np.nan
+                else:
+                    # Multiple programmes share lineage/time. There is no honest unique
+                    # interval curve until the caller chooses a programme explicitly.
+                    d.loc[:,["mean","lower","upper"]]=np.nan
+        adapted["main"]=d
+    return adapted
+
+
 def render_module(module_id:str,inputs:dict[str,pd.DataFrame],config:dict,out:Path)->dict:
     spec=IMPLEMENTED["modules"].get(module_id)
     if spec is None:raise NotImplementedError(f"{module_id} is roadmap-only")
@@ -39,6 +64,7 @@ def render_module(module_id:str,inputs:dict[str,pd.DataFrame],config:dict,out:Pa
     for name,contract in spec["inputs"].items():
         if name not in inputs:raise ValueError(f"{module_id}: missing named input {name!r}")
         base._validate_contract(inputs[name],contract)
+    inputs=_semantic_adapters(module_id,inputs,cfg)
     if module_id in base.DISPATCH:
         return base.render_module(module_id,inputs,cfg,out)
     records,skipped=EXTRA[module_id](inputs,cfg,out,api_namespace())
