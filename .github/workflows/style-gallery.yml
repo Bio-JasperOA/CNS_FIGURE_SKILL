@@ -57,6 +57,8 @@ jobs:
           python .github/scripts/publish_style_gallery.py verify
       - name: Finalize immutable publication documents
         run: |
+          # Always run the reviewed publisher, not a working-tree test fixture.
+          git restore --source=HEAD -- .github/scripts/finalize_style_docs.py
           python .github/scripts/finalize_style_docs.py
           python singlecell-spatial-figures/style_gallery/repository_update.py manifest
           git diff --check
