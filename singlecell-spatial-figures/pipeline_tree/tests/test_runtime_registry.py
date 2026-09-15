@@ -20,7 +20,7 @@ def test_implemented_modules_are_roadmap_modules():
         assert spec["inputs"]
 
 
-def test_runtime_dispatch_matches_registry():
-    spec=importlib.util.spec_from_file_location("runtime",HERE/"runtime.py")
-    runtime=importlib.util.module_from_spec(spec);spec.loader.exec_module(runtime)
-    assert set(runtime.DISPATCH)==set(implemented["modules"])
+def test_canonical_router_dispatch_matches_registry():
+    spec=importlib.util.spec_from_file_location("run_pipeline",HERE/"run_pipeline.py")
+    router=importlib.util.module_from_spec(spec);spec.loader.exec_module(router)
+    assert set(router.DISPATCH)==set(implemented["modules"])
