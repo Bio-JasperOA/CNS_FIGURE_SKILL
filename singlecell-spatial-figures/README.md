@@ -17,6 +17,23 @@ python -m pytest -q
 
 目录：`scripts/` 为执行逻辑；`tests/` 为回归与失败场景；`examples/` 为可跑的软件测试项目；`assets/` 为保留的 v2 schema/templates；`references/` 为按需资料。v3 schema 由 `visual_contract.schema_v3()` 扩展原闭合 schema，未知配置字段仍会报错；不要把旧 `assets/*.render_plan.json` 当作新数据的结果。
 
+## Pipeline-first figure tree
+
+新增 [pipeline_tree](pipeline_tree/README.md) 作为单细胞、空间组学、跨模态、胚胎发育和 foundation-model 评估的分析→图形覆盖层。其核心要求是：**每个分析过程至少有一类必产图，每种高级分析至少有一类高级图；任何节点都不能只完成计算而没有可审阅图形输出。**
+
+- [完整树状路线](pipeline_tree/PIPELINE_TREE.md)
+- [机器可读模块注册表](pipeline_tree/MODULE_REGISTRY.json)
+- [结果表契约](pipeline_tree/RESULT_CONTRACTS.json)
+- [开发优先级](pipeline_tree/IMPLEMENTATION_ROADMAP.md)
+
+```bash
+python pipeline_tree/validate_registry.py validate
+python pipeline_tree/validate_registry.py tree
+python -m pytest pipeline_tree/tests -q
+```
+
+注册表同时列出已经可复用的 `style_gallery` 图型和仍需开发的目标图。登记目标不等于声称 renderer 已实现；实现边界仍以代码、测试和 `CAPABILITIES.json` 为准。全树继承“禁止 subtitle、缺失科学输入不伪造、advanced 必须增加真实科学维度”的规则。
+
 ## Palette presets · v3.0.1（兼容扩充）
 
 保留 `spec_version: '3.0'`。本次增加 52 个可选色卡家族，原有默认色和六种 norm 不变。使用前读 [色卡索引与调用规则](assets/palettes/README.md)。类别尺度可写 `preset: C19` 加固定 `order`；连续尺度可写 `preset: M02`，中心发散可用 `preset: D03` 加 `norm: {type: two_slope, center: 0}`。`preset` 不可与显式 colors/cmap 混用。C06 必须选具体变体；C21 是衍生试选，不标为论文原色。
