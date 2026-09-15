@@ -1,0 +1,62 @@
+{
+  "runtime_version": "1.0.0",
+  "skill_major_version": 3,
+  "subtitle_policy": "forbidden",
+  "description": "First executable pipeline tranche. Modules not listed here remain roadmap-only and must not be claimed implemented.",
+  "modules": {
+    "scrna.qc": {
+      "inputs": {"main": "cell_qc"},
+      "required_targets": ["qc_violin", "qc_counts_vs_genes", "qc_mito_distribution", "qc_sample_summary"],
+      "advanced_targets": ["qc_dashboard", "qc_density_thresholds", "qc_before_after_filtering", "qc_sample_heatmap"],
+      "status": "implemented_runtime_v1"
+    },
+    "scrna.composition_da": {
+      "inputs": {"main": "composition_effect"},
+      "required_targets": ["composition_stacked", "composition_heatmap", "fraction_distribution", "da_forest", "da_lollipop"],
+      "advanced_targets": ["paired_composition", "neighborhood_da_map", "composition_effect_matrix", "composition_da_panel"],
+      "status": "implemented_runtime_v1",
+      "conditional": ["da_forest needs effect/lower/upper", "da_lollipop needs effect/q", "paired_composition needs subject/condition"]
+    },
+    "scrna.communication": {
+      "inputs": {"main": "interaction"},
+      "required_targets": ["interaction_heatmap", "lr_bubble", "communication_network", "communication_chord", "pathway_ranking"],
+      "advanced_targets": ["sender_receiver_panel", "lr_evidence_bubble", "pathway_network", "communication_target_program_panel"],
+      "status": "implemented_runtime_v1",
+      "conditional": ["LR plots need ligand/receptor", "pathway ranking needs pathway", "target-program panel needs target_program"]
+    },
+    "spatial.expression": {
+      "inputs": {"main": "spatial_point"},
+      "required_targets": ["spatial_feature", "spatial_multisection_feature", "spatial_multigene_panel"],
+      "advanced_targets": ["segmentation_overlay", "spatial_contour_hotspot", "region_zoom", "feature_image_composite"],
+      "status": "implemented_runtime_v1",
+      "conditional": ["value is required", "segmentation needs supplied vertices", "image composite needs explicit image asset"]
+    },
+    "spatial.mapping_deconvolution": {
+      "inputs": {"main": "spatial_composition"},
+      "required_targets": ["mapped_celltype", "spatial_composition", "spatial_pie", "mapping_probability", "mapping_confidence"],
+      "advanced_targets": ["topk_composition_map", "celltype_abundance_atlas", "region_composition_heatmap", "mapping_confidence_panel"],
+      "status": "implemented_runtime_v1",
+      "conditional": ["mapping_confidence needs confidence", "region heatmap needs an upstream region label"]
+    },
+    "fm.reconstruction_prediction": {
+      "inputs": {"main": "prediction"},
+      "required_targets": ["observed_predicted", "prediction_residual", "prediction_error_heatmap", "prediction_calibration"],
+      "advanced_targets": ["truth_prediction_error_uncertainty_panel"],
+      "status": "implemented_runtime_v1",
+      "conditional": ["error heatmap needs group/feature", "probability calibration requires prediction_type=probability"]
+    },
+    "fm.benchmark": {
+      "inputs": {"main": "model_metric"},
+      "required_targets": ["benchmark_scores", "paired_benchmark", "winrate_heatmap", "method_rank"],
+      "advanced_targets": ["benchmark_evidence_panel"],
+      "status": "implemented_runtime_v1"
+    },
+    "development.stage_composition": {
+      "inputs": {"main": "composition_effect"},
+      "required_targets": ["stage_celltype_heatmap", "stage_composition", "abundance_trends"],
+      "advanced_targets": ["developmental_atlas_panel"],
+      "status": "implemented_runtime_v1",
+      "conditional": ["condition is interpreted as supplied developmental stage; stage_order should be explicit when lexical order is inappropriate"]
+    }
+  }
+}
