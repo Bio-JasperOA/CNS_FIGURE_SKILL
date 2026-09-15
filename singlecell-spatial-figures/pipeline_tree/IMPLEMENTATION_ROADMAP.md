@@ -1,120 +1,136 @@
-# Implementation roadmap
+# Implementation roadmap · runtime complete
 
-The registry is a coverage contract, not a claim that every target plot already has a dedicated renderer. Implementation proceeds in phases while keeping major version 3 and FigureSpec 3.0.
+The original implementation roadmap is now complete for the registered pipeline tree. The Skill remains major version **3** and FigureSpec remains **3.0**.
 
-## Priority 1 — core paper pipeline
+## Completion status
 
-These modules should be implemented first because together they cover the dominant figure flow of most scRNA-seq and spatial-transcriptomics studies.
+| Phase | Scope | Status |
+|---|---|---|
+| Priority 1 | core scRNA/ST/development/model pipeline | complete |
+| Priority 2 | common advanced analyses | complete |
+| Priority 3 | perturbation and histology/morphology extensions | complete |
+| Cross-modal | reference mapping, marker, niche and communication validation | complete |
+| Synthetic gallery | all registered executable modules | complete |
 
-1. `scrna.qc`
-2. `scrna.normalization_hvg`
-3. `scrna.integration`
-4. `scrna.clustering`
-5. `scrna.annotation`
-6. `scrna.markers_de`
-7. `scrna.composition_da`
-8. `scrna.trajectory`
-9. `scrna.communication`
-10. `spatial.qc`
-11. `spatial.normalization_embedding`
-12. `spatial.domains`
-13. `spatial.expression`
-14. `spatial.mapping_deconvolution`
-15. `spatial.neighborhood_niche`
-16. `spatial.communication`
-17. `spatial.gradient_trajectory`
-18. `cross_modal.reference_mapping`
-19. `development.stage_composition`
-20. `development.lineage_progression`
-21. `development.spatial_gradient`
-22. `development.virtual_embryo_prediction`
-23. `fm.reconstruction_prediction`
-24. `fm.benchmark`
+Current implementation boundary: **36/36 pipeline modules executable**.
 
-### Priority-1 completion criterion
+## Implemented domains
 
-A module becomes `implemented` only when all of the following exist:
+### scRNA-seq · 13/13
 
-- validated result-table adapter/contract;
-- every `required_plots` target has runnable code;
-- every `advanced_plots` target has runnable code or a documented composite that calls implemented primitives;
-- minimal and advanced synthetic fixtures;
-- PNG/PDF/SVG output checks;
-- stable palette identity when categorical biology is shared across panels;
-- explicit uncertainty/denominator/unit semantics when applicable;
-- no subtitle output;
-- regression tests;
-- a panel example when the module is used in a standard publication figure.
-
-## Priority 2 — common advanced analyses
-
+- `scrna.qc`
+- `scrna.normalization_hvg`
+- `scrna.integration`
+- `scrna.clustering`
+- `scrna.annotation`
+- `scrna.markers_de`
+- `scrna.composition_da`
 - `scrna.pathway_activity`
+- `scrna.trajectory`
 - `scrna.velocity_fate`
+- `scrna.communication`
 - `scrna.regulon_module`
+- `scrna.perturbation_prediction`
+
+### Spatial transcriptomics · 11/11
+
+- `spatial.qc`
+- `spatial.normalization_embedding`
+- `spatial.domains`
+- `spatial.expression`
+- `spatial.mapping_deconvolution`
 - `spatial.svg_autocorrelation`
+- `spatial.neighborhood_niche`
+- `spatial.communication`
+- `spatial.gradient_trajectory`
 - `spatial.multisection`
+- `spatial.histology_morphology`
+
+### Cross-modal · 4/4
+
+- `cross_modal.reference_mapping`
 - `cross_modal.marker_validation`
 - `cross_modal.niche_validation`
 - `cross_modal.communication_validation`
+
+### Development / embryo · 4/4
+
+- `development.stage_composition`
+- `development.lineage_progression`
+- `development.spatial_gradient`
+- `development.virtual_embryo_prediction`
+
+### Foundation-model evaluation · 4/4
+
 - `fm.latent_embedding`
+- `fm.reconstruction_prediction`
+- `fm.benchmark`
 - `fm.ablation_scaling`
 
-These modules should reuse existing primitives wherever scientifically valid, but receive dedicated renderers where the semantics differ. For example, fate probability is not generic continuous expression, and Moran's I is not a generic effect size.
+## Completion criterion used
 
-## Priority 3 — specialized extensions
+A module is considered executable only when:
 
-- `scrna.perturbation_prediction`
-- `spatial.histology_morphology`
+- its reviewed result-table contract exists;
+- it is listed in `IMPLEMENTED_MODULES.json`;
+- `run_pipeline.py` routes it to executable code;
+- it produces at least one required and one advanced scientific view for the deterministic fixture;
+- all declared targets are either generated or explicitly skipped for a documented missing upstream field;
+- figure exports are checked as actual files;
+- no subtitle is rendered;
+- regression tests pass;
+- the full synthetic gallery can render the module in the same CI run.
 
-These require additional input types, image/segmentation handling or experiment-specific semantics and should not block the core single-cell/spatial pipeline.
+## Latest validation
 
-## Implementation pattern
+GitHub Actions complete run:
 
-Each module should evolve toward:
+- architecture: 36 modules / 23 contracts;
+- required assignments: 141;
+- advanced assignments: 107;
+- unique targets: 240;
+- tests: **60 passed**;
+- complete gallery: **36 modules / 286 generated figure records**.
+
+## Architecture after completion
+
+The implementation intentionally keeps a shared runtime rather than creating 36 isolated plotting packages:
 
 ```text
-plots/<domain>/<module>/
-├─ adapter.py          # reviewed upstream result -> canonical table
-├─ minimal.py          # smallest scientifically complete view
-├─ advanced.py         # real additional information layer
-├─ panel.py            # multi-plot publication composition
-├─ schema.json         # module-specific constraints extending RESULT_CONTRACTS
-├─ fixtures/
-│  ├─ example.csv
-│  └─ config.json
-├─ tests/
-│  └─ test_module.py
-└─ references.md       # paper/code design evidence and evidence grade
+reviewed analysis output
+        │
+        ▼
+RESULT_CONTRACTS.json
+        │
+        ▼
+run_pipeline.py
+        │
+        ├── reusable style_gallery primitives
+        ├── pipeline-specific adapters
+        ├── minimal scientific views
+        ├── advanced scientific views
+        └── publication/review panels
+        │
+        ▼
+PNG / PDF / SVG + manifest.json
 ```
 
-The existing `style_gallery` is the reusable primitive layer during migration. New module code should call those primitives when their semantics match instead of cloning plotting code.
+This design keeps figure semantics centralized and prevents copies of near-identical UMAP, heatmap, network and spatial renderers from drifting apart.
 
-## Advanced-figure design rule
+## Maintenance roadmap
 
-An advanced plot must add at least one of:
+Development now shifts from breadth to quality and real-project validation:
 
-- real comparison;
-- uncertainty;
-- paired/matched structure;
-- hierarchy;
-- spatial context or boundary;
-- temporal/lineage structure;
-- transition mass/probability;
-- multi-modal validation;
-- prediction error/uncertainty;
-- evidence linking a summary to underlying observations.
+1. connect real Seurat/Scanpy/CellChat/CellRank/Squidpy/cell2location outputs through thin adapters;
+2. add real-data stress fixtures without committing sensitive or unpublished data;
+3. benchmark large-category legends, dense matrices and multi-section layouts;
+4. add native R parity only when an R backend is actually executed and tested;
+5. expand paper-reference evidence for each advanced target;
+6. promote review-only panel compositions to vector-native panel layouts where scientifically useful;
+7. keep palette identity and numerical normalization stable across multi-panel manuscripts.
 
-It must not qualify as advanced solely because it has more colors, annotations, borders, labels, shadows or decorative insets.
+## Scientific boundary
 
-## Panel implementation order
+“36/36 executable” means every registered analysis node has a runnable visualization route. It does not mean the repository performs the upstream biological/statistical analysis. P-values, confidence intervals, clustering, cell annotations, trajectories, communication inference, deconvolution, neighborhood definitions, image segmentation and prediction uncertainty remain upstream reviewed inputs.
 
-After Priority-1 primitives are stable, build panels in this order:
-
-1. single-cell atlas;
-2. trajectory/development;
-3. spatial atlas;
-4. cell-cell communication;
-5. scRNA + spatial integration;
-6. foundation-model / virtual-embryo evaluation.
-
-Panels may compose existing plots but must not silently rescale, reorder identities, recompute statistics, or change denominators.
+Advanced figures must continue to add real scientific structure—comparison, uncertainty, pairing, hierarchy, spatial context, trajectory, transition, multimodal evidence or prediction error—not decoration.
