@@ -6,6 +6,7 @@ on:
       - '.delivery/style-gallery-v32-26/**'
       - '.github/workflows/style-gallery.yml'
       - '.github/scripts/publish_style_gallery.py'
+      - '.github/scripts/finalize_style_docs.py'
       - 'singlecell-spatial-figures/style_gallery/*.py'
       - 'singlecell-spatial-figures/style_gallery/*.json'
       - 'singlecell-spatial-figures/style_gallery/tests/*.py'
@@ -53,42 +54,12 @@ jobs:
         run: |
           python singlecell-spatial-figures/style_gallery/render.py demo --out singlecell-spatial-figures/style_gallery/examples
           python .github/scripts/publish_style_gallery.py verify
-      - name: Finalize and validate complete publication documents
+      - name: Finalize immutable publication documents
         run: |
-          git restore --source=HEAD -- README.md singlecell-spatial-figures/SKILL.md singlecell-spatial-figures/CAPABILITIES.json singlecell-spatial-figures/QA_REPORT.md
-          python singlecell-spatial-figures/style_gallery/repository_update.py metadata
-          python - <<'PY'
-          from pathlib import Path
-          import hashlib, json, re, subprocess
-          paths = [Path('README.md'), Path('singlecell-spatial-figures/SKILL.md'), Path('singlecell-spatial-figures/QA_REPORT.md')]
-          for path in paths:
-              text = '\n'.join(line.rstrip() for line in path.read_text().splitlines()).rstrip() + '\n'
-              path.write_text(text)
-          path = paths[1]
-          raw = path.read_bytes()
-          text = raw.decode('utf-8')
-          original = subprocess.check_output(['git', 'show', 'HEAD:singlecell-spatial-figures/SKILL.md']).decode('utf-8')
-          def unchanged_body(value):
-              for tag in ('STYLE_GALLERY_V3_1', 'STYLE_GALLERY_V3_2'):
-                  value = re.sub(r'<!-- ' + tag + r':START -->.*?<!-- ' + tag + r':END -->\s*', '', value, flags=re.S)
-              return ' '.join(value.split())
-          print('Final Skill bytes:', len(raw), 'characters:', len(text), 'lines:', len(text.splitlines()))
-          assert unchanged_body(text) == unchanged_body(original), 'Original Skill body not preserved'
-          assert text.startswith('---\nname: singlecell-spatial-figures\n')
-          assert text.count('<!-- STYLE_GALLERY_V3_2:START -->') == 1
-          assert '所有绘图均不显示 subtitle' in text
-          assert '## 1.' in text and '## 10.' in text
-          assert raw.endswith(b'\n') and not raw.endswith(b'\n\n')
-          assert all(line == line.rstrip() for line in text.splitlines())
-          report_path = Path('singlecell-spatial-figures/style_gallery/PUBLISH_REPORT.json')
-          report = json.loads(report_path.read_text())
-          report['publication_documents'] = {str(p): hashlib.sha256(p.read_bytes()).hexdigest() for p in paths}
-          report['original_skill_body_preserved'] = True
-          report_path.write_text(json.dumps(report, indent=2) + '\n')
-          print('Verified complete retained Skill body, frontmatter, v3.2 rules and final document hashes')
-          PY
+          python .github/scripts/finalize_style_docs.py
           python singlecell-spatial-figures/style_gallery/repository_update.py manifest
-          git diff --check -- . ':!singlecell-spatial-figures/SKILL.md'
+          git diff --check
+          git diff --cached --check
       - name: Publish tested sources and generated examples
         run: |
           git config user.name 'github-actions[bot]'
