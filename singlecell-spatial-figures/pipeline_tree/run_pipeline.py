@@ -14,6 +14,8 @@ HERE=Path(__file__).resolve().parent
 if str(HERE) not in sys.path:sys.path.insert(0,str(HERE))
 import runtime as base
 import runtime_tranche2 as t2
+import runtime_tranche3 as t3
+import runtime_foundation as fmrt
 
 EXTRA={
  "scrna.annotation":t2.render_annotation,
@@ -22,6 +24,12 @@ EXTRA={
  "spatial.qc":t2.render_spatial_qc,
  "spatial.domains":t2.render_spatial_domains,
  "spatial.neighborhood_niche":t2.render_spatial_niche,
+ "spatial.communication":t3.render_spatial_communication,
+ "cross_modal.reference_mapping":t3.render_reference_mapping,
+ "cross_modal.marker_validation":t3.render_marker_validation,
+ "development.lineage_progression":t3.render_lineage_progression,
+ "fm.latent_embedding":fmrt.render_latent_embedding,
+ "fm.ablation_scaling":t3.render_ablation_scaling,
 }
 DISPATCH=dict(base.DISPATCH)
 DISPATCH.update(EXTRA)
@@ -49,8 +57,6 @@ def _semantic_adapters(module_id,inputs,cfg):
                     keep=d.feature.astype(str)==str(chosen)
                     d.loc[~keep,["mean","lower","upper"]]=np.nan
                 else:
-                    # Multiple programmes share lineage/time. There is no honest unique
-                    # interval curve until the caller chooses a programme explicitly.
                     d.loc[:,["mean","lower","upper"]]=np.nan
         adapted["main"]=d
     return adapted
@@ -74,7 +80,7 @@ def render_module(module_id:str,inputs:dict[str,pd.DataFrame],config:dict,out:Pa
       "inputs":{k:{"contract":spec["inputs"].get(k),"sha256":base._sha_frame(v),"rows":len(v)} for k,v in inputs.items()},
       "generated":records,"skipped":skipped,
       "vector_rule":"Standalone PDF/SVG outputs are publication candidates; contact-sheet panels are review-only raster assemblies.",
-      "scientific_boundary":"No upstream analysis, significance, interval, lineage, segmentation, niche or uncertainty is inferred by this runtime."
+      "scientific_boundary":"No upstream analysis, significance, interval, lineage, segmentation, niche, posterior uncertainty or latent metric is inferred by this runtime."
     }
     (out/"manifest.json").write_text(json.dumps(manifest,indent=2,ensure_ascii=False)+"\n",encoding="utf-8")
     return manifest
