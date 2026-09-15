@@ -33,7 +33,7 @@ def test_runtime_generates_figures(module_id,tmp_path):
 def test_roadmap_only_module_refuses_runtime(tmp_path):
     table,cfg=fixtures.scrna_qc()
     with pytest.raises(NotImplementedError):
-        runtime.render_module("scrna.annotation",{"main":table},cfg,tmp_path/"x")
+        runtime.render_module("scrna.integration",{"main":table},cfg,tmp_path/"x")
 
 
 def test_real_data_requires_explicit_provenance(tmp_path):
