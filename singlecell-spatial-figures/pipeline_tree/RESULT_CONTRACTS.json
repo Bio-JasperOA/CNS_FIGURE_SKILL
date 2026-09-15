@@ -1,5 +1,5 @@
 {
-  "contract_version": "1.0.0",
+  "contract_version": "1.1.0",
   "global": {
     "provenance_required_for_real_data": true,
     "subtitle_allowed": false,
@@ -21,7 +21,7 @@
     },
     "embedding": {
       "required": ["id", "x", "y"],
-      "optional": ["group", "sample", "batch", "condition", "value", "confidence", "stage", "lineage"],
+      "optional": ["group", "sample", "batch", "condition", "value", "confidence", "stage", "lineage", "parent"],
       "grain": "one row per cell/spot/state point",
       "notes": "Coordinates are treated as reviewed inputs and are not rotated, recomputed or re-embedded by the plotting layer."
     },
@@ -57,13 +57,13 @@
     },
     "spatial_point": {
       "required": ["id", "section", "x", "y"],
-      "optional": ["value", "group", "gene", "sample", "condition", "confidence", "boundary_id", "image_x", "image_y"],
+      "optional": ["value", "group", "gene", "sample", "condition", "confidence", "boundary_id", "image_x", "image_y", "vertices", "n_counts", "n_features", "pct_mito", "in_tissue", "niche", "domain"],
       "grain": "one row per spot/cell/segment coordinate",
-      "notes": "Coordinate unit and aspect ratio must be declared; tissue boundaries are never inferred from scatter geometry unless provided by an upstream segmentation result."
+      "notes": "Coordinate unit and aspect ratio must be declared; tissue boundaries are never inferred from scatter geometry unless provided by an upstream segmentation result. QC metrics, domains and niches are accepted only when supplied upstream."
     },
     "spatial_composition": {
       "required": ["id", "section", "x", "y", "group", "fraction"],
-      "optional": ["sample", "condition", "confidence", "method"],
+      "optional": ["sample", "condition", "confidence", "method", "region"],
       "grain": "one row per spot-group component",
       "notes": "Fractions must sum to one within spatial unit when they represent composition."
     },
