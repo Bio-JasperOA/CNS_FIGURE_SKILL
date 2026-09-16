@@ -1,0 +1,32 @@
+{
+  "version": "3.2.1-editorial",
+  "policy": "Low-saturation, light-background editorial defaults. Legacy palettes remain available through palette_lock or palette_policy=legacy.",
+  "categorical": {
+    "E01": {"name": "Editorial Soft 6", "colors": ["#6F8FA0", "#D79A8B", "#8DAA92", "#D6BC7A", "#9A8CB5", "#C58A9D"]},
+    "E02": {"name": "Modern Bio 8", "colors": ["#68899A", "#D39384", "#82A18A", "#D0B36F", "#9183AD", "#BF8499", "#84AFB8", "#AE967E"]},
+    "E03": {"name": "Soft Atlas 10", "colors": ["#66889A", "#D58F81", "#79A18E", "#D4B46D", "#8D80B0", "#C47F99", "#7FAEBA", "#AD9278", "#95A987", "#B49DBD"]},
+    "E04": {"name": "Neo Editorial 10", "colors": ["#63859B", "#D48D7E", "#75A08C", "#D1B06A", "#8E7FAF", "#C27C96", "#7AAAB7", "#AC8F77", "#91A783", "#AF9AB9"]},
+    "E05": {"name": "Calm Contrast 10", "colors": ["#7896A6", "#DBA095", "#91AD98", "#D9BF82", "#A092B9", "#C98EAA", "#91B8C0", "#B29A84", "#9DAC8E", "#B7A5C2"]},
+    "E06": {"name": "Editorial Accent 12", "colors": ["#66889B", "#D58F80", "#78A08D", "#D2B16B", "#8E80B0", "#C37E98", "#7DAEBA", "#AD9178", "#91A784", "#B09ABC", "#C7AE81", "#8D9FB4"]},
+    "E07": {"name": "Calm Spectrum 12", "colors": ["#708D9C", "#D29A8D", "#88A493", "#CDB47A", "#9789B0", "#C18A9F", "#88B0B9", "#AC9682", "#9CAA8A", "#B19FBE", "#C5AF8D", "#90A3B3"]},
+    "E08": {"name": "Editorial Extended 16", "colors": ["#648699", "#D58E80", "#74A08D", "#D2B16A", "#8C7EAE", "#C37D96", "#7CAAB7", "#AC9078", "#91A783", "#B09ABC", "#C7AE80", "#8B9FB2", "#B88D78", "#7E9A91", "#AE7F84", "#998EA9"]},
+    "E09": {"name": "Editorial Atlas 20", "colors": ["#64879A", "#D58F81", "#74A08D", "#D3B16B", "#8D7FAF", "#C37E97", "#7DABB8", "#AC9078", "#91A783", "#B09ABC", "#C7AF81", "#8C9FB2", "#B98E79", "#7F9A91", "#AF8084", "#998FA9", "#7992A2", "#C99C8B", "#86A79B", "#B3A083"]},
+    "E10": {"name": "Pastel Muted 8", "colors": ["#819BA9", "#D6A79D", "#9DB29F", "#D7C28F", "#ABA0C0", "#CFA3B2", "#9CC0C7", "#B39E8B"]},
+    "E11": {"name": "Warm Cool Editorial 8", "colors": ["#688898", "#D09482", "#81A08E", "#CFB170", "#9182AA", "#BE8296", "#87AFB6", "#AA937D"]},
+    "E12": {"name": "Mist Atlas 12", "colors": ["#7692A2", "#D59E92", "#91AB98", "#D4BC80", "#9A8DB5", "#C58DA3", "#8BB6BF", "#AD9782", "#9BAA8C", "#B29FC0", "#C8B38C", "#91A5B5"]}
+  },
+  "sequential": {
+    "L01": {"name": "Pearl to Blue", "colors": ["#F7F8F7", "#E2ECEF", "#C1D7DE", "#92B6C3", "#668EA0", "#4E7284"]},
+    "L02": {"name": "Cream to Coral", "colors": ["#FBF8F3", "#F1E2D8", "#E7C4B6", "#D99D8C", "#C77D70", "#A9615D"]},
+    "L03": {"name": "Mist to Violet", "colors": ["#F8F7FA", "#E8E3EF", "#D0C7E0", "#B1A0CB", "#907DB3", "#706196"]},
+    "L04": {"name": "Mint to Teal", "colors": ["#F6F9F7", "#E2EFEA", "#C2DDD4", "#97C0B4", "#6D9D90", "#527C72"]},
+    "L05": {"name": "Cream to Ochre", "colors": ["#F9F7F2", "#EEE7D8", "#DFCFB0", "#CCB987", "#B39C66", "#907B55"]},
+    "L06": {"name": "Blush to Rose", "colors": ["#F9F6F7", "#EEDFE3", "#DFBEC8", "#CB98A9", "#B6788E", "#965D76"]}
+  },
+  "diverging": {
+    "V01": {"name": "Blue to Clay", "colors": ["#55798D", "#8EAAB5", "#CFDEE1", "#F7F4EF", "#E6CCC3", "#CE9A8B", "#B87568"]},
+    "V02": {"name": "Teal to Rose", "colors": ["#5E8583", "#99B4AE", "#D6E4DF", "#F7F4F0", "#E7D0D7", "#C99AA8", "#AA7184"]},
+    "V03": {"name": "Slate to Ochre", "colors": ["#6B8090", "#A2B1B7", "#D9E1E2", "#F7F5EF", "#E6D8B8", "#C8AA76", "#A18458"]},
+    "V04": {"name": "Blue to Plum", "colors": ["#657F9A", "#A0B3C6", "#DCE5EB", "#F7F4F6", "#E4D3E0", "#C2A1BA", "#9B7896"]}
+  }
+}
