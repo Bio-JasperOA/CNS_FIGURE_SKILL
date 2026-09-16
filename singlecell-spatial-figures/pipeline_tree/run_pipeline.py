@@ -12,6 +12,8 @@ import pandas as pd
 
 HERE=Path(__file__).resolve().parent
 if str(HERE) not in sys.path:sys.path.insert(0,str(HERE))
+STYLE=HERE.parent/"style_gallery"
+if str(STYLE) not in sys.path:sys.path.insert(0,str(STYLE))
 import runtime as base
 import runtime_tranche2 as t2
 import runtime_tranche3 as t3
@@ -19,6 +21,12 @@ import runtime_tranche4 as t4
 import runtime_tranche5 as t5
 import runtime_final_fixes as fixes
 import runtime_foundation as fmrt
+from modern_palettes import palette as editorial_palette,cmap as editorial_cmap
+
+# Pipeline rendering follows the same low-saturation editorial defaults as the style
+# gallery. Explicit user maps are preserved; palette_lock/palette_policy=legacy opts out.
+base.style_palette=editorial_palette
+base.style_cmap=editorial_cmap
 
 EXTRA={
  "scrna.normalization_hvg":fixes.render_normalization_hvg,
@@ -55,7 +63,7 @@ IMPLEMENTED=json.loads((HERE/"IMPLEMENTED_MODULES.json").read_text(encoding="utf
 
 
 def api_namespace():
-    ns=vars(base).copy();ns["style_palette"]=base.style_palette;ns["style_cmap"]=base.style_cmap;return ns
+    ns=vars(base).copy();ns["style_palette"]=editorial_palette;ns["style_cmap"]=editorial_cmap;return ns
 
 
 def _semantic_adapters(module_id,inputs,cfg):
@@ -79,16 +87,16 @@ def render_module(module_id:str,inputs:dict[str,pd.DataFrame],config:dict,out:Pa
     spec=IMPLEMENTED["modules"].get(module_id)
     if spec is None:raise NotImplementedError(f"{module_id} is not a registered executable module")
     if module_id not in DISPATCH:raise RuntimeError(f"{module_id} is declared executable without a dispatcher")
-    out=base._mkdir(Path(out));cfg=dict(config);cfg.pop("subtitle",None)
+    out=base._mkdir(Path(out));cfg=dict(config);cfg.pop("subtitle",None);cfg.setdefault("palette_policy","modern_editorial")
     for name,contract in spec["inputs"].items():
         if name not in inputs:raise ValueError(f"{module_id}: missing named input {name!r}")
         base._validate_contract(inputs[name],contract)
     inputs=_semantic_adapters(module_id,inputs,cfg)
     if module_id in base.DISPATCH:
-        manifest=base.render_module(module_id,inputs,cfg,out);manifest["runtime_version"]=IMPLEMENTED["runtime_version"]
+        manifest=base.render_module(module_id,inputs,cfg,out);manifest["runtime_version"]=IMPLEMENTED["runtime_version"];manifest["palette_policy"]=cfg["palette_policy"]
         (out/"manifest.json").write_text(json.dumps(manifest,indent=2,ensure_ascii=False)+"\n",encoding="utf-8");return manifest
     records,skipped=EXTRA[module_id](inputs,cfg,out,api_namespace())
-    manifest={"module_id":module_id,"runtime_version":IMPLEMENTED["runtime_version"],"skill_major_version":3,"subtitle_policy":"forbidden","inputs":{k:{"contract":spec["inputs"].get(k),"sha256":base._sha_frame(v),"rows":len(v)} for k,v in inputs.items()},"generated":records,"skipped":skipped,"vector_rule":"Standalone PDF/SVG outputs are publication candidates; contact-sheet panels are review-only raster assemblies.","scientific_boundary":"No upstream analysis, significance, interval, lineage, segmentation, niche, posterior uncertainty or latent metric is inferred by this runtime."}
+    manifest={"module_id":module_id,"runtime_version":IMPLEMENTED["runtime_version"],"skill_major_version":3,"subtitle_policy":"forbidden","palette_policy":cfg["palette_policy"],"inputs":{k:{"contract":spec["inputs"].get(k),"sha256":base._sha_frame(v),"rows":len(v)} for k,v in inputs.items()},"generated":records,"skipped":skipped,"vector_rule":"Standalone PDF/SVG outputs are publication candidates; contact-sheet panels are review-only raster assemblies.","scientific_boundary":"No upstream analysis, significance, interval, lineage, segmentation, niche, posterior uncertainty or latent metric is inferred by this runtime."}
     (out/"manifest.json").write_text(json.dumps(manifest,indent=2,ensure_ascii=False)+"\n",encoding="utf-8");return manifest
 
 
@@ -101,6 +109,6 @@ def load_inputs(items):
 
 
 def main():
-    p=argparse.ArgumentParser(description=__doc__);p.add_argument("--module",required=True,choices=sorted(IMPLEMENTED["modules"]));p.add_argument("--input",action="append",required=True,help="NAME=path.csv; repeat for multi-input modules");p.add_argument("--config",required=True);p.add_argument("--out",required=True);a=p.parse_args();cfg=json.loads(Path(a.config).read_text(encoding="utf-8"));m=render_module(a.module,load_inputs(a.input),cfg,Path(a.out));print(json.dumps({"module":a.module,"generated":len(m["generated"]),"skipped":len(m["skipped"])},indent=2));return 0
+    p=argparse.ArgumentParser(description=__doc__);p.add_argument("--module",required=True,choices=sorted(IMPLEMENTED["modules"]));p.add_argument("--input",action="append",required=True,help="NAME=path.csv; repeat for multi-input modules");p.add_argument("--config",required=True);p.add_argument("--out",required=True);a=p.parse_args();cfg=json.loads(Path(a.config).read_text(encoding="utf-8"));m=render_module(a.module,load_inputs(a.input),cfg,Path(a.out));print(json.dumps({"module":a.module,"generated":len(m["generated"]),"skipped":len(m["skipped"]),"palette_policy":m.get("palette_policy")},indent=2));return 0
 
 if __name__=="__main__":raise SystemExit(main())
