@@ -3,6 +3,23 @@ name: singlecell-spatial-figures
 description: "Render reviewed single-cell and spatial transcriptomics results with explicit visual scales, measured layouts, independent guides, export audits and artifact-bound human review. Use Python's tested v3 pipeline or the explicitly unverified R bridge; do not treat scientific conclusions or journal approval as automated capabilities."
 ---
 
+<!-- STYLE_GALLERY_V3_2:START -->
+## 图形样式执行规则 · v3.2
+
+**所有绘图均不显示 subtitle。** 不将副标题搬成主标题下的另一行说明，也不保留副标题空白。主标题、坐标名称、单位、图例和必要的真实/合成标识是不同概念，不得为删副标题而删掉数值语义。
+
+先读 `style_gallery/examples/README.md` 选择 26 类之一，再读 `style_gallery/DESIGN_GUIDE.md`。同一个 `style_gallery/render.py` 的 minimal/advanced 入口已更新，不另建平行绘图路线。原 FigureSpec schema 3.0、四类 renderer、52 个色卡家族保留。
+
+高级版必须有输入支持的结构性新增：真实条件对照、共索引注释轨道、配对差值、多阶段质量、空间轮廓、给定区间或错误结构。只增加标签/边框不算高级。缺少数据列时不要伪造，必要时退回最简版并解释缺口。图型与对应数据字段见 `style_gallery/catalogue_v32.json`；范例 CSV 只是合成测试，不得代替实验结果。
+
+```bash
+python style_gallery/render.py plot --kind heatmap --input reviewed.csv --config reviewed.json --mode advanced --out results/Fig1
+python -m pytest style_gallery/tests -q
+```
+
+必须检查数值、共同分母、变换与不确定性；高级版如改画配对差值/行比例，轴与图例必须同步改名。每次导出保存输入哈希与语义图层记录。旧版最终 PDF/载体审核仍使用 `scripts/render_v3.py inspect-pdf` / `bind-report`，不把新增 Canvas 检查称为全自动科学审阅。R 仅为共享 Python 引擎的 wrapper，未声明原生 R 等价。
+<!-- STYLE_GALLERY_V3_2:END -->
+
 <!-- PIPELINE_TREE_V3:START -->
 ## Pipeline-first 执行规则 · v3 兼容扩展
 
@@ -22,23 +39,6 @@ python -m pytest pipeline_tree/tests -q
 
 需要开发新模块时用 `pipeline_tree/scaffold_module.py <module_id>` 生成 `adapter/minimal/advanced/panel/schema/tests` 骨架。生成的 `NotImplementedError` 是故意的硬边界；未替换为经过测试的真实绘图实现前，不得把 scaffold 声称为已实现能力。
 <!-- PIPELINE_TREE_V3:END -->
-
-<!-- STYLE_GALLERY_V3_2:START -->
-## 图形样式执行规则 · v3.2
-
-**所有绘图均不显示 subtitle。** 不将副标题搬成主标题下的另一行说明，也不保留副标题空白。主标题、坐标名称、单位、图例和必要的真实/合成标识是不同概念，不得为删副标题而删掉数值语义。
-
-先读 `style_gallery/examples/README.md` 选择 26 类之一，再读 `style_gallery/DESIGN_GUIDE.md`。同一个 `style_gallery/render.py` 的 minimal/advanced 入口已更新，不另建平行绘图路线。原 FigureSpec schema 3.0、四类 renderer、52 个色卡家族保留。
-
-高级版必须有输入支持的结构性新增：真实条件对照、共索引注释轨道、配对差值、多阶段质量、空间轮廓、给定区间或错误结构。只增加标签/边框不算高级。缺少数据列时不要伪造，必要时退回最简版并解释缺口。图型与对应数据字段见 `style_gallery/catalogue_v32.json`；范例 CSV 只是合成测试，不得代替实验结果。
-
-```bash
-python style_gallery/render.py plot --kind heatmap --input reviewed.csv --config reviewed.json --mode advanced --out results/Fig1
-python -m pytest style_gallery/tests -q
-```
-
-必须检查数值、共同分母、变换与不确定性；高级版如改画配对差值/行比例，轴与图例必须同步改名。每次导出保存输入哈希与语义图层记录。旧版最终 PDF/载体审核仍使用 `scripts/render_v3.py inspect-pdf` / `bind-report`，不把新增 Canvas 检查称为全自动科学审阅。R 仅为共享 Python 引擎的 wrapper，未声明原生 R 等价。
-<!-- STYLE_GALLERY_V3_2:END -->
 
 # Single-cell / Spatial Figures · v3
 

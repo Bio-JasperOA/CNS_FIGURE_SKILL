@@ -8,5 +8,6 @@
     "Myeloid": "#67BF5C"
   },
   "coordinate_unit": "µm",
-  "spot_radius": 6.6
+  "spot_radius": 6.6,
+  "palette_policy": "modern_editorial"
 }

@@ -11,5 +11,6 @@
     "Epithelial": "#ED665D"
   },
   "edge_unit": "score",
-  "directed": true
+  "directed": true,
+  "palette_policy": "modern_editorial"
 }

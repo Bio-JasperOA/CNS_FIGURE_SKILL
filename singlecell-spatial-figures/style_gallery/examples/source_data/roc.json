@@ -3,5 +3,6 @@
   "width_mm": 190,
   "height_mm": 135,
   "interval_label": "Supplied illustrative band",
-  "prevalence": 0.25
+  "prevalence": 0.25,
+  "palette_policy": "modern_editorial"
 }

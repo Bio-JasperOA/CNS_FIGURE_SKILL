@@ -11,5 +11,6 @@
   "y_thresholds": [
     1000
   ],
-  "gridsize": 40
+  "gridsize": 40,
+  "palette_policy": "modern_editorial"
 }

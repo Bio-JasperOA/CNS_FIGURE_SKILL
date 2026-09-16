@@ -1,46 +1,25 @@
 {
   "version": "3.2.0",
   "status": "verified_before_generated_commit",
-  "source_commit": "51a990f2126e68aab6c06aede53df6298e49687d",
-  "workflow_url": "https://github.com/Bio-JasperOA/CNS_FIGURE_SKILL/actions/runs/34962995136",
-  "checked_at_utc": "2026-09-15T11:24:49.468430+00:00",
-  "ci_summary": "413 passed, 2 skipped, 12 warnings in 40.65s",
+  "source_commit": "50bb19d7980d49f619d7aefb0a8544d295f59bac",
+  "workflow_url": "https://github.com/Bio-JasperOA/CNS_FIGURE_SKILL/actions/runs/35073957293",
+  "checked_at_utc": "2026-09-16T08:29:43.060313+00:00",
+  "ci_summary": "420 passed, 2 skipped, 12 warnings in 31.28s",
   "chart_families": 26,
   "standalone_figures": 54,
   "paired_pdf_pages": 26,
   "palette_schema_legacy_scripts_unchanged": true,
   "source_archive_sha256": "98cbc446b1daa3c237847a88265c1842e40996a9e519b60f2fa4f751b884b874",
-  "source_sha256": {
-    "singlecell-spatial-figures/style_gallery/.gitignore": "e79ac4fac80a945f071517febab827a9e4a91c9861592225c0f8d8fd14979b73",
-    "singlecell-spatial-figures/style_gallery/DESIGN_GUIDE.md": "d6687c51e886135cf92c901abbf4de4eefbdc4f6128ebbe9b859586b139d3e68",
-    "singlecell-spatial-figures/style_gallery/LOCAL_TEST_REPORT.txt": "4cd3c48db21b6ab590e7d16de1c45036276fed5fa2f4b67ad9298c70e6db2fbf",
-    "singlecell-spatial-figures/style_gallery/QA_REPORT.md": "2dfe00dedfccc808ab05cc54cb5304e66ae84afdf71f720851f8da1c7ac1633e",
-    "singlecell-spatial-figures/style_gallery/README.md": "a57bf71e0e9cb1b386c4939efab809c404202eec771cb89e48bb986250083620",
-    "singlecell-spatial-figures/style_gallery/catalogue.py": "22b9ce965adb5b7878a7c33e527528715cc40490b8339d098b48928991337c64",
-    "singlecell-spatial-figures/style_gallery/catalogue_v32.json": "ce8c29b9627fe96bc214f8443e6cff1ab4a405a65027af47accd58f3b5277b1f",
-    "singlecell-spatial-figures/style_gallery/chart_core.py": "9c469a90c9bc723c164efe884a73f7da8f228895721a050bdf5788a243ec21d0",
-    "singlecell-spatial-figures/style_gallery/chart_types.py": "cfd07f3e52f97a5a0e2fd9399aa5c6a904bb9ade792d19bb2e3ae6fe1947c999",
-    "singlecell-spatial-figures/style_gallery/fixtures.py": "3532a0ad9aa18bec972ea513ab81a0076ac4cc5a756f81b66dcf4d20af96fed9",
-    "singlecell-spatial-figures/style_gallery/palette_snapshots_v32.json": "6a81d7a8cfa937eeee4b5cb85b778bb099e3935c612b4064d0f44d50a53a9024",
-    "singlecell-spatial-figures/style_gallery/publish.py": "9c43817292c1935618d1260e2f353ca461fcd361f67f46f9f5e362625318bfe4",
-    "singlecell-spatial-figures/style_gallery/publish_v32.py": "47856d7970f8648d01cef48d6442e56d74969eb30229caaf2f9a737485366c85",
-    "singlecell-spatial-figures/style_gallery/render.py": "deb179f3f44dd35d87ad9adf115a07aaa05b83679f2168a8c8fbe8d18ba6571a",
-    "singlecell-spatial-figures/style_gallery/render_from_R.R": "53c5a2562118119fedc522148ea42ba2d27e1d933797bbef36aeef68ec3c0168",
-    "singlecell-spatial-figures/style_gallery/repository_update.py": "4cad686be114c3dc76e2af0a9eed83de842e7194ea396c35831d9595cd13dc7b",
-    "singlecell-spatial-figures/style_gallery/requirements-tested.txt": "01663ba1f75b5d5138659fac0be244af0a228aee9b5bf3f70566e5bbcabf195d",
-    "singlecell-spatial-figures/style_gallery/requirements.txt": "9dc9959e1f9b17b65ad5786001cc33ae8c2db4250603276b759713f14cd61069",
-    "singlecell-spatial-figures/style_gallery/tests/test_gallery.py": "5a9a09f039c35bbe668f7c3c9d79b1f095a77a6f4f63a274d41a1885ccca004a",
-    "singlecell-spatial-figures/style_gallery/tests/test_update_metadata.py": "ac03148ddaff6ad5a3f33748b75cea74338620a09c260beb38cc8066393a42c7"
-  },
+  "source_sha256": {},
   "figures": [
     {
       "figure": "embedding_minimal",
       "subtitle_count": 0,
       "outside_canvas": [],
       "outputs": {
-        "png": "0bcf321bfad5f465c0f3f4f0117a9d57cc6673c2fbf1ed6540686cf52034433f",
-        "pdf": "1e802e3c420519709e78a08b709fdc0edde2a2b8cde4ec916c73de39be46f4f3",
-        "svg": "24b361cc9852f319a3d87609dedec1be2538ad34733d9f979fed3de8c498133a"
+        "png": "29d48cb5b1eb5cd7e49d5584bf42c5b5898db38576ce27ed15654a6ce17e652e",
+        "pdf": "aeb10f0216d87047e2cd77602b9aa64629474eb1809865762b57f15fd3ebd9aa",
+        "svg": "146d776cb8daab617ceed017518d29a8b2223ed9c7dadd4368d30946f32f1779"
       }
     },
     {
@@ -48,9 +27,9 @@
       "subtitle_count": 0,
       "outside_canvas": [],
       "outputs": {
-        "png": "05daf28a1e23873c03e48a175d918dade8ee880507d8f597c54ba700b0f57445",
-        "pdf": "a3ea61a0f2f045c678820cfb6b8a4bc78183dd2615bbcbd359b55a23427914da",
-        "svg": "f6e0140fff83782d44c512dc180b118da42eea1258d6b77e770daa7db60e7924"
+        "png": "be3050dd0266cc5e0af4261b07fe570f52dc126edb515fe1630abd3e6de9e263",
+        "pdf": "102a9d1d4c4e091679c0f98471bd83aa2bc860711221308769f22d83aa299639",
+        "svg": "48159db4a0d737d97731dcf278b787a5a2ea3a669a552212a398544013e74fdc"
       }
     },
     {
@@ -58,9 +37,9 @@
       "subtitle_count": 0,
       "outside_canvas": [],
       "outputs": {
-        "png": "0dc401178132be4a840120295e54006977684b62955871dc5f7ba52a6f086e5e",
-        "pdf": "812bb4f87b1909c131ee3bed0b06ac937e6db27d1afa7c814803a437d912cafc",
-        "svg": "a81c1d0a536af252c5e62a28629b8ad9bcf815d409ff9bb829baec98623870d5"
+        "png": "998217f48852f2e99e2cb0586ca8ebf6584adef452fc6a5640824007af1ae6d5",
+        "pdf": "44ece0b19d5c2e042f6d1d3074ad534393e1325d41deace24b5e896e7863471b",
+        "svg": "f99488d70c35f1b131d25b7d6337919abde248c09156ba64bd6e0f378d42c8e1"
       }
     },
     {
@@ -68,9 +47,9 @@
       "subtitle_count": 0,
       "outside_canvas": [],
       "outputs": {
-        "png": "3019a0e2cee073cef4dedd330e938d090c06613f5603b14bca10d2c405705ff2",
-        "pdf": "452a6e4408a16621a0cd3f34f53f3e3e6b5cd4ef7c9bc7ee81955dae4c982573",
-        "svg": "7c9ad39ab31f42a46d6921ac5ad1f4edfd87c1577328b642b7279aa0bef585f6"
+        "png": "75752c8283c8e3ffbd427ee242e34db0096be18bb9e5e0ecd0eb8d925b642c66",
+        "pdf": "2e802c8c748db872fbf8ca0d6fcbc8a62b0e94d191d0955ef3b3f24b00f9abc9",
+        "svg": "58e24ffd7d38abd975b62e9bd8436ccd86274cb26e834c96502446f2ec5edc31"
       }
     },
     {
@@ -78,9 +57,9 @@
       "subtitle_count": 0,
       "outside_canvas": [],
       "outputs": {
-        "png": "22d036e67da94f3436753a85faad20583a729f7525cb69040bcc786846cfb45b",
-        "pdf": "bea281c495fb1598c070587ab56c397d4aa6f5eb55db03f2bd15a0972e761e83",
-        "svg": "b3008808ed3665657521f2be25e373a939dfd424e9fea7b3ccedf53abfa404a8"
+        "png": "d404b2dda0a5de1e2d57e06294c2ebf5db014dc2a9d24370552f431dec1ad93d",
+        "pdf": "ead3e33fb0edb244c3a0c1027250b9032d40c195077e9fcb4d5d89c40346bee8",
+        "svg": "e40d0849c7f5ee7e6793f1f2837dad988355540b348dcf9cc06e0487fdfbb7cd"
       }
     },
     {
@@ -88,9 +67,9 @@
       "subtitle_count": 0,
       "outside_canvas": [],
       "outputs": {
-        "png": "d941fc6f80a6ff0af7f0a1db331f945059e814ce5aa335665af9c91b592ae623",
-        "pdf": "4e876dd66ea1e71a18a14be1773180ca9fdd94d149c90c85ac77be2c3fa7eb91",
-        "svg": "639ee4c3f7deec6baede113043a695f11a66aa347cb1c24fcb6a0bda3d50c637"
+        "png": "cf4bdec310a151d25c81d0be9f03fe5a56b1cd3c784852c84dea78cbd3b6013e",
+        "pdf": "50578074dfa15f2324d771cfa5739c3de39b4ac3a7e0a3182a88af44466df4b5",
+        "svg": "65cf6cbee811e5462157f1d78a19ce2ef7ad6f3396d21ab0c6176ff72f28fb00"
       }
     },
     {
@@ -99,8 +78,8 @@
       "outside_canvas": [],
       "outputs": {
         "png": "a72f739ef297c1ebbd78fe5c91b4342389bd64c943ea6a592651c89ebce7564d",
-        "pdf": "3c09d762e008dd749dcfb4f852bedde6d4e7121a3209fd812acecee7abe4217c",
-        "svg": "ef953734ef6d48c85fe9dc823b03fb8406e50a97fcdd2b713aae987222585d10"
+        "pdf": "c7c55f537881968f34b6961a6e82c21baba0247682f36376e450c4c55fed2533",
+        "svg": "cd4dbfbc8bc28b28b181c0417a103866b5e72267c793a72dbb4fa3926acc9b58"
       }
     },
     {
@@ -108,9 +87,9 @@
       "subtitle_count": 0,
       "outside_canvas": [],
       "outputs": {
-        "png": "fcb4403bbe7eafecaa17fb89df2a7536b6effc25458257afd20373e15d9645bc",
-        "pdf": "f5d6b6b8b262c9fd55ed821d9c994efb6786b05f962aa28f1a9fd0e332f354c7",
-        "svg": "70c3d9fe55883cfa47ba19ec21b882672b1272e2f607b7c0b358324abca45954"
+        "png": "430402e9d44b95ce1ed926d3b68a08dfc637e53a9aee7f0a5bf9514ca82c522b",
+        "pdf": "d45194cee8224054b30a74510adff18a057116d793d8946766939078337288eb",
+        "svg": "a2b58190b93f54764780e2698be6a9c334cb99e77faea01500696cb28c6612a1"
       }
     },
     {
@@ -118,9 +97,9 @@
       "subtitle_count": 0,
       "outside_canvas": [],
       "outputs": {
-        "png": "6aff83feb67b7524c5a2dd2fd6af593d15b1944c77556751e05ff60d6b690f12",
-        "pdf": "66e89961b0d65c53816fe4a527dd7ce3706bfee02e6bd30bb98f26081c07e131",
-        "svg": "5ca808eee53d61370217f44a495da33852be219b8dd214bc2fdb0456b4f2a187"
+        "png": "c4fb13a8fb007978b8db0cc73ffdd53ebba507e285afcd996ec8f1b72b27e325",
+        "pdf": "743c4a680e7101d3cd12620dfd3513d9f124bb79907c797aa620b884be47b8a6",
+        "svg": "c66823617e2364bd862ac2bd7a841e01b847e23ec5a4e193fa89f6df24243b73"
       }
     },
     {
@@ -128,9 +107,9 @@
       "subtitle_count": 0,
       "outside_canvas": [],
       "outputs": {
-        "png": "db69c66df26eed02bb5e9d62fa0d4d7d7dde42502f19c0971d957c9a348a01a6",
-        "pdf": "2bddeb73252b966503cd0e5204a4bf3c3ccb07e966b77ab51116229bc2f3e113",
-        "svg": "b7fc0bf445c95a4d2ba5af28e806c37c83414f943eafe7f9eb4f64efe6a2ef6b"
+        "png": "a731879f8b9b73b219c3da320421d381034b1bccd69b957efa1870bd6bc6385e",
+        "pdf": "c4fd4f4c45bc3e2af65fdf6cd12858616faec212142cfd4d567ea355b96c5e66",
+        "svg": "6c2cd7dd4d60dc58860e25988e02c88ddbb8b8c11edb67885e79bcda7547b048"
       }
     },
     {
@@ -138,9 +117,9 @@
       "subtitle_count": 0,
       "outside_canvas": [],
       "outputs": {
-        "png": "a937820c051f245d644942eb6bd78d1cfcffb00155666ebda98a0b66dcb8e3ea",
-        "pdf": "cf92c21e78b68d5b0ab19acc9caf01bd5d825a0fc607bfc6254da9ee10ec562f",
-        "svg": "166d3a28f05e26ee11f3be721c45a9d509bd8a318e473ee923495ad6bec5be63"
+        "png": "5d94a5c2f8457c66fd1f4ca47abc3022998a79e582fd8fc0d8adc4fac65e6b02",
+        "pdf": "7048b51bab913b160a61c37b91f5178f05fca79fa2f2ff2ed659c1717a43db62",
+        "svg": "37925faae04e5e9fc63e4c71ae70c551ac2c8e57b9d6da4bd2572273aed841c9"
       }
     },
     {
@@ -148,9 +127,9 @@
       "subtitle_count": 0,
       "outside_canvas": [],
       "outputs": {
-        "png": "f324be61617095ba12e2ef6f37af8d8b53bed3ab7a0f7631e4b9046cacb4583e",
-        "pdf": "7a179dd353b9806389eaf8c6b7217dcea3338bfc610f67cd072c8bc39678ce89",
-        "svg": "19ee6fe299e666d0ab31774b15f25785d6c4718d9b271e311f27116acbe0787a"
+        "png": "16023db63af69c1f143556b7bcd3eddf9ee795782537ce23318e69a3d60785c0",
+        "pdf": "b021537cbef8cf22d8d091d1d674d9cdee1288d6ae1e69f918f0cad9f6831742",
+        "svg": "6b8f4967de01eb8e0ebc31cf35ab06b81d0f53bc59202757a768a949cf0b4585"
       }
     },
     {
@@ -158,9 +137,9 @@
       "subtitle_count": 0,
       "outside_canvas": [],
       "outputs": {
-        "png": "d1e0f0a0e94c755484ca63fa57eab8d35ced70f095a301b697589839d9afef29",
-        "pdf": "4c634cf0497adc7fd7749fec22ed830ddc48fc06d913b25616cb85a1980a8c63",
-        "svg": "4e37b645aeb37ae5439e43db3d20b568a0e0d92720ffb8b44b9754b3aeda2b57"
+        "png": "6e24986978cb0a095d2e15c1acec260a83bcb8c1d45de385765f078a4381d4cf",
+        "pdf": "a16ba59d48c4c627913c43efff91042c2f7965d8088ea09271763d1c6542049c",
+        "svg": "2115a22981e544ef4984f14146beeb45ebbed6b4a3f6cfedf3f59cb3a015d9bc"
       }
     },
     {
@@ -168,9 +147,9 @@
       "subtitle_count": 0,
       "outside_canvas": [],
       "outputs": {
-        "png": "0708b3ce45a13459bb71a70789a7c31f4b3a2a65a7f3c7e1c86e5a1811d4eff9",
-        "pdf": "f30a7c4c3e86d3abbd92ac31b21a201e7cdb5ee0209973f7999406e69afadeff",
-        "svg": "ae54a5d273995cc028f859e2c76cb3d1892080cc1f728333350262d061e4b569"
+        "png": "7ad2109094896667cb3c8c62d50419bc1ed5eda033cbf7e02ca7a15a8d9ff67c",
+        "pdf": "ea7483efedd89d6f365ceda4c2358d4f3a0805452e8eb31798a12c5c9c789acb",
+        "svg": "01c03f0405e34c5202baac033d2d249e495f8c3d4c45e8b4b3379d7fec725ec9"
       }
     },
     {
@@ -179,8 +158,8 @@
       "outside_canvas": [],
       "outputs": {
         "png": "bb142a6908615a9d43d15f6e86ddf78063d742a4099ad936bf8ad9b2c5247689",
-        "pdf": "bd74f34a029b435b24ed5aade2f390489ec7c610b1742de2ff1a1c8049daa6db",
-        "svg": "9e964720bd034794b24a7b80b68f994c2bae91fbfebd9f0fc0bc9e85e430f8b7"
+        "pdf": "b5b42a45cae9490395d3b568abd1fbc886333251acea213602350ec15757f6d8",
+        "svg": "6193cda3807f24c8f26e495775ba1ab4a8a9638323dc3893a64b974482ffd466"
       }
     },
     {
@@ -189,8 +168,8 @@
       "outside_canvas": [],
       "outputs": {
         "png": "e122a184c462b5c98864ae39c0c7a2574d80d6bd899190a00018598ac78f560b",
-        "pdf": "70d9d7881d04ab46c7350d350775eafe43d7dbb64d166aa485c7b64271a901dd",
-        "svg": "d6a0a5882ed2e291201b3126dc58135a822f0f4c90419634b9e7712332abbf5f"
+        "pdf": "5ee1014738ee3750a9d7136b8dc9e1e5ed4d4d053706174f6f09364e18cd20b5",
+        "svg": "40116873d5ac3f3a2fa7a4d7a931c289187cd35b1e3626b6a6dcceafed66bf82"
       }
     },
     {
@@ -198,9 +177,9 @@
       "subtitle_count": 0,
       "outside_canvas": [],
       "outputs": {
-        "png": "4a9985a227c7de9d47f8a77da2b65991cb1fa598c1d33fb0fed112e3c8ac76dc",
-        "pdf": "a91419a7b1fd72e9a04f97247f11784420f9ac5860f883044c9561f12737b769",
-        "svg": "eefbdb64613d7c7cd7eb19d526c5fe32e827e546c0b6ad70f2182e1c57057b80"
+        "png": "c74998c1e2ce1de7834e45808a83ebb4b8d22e54f776a982a9dfb20c92455931",
+        "pdf": "5096e49f4f17637477b10c3f2e748193916abc04dc639923116cb7d248752e1c",
+        "svg": "ebadb54797016700672ec4c51f56debb0ab0998b5fad58e2c870d46d445958c7"
       }
     },
     {
@@ -208,9 +187,9 @@
       "subtitle_count": 0,
       "outside_canvas": [],
       "outputs": {
-        "png": "e8f3c01fbb223ab68463da4a85353787c086d393d7b0f61bb6a736f7c089eb3a",
-        "pdf": "89bcd4a6311fdb7384a70a49e165c007d423110d6fb5b2843d9f8abb02cbaff2",
-        "svg": "646a4377bdb662834cc7d172049e38a0c3f48f4bca3a0b606a2dd643f003b84a"
+        "png": "c8b44cd72ecbe5ee952a8e739499b97b6334d994aafa06026c14bbc02738ecb9",
+        "pdf": "6dad65446fedaf5c499405b87cce12bd9b6a88ab1337e4f05d60c68d5e93a86b",
+        "svg": "29f136ed51749f2f6668c559230c93b1d5c489b3197fd4bd1ca37541e3d9c084"
       }
     },
     {
@@ -218,9 +197,9 @@
       "subtitle_count": 0,
       "outside_canvas": [],
       "outputs": {
-        "png": "70be2383b97a7ef1b754e2621d1f5cad888062caed9f7fe7c9872f3f1387c546",
-        "pdf": "8810e9a72576b530e3a120da1ef00c082c572ebde7785cc065e8255508408526",
-        "svg": "b185b0cf91068b034efa35ef78115d8cff9babe6092aa16c2c13d81a252fbb18"
+        "png": "ad6e60cdf23a38e30b0a8b577b9eb6bbfd3de68f16b38d88c9ca3e812c66ba15",
+        "pdf": "1ea32158850ca22145a4f1bec59a27ff13f550ecf26114318bbc59626816d5e9",
+        "svg": "72d5ca03a3d2c7d857db097a3049033558b7bb41fd4a56e1498362cf2359f109"
       }
     },
     {
@@ -228,9 +207,9 @@
       "subtitle_count": 0,
       "outside_canvas": [],
       "outputs": {
-        "png": "3ef69456adf765d346e6fd57480aabb54dd6afe49c9996d86187ce3ae8f038e2",
-        "pdf": "cea49edee978a30bd9634447b07211089b22ab4f48e9c50456480e652911f683",
-        "svg": "7db1f2fedff3d13af6b2a7b26bbd9e905bcbad76b94ae4188565276f326b9636"
+        "png": "66f81dccc5d8a4515a59edf2983745ae7d245e6bffe2b85150858412ab27b533",
+        "pdf": "320eb82f74085ad5d74b027636b07a2cb8beee54e4c85593cfc0641b61cb533f",
+        "svg": "efab16a189e1211312240ab69e64b547a5976f55a8cc4aab5ee57757153ae572"
       }
     },
     {
@@ -238,9 +217,9 @@
       "subtitle_count": 0,
       "outside_canvas": [],
       "outputs": {
-        "png": "b2c2121b05fa8a8fac8086c5df79556bf7f81ba8f3f0baa90d0949ada7eff3cf",
-        "pdf": "e67c563c5cfd312b2ac2c39d6065fc7e5060ce4513a146025be923812a28590c",
-        "svg": "bfe374f005ef1c2ebaacc7c36b0475773980802245ea337f27418369c3b23760"
+        "png": "83182112f26b584287444ed4d1b51b2c0d5968b0720437f17fbc6d969e649967",
+        "pdf": "9d2345ef61f0d0e18eb3af9bf9ed70e84364f77a6374444ca128ce1bf86ac009",
+        "svg": "6d5079704e77c8081d2c40fcd54698fb5920865cc18faf5422d42c60faa72ea9"
       }
     },
     {
@@ -248,9 +227,9 @@
       "subtitle_count": 0,
       "outside_canvas": [],
       "outputs": {
-        "png": "321dae9b03689c62e8931b0395d3ed945924f80e15710529a2cb0bad11fd85cd",
-        "pdf": "acd5e6998713416cf41df78e6dfb3c8412a797d98d3db7a8aa70a8583f79e127",
-        "svg": "16062c803ff5ef1b5ab9f60117c94e495f3b11bca9af57fba85a515e5615617d"
+        "png": "0944203f73d14c2e6fc2b23a4069f0b92cc12d0532de0ec1baa9d7b49e4c8766",
+        "pdf": "2cfea09dfaa1867dffed1fa3f6f2980fc8a38299e96eea3268ebdaf3daae0831",
+        "svg": "cb16729aeefa8bb61e10b14c8bfae323726a326176797536d20fc3f6908517d2"
       }
     },
     {
@@ -258,9 +237,9 @@
       "subtitle_count": 0,
       "outside_canvas": [],
       "outputs": {
-        "png": "49221636ed97b922bd5af4057a98c406d6778354381282783ff3b9f616882a21",
-        "pdf": "a9ad641605c9c90f31f69cf4bf0ab542a915d1225290f3d27bccd9c0a2305114",
-        "svg": "05a7c1576cf57fc5e2d2168d286a978c4601569f4b4c4ea539b8478f6ca71652"
+        "png": "0d996c07a42bb8e724168cdbee133cf24745bd66fd15d3ab071fc53164691254",
+        "pdf": "beb56685ec1af156baa200304ac3647bbc6f45d175a1eb395b9f8fa5b797cfcb",
+        "svg": "888f61d2e63f6936c46fcc5f1dc92c8fb184dc7d989aa2101e35a334de13c415"
       }
     },
     {
@@ -268,9 +247,9 @@
       "subtitle_count": 0,
       "outside_canvas": [],
       "outputs": {
-        "png": "fc2f724545394cc6c8760575f9e84d5199ea1530c814542e8de5d07cf1bca6e6",
-        "pdf": "eabf0d7728afff5e7179d7d25baca76d9b52b9b02cb2be7513db34b4e61c6080",
-        "svg": "8a070575e0eef5be56ee8ff8e89e568c977c7584449cb9cc9fe1a8f7624bbd3c"
+        "png": "25693e265f9049fed0024ffcba5dfbe4db1de3cc7d2ea3195c6c27ac3d362afd",
+        "pdf": "9d891bb25426e632b447bf605a18c987815abac75d45d6d4a683b00f3ceb702a",
+        "svg": "15b7c1bf3aec00c48af2298523a3e5a7d25a060b91b9470936b224ee40d90ee4"
       }
     },
     {
@@ -278,9 +257,9 @@
       "subtitle_count": 0,
       "outside_canvas": [],
       "outputs": {
-        "png": "10c1e9dd264a61a4b02aeafb9115189e143c1bc1fcd60775e7c9c84f27bad311",
-        "pdf": "2dc6dcf91fb6c7743e29243d9cbc2859b33ffb8e60c47b947589d8fbeb519563",
-        "svg": "bf6b4cf4746f01be49b1776a43eb8408d9e79b2cd729507533e4f3ff24741210"
+        "png": "74bc126688a20a798052f7698e807fd4dc399f4b8f1fc3559935c72326d27655",
+        "pdf": "ef246c19230259c4dd7bb4859580db73c44402da59dba8828f7424f38ea3efe2",
+        "svg": "8bdc24d47f617b307924a48b895f18fdd18863f843581827515bcd4c7f1ddfe6"
       }
     },
     {
@@ -289,8 +268,8 @@
       "outside_canvas": [],
       "outputs": {
         "png": "c5bec08bd4d1eb8095228a4d6fdaa36d5fcce4fbaa25c2839a913e36d1f82cb6",
-        "pdf": "86c059419cdf58570e26d6b73cfdabe85e5fb980a7a9e19c80078427b902a67a",
-        "svg": "0cc1436f6fbeb6c5a48273c2f4d60c66e0b37a7f7663a3df51ba0c9b0c22e082"
+        "pdf": "e0adaa2e58d3626b92565139c0121d604d4d918059ea3ff8da6265b98d35dbdb",
+        "svg": "58a98e0602b93209e9f83ff9c084474b5dc0fb6bbfb4d49eef17c128a089d4e2"
       }
     },
     {
@@ -299,8 +278,8 @@
       "outside_canvas": [],
       "outputs": {
         "png": "cf7e0d5d708a8be5175d54b4613bca6798c54de4a6d27b732d91d278d9a254a4",
-        "pdf": "9080f0c66b0f49949848d7e005f05821f86e69b9e5e7ac6967611d8647d02035",
-        "svg": "d4208f116346bf8b43a157bdafb790819422b0df660f35b49e76b3c2cdd41126"
+        "pdf": "709756401038f5b2081413073dd5d33a804aeb0cd976c25760e3d4ccd340450b",
+        "svg": "2ab8e6893a1a3d392923e2f07a7fe14bc2467fbac811f1cef933af67805cee71"
       }
     },
     {
@@ -309,8 +288,8 @@
       "outside_canvas": [],
       "outputs": {
         "png": "9da7a0b10a03b52e8e5ed27a4dae0cf793096750089dcaa95bb0c3ee92195f08",
-        "pdf": "95d9df3f670227f18369a0273a3c3c583e8f8bf66402b5b8f40d4c5f00cc79fa",
-        "svg": "77797abfef2449890575c1fa21d9f0703da62370dbc733089043a8a5013ef9ff"
+        "pdf": "aec8f09ff8da3764a4ba5f906171449f11ea041a08e28b04823b2acc9fcb65dd",
+        "svg": "68407418682369d9707d48db071840adbb66766f25c308b20a2a0bb6d4cf15a0"
       }
     },
     {
@@ -319,8 +298,8 @@
       "outside_canvas": [],
       "outputs": {
         "png": "4082c672969bc07b817aa8c8dce64dfa077fad22420ab314380d737b7c79ca4d",
-        "pdf": "8c6457fb5995c7a33dd5f6ea9622a5dac69a0bfe07cd24dad6248296f34e9024",
-        "svg": "631114280bca7f3e8ef80ef30ab48d770ce2bcb124ef176209c53c2815bf7a42"
+        "pdf": "25740f21126d18b3cd1c46f822314be01e1806e8562d459aced21430a5ebb6da",
+        "svg": "031f7210279c9cedfdf06eb63b2a6f88e6f183113cf0cc0e8be87b71870d7910"
       }
     },
     {
@@ -329,8 +308,8 @@
       "outside_canvas": [],
       "outputs": {
         "png": "66fa631093f05a15acc3922a1daea745ec351ac5c18e577c82db11bf2c84a7a7",
-        "pdf": "0758b5ea8eefcac662f61a88e674c460daa1023f391c073be1af56f6bc2827b2",
-        "svg": "b0aa4e217b608c2e4f2d78a0a77cc133d0760ca75986ea76a6aa29e5475947d3"
+        "pdf": "95233d2d364583f902d1aabf3692be41a59e7014a5f5eced28d8de1751d66bfe",
+        "svg": "538c2feb7bd0a9ff9fb2469d233b9da123cc880e256b8a9c8267086fcb1b657f"
       }
     },
     {
@@ -339,8 +318,8 @@
       "outside_canvas": [],
       "outputs": {
         "png": "c62409b34d5ed9636c8037131483b765596b49e367cf3ea0c0cbfb1bdc0bf18d",
-        "pdf": "62e99c8ceaa80244681f0e4524cd6227b3146034efd5eca9bf25c94b04004e29",
-        "svg": "2e20176f215d0b4b93384f2b00b9a598b207a1cd4dbdcd58a8dd9411a7506176"
+        "pdf": "cf250491b52d4a2e95551eb57858caa8d1cf9b7d80b49e8066c29bac9fec9cf4",
+        "svg": "d36ed7a0762d13018040de105fc37c4480ef01babe632da71ab35956eb7881a2"
       }
     },
     {
@@ -348,9 +327,9 @@
       "subtitle_count": 0,
       "outside_canvas": [],
       "outputs": {
-        "png": "f6ccc0249cbc91e196961cba65319357ca7b0db10f040913bdb660ae44277967",
-        "pdf": "a6660e725656b5d0eceed1b7bbfc873d822f0bb41be09e170f47cdaf21a820ac",
-        "svg": "249b628759f7bc4426f3e6fc3a1ba2018961c6fecb525f8ad8c9ed3e4b805857"
+        "png": "7507bf0e600661395f6df429a6cfff78455396ff539ee96ed174036ec25a8df2",
+        "pdf": "e8e85920907379f10a9afe344de0b66a9a3e2907d15badce3e861e70cdaba474",
+        "svg": "023b150c62b32a6b7ddb5b46f483f8c5eeffadae67f1edff62c8ba62454ac60c"
       }
     },
     {
@@ -358,9 +337,9 @@
       "subtitle_count": 0,
       "outside_canvas": [],
       "outputs": {
-        "png": "3e4be901cd2ac7ebd09e29656b306633f47db808dfc01ad1d83136e97a73dd30",
-        "pdf": "bb0f00b7b4baf357a26c48062f920ab55653faf6c0330066a0a16e1b8ac86e5e",
-        "svg": "521dd53462179527d1edc8b2b8bb892323f9a47a432f6df31be53101b70a7838"
+        "png": "8e9a395f8964a9e3a2a2341c682670be217b64dba55535dc5ef7fda326b6b025",
+        "pdf": "75e419befa9a96f4f828539ea2988dbf0a75ea9f24ad6f031f2c597f1f210a49",
+        "svg": "96f0b24ce4fdc38bd56cf2c318c9eb4de6e8e75300526989cef62cbbf3650d03"
       }
     },
     {
@@ -368,9 +347,9 @@
       "subtitle_count": 0,
       "outside_canvas": [],
       "outputs": {
-        "png": "e2b5416c3197eccc179222efa7e9d0b94ecbe29cfc6fe93d8127401264fee94f",
-        "pdf": "79e8ec76197467854a644e0b26550b3523ede9364fbd68b8cdc059055685607d",
-        "svg": "695fa6d9b6e3fc6f7e34a6138094886cf9f75567015c758d9fd86087c8ee20da"
+        "png": "c39bc43a67d8f690430244fcd6089320a0aa136198c202e60e18bef8a1056204",
+        "pdf": "71ad429ef5a4019be859085fa51cc07d1d3d702c26873e188846166f62aa057c",
+        "svg": "aac1929c2c16ea419307353279b5fe793dd0a9458488557c3cbca05b6f883f7e"
       }
     },
     {
@@ -378,9 +357,9 @@
       "subtitle_count": 0,
       "outside_canvas": [],
       "outputs": {
-        "png": "1dbdc1bfe93a8db1234e4eafe4a99214aadcc13deabaf3687043cca24c0348bf",
-        "pdf": "8d45ff534bb7e3fabd35a4d4528cb4c24aa8d3a8ee3bc1d045a49bed84b956d5",
-        "svg": "559eb285a6769ef9cbc19a756fe30e19eb927238509d028fbd0e8760560c5b1d"
+        "png": "32948703bf33bd80337415e45624a548b4328ff17daefbca3c5f44377e242a4d",
+        "pdf": "ea3de1a861beb044dfb79ef4ea5dd98e52e446aac4e5c09505d1c4eaa4f2d040",
+        "svg": "a947edd2f2a8d6a331a2be01bfd4690f0d2718b0068635917cc62988a244f640"
       }
     },
     {
@@ -388,9 +367,9 @@
       "subtitle_count": 0,
       "outside_canvas": [],
       "outputs": {
-        "png": "fc815d0b18c41074317916b8e2b87137cd47487491eef1c48e130a1905875ff9",
-        "pdf": "c8749db5c36c07e3e1bbfdb5d7598602c02a2083b8721503dafb781bf1236252",
-        "svg": "1ab024c1aba1521f6beb35a8a40c86a35cfd67554667714300a8611801062799"
+        "png": "9c6a7220f361d35f79c2087dc3ae7ca5fb4c23ef7485d6e239ceef19e8142e8f",
+        "pdf": "4f46a04d6b93a0368dd96a007faf1838affd9036957ad73bfb49bf04d4fca73c",
+        "svg": "092e6c5573afda57650a486679af85adb7a2c038bbd2652d9f8de865bbb37873"
       }
     },
     {
@@ -399,8 +378,8 @@
       "outside_canvas": [],
       "outputs": {
         "png": "88157a0cbf23de9902d05ad9e5f62c3855aecc1ba21f06393477d2653df2c63b",
-        "pdf": "4821aa62673ad04a65361a1c3ada9c2d018e5ca18a67b5fdca3ed2270b0cd9d8",
-        "svg": "b24af6e8ad4880d8b0dcd35594d67ffbd72108356d14439b9c03f9be3a062ee9"
+        "pdf": "c04a530d6322a8406ab0c366edfd5aa9a0fbe7fc413031c2a3979e92370716da",
+        "svg": "52b7677eacb6f5dc6ad0cb6826459846e413423d21340abab43b7da74febd564"
       }
     },
     {
@@ -408,9 +387,9 @@
       "subtitle_count": 0,
       "outside_canvas": [],
       "outputs": {
-        "png": "b89947d60c3683233a754998cd8f97e5a4477ae4f0a6fb90fbd2fd67b6237dea",
-        "pdf": "d68a266ddc8141fe2681ceaa885711a877a09ed6e5e02224b32387e05e6ee74a",
-        "svg": "d3f3874bf93b09de92260f6e649ad93dbf228ce4c76b922737264bbf1fcfd0d8"
+        "png": "03132e6b93e0c0826fa41133868a0073a7fd4859b194d5277c4cfac12ddad568",
+        "pdf": "4f4bac5d28cad663dd0b7d26ce545781509c21ee4627768f25cad54217472e90",
+        "svg": "2ffc388791e3880247b95b81a6f8d209a34ba508f91398abbcd8ff554c2fed31"
       }
     },
     {
@@ -418,9 +397,9 @@
       "subtitle_count": 0,
       "outside_canvas": [],
       "outputs": {
-        "png": "231601626aef512d8804d8cd82a8b228163dd1a438dd7b0880ad12776a9c5149",
-        "pdf": "153c3a4f640e3d896719d65e1d05400058c70cc69a1cd569bec46e179639e2c1",
-        "svg": "15d58cfd71c1c649c46d76f8d60d77c6b4e0e0c405b9d40c56f98372350cf8f9"
+        "png": "c238c39dc17b9c98fcd6b2da46d37b96b56f6f282ef006384c639ef988f84425",
+        "pdf": "eb691d956255d407b3fbe15e7f19ada56374f00f03fd53b3688a6e2c531cf347",
+        "svg": "bc2def5a8c1ad7658f3bb909cee00712fa597162515e37cb759d60bee74e60ca"
       }
     },
     {
@@ -428,9 +407,9 @@
       "subtitle_count": 0,
       "outside_canvas": [],
       "outputs": {
-        "png": "9fc793ace25ff3cec802d1ac07da6fea5a57b1cf130e106144d397fb13cb511c",
-        "pdf": "2c60d2b1a07c6b6830f544b3c6b24e02680ea76c51426799095535ded6f97111",
-        "svg": "c1e5e0c13ecbc4ded14644dc846f9821462868cde1f07717fdcb43c168887c19"
+        "png": "f45cc957250c9199ac0e49c7b7b251c5de8aa93fec0cc990ac727d88c30c34e4",
+        "pdf": "b9253c39a59b16ccfd260172da6c214cfc51c7f8d7cadba0cc10004c6584bf4c",
+        "svg": "242b7b1e9b654645bf805552dea32ed023fc404680a666f197ea8ce7f0adf726"
       }
     },
     {
@@ -438,9 +417,9 @@
       "subtitle_count": 0,
       "outside_canvas": [],
       "outputs": {
-        "png": "bc6bf2071ac897665181eaba166abed08457e0c3b3ab1538ea024a06d97476ab",
-        "pdf": "a0b3a2ac43e85f050ddc0cf8d8670f465ceb98624d219b5765c3ba630f786639",
-        "svg": "bce22ab6b9d00e6556a38f835fa93fc7ed805db30fb927f55acdb396f834c49b"
+        "png": "d561be88261dd42f5df55a95efca2cefac4d1e44a1495783e4ce1ae0250c9008",
+        "pdf": "b5124a4052f6512b1016fed730e16efaa0a8fbe7b2f66489692448d442b72789",
+        "svg": "e24075e37380b9e7f126865f3e3ef109f965312758ec7c4aaa990216a3630bf3"
       }
     },
     {
@@ -448,9 +427,9 @@
       "subtitle_count": 0,
       "outside_canvas": [],
       "outputs": {
-        "png": "1430c2a344e4e76ea66436646ec654450551364b46e5a1261bae8d0663e21988",
-        "pdf": "24c60632f3a26644343aed5786e92ed147abb434856a95ea1042d36f5ed61326",
-        "svg": "5ecfd022bd15f6bd7e79aebc62093782e894dba631a0ce9474501e49b04b35cf"
+        "png": "c8c15d8a7a57e4db8110d5e541cdfabbc038ffc00c5d9ca3ee873b017a0a41b0",
+        "pdf": "40d842d394ff92be463380a27c9521138f810abf7daab95a3884bb978b2b2236",
+        "svg": "adcc5c9bedbdf7303cbd583c03fbd9819f1bd4910660f2697e9a0aa21a2579bc"
       }
     },
     {
@@ -458,9 +437,9 @@
       "subtitle_count": 0,
       "outside_canvas": [],
       "outputs": {
-        "png": "ef641c106a4a14b4413a00f8a4acf74dc8c0d85e470c04975ae9bfbae637ca92",
-        "pdf": "ad51a2f15f0e37be6dde88b56e28c900bb1c2d737ee375860a51e4739c6f8f42",
-        "svg": "a7ec29b8876bd3c740e3821016d3c8d48409f2163e67eefe0b9a32fce5ca161b"
+        "png": "35aa17374c5114c1ec4840ac3fa4b42c246bcfdff9c82d762d8b2cbac1adb44d",
+        "pdf": "825e1dc6018deea951c53ef1d6322be4a63a52ea593a89dbea3bd211e1570f4a",
+        "svg": "8bd81895cd2a6a4b34250a8bdf77f916e7a7a83c306b311444360ede318a3007"
       }
     },
     {
@@ -468,9 +447,9 @@
       "subtitle_count": 0,
       "outside_canvas": [],
       "outputs": {
-        "png": "5a6663ec01444f7a43d82b85ac195c695e7730dc181c530ee8cf84a586ca7f89",
-        "pdf": "17597cd7a720b90f5ef09bdfb195faa001bc3e0296d7778fa068a1a45978e0fb",
-        "svg": "d539eae0d9feced69087b3421249efe39661ac3f1b7c01666b912b298afe5e6a"
+        "png": "f5b9eb9b5c82a4bd22f1f3d7fce5a24395a4be40c82c6ec8249b57eaf666076e",
+        "pdf": "fcc7e6780b7067f385b9827bf5f98f2774ab52c08c49c39cd8a785a3de7f17bf",
+        "svg": "ce7a974c226f2815a605021922bd5f068650d31688deae32280f3e45eb947d2a"
       }
     },
     {
@@ -479,8 +458,8 @@
       "outside_canvas": [],
       "outputs": {
         "png": "a7fd3b1cccdce918612e95ec5c270e9b70b1a9b840cf0e077c550c14120cb9d4",
-        "pdf": "7d9a042fbd6e056f8c20378ec55513c48784415bd5d904633e8296d740da382b",
-        "svg": "672f0de8d1481612252d35e6b679d0f8a6147382822ceb20e91858566efd7484"
+        "pdf": "1aefe597e67c24a3a701ec103cfe4bd6cd60fbbeda9f6e8c62d145c172fd9338",
+        "svg": "2e71f4bcab8e1850cd5c54e5aa123ccc4638ba9fa2fe6c2ce69891c8b2eccf7f"
       }
     },
     {
@@ -489,8 +468,8 @@
       "outside_canvas": [],
       "outputs": {
         "png": "6aeb37c787ed50b369538e937da49960e1de00644e8c39472f5d7193506b84b7",
-        "pdf": "56aec3cc8901f78ff89a5f75269c12fc88d0e98f227054e7b87c972a0b368252",
-        "svg": "691bf4d544a7e5c95f0cd8f08fd8173b5288482b747eb740a44d276cbed72662"
+        "pdf": "83fe327bac034fe60c0434deb96e57dc7f7ff74f0589c0ef8c6ce575c0470c23",
+        "svg": "a95dcb90e62624ff26be4fa82c44d85a42b40a9fb0556bda881fe865ece9ad18"
       }
     },
     {
@@ -499,8 +478,8 @@
       "outside_canvas": [],
       "outputs": {
         "png": "a28f227c88bee0dd60eb6c98fd898245803cc7c97276dc9dff5a5bf4d1088b96",
-        "pdf": "252d093db1cd232962a0da30f892b51d65d89472a1a4fd9dc2d9d6a7854156f6",
-        "svg": "2285e6e59ebef9c21d6aafc54adfc0d338bcd827f8e78548038e6d8c9ea45781"
+        "pdf": "12c11f50d7e70778ade8e0e7b2c6f0cc19fb4190bc06d287e16a55c82a2ffabf",
+        "svg": "fe229e28397edb8d8f3748b467e3dc5a650bf10dda2e28a464695f534962d369"
       }
     },
     {
@@ -509,8 +488,8 @@
       "outside_canvas": [],
       "outputs": {
         "png": "db67aca939df7f97f17c4e3e8935e2afdeacc8f12799039ca544d3daa8db1396",
-        "pdf": "e406ba1ad0de75e1f5e8cf0f1c183651a7bb453136a419668b1420b477996920",
-        "svg": "be68fde96d514fd8bcca09c50a87a929393e085f05c03a281c2b8dfab79f357f"
+        "pdf": "923ca9776fbb2b3625654828b5b856604d85020f083d93c77a60ed877be7d077",
+        "svg": "f2b2a6a96951f4fcc514c72f2613d934c32022416193c0b8249adeb6baba800c"
       }
     },
     {
@@ -518,9 +497,9 @@
       "subtitle_count": 0,
       "outside_canvas": [],
       "outputs": {
-        "png": "06c8892d589c218889cec946ec1b439167f8964e6cd63b2912ddad2d7a5fe1f2",
-        "pdf": "6c52e10ab96b72aec6648c09e0490f12771ce0fd8d025084d3a230edde05fb63",
-        "svg": "1d8087e1bcb64e25ed65d526faf443bcd3f3341585984044e5995f638c1fe170"
+        "png": "27378efcfccc660cb4ac49fa7f4bd4c12315c26e25d8bc04298ace9d8527deeb",
+        "pdf": "32f88c86bfd2e184a71c359f639523fa05e8b1864a7cdcfd5e419cee41784dd6",
+        "svg": "07e57af3b6948082d20259e6c5b96a3b31b86d093d6634eaaf5f2b38df81cd43"
       }
     },
     {
@@ -528,9 +507,9 @@
       "subtitle_count": 0,
       "outside_canvas": [],
       "outputs": {
-        "png": "9ddeee034a1771c0325de246b4105a6d4a8f8c47826049405a460ecdfffffd79",
-        "pdf": "032873b4728648cf1711f8a5734ae5b9991e2481788b2f7b049120ade08c14cd",
-        "svg": "a265dbac76608b53ba0cfa0eff6122b8406d799a0786ef3a0ac9fb9242477bed"
+        "png": "9dbfe7ba2f8197e8a8b06636022da39cee88258c21983592faf89e3938355e48",
+        "pdf": "ffd0d1b1e9d7db41fb9726efb86c83cd0476600fb37e50923c0f67aa2b3518d3",
+        "svg": "5e6ae1b5506801677af6dd2c0619628c07a2910c8cecda55075140ac164936e6"
       }
     },
     {
@@ -538,9 +517,9 @@
       "subtitle_count": 0,
       "outside_canvas": [],
       "outputs": {
-        "png": "0785663364b028360f45d4fa724958ca17ec5a0e9af2e50ae49b2acd38ec1958",
-        "pdf": "e4c337df071e0f3a0d44954c75ec058aaedc7070768087b279e30e2218a9ce79",
-        "svg": "19074fd6a3dfe35debcdaf3f7388161bf1fa5ba600764cba8fcff54d93cae579"
+        "png": "c166cafd2640c4ef132b40ef7b86fc2f4955f3f1b862591b058c2c03e02a2d33",
+        "pdf": "5fa4de7f896cf7282031cd23f5d2c09954ae5e2206abea5b4b3e4796d7a65137",
+        "svg": "83fa510e540d5f97b7ce8aa0c3e7b1338a276c3f502138be0f08c316e7ded803"
       }
     },
     {
@@ -548,9 +527,9 @@
       "subtitle_count": 0,
       "outside_canvas": [],
       "outputs": {
-        "png": "ca1c5a2fe0a882f10ca822f939db70d5c7b0c7c3c68f840e51152b5b41d20afe",
-        "pdf": "ab68c25c76a33a12376f24c0a5215d24a398beb64ea97aa73532ac3c13f46603",
-        "svg": "4f7526b002d5e208914508087fd3e8380ca23974b9b8f565048046753f8d9e65"
+        "png": "11643f67587029eaf9e19117e4316e3010fbaa9fef000740fdbee7358f2ec1a4",
+        "pdf": "24840869666b364d4c1f085647849794cee531b17da289f19156fed15f5e3a5c",
+        "svg": "84dbe78b330b304d181f5ba86e97ce2c46e95530f4f8944f377192b5877bc3dc"
       }
     },
     {
@@ -558,9 +537,9 @@
       "subtitle_count": 0,
       "outside_canvas": [],
       "outputs": {
-        "png": "7feb3d951a41e282fecc84fc88644aea81653732890fd32d5e5a07aa0e0468f7",
-        "pdf": "15ad21153c230c9df6282a0722035f46cf5ea989c031342b8e25bb770f4683b0",
-        "svg": "a3655e6d4cd3a4f16b174a9a5e60b91f0577f5f46b405960ae7710e3aaae390c"
+        "png": "e4e18f328e96ec141051940ef72e2be8d654ceb94ad3ac2ab7670b33d50bebeb",
+        "pdf": "e7bfde824d5b3dd862219e291c6ce9281b6a0538f3ebd7cc2fb40e44a1609168",
+        "svg": "e4d0ac14ecfeac24d89c8c405da6d0f6520f92ee0e9294a42c4d8c710b7f4c4c"
       }
     },
     {
@@ -568,9 +547,9 @@
       "subtitle_count": 0,
       "outside_canvas": [],
       "outputs": {
-        "png": "0256805e61030deb3459ac47e7baf9ac50fec2d01520e26badd0e1f5438d78f1",
-        "pdf": "d3a817393caeae072b2f03be2b4bf5ff71f9f98d414bd27397baf01ffa28fce2",
-        "svg": "beff8dd67644da19be97990c47187091a92e8949423a0286a1588e9ad13dfbb6"
+        "png": "7ff616688ec511549259b8ed4fc1e13e8af584f3285d96f0339b8434696cc44a",
+        "pdf": "cf20b19766c9acf9b8d396e8094d415948b6c3380113a7c6c32d9c0821694843",
+        "svg": "bf7aca68265ed38c7434513cefcbe24256187833c3ea8df4af755be2c85f4c61"
       }
     }
   ],

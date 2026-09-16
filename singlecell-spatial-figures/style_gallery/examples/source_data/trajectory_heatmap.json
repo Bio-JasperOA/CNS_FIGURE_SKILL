@@ -33,5 +33,6 @@
     3.2
   ],
   "value_label": "Supplied fitted expression",
-  "order_by_peak": true
+  "order_by_peak": true,
+  "palette_policy": "modern_editorial"
 }

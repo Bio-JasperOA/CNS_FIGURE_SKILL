@@ -2,5 +2,6 @@
   "demo": true,
   "width_mm": 190,
   "height_mm": 135,
-  "interval_label": "Supplied illustrative bin interval"
+  "interval_label": "Supplied illustrative bin interval",
+  "palette_policy": "modern_editorial"
 }

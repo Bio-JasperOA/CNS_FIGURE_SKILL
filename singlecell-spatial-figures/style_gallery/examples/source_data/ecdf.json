@@ -2,5 +2,6 @@
   "demo": true,
   "width_mm": 190,
   "height_mm": 135,
-  "value_label": "Sample response"
+  "value_label": "Sample response",
+  "palette_policy": "modern_editorial"
 }

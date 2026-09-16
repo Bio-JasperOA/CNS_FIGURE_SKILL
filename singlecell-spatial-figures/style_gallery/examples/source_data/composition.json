@@ -17,5 +17,6 @@
     "Stromal",
     "Endothelial",
     "Epithelial"
-  ]
+  ],
+  "palette_policy": "modern_editorial"
 }

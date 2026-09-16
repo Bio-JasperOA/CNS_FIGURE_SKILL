@@ -4,5 +4,6 @@
   "height_mm": 135,
   "q_threshold": 0.05,
   "effect_threshold": 1,
-  "n_labels": 6
+  "n_labels": 6,
+  "palette_policy": "modern_editorial"
 }

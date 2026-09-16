@@ -13,5 +13,6 @@
     "Stress response"
   ],
   "interval_label": "Illustrative interval",
-  "effect_label": "Supplied effect estimate"
+  "effect_label": "Supplied effect estimate",
+  "palette_policy": "modern_editorial"
 }

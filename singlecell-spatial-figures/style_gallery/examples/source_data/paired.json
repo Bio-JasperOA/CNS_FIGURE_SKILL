@@ -6,5 +6,6 @@
     "Before",
     "After"
   ],
-  "categorical_preset": "C01"
+  "categorical_preset": "C01",
+  "palette_policy": "modern_editorial"
 }

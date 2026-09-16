@@ -39,5 +39,6 @@
   "limits": [
     0,
     5
-  ]
+  ],
+  "palette_policy": "modern_editorial"
 }

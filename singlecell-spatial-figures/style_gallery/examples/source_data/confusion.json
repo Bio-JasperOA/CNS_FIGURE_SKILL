@@ -15,5 +15,6 @@
     "Myeloid",
     "Stromal",
     "Endothelial"
-  ]
+  ],
+  "palette_policy": "modern_editorial"
 }

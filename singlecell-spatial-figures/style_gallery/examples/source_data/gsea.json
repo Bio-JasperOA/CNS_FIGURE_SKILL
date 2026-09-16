@@ -1,5 +1,6 @@
 {
   "demo": true,
   "width_mm": 190,
-  "height_mm": 135
+  "height_mm": 135,
+  "palette_policy": "modern_editorial"
 }

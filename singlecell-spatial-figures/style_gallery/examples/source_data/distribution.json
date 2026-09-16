@@ -6,5 +6,6 @@
     "Control",
     "Perturbed"
   ],
-  "value_label": "Sample-level module score"
+  "value_label": "Sample-level module score",
+  "palette_policy": "modern_editorial"
 }

@@ -15,5 +15,6 @@
   ],
   "legend_mode": "external",
   "width_mm": 190,
-  "height_mm": 160
+  "height_mm": 160,
+  "palette_policy": "modern_editorial"
 }

@@ -9,5 +9,6 @@
     "Model D"
   ],
   "baseline_method": "Baseline",
-  "continuous_preset": "D03"
+  "continuous_preset": "D03",
+  "palette_policy": "modern_editorial"
 }

@@ -34,5 +34,6 @@
     -2.5,
     2.5
   ],
-  "value_label": "Supplied expression z-score"
+  "value_label": "Supplied expression z-score",
+  "palette_policy": "modern_editorial"
 }

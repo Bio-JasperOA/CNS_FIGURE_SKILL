@@ -31,5 +31,6 @@
       ]
     }
   ],
-  "point_area": 10
+  "point_area": 10,
+  "palette_policy": "modern_editorial"
 }

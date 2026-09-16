@@ -22,5 +22,6 @@
     "Module 7",
     "Module 8"
   ],
-  "cluster": true
+  "cluster": true,
+  "palette_policy": "modern_editorial"
 }

@@ -49,5 +49,6 @@
       "target": "Epithelial",
       "weight": 0.3
     }
-  ]
+  ],
+  "palette_policy": "modern_editorial"
 }
