@@ -1,6 +1,7 @@
 {
   "version": "3.2.1-editorial",
   "policy": "Low-saturation, light-background editorial defaults. Legacy palettes remain available through palette_lock or palette_policy=legacy.",
+  "surface": {"background": "#FFFFFF", "text": "#263641", "muted": "#65757F", "grid": "#E6EBEE"},
   "categorical": {
     "E01": {"name": "Editorial Soft 6", "colors": ["#6F8FA0", "#D79A8B", "#8DAA92", "#D6BC7A", "#9A8CB5", "#C58A9D"]},
     "E02": {"name": "Modern Bio 8", "colors": ["#68899A", "#D39384", "#82A18A", "#D0B36F", "#9183AD", "#BF8499", "#84AFB8", "#AE967E"]},
