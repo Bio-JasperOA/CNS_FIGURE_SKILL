@@ -183,11 +183,12 @@ def test_zero_enrichment_counts_do_not_create_infinite_legend():
     d,c=generate()['enrichment'];d['count']=0
     with pytest.raises(ValueError,match='positive gene'):render('enrichment',d,c,'advanced')
 
-def test_top_k_upset_discloses_omitted_mass():
+def test_top_k_upset_keeps_omitted_mass_in_audit_but_not_canvas_microcopy():
     d,c=generate()['upset'];c.update(max_intersections=3,allow_top_k=True)
     f=render('upset',d,c);r=audit(f)
     assert r['omitted_intersections']['items']>0
-    assert any('not displayed' in x['text'] for x in r['rendered_text'])
+    assert not any('not displayed' in x['text'] for x in r['rendered_text'])
+    assert any('not displayed' in x for x in f._removed_explanatory_text)
     plt.close(f)
 
 def test_partial_optional_interval_is_rejected():
