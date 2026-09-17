@@ -124,12 +124,13 @@ jobs:
       - name: Publish tested source files and navigation
         if: steps.delivery.outputs.installed == 'true' && github.ref == 'refs/heads/main'
         run: |
-          git diff --check
+          # Preserve CRLF CSV source bytes and hashes; still reject actual trailing spaces.
+          git -c core.whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol diff --check
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add README.md AGENTS.md STRATEGY_ROUTES.json .github/scripts/validate_strategy_routes.py singlecell-spatial-figures/research_logic/ANALYSIS_EXECUTION.md singlecell-spatial-figures/CAPABILITIES.json singlecell-spatial-figures/MANIFEST.sha256
           find singlecell-spatial-figures/result_interpretation -type f \( -name '*.py' -o -name '*.md' -o -name '*.json' -o -name '*.csv' \) -print0 | xargs -0 git add --
           git rm -- .delivery/result-interpretation-v1/part_00.xz .delivery/result-interpretation-v1/part_01a.xz .delivery/result-interpretation-v1/part_01b.xz .delivery/result-interpretation-v1/part_02.xz .delivery/result-interpretation-v1/part_03.xz .delivery/result-interpretation-v1/part_04.xz .delivery/result-interpretation-v1/part_05.xz .delivery/result-interpretation-v1/part_06.xz
-          git diff --cached --check
+          git -c core.whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol diff --cached --check
           git commit -m 'Publish tested source-linked result interpretation and invocation [skip ci]'
           git push origin HEAD:main
