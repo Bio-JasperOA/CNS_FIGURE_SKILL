@@ -11,11 +11,16 @@ CNS Figure Skill 面向需要保持“科学问题—分析结果—图形证据
 
 **New users should first read [`USAGE_EXAMPLES.md`](USAGE_EXAMPLES.md).** It explains the main usage scenarios, how to choose among the eight task routes, how to call each module from an Agent/Codex workflow, and how direct plotting/pipeline CLIs fit into the overall research workflow.
 
+**If you are starting from a biological idea rather than an existing analysis, read [`BIOLOGICAL_QUESTION_TO_ANALYSIS.md`](BIOLOGICAL_QUESTION_TO_ANALYSIS.md).** It shows how to formulate a testable biological question, use an LLM to construct claims and alternatives, check whether the available data can answer the question, and then move through analysis planning, code generation, diagnostics, interpretation and figure design.
+
 **首次使用建议先阅读 [`USAGE_EXAMPLES.md`](USAGE_EXAMPLES.md)。** 其中以“使用场景 → 模块选择 → 调用模板 → 预期输出”的方式说明八类任务路线，并提供 Agent/Codex 调用框架、直接绘图命令和典型组合使用实例。
+
+**如果你是从一个生物学想法而不是已有分析开始，建议继续阅读 [`BIOLOGICAL_QUESTION_TO_ANALYSIS.md`](BIOLOGICAL_QUESTION_TO_ANALYSIS.md)。** 该指南说明如何提出可检验的生物学问题、利用 LLM 建立主张与替代解释、判断数据能否回答问题，并进一步进入分析规划、代码生成、诊断、结果解读和 Figure 设计。
 
 Quick references / 快速入口：
 
 - [`USAGE_EXAMPLES.md`](USAGE_EXAMPLES.md) — usage scenarios and module examples / 使用场景与模块调用示例
+- [`BIOLOGICAL_QUESTION_TO_ANALYSIS.md`](BIOLOGICAL_QUESTION_TO_ANALYSIS.md) — biological question → LLM → analysis workflow / 生物学问题 → LLM → 分析完整流程
 - [`AGENTS.md`](AGENTS.md) — agent routing rules / Agent 路由规则
 - [`STRATEGY_ROUTES.json`](STRATEGY_ROUTES.json) — machine-readable route registry / 机器可读路由表
 - [`singlecell-spatial-figures/README.md`](singlecell-spatial-figures/README.md) — scientific figure system / 科学绘图系统
