@@ -1,0 +1,228 @@
+{
+  "project": {
+    "title": "Example: spatial context and lineage restriction during early human development",
+    "biological_question": "When do early embryonic cell states become lineage-restricted, and is that restriction associated with entry into specific spatial microenvironments?",
+    "central_claim": "Lineage restriction emerges through coordinated temporal state changes and spatially localized regulatory programs rather than through transcriptional maturation alone.",
+    "study_pattern": "hybrid",
+    "example_only": true
+  },
+  "gap": {
+    "known": "Single-cell datasets describe many embryonic transcriptional states and spatial datasets localize subsets of those states.",
+    "missing": "The field still lacks a unified test of whether spatial context contributes information about lineage restriction beyond transcriptional state and developmental stage.",
+    "why_existing_work_is_insufficient": "Dissociated data lose tissue context, while many spatial datasets have limited genes, stages or matched lineage information.",
+    "why_now": "Increasingly dense embryo single-cell and spatial references make stage-aware and specimen-held-out prediction and validation feasible."
+  },
+  "claims": [
+    {
+      "id": "C1",
+      "claim": "Embryonic cell states show reproducible stage-dependent transitions before terminal lineage restriction.",
+      "level": "comparative",
+      "evidence": [
+        {
+          "data": "stage-resolved human embryo scRNA-seq",
+          "analysis_or_experiment": "sample-aware state abundance, transition and gene-program analysis",
+          "expected_observation": "state frequencies and lineage-associated programs change reproducibly across ordered stages",
+          "alternative_explanation": "apparent transitions are donor or batch effects",
+          "validation": "repeat the state program and ordering in held-out embryos"
+        }
+      ],
+      "failure_rule": "The claim is unsupported if stage effects disappear after specimen-aware validation or are dominated by batch."
+    },
+    {
+      "id": "C2",
+      "claim": "Measured spatial context provides information about future lineage identity beyond transcriptomic state and stage alone.",
+      "level": "predictive",
+      "evidence": [
+        {
+          "data": "matched or reference-mapped spatial embryo data with stage and cell-state labels",
+          "analysis_or_experiment": "compare state-only, stage-aware and spatially informed predictive models using embryo-held-out evaluation",
+          "expected_observation": "spatially informed models improve held-out lineage prediction and calibration",
+          "alternative_explanation": "performance gain reflects specimen leakage or cell-type composition imbalance",
+          "validation": "hold out complete embryos and repeat across spatial sections or platforms"
+        }
+      ],
+      "failure_rule": "The claim fails if spatial information does not improve specimen-held-out prediction over strong state and stage baselines."
+    },
+    {
+      "id": "C3",
+      "claim": "A localized regulatory program links the spatial niche to lineage restriction.",
+      "level": "mechanistic",
+      "evidence": [
+        {
+          "data": "spatial expression, lineage-associated genes and optional chromatin or perturbation evidence",
+          "analysis_or_experiment": "identify niche-localized regulators and test consistency among regulator activity, target program and lineage transition",
+          "expected_observation": "candidate regulators are spatially localized before or during lineage restriction and their target programs change coherently",
+          "alternative_explanation": "the regulator is only a marker of mature lineage identity",
+          "validation": "orthogonal chromatin, protein, published perturbation or independent spatial evidence"
+        }
+      ],
+      "failure_rule": "The mechanistic interpretation is weakened if the candidate appears only after lineage commitment or lacks target-program support."
+    },
+    {
+      "id": "C4",
+      "claim": "The identified state–space relationship generalizes to embryos not used for discovery.",
+      "level": "generalization",
+      "evidence": [
+        {
+          "data": "independent embryos, stages or compatible external datasets",
+          "analysis_or_experiment": "frozen-model or fixed-signature validation",
+          "expected_observation": "direction and ordering of the core state–space association are preserved",
+          "alternative_explanation": "the result is atlas-specific",
+          "validation": "external or embryo-held-out evaluation with no retuning of the biological claim"
+        }
+      ],
+      "failure_rule": "Generalization is unsupported if the effect reverses or disappears in independent embryos."
+    }
+  ],
+  "data_design": {
+    "modalities": ["scRNA-seq", "spatial transcriptomics"],
+    "biological_replicate_unit": "embryo/specimen",
+    "discovery_set": "multiple stage-resolved embryos used to define states, programs and model training",
+    "validation_set": "complete held-out embryos and at least one compatible external reference where available",
+    "independence_unit": "embryo/specimen",
+    "time_axis": "ordered developmental stage",
+    "space_axis": "measured cell/spot coordinates and anatomical region",
+    "perturbation_axis": "optional validation axis; no causal claim without perturbation",
+    "ood_axes": ["unseen embryo", "unseen stage", "unseen spatial section or platform"],
+    "leakage_barriers": [
+      "split by embryo before representation fine-tuning or downstream model training",
+      "do not use test-embryo labels to select markers or hyperparameters",
+      "keep near-duplicate sections from the same embryo in the same partition"
+    ]
+  },
+  "analysis_chain": [
+    {
+      "step": 1,
+      "purpose": "Establish reproducible embryonic states and stage structure.",
+      "input": "discovery scRNA-seq",
+      "method_family": "sample-aware single-cell atlas and state program analysis",
+      "output": "reviewed state labels, stage associations and lineage programs",
+      "supports_claims": ["C1"],
+      "failure_rule": "Stop if state definitions are not reproducible across embryos."
+    },
+    {
+      "step": 2,
+      "purpose": "Map the reviewed states into physical embryo space.",
+      "input": "spatial transcriptomics plus reviewed single-cell reference",
+      "method_family": "reference mapping and spatial composition/state assignment",
+      "output": "state localization and uncertainty",
+      "supports_claims": ["C2", "C3"],
+      "failure_rule": "Do not interpret spatial niches if mapping confidence is inadequate."
+    },
+    {
+      "step": 3,
+      "purpose": "Test whether spatial context adds predictive information beyond state and stage.",
+      "input": "embryo-level training partitions with state, stage and spatial features",
+      "method_family": "nested specimen-held-out predictive comparison",
+      "output": "performance, calibration, residuals and ablations",
+      "supports_claims": ["C2"],
+      "failure_rule": "Reject the spatial-information claim if gains vanish under embryo-held-out evaluation."
+    },
+    {
+      "step": 4,
+      "purpose": "Identify a regulatory program connecting niche occupancy with lineage restriction.",
+      "input": "spatially localized states and lineage-associated programs",
+      "method_family": "regulatory, pathway and target-program integration",
+      "output": "candidate regulators with spatial, temporal and target evidence",
+      "supports_claims": ["C3"],
+      "failure_rule": "Downgrade to association if no temporally prior or orthogonal regulatory evidence exists."
+    },
+    {
+      "step": 5,
+      "purpose": "Challenge the fixed claim in independent embryos.",
+      "input": "held-out and external datasets",
+      "method_family": "external validation with fixed signatures/models",
+      "output": "replication and OOD performance",
+      "supports_claims": ["C4"],
+      "failure_rule": "Report dataset-specific scope if replication fails."
+    }
+  ],
+  "model_evaluation": {
+    "baselines": [
+      "majority or simple statistical baseline",
+      "state-and-stage logistic/linear model",
+      "strong task-specific latent model",
+      "contemporary single-cell or spatial representation model"
+    ],
+    "split_strategy": "nested embryo-held-out train/validation/test split",
+    "ood_axes": ["unseen embryo", "unseen stage", "unseen spatial platform"],
+    "ablations": [
+      "remove spatial inputs",
+      "remove stage inputs",
+      "reduce pretraining data diversity if a foundation model is used"
+    ],
+    "uncertainty": "report calibration or predictive uncertainty where the model supplies a defensible uncertainty quantity",
+    "leakage_audit": "verify that embryos, serial sections and derived labels do not cross train/test partitions",
+    "biological_utility_test": "test whether spatially informed predictions identify a reproducible lineage-restriction niche and associated regulatory program"
+  },
+  "validation_ladder": {
+    "internal": "specimen-aware cross-validation and robustness to annotation/mapping choices",
+    "external_or_ood": "held-out embryos plus compatible external data",
+    "orthogonal": "spatial localization plus optional chromatin, protein or published regulator evidence",
+    "perturbational": "required before upgrading a regulator from mechanistic candidate to causal driver",
+    "experimental": "targeted validation is optional for the minimal study but required for a strong causal claim",
+    "negative_controls": [
+      "permuted spatial neighborhood labels",
+      "stage-matched random gene programs",
+      "non-spatial model with equivalent parameter budget"
+    ]
+  },
+  "failure_modes": [
+    {
+      "risk": "embryo-specific batch masquerades as developmental progression",
+      "diagnostic": "inspect specimen mixing, stage-by-specimen confounding and held-out replication",
+      "response": "restrict claims or redesign the discovery/validation split"
+    },
+    {
+      "risk": "spatial mapping uncertainty creates artificial niches",
+      "diagnostic": "quantify mapping confidence and repeat conclusions across mapping methods or direct spatial markers",
+      "response": "remove low-confidence regions and downgrade unsupported niche claims"
+    },
+    {
+      "risk": "predictive gain is caused by leakage",
+      "diagnostic": "repeat evaluation with complete embryos and serial sections held out",
+      "response": "invalidate the original benchmark and rerun with specimen-level partitions"
+    },
+    {
+      "risk": "candidate regulator is a mature-state marker rather than a driver",
+      "diagnostic": "test temporal precedence and orthogonal target-program support",
+      "response": "report association only unless perturbational evidence is obtained"
+    }
+  ],
+  "figure_story": [
+    {
+      "figure": "Fig1",
+      "question": "What developmental states and stages are present in the resource?",
+      "claim": "C1",
+      "panels": ["cohort and stage design", "cell-state atlas", "stage composition", "lineage-associated programs"]
+    },
+    {
+      "figure": "Fig2",
+      "question": "Where do lineage-associated states occur in the embryo?",
+      "claim": "C2",
+      "panels": ["spatial mapping", "state abundance across regions", "mapping confidence", "spatial niche structure"]
+    },
+    {
+      "figure": "Fig3",
+      "question": "Does spatial context add information beyond transcriptional state and stage?",
+      "claim": "C2",
+      "panels": ["baseline comparison", "embryo-held-out performance", "ablation", "calibration and residual analysis"]
+    },
+    {
+      "figure": "Fig4",
+      "question": "Which regulatory program links the niche to lineage restriction?",
+      "claim": "C3",
+      "panels": ["regulator activity", "spatial localization", "target program", "orthogonal evidence"]
+    },
+    {
+      "figure": "Fig5",
+      "question": "Does the state–space relationship generalize?",
+      "claim": "C4",
+      "panels": ["held-out embryos", "external validation", "OOD analysis", "scope and failure cases"]
+    }
+  ],
+  "scope": {
+    "minimal_publishable_version": "C1 + C2 + external embryo-held-out validation, with C3 presented only as a supported regulatory hypothesis.",
+    "ambitious_extension": "Add perturbation or experimental validation to upgrade C3 toward causality and evaluate a virtual-embryo model on unseen stages or spatial contexts."
+  }
+}
