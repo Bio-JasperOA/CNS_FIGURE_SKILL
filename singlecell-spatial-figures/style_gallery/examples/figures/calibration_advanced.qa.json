@@ -18,11 +18,6 @@
       "gid": null
     },
     {
-      "text": "Area ∝ bin n\nSegments = calibration gap",
-      "size_pt": 7.0,
-      "gid": null
-    },
-    {
       "text": "Mean predicted probability",
       "size_pt": 8.0,
       "gid": null
@@ -119,7 +114,7 @@
     },
     {
       "text": "SYNTHETIC EXAMPLE",
-      "size_pt": 6.0,
+      "size_pt": 7.0,
       "gid": "synthetic_disclosure"
     }
   ],
@@ -156,8 +151,8 @@
   "axes_count": 1,
   "scope": "canvas bounds and subtitle policy; not a scientific or universal collision certificate",
   "outputs": {
-    "png": "6c4d52294646ed84f6e6d02b77d95eeba981a0eb2d55b8222beec55a55cb6d5f",
-    "pdf": "2a6d93759869e2c7027b813a5f068a3ed23a590456ff7f2ccf5b036f6f572f2b",
-    "svg": "22c6c728e698669a5395af66124e39d1b1ccdb396800c98e710ebdf949376695"
+    "png": "8873d27aae4a77b809797e1092e0e1007a2b9b0e32d0c8f07178d1be4ceada84",
+    "pdf": "b94118c990ec0895d5c73c8e23eeb182c131746ca1473d0bc95f1da00a2a4c14",
+    "svg": "42b5339fec7c55eb0e3eb1988b9a97c4dd2a50b693aaa663e7c51a7d58cdbedd"
   }
 }

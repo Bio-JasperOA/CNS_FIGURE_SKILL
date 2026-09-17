@@ -99,7 +99,7 @@
     },
     {
       "text": "SYNTHETIC EXAMPLE",
-      "size_pt": 6.0,
+      "size_pt": 7.0,
       "gid": "synthetic_disclosure"
     }
   ],
@@ -124,14 +124,14 @@
   "font": "DejaVu Sans",
   "width_mm": 190.0,
   "height_mm": 135.0,
-  "input_csv_sha256": "464de6fa8318c2ec378c6e36e9f32c234af7874338fbe504794989cf95fe457f",
+  "input_csv_sha256": "eb6d9489af0c68e81823ecc19848379d6e41cd7fd471ca50353a0581d9b2bf56",
   "derived_order": null,
   "omitted_intersections": null,
   "axes_count": 1,
   "scope": "canvas bounds and subtitle policy; not a scientific or universal collision certificate",
   "outputs": {
-    "png": "52af2b8d341c23c77a7dc12fc85f81ac42573f181011aaece117d31808cad828",
-    "pdf": "94b49148ca3d88f63b334bb42e3412e89d55f45e76ed3a8eeacdd194645efb2a",
-    "svg": "396158998ec794669699dfe5c37b9743e7916eaa939f0b340c2e8bb360f1ba72"
+    "png": "940b223a145ec0f552672479fe7d389a4211f2158d8c607c6441b3ee78867490",
+    "pdf": "f639499a27263b23a16a46ac19a3c6bc3c458d139166d933b073aeda7754b0da",
+    "svg": "abd6e9cce7af26ec1de871a83eaf72a604808f5f0e5a45099587687584c4e540"
   }
 }

@@ -2,8 +2,8 @@
 ........................................................................ [ 33%]
 ..........................................................ss............ [ 50%]
 ........................................................................ [ 67%]
-........................................................................ [ 84%]
-..................................................................       [100%]
+........................................................................ [ 83%]
+.....................................................................    [100%]
 =============================== warnings summary ===============================
 singlecell-spatial-figures/tests/test_framework_v2.py: 11 warnings
   /home/runner/work/CNS_FIGURE_SKILL/CNS_FIGURE_SKILL/singlecell-spatial-figures/scripts/figure_core.py:51: UserWarning: Arial is unavailable; using DejaVu Sans. Record this in provenance.
@@ -14,4 +14,4 @@ singlecell-spatial-figures/tests/test_visual_v3.py::test_typography_math_and_mis
     fig.canvas.draw();renderer=fig.canvas.get_renderer();factor=25.4/fig.dpi;fw,fh=fig.get_size_inches()*25.4
 
 -- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
-424 passed, 2 skipped, 12 warnings in 29.18s
+427 passed, 2 skipped, 12 warnings in 38.72s

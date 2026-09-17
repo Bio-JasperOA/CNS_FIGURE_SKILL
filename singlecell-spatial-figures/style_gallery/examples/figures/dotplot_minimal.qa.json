@@ -3,11 +3,6 @@
   "subtitle_count": 0,
   "rendered_text": [
     {
-      "text": "Row order: Baseline / Stimulated",
-      "size_pt": 7.0,
-      "gid": null
-    },
-    {
       "text": "CD3D",
       "size_pt": 7.0,
       "gid": null
@@ -159,7 +154,7 @@
     },
     {
       "text": "SYNTHETIC EXAMPLE",
-      "size_pt": 6.0,
+      "size_pt": 7.0,
       "gid": "synthetic_disclosure"
     }
   ],
@@ -181,8 +176,8 @@
   "axes_count": 2,
   "scope": "canvas bounds and subtitle policy; not a scientific or universal collision certificate",
   "outputs": {
-    "png": "38742aebdd71f0c82ca2af73d9fa33936aab3adc5dbb1a595afa678faac0c762",
-    "pdf": "fc7297f22c5191212a406f265cd054a9275b43ebe0fa86fad559a2bd518596de",
-    "svg": "48cde3c60aeda20d79467532e3ca9c129ff0f2d1108379d6e676db6aeaa4780d"
+    "png": "bf4be2e03e10a92376cf2ff29202648bae4178717938cabbf6cfcdacdfdff5b2",
+    "pdf": "828f3bfd5ff658ec647553b06f340f43b70baf47a52d8b4f3d1c2987178972fe",
+    "svg": "87d103f5d60dc493ff3bf47925b1c2438170e12e43059dee822271aafb855955"
   }
 }

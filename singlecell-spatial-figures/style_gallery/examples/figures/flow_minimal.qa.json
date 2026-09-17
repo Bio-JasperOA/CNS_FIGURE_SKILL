@@ -48,18 +48,13 @@
       "gid": null
     },
     {
-      "text": "Total 300 coupling units",
-      "size_pt": 7.0,
-      "gid": null
-    },
-    {
       "text": "State transitions and conserved mass",
       "size_pt": 11.5,
       "gid": "main_title"
     },
     {
       "text": "SYNTHETIC EXAMPLE",
-      "size_pt": 6.0,
+      "size_pt": 7.0,
       "gid": "synthetic_disclosure"
     }
   ],
@@ -83,8 +78,8 @@
   "axes_count": 1,
   "scope": "canvas bounds and subtitle policy; not a scientific or universal collision certificate",
   "outputs": {
-    "png": "93da84597e53dbef97a72d3a89ecc16673527cd074d9177ac63ae2aebecc2c24",
-    "pdf": "e2e2727c7f5249e0a926f2bcbe1ea296804ca780bce95bf28e46ba498bb85cf9",
-    "svg": "82afee864eb58ae01265990b50d285cb49e45c2d64409e444f934a4389859435"
+    "png": "9e69b543422953d9b35cc4714aad0c1a29ab3308282b0dfb99d8761ab91d499b",
+    "pdf": "c03b9f6b213d65b867d0fb9af48abe8ead654f83a1335bd315702e5150770820",
+    "svg": "4c91d749c29592110eebb38824cfbf695ba67fdc18e18681d08a16be9ac14007"
   }
 }

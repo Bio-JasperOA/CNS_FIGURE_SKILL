@@ -49,7 +49,7 @@
     },
     {
       "text": "SYNTHETIC EXAMPLE",
-      "size_pt": 6.0,
+      "size_pt": 7.0,
       "gid": "synthetic_disclosure"
     }
   ],
@@ -72,8 +72,8 @@
   "axes_count": 1,
   "scope": "canvas bounds and subtitle policy; not a scientific or universal collision certificate",
   "outputs": {
-    "png": "f86fa10bbf89a474773deef0117377341a629a51ecfe0e5a4283950eb91245f5",
-    "pdf": "c2d45828ce2be88d065e4de51e2a3052881ae401cf203f905fc82d1bf330a0d2",
-    "svg": "00198ece68acf22425eef40249548d8ec1337e6abf06718ab7dc9241e9acffb1"
+    "png": "d4acd2ea186b62628515b201db1747fa4135fcfa6bd2345e090ef8fbb21f6abf",
+    "pdf": "d135afb4793249dc50d3e69305e343522c6fbc553b27a5168a25a9625c9e8042",
+    "svg": "dd7099b58a91e514b4514bd19ecd3b47cf57df1ebf7cfcd3d977ccf5fafcc8cd"
   }
 }

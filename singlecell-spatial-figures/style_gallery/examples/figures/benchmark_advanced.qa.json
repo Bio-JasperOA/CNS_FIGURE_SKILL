@@ -223,11 +223,6 @@
       "gid": null
     },
     {
-      "text": "Cell text = raw score; top = median paired difference",
-      "size_pt": 7.0,
-      "gid": null
-    },
-    {
       "text": "Baseline",
       "size_pt": 7.0,
       "gid": null
@@ -354,7 +349,7 @@
     },
     {
       "text": "SYNTHETIC EXAMPLE",
-      "size_pt": 6.0,
+      "size_pt": 7.0,
       "gid": "synthetic_disclosure"
     }
   ],
@@ -385,8 +380,8 @@
   "axes_count": 2,
   "scope": "canvas bounds and subtitle policy; not a scientific or universal collision certificate",
   "outputs": {
-    "png": "7a3e5acbd74f8690b259aa6dbd5441b26ec68cf88c36a41b6213fda304f2cfda",
-    "pdf": "b0b729ea81e6031070db487ed2fde0cfa517c12e6f4bb204fec07b76dc0386bb",
-    "svg": "a6a48c97961ebd00cca56177e9ad1804de315c8990a4aeb746a7fb5cf201388c"
+    "png": "575563af507830e31beecd1efa0cdac152ed1a9ad01033727050c0af382b0f72",
+    "pdf": "c32d740432f7551974f543390f3536497478b596cb5d5abde8d082eb24b2ed00",
+    "svg": "48a34d45e2c3dcf560551f1da508b00f0f991d336e8e0814ce31f72d3d8c50af"
   }
 }

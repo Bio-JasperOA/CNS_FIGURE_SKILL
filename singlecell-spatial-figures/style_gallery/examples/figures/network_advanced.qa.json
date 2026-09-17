@@ -63,18 +63,13 @@
       "gid": null
     },
     {
-      "text": "Node values: out / in (score); arrows mark receivers",
-      "size_pt": 6.8,
-      "gid": null
-    },
-    {
       "text": "Candidate sender–receiver communication",
       "size_pt": 11.5,
       "gid": "main_title"
     },
     {
       "text": "SYNTHETIC EXAMPLE",
-      "size_pt": 6.0,
+      "size_pt": 7.0,
       "gid": "synthetic_disclosure"
     }
   ],
@@ -105,8 +100,8 @@
   "axes_count": 1,
   "scope": "canvas bounds and subtitle policy; not a scientific or universal collision certificate",
   "outputs": {
-    "png": "cdedcacd1e7662d54e5d776033cb9f164c16b6ee7da24714c821c4dfb77f408a",
-    "pdf": "3b4187a6e0c27167574e7b70740bde61b231a93885ddc1e060f3de71aa7e2d50",
-    "svg": "08826a578365fd1582fd74cafdc8d7dce38ed1535d7bd58c35c7d1dfe79364d1"
+    "png": "2db0469c3b778b5b35c34bd8b53d0df9718e45d1b92dcae8b7b443214b6abea4",
+    "pdf": "23acdeecb26d26e7601860e9a5c5a6bac2ecb3b95c869b5ae9e72ab15f9c254f",
+    "svg": "c1d386523c386ae2edfd90ec529112288d679cf5deaf938849b3f76770ec6b3a"
   }
 }
