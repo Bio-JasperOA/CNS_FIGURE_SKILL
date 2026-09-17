@@ -7,10 +7,11 @@ The core idea is simple: **do not start from methods or figures; start from the 
 ## Files
 
 - `SKILL.md` — operational rules for Codex/agents.
-- `PAPER_LOGIC_LIBRARY.md` — recurring logic patterns distilled from recent Nature/Cell/Nature Methods/Nature Reviews studies.
+- `CNS_ANCHORS.md` — compact Cell / Nature / Science anchor reading set.
+- `PAPER_LOGIC_LIBRARY.md` — paper-by-paper research logic distilled from representative top-tier studies and reviews.
 - `RESEARCH_PLAN_SCHEMA.json` — machine-readable research-plan contract.
 - `templates/research_plan.example.json` — example project specification.
-- `validate_research_plan.py` — structural validator for research plans.
+- `validate_research_plan.py` — structural and semantic validator for research plans.
 
 ## Research-first flow
 
@@ -43,7 +44,7 @@ python research_logic/validate_research_plan.py \
   research_logic/templates/research_plan.example.json
 ```
 
-For a new project, copy the example JSON and replace the synthetic content with the real biological question, data, claims, validation strategy and figure story.
+For a new project, copy the example JSON and replace the example content with the real biological question, data, claims, validation strategy and figure story.
 
 ## Scope
 
