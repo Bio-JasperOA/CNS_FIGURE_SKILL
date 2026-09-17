@@ -1,9 +1,9 @@
 name: Build scientific style gallery
+
 on:
   push:
     branches: [main]
     paths:
-      - '.delivery/style-gallery-v32-26/**'
       - '.github/workflows/style-gallery.yml'
       - '.github/scripts/publish_style_gallery.py'
       - '.github/scripts/finalize_style_docs.py'
@@ -13,11 +13,14 @@ on:
       - 'singlecell-spatial-figures/style_gallery/tests/*.py'
       - 'singlecell-spatial-figures/style_gallery/requirements*.txt'
   workflow_dispatch:
+
 permissions:
   contents: write
+
 concurrency:
   group: style-gallery-${{ github.ref }}
   cancel-in-progress: false
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -30,46 +33,41 @@ jobs:
     defaults:
       run:
         shell: bash
+
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+
       - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
         with:
           python-version: '3.13'
-      - name: Install only the verified 26-family delivery
+
+      - name: Prepare gallery sources
         run: python .github/scripts/publish_style_gallery.py install
-      - name: Install isolated dependencies
+
+      - name: Install dependencies
         run: python -m pip install -r singlecell-spatial-figures/requirements-v3.txt -r singlecell-spatial-figures/style_gallery/requirements-tested.txt
-      - name: Synchronize capabilities and verify palette snapshots
+
+      - name: Synchronize metadata and palette snapshots
         run: |
           python singlecell-spatial-figures/style_gallery/repository_update.py metadata
           python singlecell-spatial-figures/style_gallery/repository_update.py presets
-      - name: Run preserved and new regression tests
-        run: |
-          set -o pipefail
-          python -m pytest singlecell-spatial-figures/tests singlecell-spatial-figures/style_gallery/tests .github/scripts/test_style_docs_publication.py -q | tee singlecell-spatial-figures/style_gallery/CI_REPORT.txt
-      - name: Restore release metadata after isolated tests
-        run: |
-          git restore --source=HEAD -- README.md singlecell-spatial-figures/SKILL.md singlecell-spatial-figures/CAPABILITIES.json singlecell-spatial-figures/QA_REPORT.md
-          python singlecell-spatial-figures/style_gallery/repository_update.py metadata
-      - name: Render and verify 26 no-subtitle chart pairs
+
+      - name: Run regression tests
+        run: python -m pytest singlecell-spatial-figures/tests singlecell-spatial-figures/style_gallery/tests .github/scripts/test_style_docs_publication.py -q
+
+      - name: Render and verify gallery
         run: |
           python singlecell-spatial-figures/style_gallery/render.py demo --out singlecell-spatial-figures/style_gallery/examples
           python .github/scripts/publish_style_gallery.py verify
-      - name: Finalize publication documents
+
+      - name: Build public gallery documentation
+        run: python .github/scripts/finalize_style_docs.py
+
+      - name: Build repository manifest
         run: |
-          git restore --source=HEAD --staged --worktree -- .github/scripts/finalize_style_docs.py
-          python .github/scripts/finalize_style_docs.py
-      - name: Restore reviewed publisher and build manifest independently
-        run: |
-          git restore --source=HEAD --staged --worktree -- .github/scripts/finalize_style_docs.py
           python - <<'PY'
           from pathlib import Path
           import hashlib
-
-          publisher = Path('.github/scripts/finalize_style_docs.py')
-          text = publisher.read_text(encoding='utf-8')
-          publisher.write_text('\n'.join(line.rstrip(' \t') for line in text.splitlines()) + '\n', encoding='utf-8')
-          compile(publisher.read_text(encoding='utf-8'), str(publisher), 'exec')
 
           skill = Path('singlecell-spatial-figures')
           excluded = {'__pycache__', '.pytest_cache', '.git', '.venv'}
@@ -80,23 +78,26 @@ jobs:
                   rows.append(hashlib.sha256(path.read_bytes()).hexdigest() + '  ' + rel.as_posix())
           (skill / 'MANIFEST.sha256').write_text('\n'.join(rows) + '\n', encoding='utf-8')
           PY
-      - name: Check publication text hygiene
+
+      - name: Check documentation hygiene
         run: |
           git diff --check -- \
             .github/scripts/finalize_style_docs.py \
-            README.md \
-            README_MAINTAINER.md \
             docs/GALLERY.md \
-            singlecell-spatial-figures/SKILL.md \
-            singlecell-spatial-figures/CAPABILITIES.json \
-            singlecell-spatial-figures/QA_REPORT.md
-      - name: Publish tested sources and generated examples
+            singlecell-spatial-figures/style_gallery \
+            singlecell-spatial-figures/MANIFEST.sha256
+
+      - name: Publish generated gallery assets
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add .github/scripts/finalize_style_docs.py singlecell-spatial-figures/style_gallery README.md README_MAINTAINER.md docs/GALLERY.md docs/preview.png singlecell-spatial-figures/SKILL.md singlecell-spatial-figures/CAPABILITIES.json singlecell-spatial-figures/QA_REPORT.md singlecell-spatial-figures/MANIFEST.sha256
-          if git ls-files .delivery | grep -q .; then git add -u .delivery; fi
+          git add \
+            .github/scripts/finalize_style_docs.py \
+            docs/GALLERY.md \
+            docs/preview.png \
+            singlecell-spatial-figures/style_gallery \
+            singlecell-spatial-figures/MANIFEST.sha256
           if ! git diff --cached --quiet; then
-            git commit -m 'Publish 26 no-subtitle chart pairs and verified v3.2 sources [skip ci]'
+            git commit -m 'Refresh public scientific gallery [skip ci]'
             git push origin HEAD:main
           fi
