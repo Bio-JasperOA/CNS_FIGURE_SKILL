@@ -1,75 +1,67 @@
-# Research Logic Layer
+# Research Logic
 
-This directory upgrades the Skill from a plotting-only assistant to a **research-design assistant** for single-cell, spatial, developmental/embryo and biological foundation-model studies.
+**Question-first research design for single-cell, spatial, developmental and biological foundation-model studies.**  
+**面向单细胞、空间组学、发育生物学与生物学基础模型研究的问题驱动型研究设计层。**
 
-The core idea is simple: **do not start from methods or figures; start from the biological gap, build a claim–evidence graph, and only then choose analyses and figures.**
+The core rule is simple: start from the biological gap and an answerable question, then build claims, evidence and validation before choosing analyses or figures.
 
-## Files
+核心规则是：先从生物学空白与可回答的问题出发，建立主张、证据与验证逻辑，再选择分析方法和图形。
 
-- `SKILL.md` — operational rules for Codex/agents.
-- `CNS_ANCHORS.md` — compact Cell / Nature / Science anchor reading set.
-- `PAPER_LOGIC_LIBRARY.md` — paper-by-paper research logic distilled from representative top-tier studies and reviews.
-- `ANALYSIS_STRATEGY_LIBRARY.md` — common scRNA-seq and spatial transcriptomics analysis routes, with question, inference unit, outputs, limitations and validation logic.
-- `ANALYSIS_STRATEGY_CATALOG.json` — machine-readable analysis-family catalog for Codex routing.
-- `RESEARCH_PLAN_SCHEMA.json` — machine-readable research-plan contract.
-- `templates/research_plan.example.json` — example project specification.
-- `validate_research_plan.py` — structural and semantic validator for research plans.
-
-## Research-first flow
+## Research flow · 研究流程
 
 ```text
-Biological gap
-    ↓
-One answerable biological question
-    ↓
-Central claim
-    ↓
-3–5 subclaims
-    ↓
-Claim-specific evidence
-    ↓
-Analysis strategy selection
-    ↓
-Diagnostics + validation
-    ↓
-Failure modes and alternative explanations
-    ↓
-Figure story
+Biological gap / 生物学空白
+        ↓
+Answerable question / 可回答问题
+        ↓
+Provisional central claim / 暂定核心主张
+        ↓
+Subclaims + alternatives / 子主张与替代解释
+        ↓
+Claim-specific evidence / 对应证据
+        ↓
+Analysis strategy / 分析策略
+        ↓
+Diagnostics + validation / 诊断与验证
+        ↓
+Failure modes / 失败条件
+        ↓
+Figure story / 图形叙事
 ```
 
-The analysis layer is **question-driven**. QC, integration, annotation, differential abundance, DE, pathway/regulon analysis, trajectory, velocity, communication, deconvolution, spatial domains, SVGs, niches, gradients, multi-section integration and histology integration are not a mandatory checklist. They are selected only when they provide evidence for a claim.
+Analysis methods are not a checklist. QC, integration, annotation, differential abundance, DE, trajectory, velocity, communication, deconvolution, spatial domains, SVGs, niches, gradients or multimodal integration should be selected only when they answer a defined question or protect inference quality.
 
-The plotting pipeline remains downstream. A figure is generated only after the result is linked to a claim and the claim is linked to a biological question.
+分析方法不是固定清单。QC、整合、注释、差异丰度、DE、轨迹、velocity、通讯、去卷积、空间域、SVG、niche、gradient 与多模态整合，只有在能够回答明确问题或保护推断质量时才应使用。
 
-## Quick use
+## Main documents · 主要文档
 
-Validate a durable research plan:
+- `SKILL.md` — research-design operating rules / 研究设计操作规则
+- `ANALYSIS_SKILL.md` — analysis-planning rules / 分析规划规则
+- `ANALYSIS_EXECUTION.md` — code-authoring and execution contract / 代码编写与执行约定
+- `ANALYSIS_STRATEGY_LIBRARY.md` — reusable strategy patterns / 可复用分析策略
+- `ANALYSIS_STRATEGY_CATALOG.json` — machine-readable strategy catalogue / 机器可读策略目录
+- `CNS_ANCHORS.md` — literature navigation anchors / 文献导航锚点
+- `PAPER_LOGIC_LIBRARY.md` — representative paper logic library / 代表性论文逻辑库
+- `RESEARCH_PLAN_SCHEMA.json` — structured research-plan contract / 结构化研究计划约定
+
+## Validation · 校验
 
 ```bash
 python research_logic/validate_research_plan.py \
   research_logic/templates/research_plan.example.json
 ```
 
-For a new project, copy the example JSON and replace the example content with the real biological question, data, claims, validation strategy and figure story.
+A structurally valid plan is not a scientific certification. Specific literature claims must still be checked against the original source, and biological conclusions remain subject to experimental evidence and human scientific judgment.
 
-When deciding what analysis to add, inspect:
+结构上合法的研究计划并不等于科学结论已经成立。具体文献结论仍需回到原文核查，生物学结论仍必须由实际证据与人工科学判断支持。
 
-```text
-ANALYSIS_STRATEGY_LIBRARY.md
-ANALYSIS_STRATEGY_CATALOG.json
-```
+## Scope · 适用范围
 
-and ask whether the analysis adds evidence beyond a simpler alternative.
+Designed for / 适用于：
 
-## Scope
-
-Designed for:
-
-- single-cell atlases and cohort studies;
-- spatial transcriptomics and tissue ecology;
-- developmental and embryo biology;
-- cross-modal reference mapping;
-- perturbation biology;
-- biological foundation models and virtual cell / virtual embryo studies.
-
-Not intended to certify that a project is publishable in any journal. It enforces research logic and evidence structure; scientific judgment remains human.
+- single-cell atlases and cohort studies / 单细胞图谱与队列研究
+- spatial transcriptomics and tissue ecology / 空间转录组与组织生态
+- developmental and embryo biology / 发育与胚胎生物学
+- cross-modal reference mapping / 跨模态参考映射
+- perturbation biology / 扰动生物学
+- biological foundation models and virtual cell/embryo studies / 生物学基础模型与虚拟细胞/虚拟胚胎研究
