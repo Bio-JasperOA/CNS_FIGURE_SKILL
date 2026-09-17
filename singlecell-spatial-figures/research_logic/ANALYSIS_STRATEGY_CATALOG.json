@@ -1,0 +1,191 @@
+{
+  "version": "1.0.0",
+  "purpose": "Question-driven selection of common single-cell and spatial transcriptomics analysis families.",
+  "rules": {
+    "selection_order": ["biological_question", "claim", "evidence_needed", "analysis_family", "diagnostics", "validation", "figure"],
+    "default_replicate_rule": "For condition-level biological inference, use the biological specimen/donor/embryo as the independent replicate unless the study design justifies another unit.",
+    "anti_pattern": "Do not add an analysis that supports no claim."
+  },
+  "modules": {
+    "sc.qc": {
+      "question": "Are observed cells or nuclei technically credible?",
+      "minimum_inputs": ["raw_or_filtered_counts", "sample_id", "cell_or_nucleus_id"],
+      "unit_of_inference": "cell for technical filtering; sample for specimen-level failure",
+      "outputs": ["qc_metrics", "retained_cells", "sample_qc"],
+      "supports": ["data_quality"],
+      "does_not_support": ["condition_biology"],
+      "validation": ["sample_level_outliers", "doublet_or_contamination_checks"]
+    },
+    "sc.integration": {
+      "question": "Can multiple batches or donors be jointly compared without erasing real biology?",
+      "minimum_inputs": ["multi_sample_expression", "sample_or_batch_id"],
+      "unit_of_inference": "sample/donor/batch",
+      "outputs": ["joint_representation", "batch_mixing_diagnostics", "biology_preservation_diagnostics"],
+      "supports": ["joint_state_comparison"],
+      "does_not_support": ["differential_expression_on_corrected_values_by_default"],
+      "validation": ["batch_removal", "cell_state_preservation", "rare_state_preservation"]
+    },
+    "sc.annotation": {
+      "question": "What biological identity best explains each cell state?",
+      "minimum_inputs": ["expression", "clusters_or_cells"],
+      "unit_of_inference": "cell/cluster with donor recurrence check",
+      "outputs": ["hierarchical_identity", "annotation_evidence"],
+      "supports": ["cell_type", "cell_state"],
+      "does_not_support": ["novel_cell_type_from_clustering_alone"],
+      "validation": ["marker_programs", "reference_mapping", "orthogonal_evidence"]
+    },
+    "sc.composition_da": {
+      "question": "Does cell-state abundance differ across conditions or stages?",
+      "minimum_inputs": ["cell_identity", "sample_id", "condition"],
+      "unit_of_inference": "sample/donor/embryo",
+      "outputs": ["sample_level_fractions", "effect_sizes", "uncertainty"],
+      "supports": ["differential_abundance"],
+      "does_not_support": ["mechanism_of_abundance_change"],
+      "validation": ["replicate_consistency", "covariate_sensitivity"]
+    },
+    "sc.de": {
+      "question": "Within a defined state, which transcriptional responses differ between biological groups?",
+      "minimum_inputs": ["expression", "cell_identity", "sample_id", "condition"],
+      "unit_of_inference": "sample/donor for population-level claims",
+      "outputs": ["gene_effects", "uncertainty", "adjusted_evidence"],
+      "supports": ["transcriptional_response"],
+      "does_not_support": ["mechanism_by_itself"],
+      "validation": ["donor_aware_or_pseudobulk_inference", "replicate_consistency"]
+    },
+    "sc.pathway": {
+      "question": "Do gene-level changes form coherent biological programmes?",
+      "minimum_inputs": ["gene_level_signal", "gene_sets_or_program_model"],
+      "unit_of_inference": "matched to upstream contrast",
+      "outputs": ["pathway_activity", "gene_programs", "leading_edge"],
+      "supports": ["functional_interpretation"],
+      "does_not_support": ["causal_pathway_mechanism"],
+      "validation": ["cross_method_consistency", "orthogonal_or_perturbation_support"]
+    },
+    "sc.regulon": {
+      "question": "Which regulators could explain a state or transition?",
+      "minimum_inputs": ["expression_or_multimodal_data"],
+      "unit_of_inference": "state/sample depending on claim",
+      "outputs": ["regulator_activity", "target_programs"],
+      "supports": ["candidate_regulatory_mechanism"],
+      "does_not_support": ["causality_from_coexpression"],
+      "validation": ["motif_or_chromatin_support", "perturbation", "temporal_precedence"]
+    },
+    "sc.trajectory": {
+      "question": "Are observed states consistent with an ordered biological transition?",
+      "minimum_inputs": ["state_continuum", "biological_start_or_ordering_information"],
+      "unit_of_inference": "cell ordering nested within biological specimens",
+      "outputs": ["pseudotime", "branches", "dynamic_programs"],
+      "supports": ["transition_hypothesis", "ordered_programs"],
+      "does_not_support": ["definitive_lineage_from_umap"],
+      "validation": ["chronological_stage", "lineage_trace", "spatial_order", "velocity", "perturbation"]
+    },
+    "sc.velocity": {
+      "question": "Is there directional transcriptional evidence that strengthens a transition model?",
+      "minimum_inputs": ["spliced_unspliced_or_equivalent_dynamics"],
+      "unit_of_inference": "cell with system-level model diagnostics",
+      "outputs": ["velocity", "latent_time", "fate_probability", "uncertainty"],
+      "supports": ["directional_evidence_under_model_assumptions"],
+      "does_not_support": ["ground_truth_lineage", "cell_migration"],
+      "validation": ["model_fit", "uncertainty", "preprocessing_sensitivity", "known_biology"]
+    },
+    "sc.communication": {
+      "question": "Which sender-receiver relationships could plausibly explain receiver programmes?",
+      "minimum_inputs": ["sender_identity", "receiver_identity", "expression"],
+      "unit_of_inference": "specimen-aware interaction evidence",
+      "outputs": ["ligand_receptor_hypotheses", "receiver_target_programs"],
+      "supports": ["communication_hypothesis"],
+      "does_not_support": ["demonstrated_signaling_from_lr_score_alone"],
+      "validation": ["replicate_recurrence", "downstream_targets", "spatial_proximity", "perturbation"]
+    },
+    "spatial.qc": {
+      "question": "Are spatial measurements technically reliable and anatomically plausible?",
+      "minimum_inputs": ["spatial_counts", "coordinates", "section_id"],
+      "unit_of_inference": "location/cell for technical QC; section/specimen for failure",
+      "outputs": ["trusted_locations", "tissue_qc", "segmentation_or_registration_qc"],
+      "supports": ["spatial_data_quality"],
+      "does_not_support": ["tissue_biology"],
+      "validation": ["tissue_coverage", "section_artifacts", "effective_resolution", "registration_or_segmentation"]
+    },
+    "spatial.mapping_deconvolution": {
+      "question": "Which cell types or states occupy each spatial location?",
+      "minimum_inputs": ["spatial_expression", "spatial_coordinates", "reference_or_marker_model"],
+      "unit_of_inference": "location/cell with specimen-level validation",
+      "outputs": ["mapped_identity_or_fraction", "mapping_confidence"],
+      "supports": ["spatial_localization", "cell_type_abundance"],
+      "does_not_support": ["precise_cell_contact_when_resolution_is_multicellular"],
+      "validation": ["reference_coverage", "marker_localization", "histology", "known_anatomy"]
+    },
+    "spatial.domains": {
+      "question": "Are there reproducible molecularly defined tissue regions?",
+      "minimum_inputs": ["spatial_expression", "coordinates"],
+      "unit_of_inference": "section with specimen-level recurrence",
+      "outputs": ["spatial_domains", "domain_markers"],
+      "supports": ["tissue_architecture"],
+      "does_not_support": ["anatomical_compartment_from_single_clustering_output"],
+      "validation": ["parameter_robustness", "histology", "marker_programs", "cross_section_recurrence"]
+    },
+    "spatial.svg": {
+      "question": "Which genes or programmes show non-random spatial organization?",
+      "minimum_inputs": ["spatial_expression", "coordinates"],
+      "unit_of_inference": "location with section/specimen replication",
+      "outputs": ["spatial_autocorrelation", "spatial_variable_genes", "hotspots"],
+      "supports": ["spatial_patterning"],
+      "does_not_support": ["mechanism_by_itself"],
+      "validation": ["composition_adjustment_when_needed", "cross_section_recurrence"]
+    },
+    "spatial.niche": {
+      "question": "Which local cellular communities recur and associate with specific states or phenotypes?",
+      "minimum_inputs": ["cell_or_location_identity", "coordinates", "specimen_id"],
+      "unit_of_inference": "local neighborhood nested within specimen",
+      "outputs": ["niches", "niche_composition", "niche_programs"],
+      "supports": ["local_tissue_ecology"],
+      "does_not_support": ["validated_niche_from_one_section_only"],
+      "validation": ["cross_section_recurrence", "cross_specimen_recurrence", "histology_or_marker_support"]
+    },
+    "spatial.gradient": {
+      "question": "Does a biological programme vary along a measured anatomical axis?",
+      "minimum_inputs": ["coordinates_or_anatomical_axis", "molecular_or_cellular_measure"],
+      "unit_of_inference": "location with specimen-level replication",
+      "outputs": ["gradient", "axis_associated_programs"],
+      "supports": ["spatial_ordering"],
+      "does_not_support": ["developmental_time_without_independent_time_evidence"],
+      "validation": ["anatomical_reproducibility", "cross_section_alignment"]
+    },
+    "spatial.communication": {
+      "question": "Are candidate sender-receiver interactions spatially plausible and linked to local target programmes?",
+      "minimum_inputs": ["spatial_identity", "coordinates", "ligand_receptor_expression"],
+      "unit_of_inference": "specimen-aware local interactions",
+      "outputs": ["spatial_lr_hypotheses", "local_target_programs"],
+      "supports": ["spatial_communication_hypothesis"],
+      "does_not_support": ["causal_signaling_without_perturbation"],
+      "validation": ["proximity", "target_program", "condition_specificity", "replicate_recurrence", "perturbation"]
+    },
+    "spatial.multisection": {
+      "question": "Which spatial structures are conserved rather than section-specific?",
+      "minimum_inputs": ["multiple_sections_or_specimens", "comparable_spatial_features"],
+      "unit_of_inference": "specimen",
+      "outputs": ["shared_domains", "conserved_niches", "specimen_variability"],
+      "supports": ["spatial_generalization"],
+      "does_not_support": ["independence_of_adjacent_serial_sections"],
+      "validation": ["specimen_level_recurrence", "registration_only_when_justified"]
+    },
+    "spatial.histology": {
+      "question": "Do molecular states correspond to measurable tissue morphology?",
+      "minimum_inputs": ["spatial_molecular_data", "registered_image_or_morphology_features"],
+      "unit_of_inference": "cell/location/region nested within specimen",
+      "outputs": ["morphology_molecular_association", "boundary_or_region_support"],
+      "supports": ["orthogonal_tissue_evidence"],
+      "does_not_support": ["mechanism_from_visual_overlay"],
+      "validation": ["registration_qc", "independent_image_features", "cross_specimen_recurrence"]
+    },
+    "crossmodal.sc_to_spatial": {
+      "question": "Can high-resolution scRNA states be localized in tissue?",
+      "minimum_inputs": ["validated_scrna_reference", "spatial_data"],
+      "unit_of_inference": "specimen",
+      "outputs": ["spatial_state_mapping", "mapping_confidence", "marker_validation"],
+      "supports": ["cross_modal_localization"],
+      "does_not_support": ["causal_context_dependence_by_mapping_alone"],
+      "validation": ["held_out_markers", "histology", "independent_reference"]
+    }
+  }
+}
