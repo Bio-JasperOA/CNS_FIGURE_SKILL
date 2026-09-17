@@ -21,6 +21,21 @@ PALETTE_SNAPSHOT={**PAL,**editorial_snapshots()}
 _palette=palette
 _cmap=cmap
 
+
+def _prepare_demo_config(config):
+    """Remove legacy palette hints so generated gallery configs match the active router."""
+    c=copy.deepcopy(config)
+    c.pop('subtitle',None)
+    c.setdefault('palette_policy','modern_editorial')
+    if c.get('palette_policy')=='modern_editorial':
+        c.pop('colors',None)
+        pid=str(c.get('categorical_preset',''))
+        if pid.startswith('C'):c.pop('categorical_preset',None)
+        pid=str(c.get('continuous_preset',''))
+        if pid.startswith(('M','D','S')):c.pop('continuous_preset',None)
+    return c
+
+
 def render(kind,table,config=None,mode='advanced'):
     cfg=copy.deepcopy(config or {});d=table.copy(deep=True)
     cfg.setdefault('palette_policy','modern_editorial')
@@ -34,6 +49,8 @@ def render(kind,table,config=None,mode='advanced'):
             PLOTTERS[kind](ax,d,mode=='advanced',cfg)
             for t in fig.findobj(Text):t.set_fontfamily(fig._actual_font)
             fig._mode=mode;fig._input_sha256=hashlib.sha256(table.to_csv(index=False).encode()).hexdigest()
+            fig._palette_policy=cfg.get('palette_policy','modern_editorial')
+            fig._palette_router='modern_palettes' if fig._palette_policy!='legacy' else 'chart_core'
             fig.canvas.draw();return fig
         except Exception:
             plt.close(fig);raise
@@ -45,15 +62,14 @@ def demo(out):
     from fixtures import generate,high_capacity
     root=Path(out);(root/'source_data').mkdir(parents=True,exist_ok=True);manifest=[]
     for kind,(d,c) in generate().items():
-        csv=root/'source_data'/f'{kind}.csv';d.to_csv(csv,index=False)
-        # Retain the intentional subtitle sentinel only in tests, not production examples.
-        c.pop('subtitle',None);c.setdefault('palette_policy','modern_editorial');_write(csv.with_suffix('.json'),c)
+        c=_prepare_demo_config(c)
+        csv=root/'source_data'/f'{kind}.csv';d.to_csv(csv,index=False);_write(csv.with_suffix('.json'),c)
         reports={}
         for mode in ['minimal','advanced']:
             reports[mode]=export(render(kind,d,c,mode),root/'figures'/f'{kind}_{mode}')
-        manifest.append({'kind':kind,'data_sha256':_hash(csv),'config_sha256':_hash(csv.with_suffix('.json')),'modes':{m:{'layers':r['semantic_layers'],'outputs':r['outputs']} for m,r in reports.items()}})
+        manifest.append({'kind':kind,'data_sha256':_hash(csv),'config_sha256':_hash(csv.with_suffix('.json')),'palette_policy':c['palette_policy'],'modes':{m:{'layers':r['semantic_layers'],'outputs':r['outputs']} for m,r in reports.items()}})
         print(kind,flush=True)
-    d,c=high_capacity();d.to_csv(root/'source_data'/'embedding_100.csv',index=False);c.pop('subtitle',None);c.setdefault('palette_policy','modern_editorial');_write(root/'source_data'/'embedding_100.json',c)
+    d,c=high_capacity();c=_prepare_demo_config(c);d.to_csv(root/'source_data'/'embedding_100.csv',index=False);_write(root/'source_data'/'embedding_100.json',c)
     for mode in ['minimal','advanced']:
         export(render('embedding',d,c,mode),root/'figures'/f'embedding_100_{mode}')
     _write(root/'manifest.json',{'version':VERSION,'data_kind':'synthetic_style_fixture','subtitle_policy':'forbidden','palette_policy':'modern_editorial','pairs':manifest})
