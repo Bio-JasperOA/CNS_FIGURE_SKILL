@@ -1,10 +1,33 @@
-# Result interpretation
+# Result Interpretation
 
-Use `task_mode: results-interpret` to interpret actual single-cell, spatial, developmental, computational and wet-lab results. Start with [SKILL.md](SKILL.md), then select relevant [assay guidance](ASSAY_PLAYBOOK.md) and [narrative patterns](NARRATIVE_PLAYBOOK.md).
+**Source-linked interpretation of actual computational and experimental results.**  
+**面向真实计算与实验结果的可追溯解读层。**
 
-The agent reads results, constructs biological explanations, tests them against alternatives, and writes source-linked interpretations. The helper program only checks a declared evidence bundle and builds a review packet. It does not read arbitrary experiments, discover mechanisms, or approve manuscript conclusions automatically.
+Use `task_mode: results-interpret` for single-cell, spatial, developmental, model-evaluation and wet-lab results. Start with [`SKILL.md`](SKILL.md), then use the relevant assay and narrative guidance.
 
-## Invocation
+对单细胞、空间组学、发育、模型评估及湿实验结果使用 `task_mode: results-interpret`。先读取 [`SKILL.md`](SKILL.md)，再根据实际结果选择 assay 与 narrative 指南。
+
+## Interpretation logic · 解读逻辑
+
+```text
+Observed result / 观察结果
+        ↓
+Biological meaning / 生物学含义
+        ↓
+Plausible explanation / 可能解释
+        ↓
+Alternative explanations / 替代解释
+        ↓
+Evidence strength and boundary / 证据强度与边界
+        ↓
+Discriminating validation / 可区分解释的验证
+```
+
+Observation, interpretation, mechanism hypothesis and validated conclusion must remain separate. Negative and contradictory results are retained when they materially affect the claim.
+
+观察、解释、机制假设与已验证结论必须分开。对主张有实质影响的阴性结果和矛盾结果必须保留。
+
+## Invocation · 调用
 
 ```text
 task_mode: results-interpret
@@ -19,38 +42,42 @@ inputs:
 output_dir: project/interpretation
 ```
 
-Replace project paths with actual files. `plan_only` here means read-only interpretation/reporting, not refusal to produce an interpretation. New computation belongs to an explicitly requested analysis route. `quick`, `full` and `manuscript` control interpretation depth; they do not change evidence standards.
+Replace example paths with real project files. In this route, `plan_only` means read-only interpretation and reporting; it does not suppress the interpretation output.
 
-The module works directly on available results; existing data-adaptation profiles and manifests are reused when available. It does not require the optional data-adaptation package or a new complete research plan. Existing plotting styles and raw data stay unchanged.
+示例路径必须替换为真实项目文件。在本路线中，`plan_only` 表示只读解读与报告，不表示停止输出解读结果。
 
-## Structured evidence check
+`interpretation_depth` values / 解读深度：
 
-Install the helper dependency with `python -m pip install 'jsonschema>=4.18,<5'`.
+- `quick` — key findings and major caveats / 核心发现与主要限制
+- `full` — result-by-result interpretation and evidence chain / 逐结果解读与证据链
+- `manuscript` — structured Results/Discussion handoff while preserving claim boundaries / 在保持主张边界的前提下形成 Results/Discussion 交接材料
 
-From the repository root:
+## Structured evidence check · 结构化证据检查
 
 ```bash
+python -m pip install 'jsonschema>=4.18,<5'
 python singlecell-spatial-figures/result_interpretation/review_results.py packet \
-  singlecell-spatial-figures/result_interpretation/examples/synthetic_multimodal.json \
-  --root singlecell-spatial-figures/result_interpretation/examples \
-  --verify-files --out build/interpretation_demo
-
-python -m unittest discover \
-  -s singlecell-spatial-figures/result_interpretation/tests -v
+  project/interpretation/result_bundle.json \
+  --root project \
+  --verify-files \
+  --out project/interpretation/checked
 ```
 
-The example is entirely synthetic. For a real project, record actual source IDs, project-root-relative file paths, read scope, effect scale, contrast, biological/inferential units, diagnostics, claim roles and contradictory evidence in `RESULT_BUNDLE_SCHEMA.json` format. File hashes detect stale inputs; explicit CSV/TSV numeric bindings verify that stated summary statistics match a uniquely selected source row. Other formats require a reviewed table export; this helper does not silently parse or convert them.
+The helper validates declared evidence relationships, metadata consistency, source hashes and explicit numeric bindings where supported. It does not independently establish biological truth or causal mechanism.
 
-`validate` prints the audit, while `packet` additionally writes `audit.json` and `review_packet.md`. Existing output files are not overwritten unless `--overwrite` is supplied. Input evidence is protected even with that flag. A failed bundle does not produce a new endorsed-looking narrative packet. Use a new output directory per revision; an older packet is not evidence of a newer run's success.
+辅助程序用于检查声明的证据关系、元数据一致性、来源哈希以及支持格式中的显式数值绑定；它不会独立证明生物学事实或因果机制。
 
-## What gets checked, and what does not
+## Main documents · 主要文档
 
-Implemented checks include references, metadata consistency, effect/null/interval scale, duplicate keys, declared nesting, claimed independent evidence, heldout specimen overlap, unsupported causal/equivalence escalation, unaccounted results, obvious selective exclusions, source hashes and bound numeric values.
+- [`ASSAY_PLAYBOOK.md`](ASSAY_PLAYBOOK.md) — assay-aware interpretation / 按实验类型解读
+- [`ASSAY_RULES.json`](ASSAY_RULES.json) — machine-readable interpretation constraints / 机器可读解读约束
+- [`NARRATIVE_PLAYBOOK.md`](NARRATIVE_PLAYBOOK.md) — evidence-to-narrative patterns / 证据到叙事的组织方式
+- [`LITERATURE_LOGIC.md`](LITERATURE_LOGIC.md) — literature-use boundaries / 文献使用边界
+- [`RESULT_BUNDLE_SCHEMA.json`](RESULT_BUNDLE_SCHEMA.json) — structured evidence contract / 结构化证据约定
+- [`review_results.py`](review_results.py) — evidence packet validator / 证据包校验工具
 
-Unimplemented scientific judgments include automatic image quantification/integrity checks, arbitrary-format ingestion, proof of causal identification, verification of every sentence's meaning, literature novelty and a universal CNS-readiness score. A passing JSON record is not a proof that its declarations are true. Human review stays pending.
+## Scientific boundary · 科学边界
 
-## Files
+Literature may explain context, expected biology or alternative mechanisms, but it must not be used to invent project-specific measurements. A successful schema or software validation is not equivalent to a validated biological conclusion.
 
-`SKILL.md` defines agent behavior; `ASSAY_PLAYBOOK.md` and `ASSAY_RULES.json` cover 20 interpretation families; `NARRATIVE_PLAYBOOK.md` covers six narrative patterns; `LITERATURE_LOGIC.md` and `SOURCES.json` document ten targeted references and actual read scope. The schema, executable checker, two synthetic worked examples and regression tests provide the software contract.
-
-The referenced literature set includes primary Nature, Cell, Science and portfolio papers, two review navigation entries, and a statistical commentary. It is not an exhaustive or newest-paper survey. No paper PDFs, original figures, model weights or font files are distributed.
+文献可以用于解释背景、预期生物学与替代机制，但不能用于补造本项目不存在的测量结果。Schema 或软件校验通过，不等于生物学结论已经得到验证。
