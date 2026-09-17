@@ -1,25 +1,60 @@
-# Single-cell / Spatial Figures · v3
+# Single-cell & Spatial Figure System
 
-入口为 [SKILL.md](SKILL.md)。当前能力边界见 [CAPABILITIES.json](CAPABILITIES.json)，pipeline-first 运行层见 [pipeline_tree/README.md](pipeline_tree/README.md)，执行与验证记录见 [pipeline_tree/RUNTIME.md](pipeline_tree/RUNTIME.md) 和 [QA_REPORT.md](QA_REPORT.md)。
+**Reusable scientific figure generation for single-cell, spatial, developmental and foundation-model research.**  
+**面向单细胞、空间组学、发育生物学与基础模型研究的可复用科学绘图系统。**
 
-当前 Skill 保持 **v3 / FigureSpec 3.0**，同时提供两层可复用能力：
+The entry document for strict figure generation and audit is [`SKILL.md`](SKILL.md). Machine-readable capability boundaries are defined in [`CAPABILITIES.json`](CAPABILITIES.json).
 
-1. 原 v3 FigureSpec 审核/载体层，用于严格的尺度、布局、导出、PDF carrier 与人工签署；
-2. pipeline-first 科研绘图层，用于把已经审核的 scRNA-seq、空间转录组、跨模态、胚胎发育和 foundation-model 分析结果映射到必产图、高级图和 panel。
+严格绘图与审核入口见 [`SKILL.md`](SKILL.md)，机器可读的能力边界见 [`CAPABILITIES.json`](CAPABILITIES.json)。
 
-## Pipeline-first runtime
+## Architecture · 架构
 
-当前 `pipeline_tree/` 已覆盖 **36/36 注册模块**：
+The system is organized into five public components:
 
-- scRNA-seq：13
-- spatial transcriptomics：11
-- cross-modal：4
-- development / embryo：4
-- foundation-model evaluation：4
+系统由五个公开组件构成：
 
-机器注册表包含 141 个 required figure assignments、107 个 advanced figure assignments 和 240 个 unique plot targets。最新完整 GitHub Actions 验证为 **60 tests passed**，随后实际渲染 **36 个模块 / 286 个 synthetic figure records**。
+1. **Research logic / 研究逻辑** — biological question, evidence chain and analysis strategy.
+2. **Result interpretation / 结果解读** — source-linked interpretation of actual outputs.
+3. **Style gallery / 图形库** — reusable plot families with `minimal` and `advanced` modes.
+4. **Pipeline tree / 流程图树** — analysis-module to figure-set mapping.
+5. **Figure audit / 图形审核** — layout, scale, export and final-carrier checks.
 
-统一入口：
+## Supported research domains · 支持领域
+
+- scRNA-seq and snRNA-seq / 单细胞与单核 RNA 测序
+- spatial transcriptomics / 空间转录组
+- cross-modal and multimodal biology / 跨模态与多模态生物学
+- development and embryo research / 发育与胚胎研究
+- biological foundation-model evaluation / 生物学基础模型评估
+
+## Figure principles · 绘图原则
+
+- No subtitles. / 不使用 subtitle。
+- `advanced` must add real scientific information. / `advanced` 必须增加真实科学信息。
+- Do not refit statistical or biological models while plotting. / 绘图阶段不重新拟合统计或生物学模型。
+- Do not invent significance, uncertainty, trajectories, boundaries, neighborhoods or probabilities. / 不补造显著性、不确定性、轨迹、边界、邻域或概率。
+- Keep biological identities color-stable across related panels when possible. / 相同生物类别在相关 panel 中尽量保持颜色一致。
+- Continuous normalization and palette choice are separate decisions. / 连续变量归一化与色板选择分开处理。
+- Synthetic fixtures are software examples only. / 合成数据仅用于软件示例。
+
+## Single-figure rendering · 单图绘制
+
+```bash
+cd singlecell-spatial-figures/style_gallery
+python -m pip install -r requirements-tested.txt
+python render.py plot \
+  --kind heatmap \
+  --input reviewed.csv \
+  --config reviewed.json \
+  --mode advanced \
+  --out results/Fig1
+```
+
+The style gallery currently exposes supported scientific plot families through a common rendering interface. See [`style_gallery/README.md`](style_gallery/README.md).
+
+通用图形通过统一渲染接口调用，详见 [`style_gallery/README.md`](style_gallery/README.md)。
+
+## Pipeline-aware rendering · 流程配套绘图
 
 ```bash
 python pipeline_tree/run_pipeline.py \
@@ -30,37 +65,25 @@ python pipeline_tree/run_pipeline.py \
   --out build/annotation
 ```
 
-每个模块的字段约束见 `pipeline_tree/RESULT_CONTRACTS.json`；完整分析树见 `pipeline_tree/PIPELINE_TREE.md`；当前可执行边界见 `pipeline_tree/IMPLEMENTED_MODULES.json`。
+The pipeline renderer consumes reviewed upstream result tables. It does not rerun Seurat, Scanpy, CellRank, scVelo, CellChat, LIANA, Milo, scCODA, Squidpy, cell2location, Tangram or model fitting.
 
-绘图 runtime 不重新执行 Seurat、Scanpy、CellRank、scVelo、CellChat、LIANA、Milo、scCODA、Squidpy、cell2location 等上游分析，也不制造缺失的统计显著性、区间、轨迹、分割边界、邻域、概率或不确定性。缺少高级图所需输入时，会在 `manifest.json` 中明确记录 `skipped` 原因。
+Pipeline renderer 只消费已审核的上游结果表，不重新执行 Seurat、Scanpy、CellRank、scVelo、CellChat、LIANA、Milo、scCODA、Squidpy、cell2location、Tangram 或模型训练。
 
-## 图形与视觉规范
+Input definitions / 输入定义：
 
-所有图统一执行：
+- [`pipeline_tree/IMPLEMENTED_MODULES.json`](pipeline_tree/IMPLEMENTED_MODULES.json)
+- [`pipeline_tree/RESULT_CONTRACTS.json`](pipeline_tree/RESULT_CONTRACTS.json)
+- [`pipeline_tree/PIPELINE_TREE.md`](pipeline_tree/PIPELINE_TREE.md)
 
-- **禁止 subtitle**；
-- palette 与 normalization 分离；
-- 同一生物类别尽量使用固定命名颜色；
-- `advanced` 必须增加真实科学维度，而非只增加装饰；
-- standalone PDF/SVG 是矢量发表候选，review contact sheet 只用于检查和导航；
-- synthetic fixtures 永远不能当作生物学结果。
+## Research and interpretation routes · 研究与解读入口
 
-26 类通用绘图 primitive 和 minimal/advanced 范例位于 [style_gallery](style_gallery/README.md)。52 个色卡家族位于 [assets/palettes](assets/palettes/README.md)。
+- [`research_logic/SKILL.md`](research_logic/SKILL.md) — research design / 研究设计
+- [`research_logic/ANALYSIS_SKILL.md`](research_logic/ANALYSIS_SKILL.md) — analysis planning / 分析规划
+- [`research_logic/ANALYSIS_EXECUTION.md`](research_logic/ANALYSIS_EXECUTION.md) — code authoring contract / 代码实现约定
+- [`result_interpretation/SKILL.md`](result_interpretation/SKILL.md) — actual-result interpretation / 真实结果解读
 
-## 原 v3 FigureSpec / 最终载体审核
+## Final figure audit · 最终图形审核
 
-严格 FigureSpec 路径仍保留，用于最终论文图与载体检查：
+For manuscript figures, use the strict audit route in [`SKILL.md`](SKILL.md) to check scale, panel layout, vector export, PDF carriers and review status.
 
-```bash
-python -m pip install -r requirements-v3.txt
-python scripts/render_v3.py render examples/v3_software_qa/figure.yaml --root examples/v3_software_qa --out build/software_qa
-python scripts/render_v3.py review build/software_qa
-```
-
-需要检查最终报告/组图 PDF 时继续使用 `inspect-pdf`、`carrier` 和 `bind-report` 路线。pipeline runtime 的成功不替代最终 carrier audit 或人工科学审阅。
-
-## 色卡
-
-保留 `spec_version: '3.0'` 和既有 52 个色卡家族。类别颜色不足时停止，不循环或插值；筛选群组时继续复用固定命名颜色。连续尺度的 palette 与 normalization 独立配置。
-
-R bridge 仍未声明与 Python runtime 原生等价；只有实际执行并加入测试后才能扩张该能力声明。
+论文正式组图应使用 [`SKILL.md`](SKILL.md) 中的严格审核路线检查尺度、panel 布局、矢量导出、PDF 载体与审核状态。
