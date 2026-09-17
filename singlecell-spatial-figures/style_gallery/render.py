@@ -7,15 +7,19 @@ from pathlib import Path
 import pandas as pd
 import matplotlib.pyplot as plt
 from matplotlib.text import Text
+import chart_core as _chart_core
 from chart_core import VERSION,REQUIRED,validate,frame,audit,export,palette,cmap,PAL
 import chart_types as _chart_types
 from chart_types import PLOTTERS
 from modern_palettes import palette as editorial_palette, cmap as editorial_cmap, snapshots as editorial_snapshots
 
-# Modern low-saturation editorial routing is the default rendering policy. The legacy
-# palette implementation remains exported below for compatibility tests and explicit use.
+# Modern low-saturation editorial routing is the default rendering policy. Patch both
+# chart_types and chart_core because helpers such as matrix() resolve palette/cmap from
+# chart_core's module globals at runtime.
 _chart_types.palette = editorial_palette
 _chart_types.cmap = editorial_cmap
+_chart_core.palette = editorial_palette
+_chart_core.cmap = editorial_cmap
 KINDS=list(REQUIRED)
 PALETTE_SNAPSHOT={**PAL,**editorial_snapshots()}
 _palette=palette
