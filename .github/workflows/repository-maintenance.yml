@@ -1,0 +1,43 @@
+name: Repository maintenance audit
+on:
+  push:
+    branches: ['maintenance/release-1.0.1']
+    paths: ['.github/workflows/repository-maintenance.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  inventory:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - name: Snapshot only tracked public repository files
+        run: |
+          mkdir -p "$RUNNER_TEMP/cns-inventory"
+          git archive --format=zip HEAD > "$RUNNER_TEMP/cns-inventory/checkout.zip"
+          python - <<'PY'
+          import collections, hashlib, json, os, pathlib, re, subprocess
+          paths = subprocess.check_output(['git','ls-files','-z']).decode().split('\0')
+          records=[]; duplicates=collections.defaultdict(list); versions=[]
+          for name in filter(None,paths):
+              p=pathlib.Path(name); data=p.read_bytes(); sha=hashlib.sha256(data).hexdigest()
+              records.append({'path':name,'size':len(data),'sha256':sha}); duplicates[sha].append(name)
+              if p.suffix in {'.md','.json','.py','.R','.yml','.yaml','.txt','.html'}:
+                  try: text=data.decode('utf-8')
+                  except UnicodeDecodeError: continue
+                  if '/examples/figures/' not in name:
+                      for i,line in enumerate(text.splitlines(),1):
+                          if re.search(r'version|v3\.|v2\.|tranche|roadmap.only|not yet|未实现|待实现',line,re.I):
+                              versions.append({'path':name,'line':i,'text':line[:260]})
+          result={'head':subprocess.check_output(['git','rev-parse','HEAD']).decode().strip(),'files':records,'duplicate_groups':[v for v in duplicates.values() if len(v)>1],'version_and_status_lines':versions}
+          pathlib.Path(os.environ['RUNNER_TEMP'],'cns-inventory','inventory.json').write_text(json.dumps(result,indent=2))
+          print('Tracked files:',len(records),'bytes:',sum(r['size'] for r in records))
+          print('Duplicate groups:',len(result['duplicate_groups']),'version/status lines:',len(versions))
+          print('Data adaptation installed:',pathlib.Path('singlecell-spatial-figures/data_adaptation/SKILL.md').exists())
+          PY
+      - uses: actions/upload-artifact@v7
+        with:
+          name: repository-inventory
+          path: ${{ runner.temp }}/cns-inventory/
+          retention-days: 7
+          if-no-files-found: error
