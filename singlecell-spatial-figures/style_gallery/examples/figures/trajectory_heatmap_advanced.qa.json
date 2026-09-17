@@ -244,7 +244,7 @@
   "font": "DejaVu Sans",
   "width_mm": 190.0,
   "height_mm": 155.0,
-  "input_csv_sha256": "94368f2f49d01921e9cc712afc466c55f89d33f2804c6ebf2bc356dca7c7b68d",
+  "input_csv_sha256": "333a178e814190370648ad1aabb5f8b9fe44790930d792c120eb57d84f6765b1",
   "derived_order": [
     "Gene 01",
     "Gene 02",
@@ -276,7 +276,7 @@
   "scope": "canvas bounds and subtitle policy; not a scientific or universal collision certificate",
   "outputs": {
     "png": "3801a04157d55df8513b545fece86a67d37788bc7f55b4e6a30bf171e0c344e6",
-    "pdf": "36c518afb02c98c3fae301af4a5931c154f86d59776651c0efbe0e8e89d218a4",
-    "svg": "62934d1ce4a5d896713b2b3a78c76bda9636fbdaf1ca96ff4991f19b6a6c5e40"
+    "pdf": "bc77fd5ad5f14d251672e7cc01a8868cb0626cb8ce35fe75b7c864c2fb22640e",
+    "svg": "292cd905443b8971cd60019be24c6d301a9ef3c1f40799d63ac544360bb35d82"
   }
 }

@@ -1,6 +1,5 @@
 {
   "demo": true,
-  "categorical_preset": "C19",
   "label_groups": [
     "Type 001",
     "Type 011",

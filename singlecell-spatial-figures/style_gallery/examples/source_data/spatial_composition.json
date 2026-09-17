@@ -2,11 +2,6 @@
   "demo": true,
   "width_mm": 190,
   "height_mm": 135,
-  "colors": {
-    "T cells": "#729ECE",
-    "B cells": "#FF9E4A",
-    "Myeloid": "#67BF5C"
-  },
   "coordinate_unit": "µm",
   "spot_radius": 6.6,
   "palette_policy": "modern_editorial"

@@ -1,11 +1,11 @@
 <!-- REMOTE_PUBLICATION:START -->
 # GitHub publication verification
 
-420 passed, 2 skipped, 12 warnings in 37.55s
+424 passed, 2 skipped, 12 warnings in 29.18s
 
 26 families; 54 no-subtitle figures; 26-page paired PDF; existing palette, schema and legacy script hashes unchanged.
 
-[Build run](https://github.com/Bio-JasperOA/CNS_FIGURE_SKILL/actions/runs/35167373826) | [Machine-readable report](PUBLISH_REPORT.json). The authoring report below is historical; its earlier not-uploaded status does not describe this publication.
+[Build run](https://github.com/Bio-JasperOA/CNS_FIGURE_SKILL/actions/runs/35168340729) | [Machine-readable report](PUBLISH_REPORT.json). The authoring report below is historical; its earlier not-uploaded status does not describe this publication.
 <!-- REMOTE_PUBLICATION:END -->
 
 # v3.2.0 实际检查记录
