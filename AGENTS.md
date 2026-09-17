@@ -9,9 +9,13 @@ If the task asks to design, critique, prioritize, extend or interpret a study, *
 1. `singlecell-spatial-figures/research_logic/SKILL.md`
 2. `singlecell-spatial-figures/research_logic/CNS_ANCHORS.md`
 3. `singlecell-spatial-figures/research_logic/PAPER_LOGIC_LIBRARY.md`
-4. `singlecell-spatial-figures/research_logic/RESEARCH_PLAN_SCHEMA.json` when producing a durable project plan.
+4. `singlecell-spatial-figures/research_logic/ANALYSIS_STRATEGY_LIBRARY.md`
+5. `singlecell-spatial-figures/research_logic/ANALYSIS_STRATEGY_CATALOG.json` when selecting concrete scRNA-seq / spatial analysis families.
+6. `singlecell-spatial-figures/research_logic/RESEARCH_PLAN_SCHEMA.json` when producing a durable project plan.
 
 Do not begin a research-design task with software, analysis methods or figures. Start from the biological gap, core question, central claim and claim–evidence graph.
+
+Once the claims are defined, choose the **smallest defensible analysis chain** from the analysis-strategy library. Every analysis step must support at least one claim and must specify its biological question, independence unit, expected output, limitation and validation. Do not add CellChat, trajectory, velocity, regulons, spatial niches, deconvolution or other advanced modules only because they are available.
 
 For biological foundation-model projects, explicitly address biological utility, baseline hierarchy, OOD evaluation, specimen-level independence and leakage.
 
@@ -34,7 +38,9 @@ When a task includes both research design and figures:
 ```text
 research question
 → claim–evidence graph
-→ data / analysis / validation design
+→ data design
+→ analysis strategy selection
+→ validation design
 → reviewed result contracts
 → figure pipeline
 ```
