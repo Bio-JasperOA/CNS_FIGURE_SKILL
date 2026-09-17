@@ -9,9 +9,10 @@ If the task asks to design, critique, prioritize, extend or interpret a study, *
 1. `singlecell-spatial-figures/research_logic/SKILL.md`
 2. `singlecell-spatial-figures/research_logic/CNS_ANCHORS.md`
 3. `singlecell-spatial-figures/research_logic/PAPER_LOGIC_LIBRARY.md`
-4. `singlecell-spatial-figures/research_logic/ANALYSIS_STRATEGY_LIBRARY.md`
-5. `singlecell-spatial-figures/research_logic/ANALYSIS_STRATEGY_CATALOG.json` when selecting concrete scRNA-seq / spatial analysis families.
-6. `singlecell-spatial-figures/research_logic/RESEARCH_PLAN_SCHEMA.json` when producing a durable project plan.
+4. `singlecell-spatial-figures/research_logic/ANALYSIS_SKILL.md` for operational scRNA-seq / spatial analysis planning.
+5. `singlecell-spatial-figures/research_logic/ANALYSIS_STRATEGY_LIBRARY.md`
+6. `singlecell-spatial-figures/research_logic/ANALYSIS_STRATEGY_CATALOG.json` when selecting concrete analysis families.
+7. `singlecell-spatial-figures/research_logic/RESEARCH_PLAN_SCHEMA.json` when producing a durable project plan.
 
 Do not begin a research-design task with software, analysis methods or figures. Start from the biological gap, core question, central claim and claim–evidence graph.
 
