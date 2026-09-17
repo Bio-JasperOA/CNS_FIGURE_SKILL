@@ -7,8 +7,9 @@ This repository has two complementary execution layers.
 If the task asks to design, critique, prioritize, extend or interpret a study, **read first**:
 
 1. `singlecell-spatial-figures/research_logic/SKILL.md`
-2. `singlecell-spatial-figures/research_logic/PAPER_LOGIC_LIBRARY.md`
-3. `singlecell-spatial-figures/research_logic/RESEARCH_PLAN_SCHEMA.json` when producing a durable project plan.
+2. `singlecell-spatial-figures/research_logic/CNS_ANCHORS.md`
+3. `singlecell-spatial-figures/research_logic/PAPER_LOGIC_LIBRARY.md`
+4. `singlecell-spatial-figures/research_logic/RESEARCH_PLAN_SCHEMA.json` when producing a durable project plan.
 
 Do not begin a research-design task with software, analysis methods or figures. Start from the biological gap, core question, central claim and claim–evidence graph.
 
