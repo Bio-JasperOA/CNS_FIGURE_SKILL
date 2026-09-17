@@ -6,8 +6,10 @@ sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
 import matplotlib.pyplot as plt
 from matplotlib.colors import to_rgb,to_hex
 from matplotlib.collections import PathCollection
+from matplotlib.text import Text
 from modern_palettes import palette,cmap,CATEGORICAL,SEQUENTIAL,DIVERGING
 from render import render,_prepare_demo_config
+from chart_core import INK,MUTED
 from fixtures import generate
 
 
@@ -18,6 +20,11 @@ def _lightness(color):
 
 def _hexset(rows):
     return {to_hex(x,keep_alpha=False).upper() for x in rows}
+
+
+def _safe_hex(color):
+    try:return to_hex(color,keep_alpha=False).upper()
+    except Exception:return ''
 
 
 def test_editorial_inventory_is_complete_and_high_lightness():
@@ -116,5 +123,48 @@ def test_rendered_heatmap_artist_uses_editorial_diverging_cmap():
         im=fig.axes[0].images[0]
         assert to_hex(im.cmap(0.0)).upper()==DIVERGING['V02']['colors'][0]
         assert to_hex(im.cmap(1.0)).upper()==DIVERGING['V02']['colors'][-1]
+    finally:
+        plt.close(fig)
+
+
+def test_legends_are_left_aligned_consistently():
+    for kind,mode in [('embedding','minimal'),('heatmap','advanced'),('calibration','advanced')]:
+        d,c=generate()[kind]
+        fig=render(kind,d,c,mode)
+        try:
+            legends=[ax.get_legend() for ax in fig.axes if ax.get_legend() is not None]
+            assert legends
+            for legend in legends:
+                assert getattr(legend,'_legend_box').align=='left'
+                assert legend.get_title().get_ha()=='left'
+                assert all(t.get_ha()=='left' for t in legend.get_texts())
+        finally:
+            plt.close(fig)
+
+
+def test_no_gray_small_explanatory_text_remains_on_canvas():
+    muted=to_hex(MUTED).upper()
+    for kind in ['dotplot','network','benchmark','calibration']:
+        d,c=generate()[kind]
+        fig=render(kind,d,c,'advanced')
+        try:
+            visible=[t for t in fig.findobj(Text) if t.get_visible() and (t.get_text() or '').strip()]
+            gray_small=[t.get_text() for t in visible if t.get_fontsize()<=7.5 and _safe_hex(t.get_color())==muted]
+            assert gray_small==[]
+            texts=[t.get_text() for t in visible]
+            assert not any(x.startswith(('Row order:','Cell text:','Cell text =','Node values:','Total ','Area ∝','Point area ∝','Fixed point area')) for x in texts)
+            assert not any(' not displayed' in x for x in texts)
+        finally:
+            plt.close(fig)
+
+
+def test_synthetic_disclosure_is_not_gray_microcopy():
+    d,c=generate()['embedding']
+    fig=render('embedding',d,c,'minimal')
+    try:
+        disclosure=next(t for t in fig.findobj(Text) if t.get_gid()=='synthetic_disclosure')
+        assert disclosure.get_visible()
+        assert _safe_hex(disclosure.get_color())==to_hex(INK).upper()
+        assert disclosure.get_fontsize()>=7
     finally:
         plt.close(fig)
