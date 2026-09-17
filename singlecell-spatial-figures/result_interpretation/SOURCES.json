@@ -1,0 +1,106 @@
+{
+  "verified_on": "2026-09-17",
+  "scope": "Targeted primary-source and review navigation set; not an exhaustive or latest-paper survey. No PDFs or copied figures included.",
+  "sources": [
+    {
+      "id": "P1",
+      "title": "A human embryonic limb cell atlas resolved in space and time",
+      "journal": "Nature",
+      "year": "2023 online; 2024 issue",
+      "doi": "10.1038/s41586-023-06806-x",
+      "url": "https://www.nature.com/articles/s41586-023-06806-x",
+      "access_scope": "indexed Results, Discussion, Methods and Fig. 4 legend excerpts",
+      "interpretation_pattern": "State atlas → measured spatial localization → nominated regulator → MSC knockdown followed by myocyte-gene readout. Separate molecular consequence from a complete in vivo developmental mechanism."
+    },
+    {
+      "id": "P2",
+      "title": "Spatially organized multicellular immune hubs in human colorectal cancer",
+      "journal": "Cell",
+      "year": "2021",
+      "doi": "10.1016/j.cell.2021.08.003",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/34450029/",
+      "access_scope": "PubMed abstract and publisher-indexed abstract/highlights; full publisher page returned 403",
+      "interpretation_pattern": "Across-tumor co-variation of programmes is followed by spatial localization of candidate multicellular hubs. Localization strengthens anatomical interpretation without being an intervention."
+    },
+    {
+      "id": "P3",
+      "title": "Lineage tracing on transcriptional landscapes links state to fate during differentiation",
+      "journal": "Science",
+      "year": "2020",
+      "doi": "10.1126/science.aaw3381",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7608074/",
+      "access_scope": "indexed Results and Fig. 2 legend excerpts; direct PMC open encountered browser challenge",
+      "interpretation_pattern": "Measured clonal links connect earlier transcriptional states with later fate. The interpretation explicitly depends on tested sister-cell similarity, illustrating why state and fate are not interchangeable."
+    },
+    {
+      "id": "P4",
+      "title": "Transfer learning enables predictions in network biology",
+      "journal": "Nature",
+      "year": "2023",
+      "doi": "10.1038/s41586-023-06139-9",
+      "url": "https://www.nature.com/articles/s41586-023-06139-9",
+      "access_scope": "indexed abstract, figure titles, extended-data legends and contributions; not full main text",
+      "interpretation_pattern": "Distinguish representation/prediction evidence from the separately reported experimental validation in cardiac microtissues. In silico perturbation must not be relabelled as a performed wet-lab intervention."
+    },
+    {
+      "id": "P5",
+      "title": "Confronting false discoveries in single-cell differential expression",
+      "journal": "Nature Communications",
+      "year": "2021",
+      "doi": "10.1038/s41467-021-25960-2",
+      "url": "https://www.nature.com/articles/s41467-021-25960-2",
+      "access_scope": "indexed Results, Discussion, Methods and availability text",
+      "interpretation_pattern": "The study challenges an initially plausible explanation, tests biological-replicate handling and uses orthogonal in situ evidence. Preserve alternatives, specimen-level uncertainty and negative controls rather than selecting the method with the most discoveries."
+    },
+    {
+      "id": "P6",
+      "title": "Human lung cancer harbors spatially organized stem-immunity hubs associated with response to immunotherapy",
+      "journal": "Nature Immunology",
+      "year": "2024",
+      "doi": "10.1038/s41590-024-01792-2",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/12096941",
+      "access_scope": "indexed abstract and first Results subsection",
+      "interpretation_pattern": "Pretreatment tissue organization is associated with later therapy outcome. Retain the observational treatment-response scope rather than claiming the tissue hub was proven to cause response."
+    },
+    {
+      "id": "P7",
+      "title": "Deep-learning-based gene perturbation effect prediction does not yet outperform simple linear baselines",
+      "journal": "Nature Methods",
+      "year": "2025",
+      "doi": "10.1038/s41592-025-02772-6",
+      "url": "https://www.nature.com/articles/s41592-025-02772-6",
+      "access_scope": "indexed Main, Methods, limitations and figure legends",
+      "interpretation_pattern": "Compare prediction targets with matched simple baselines and inspect systematic errors. The negative result is task- and dataset-scoped; it does not prove that all biological AI is ineffective."
+    },
+    {
+      "id": "P8",
+      "title": "Scientists rise up against statistical significance",
+      "journal": "Nature Comment",
+      "year": "2019",
+      "doi": "10.1038/d41586-019-00857-9",
+      "url": "https://www.nature.com/articles/d41586-019-00857-9",
+      "access_scope": "indexed introduction and bibliographic details only; conceptual commentary, not an experiment",
+      "interpretation_pattern": "The opening critiques interpreting a nonsignificant result as no difference. Use this as a conceptual caution, not as empirical evidence for a biological claim."
+    },
+    {
+      "id": "R1",
+      "title": "Revealing gene function with statistical inference at single-cell resolution",
+      "journal": "Nature Reviews Genetics",
+      "year": "2024",
+      "doi": "10.1038/s41576-024-00750-w",
+      "url": "https://www.nature.com/articles/s41576-024-00750-w",
+      "access_scope": "indexed abstract only; navigation reference",
+      "interpretation_pattern": "Review-level context connecting molecular profiling, perturbations, cohorts and phenotype. Detailed rules in this module are author-defined and require the project-specific methods, not abstract-only authority."
+    },
+    {
+      "id": "R2",
+      "title": "The diversification of methods for studying cell–cell interactions and communication",
+      "journal": "Nature Reviews Genetics",
+      "year": "2024",
+      "doi": "10.1038/s41576-023-00685-8",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/38238518/",
+      "access_scope": "PubMed metadata and available indexed review introduction; navigation reference",
+      "interpretation_pattern": "Read the relevant measurement and computational sections when interpreting communication. Do not treat one ligand–receptor inference as equivalent to every experimental class of communication evidence."
+    }
+  ]
+}

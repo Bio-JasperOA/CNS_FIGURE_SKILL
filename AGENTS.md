@@ -9,6 +9,7 @@ Read the root `README.md` Invocation section and `STRATEGY_ROUTES.json`. The JSO
 | `research-design` | Read `singlecell-spatial-figures/research_logic/SKILL.md`; design or critique the question, provisional claims and evidence chain. |
 | `analysis-plan` | Read `singlecell-spatial-figures/research_logic/ANALYSIS_SKILL.md`; choose question-driven analysis families and diagnostics. |
 | `analysis-code` | Read `singlecell-spatial-figures/research_logic/ANALYSIS_EXECUTION.md`; author project-specific R/Python scripts from a reviewed plan. |
+| `results-interpret` | Read `singlecell-spatial-figures/result_interpretation/SKILL.md`; interpret source-linked actual results before manuscript-level conclusions. |
 | `plot-single` | Read `singlecell-spatial-figures/style_gallery/README.md`; render one reviewed table with an existing gallery kind. |
 | `plot-pipeline` | Read `singlecell-spatial-figures/pipeline_tree/README.md`; render the reviewed inputs of one registered module. |
 | `figure-audit` | Read `singlecell-spatial-figures/SKILL.md`; select strict FigureSpec rendering, PDF inspection, carrier checking or artifact-bound review. |
@@ -66,12 +67,25 @@ research-design
 → analysis-plan
 → analysis-code
 → actual analysis execution when requested and feasible
-→ result diagnostics and scientific review
+→ result diagnostics
+→ results-interpret
 → plot-single or plot-pipeline
 → figure-audit when required
 ```
 
 `end-to-end` defaults to planning. Respect the requested execution stage, reuse adequate prior work, and stop only the branches whose prerequisites fail. Keep status for each step separate: planned, code written, executed, checked, or skipped. Never reverse this order by retrofitting a scientific story to attractive figures.
+
+<!-- RESULT_INTERPRETATION:START -->
+## Source-linked result interpretation
+
+Use `results-interpret` after analysis diagnostics or directly on supplied results. Read `singlecell-spatial-figures/result_interpretation/SKILL.md` and its assay/narrative playbooks. Reuse available data-adaptation profiles and experiment metadata; do not require a complete project restart.
+
+For each result separate observation, biological meaning, explanation, alternatives and claim boundary. Integrate same-data consistency, orthogonal assays, interventions and independent validation without treating them as interchangeable. Preserve material negative and contrary evidence. Cite the actual source table/panel for experimental statements and verified literature only for external context.
+
+`interpretation_depth` is quick, full or manuscript; `response_language` controls prose. This agent-only route uses plan_only for read-only interpretation, not for rerunning analyses. The optional `review_results.py` helper checks declared evidence and source bindings; it does not establish biological truth. Keep review pending and return targeted reanalysis to analysis-plan/analysis-code only when requested.
+
+For combined tasks: question → data adaptation when available → analysis/diagnostics → results-interpret ↔ discriminating validation → plotting/manuscript handoff. Diagnostic plots may come earlier. Do not redesign palettes or renderers while adding interpretation.
+<!-- RESULT_INTERPRETATION:END -->
 
 ## Maintenance
 

@@ -17,6 +17,7 @@ REQUIRED_ROUTES = {
     'plot-pipeline': 'python_renderer',
     'figure-audit': 'python_audit',
     'end-to-end': 'agent_orchestration',
+    'results-interpret': 'agent_interpretation',
 }
 EXECUTION = {'plan_only', 'write_code', 'run_approved'}
 CATALOG_FIELDS = ('analysis_catalog', 'pipeline_registry', 'plot_catalog', 'research_plan_schema')
@@ -76,7 +77,7 @@ def validate(root: Path, definition: dict | None = None) -> list[str]:
     if not isinstance(routes, dict):
         return errors + ['routes must be an object']
     if set(routes) != set(REQUIRED_ROUTES):
-        errors.append('route IDs differ from the reviewed seven-route contract')
+        errors.append('route IDs differ from the reviewed route contract')
     for rid, spec in routes.items():
         if not isinstance(spec, dict):
             errors.append(f'{rid}: expected an object')

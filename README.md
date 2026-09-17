@@ -4,6 +4,48 @@ Research design, question-driven bioinformatics strategy, and publication-orient
 
 The repository keeps **Skill major version 3** and **FigureSpec 3.0**. Planning instructions and executable plotting programs are different capabilities: an analysis strategy selects an approach; a renderer draws reviewed results; neither automatically proves a biological conclusion.
 
+<!-- RESULT_INTERPRETATION:START -->
+## Result interpretation · 结果解读
+
+`task_mode: results-interpret` 用于解读已经产生的实验/生信结果，不是重新制定整个课题，也不只是润色 Results。入口：[Result Interpretation Skill](singlecell-spatial-figures/result_interpretation/SKILL.md)。
+
+```text
+读取 AGENTS.md、STRATEGY_ROUTES.json 和结果解读 Skill。
+task_mode: results-interpret
+interpretation_depth: full
+response_language: zh
+execution: plan_only
+inputs:
+  question: project/research_question.md
+  results: project/results/
+  sample_metadata: project/samples.csv
+  analysis_log: project/logs/
+  data_profile: project/profile.json   # 已有时复用；不是必需文件
+output_dir: project/interpretation
+先读取实际结果，区分观察、解释、机制假设和已验证结论。
+逐项核对比较方向、效应、区间、分母、独立重复和来源。
+按问题组织证据，保留阴性/矛盾结果，并提出最能区分替代解释的下一步。
+不要用文献常识补造我的实验结果，不要为了叙事添加未完成的验证。
+```
+
+这些项目路径需替换为真实文件。`quick` 产生重点解读；`full` 增加逐结果解释、证据链、主张与矛盾记录；`manuscript` 再输出相互独立的 Results 和 Discussion 草稿。在此路线中 `plan_only` 表示只读解读和报告，不运行新生信分析；不会阻止输出解读文本。
+
+如已有数据自适应模块，复用其 profile、字段语义和输入绑定；没有时本模块仍可从实际结果及元数据开始。支持单细胞/空间/轨迹/通讯/模型结果，以及 qPCR、蛋白、成像、流式、功能、扰动和救援实验。针对实际测量和研究设计解释，不把所有读数都升级成“机制”。
+
+结构化证据记录可用独立 CLI 校验（从仓库根目录运行）：
+
+```bash
+python -m pip install 'jsonschema>=4.18,<5'
+python singlecell-spatial-figures/result_interpretation/review_results.py packet \
+  project/interpretation/result_bundle.json \
+  --root project --verify-files --out project/interpretation/checked
+```
+
+`review_results.py` 校验 schema、声明的证据关系、文件哈希和显式 CSV/TSV 数值绑定，输出 `audit.json` 与 `review_packet.md`；它不自动阅读所有 assay、不拟合模型、不验证自由文本的全部生物学含义，也不自动签署科学结论。真正的解读由 agent 按 Skill 读取材料后完成，人工审核保持 pending。
+
+[Assay-aware playbook](singlecell-spatial-figures/result_interpretation/ASSAY_PLAYBOOK.md) · [Narrative patterns](singlecell-spatial-figures/result_interpretation/NARRATIVE_PLAYBOOK.md) · [Literature and read scope](singlecell-spatial-figures/result_interpretation/LITERATURE_LOGIC.md) · [Synthetic worked example](singlecell-spatial-figures/result_interpretation/examples/synthetic_multimodal.json)
+<!-- RESULT_INTERPRETATION:END -->
+
 ## Invocation
 
 **先按任务选择入口，再提供输入。** 以下 `task_mode` 是本仓库定义的 agent 任务标签，**不是 shell 命令，也不是自动安装的 slash command**。在能读取本仓库的 Codex / agent 工作目录中粘贴提示词，并要求先读取 `AGENTS.md` 和 `STRATEGY_ROUTES.json`。只给一个 GitHub 链接，不等于执行环境已获得仓库文件。
@@ -15,6 +57,7 @@ The repository keeps **Skill major version 3** and **FigureSpec 3.0**. Planning 
 | `research-design` | 选题、拆解论文逻辑、评价研究证据链 | [Research Logic Skill](singlecell-spatial-figures/research_logic/SKILL.md) | 研究问题、候选主张、证据链、验证与失败条件；不执行分析 |
 | `analysis-plan` | 已有科学问题，选择单细胞 / 空间生信分析路线 | [Analysis Strategy Skill](singlecell-spatial-figures/research_logic/ANALYSIS_SKILL.md) | 最小主线、可选模块、输入输出、诊断和不推荐的分析；不运行算法 |
 | `analysis-code` | 把已审阅分析计划落成 R / Python 代码 | [Analysis Execution Contract](singlecell-spatial-figures/research_logic/ANALYSIS_EXECUTION.md) | 由 agent 编写项目脚本、环境、检查及绘图结果表导出；不是预置的一键生信流水线 |
+| `results-interpret` | 解读实际实验/生信结果，构建证据链，处理阴性/矛盾结果 | [Result Interpretation Skill](singlecell-spatial-figures/result_interpretation/SKILL.md) | 解读报告与可追溯叙事；不自动证明机制或运行新分析 |
 | `plot-single` | 已有结果表，只画一种图 | [Style Gallery](singlecell-spatial-figures/style_gallery/README.md) | `render.py plot`：一种图的 `minimal` 或 `advanced` 版本 |
 | `plot-pipeline` | 已有某个分析过程的全部结果，生成配套图组 | [Pipeline Runtime](singlecell-spatial-figures/pipeline_tree/README.md) | `run_pipeline.py --module ...`：模块图片、manifest 与跳过原因；不执行同名分析 |
 | `figure-audit` | 严格组图、尺度 / 布局 / 导出 / 最终载体检查 | [FigureSpec / Audit Skill](singlecell-spatial-figures/SKILL.md) | `render_v3.py`：FigureSpec 渲染或 PDF / carrier / review 检查；人工验收仍必需 |

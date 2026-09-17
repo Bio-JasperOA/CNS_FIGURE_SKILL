@@ -1,0 +1,18 @@
+{
+  "status": "software_checks_passed",
+  "source_commit": "c03ac7556bbe238e076e39d493e4f8542688adbb",
+  "workflow_url": "https://github.com/Bio-JasperOA/CNS_FIGURE_SKILL/actions/runs/35184208553",
+  "checked_at_utc": "2026-09-17T05:03:05.698500+00:00",
+  "evidence_cli_tests": 51,
+  "installer_tests": 9,
+  "real_checkout_routing": "passed",
+  "synthetic_source_bindings": "passed",
+  "scientific_review": "pending",
+  "scientific_certification": false,
+  "limits": [
+    "Synthetic regressions, not real biological validation",
+    "No native R assay execution",
+    "No automatic verification of all biological prose"
+  ],
+  "source_archive_sha256": "62eedc455725c1e46dc3ae776102ce9e4fbf223b3a7947e10f5c524f19595dbb"
+}

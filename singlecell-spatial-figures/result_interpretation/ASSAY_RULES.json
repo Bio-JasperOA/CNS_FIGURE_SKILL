@@ -1,0 +1,216 @@
+{
+  "version": "1.0",
+  "purpose": "Agent reasoning prompts; not implementations of the scientific analyses.",
+  "assays": {
+    "annotation": {
+      "question": "Cell identity/state",
+      "supports": "Coherent marker and reference evidence",
+      "does_not_support": "Novel cell type from a cluster label",
+      "checks": [
+        "marker coherence",
+        "donor recurrence",
+        "contamination"
+      ]
+    },
+    "sc_composition": {
+      "question": "Population representation",
+      "supports": "Relative or absolute abundance under the declared denominator",
+      "does_not_support": "Recruitment/proliferation mechanism from fractions alone",
+      "checks": [
+        "specimen n",
+        "denominator",
+        "sampling"
+      ]
+    },
+    "sc_expression": {
+      "question": "Within-state transcriptional response",
+      "supports": "Gene-level effect in the stated contrast",
+      "does_not_support": "Protein activity or direct mechanism from RNA alone",
+      "checks": [
+        "layer/scale",
+        "effect direction",
+        "replicate-aware model"
+      ]
+    },
+    "pathway": {
+      "question": "Programme coherence",
+      "supports": "Enrichment or inferred programme activity",
+      "does_not_support": "Causal pathway action from an enrichment p-value",
+      "checks": [
+        "contributors",
+        "coverage",
+        "overlap",
+        "appropriate universe"
+      ]
+    },
+    "regulon": {
+      "question": "Candidate regulation",
+      "supports": "Candidate regulator-target programme",
+      "does_not_support": "Every inferred edge is a direct binding event",
+      "checks": [
+        "TF activity vs expression",
+        "motif specificity",
+        "perturbation"
+      ]
+    },
+    "trajectory": {
+      "question": "State ordering",
+      "supports": "Transition hypothesis under ordering assumptions",
+      "does_not_support": "Observed lineage or elapsed time from pseudotime",
+      "checks": [
+        "root",
+        "measured stage",
+        "continuity",
+        "stability"
+      ]
+    },
+    "velocity": {
+      "question": "Directional dynamics",
+      "supports": "Model-conditional directional evidence",
+      "does_not_support": "Ground-truth fate or migration",
+      "checks": [
+        "kinetic fit",
+        "uncertainty",
+        "preprocessing sensitivity"
+      ]
+    },
+    "spatial_localization": {
+      "question": "Tissue organization",
+      "supports": "Measured localization or local enrichment",
+      "does_not_support": "Causal niche effect from colocalization",
+      "checks": [
+        "unit/resolution",
+        "coordinate transform",
+        "anatomy-aware null"
+      ]
+    },
+    "spatial_mapping": {
+      "question": "Reference-based localization",
+      "supports": "Mapped abundance/identity with its uncertainty",
+      "does_not_support": "Exact cell contact from mixed spots",
+      "checks": [
+        "reference coverage",
+        "calibrated vs uncalibrated scores",
+        "heldout markers"
+      ]
+    },
+    "communication": {
+      "question": "Candidate signaling",
+      "supports": "Sender-receiver hypothesis",
+      "does_not_support": "Demonstrated signaling from transcript score alone",
+      "checks": [
+        "ligand/receptor",
+        "receiver programme",
+        "specimen recurrence"
+      ]
+    },
+    "spatial_communication": {
+      "question": "Spatially plausible signaling",
+      "supports": "Location-supported communication hypothesis",
+      "does_not_support": "Causal signaling from proximity alone",
+      "checks": [
+        "resolution",
+        "exposure",
+        "density",
+        "response programme"
+      ]
+    },
+    "qpcr": {
+      "question": "Targeted transcript abundance",
+      "supports": "Normalized RNA response",
+      "does_not_support": "Protein or phenotype validation by default",
+      "checks": [
+        "Ct/expression sign",
+        "reference",
+        "biological vs technical repeats"
+      ]
+    },
+    "protein": {
+      "question": "Protein abundance or modification",
+      "supports": "Specified total/phospho/activity readout",
+      "does_not_support": "RNA/protein/activity interchangeability",
+      "checks": [
+        "loading",
+        "ratio denominator",
+        "saturation",
+        "quantification"
+      ]
+    },
+    "imaging": {
+      "question": "Localization/intensity/morphology",
+      "supports": "Quantified specimen-aware image endpoint",
+      "does_not_support": "Direct binding from overlap or statistics from a representative panel",
+      "checks": [
+        "segmentation",
+        "exposure",
+        "sample selection",
+        "unit of inference"
+      ]
+    },
+    "flow_cytometry": {
+      "question": "Phenotype or population fraction",
+      "supports": "Gate-defined fraction/MFI/absolute counts",
+      "does_not_support": "Events are biological replicates",
+      "checks": [
+        "parent gate",
+        "viability",
+        "compensation",
+        "denominator"
+      ]
+    },
+    "functional": {
+      "question": "Cell/tissue function",
+      "supports": "The function actually measured by the assay",
+      "does_not_support": "Assay proxy is the entire disease process",
+      "checks": [
+        "specificity",
+        "viability",
+        "confounding",
+        "biological n"
+      ]
+    },
+    "perturbation": {
+      "question": "Intervention consequence",
+      "supports": "Context-scoped effect under an identifying design",
+      "does_not_support": "Necessity/sufficiency/directness simultaneously",
+      "checks": [
+        "target engagement",
+        "allocation",
+        "off-target/toxicity",
+        "controls"
+      ]
+    },
+    "rescue": {
+      "question": "Specificity or reversal",
+      "supports": "Defined rescue contrast in its system",
+      "does_not_support": "Full normalization/mediation from nonsignificance",
+      "checks": [
+        "rescue-alone control",
+        "dose",
+        "specific comparison",
+        "pathway order"
+      ]
+    },
+    "model_prediction": {
+      "question": "Predictive usefulness",
+      "supports": "Heldout task performance versus matched baselines",
+      "does_not_support": "Benchmark success demonstrates a biological mechanism",
+      "checks": [
+        "split unit",
+        "leakage",
+        "calibration",
+        "errors",
+        "baselines"
+      ]
+    },
+    "other": {
+      "question": "Project-specific endpoint",
+      "supports": "Only claims justified by explicit assay description",
+      "does_not_support": "Invented generic assay capability",
+      "checks": [
+        "read protocol",
+        "declare endpoint and limitations"
+      ]
+    }
+  }
+}

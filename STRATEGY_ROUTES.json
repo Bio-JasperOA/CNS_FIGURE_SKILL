@@ -17,42 +17,94 @@
     "plot_kind": "One exact catalogue kind for plot-single.",
     "plot_mode": "minimal or advanced for plot-single; panel is not a style-gallery CLI mode.",
     "inputs": "Paths to the research brief, sample sheet, data inventory, reviewed result tables or figure specification as appropriate.",
-    "output_dir": "Project-specific destination. Do not overwrite repository demo assets or original research data."
+    "output_dir": "Project-specific destination. Do not overwrite repository demo assets or original research data.",
+    "interpretation_depth": "quick, full, or manuscript; defaults to full for results-interpret.",
+    "response_language": "Language for interpretation prose; distinct from the R/Python analysis-code preference."
   },
   "routes": {
     "research-design": {
       "execution_kind": "agent_planning",
       "entry": "singlecell-spatial-figures/research_logic/SKILL.md",
-      "read_after": ["singlecell-spatial-figures/research_logic/CNS_ANCHORS.md", "singlecell-spatial-figures/research_logic/PAPER_LOGIC_LIBRARY.md"],
-      "required_inputs": ["biological_question_or_brief", "available_data_and_constraints"],
-      "outputs": ["research_plan.md", "research_plan.json_when_schema_applicable", "claim_evidence_graph", "validation_and_failure_rules"],
+      "read_after": [
+        "singlecell-spatial-figures/research_logic/CNS_ANCHORS.md",
+        "singlecell-spatial-figures/research_logic/PAPER_LOGIC_LIBRARY.md"
+      ],
+      "required_inputs": [
+        "biological_question_or_brief",
+        "available_data_and_constraints"
+      ],
+      "outputs": [
+        "research_plan.md",
+        "research_plan.json_when_schema_applicable",
+        "claim_evidence_graph",
+        "validation_and_failure_rules"
+      ],
       "default_execution": "plan_only",
       "boundary": "Plans a study; does not run biological analyses or certify the claims."
     },
     "analysis-plan": {
       "execution_kind": "agent_planning",
       "entry": "singlecell-spatial-figures/research_logic/ANALYSIS_SKILL.md",
-      "read_after": ["singlecell-spatial-figures/research_logic/ANALYSIS_STRATEGY_LIBRARY.md", "singlecell-spatial-figures/research_logic/ANALYSIS_STRATEGY_CATALOG.json"],
-      "required_inputs": ["scientific_objective_or_claims", "data_inventory", "replicate_and_condition_metadata"],
-      "outputs": ["analysis_plan.md", "selected_and_excluded_modules", "per_step_inputs_outputs_diagnostics", "figure_handoff_plan"],
+      "read_after": [
+        "singlecell-spatial-figures/research_logic/ANALYSIS_STRATEGY_LIBRARY.md",
+        "singlecell-spatial-figures/research_logic/ANALYSIS_STRATEGY_CATALOG.json"
+      ],
+      "required_inputs": [
+        "scientific_objective_or_claims",
+        "data_inventory",
+        "replicate_and_condition_metadata"
+      ],
+      "outputs": [
+        "analysis_plan.md",
+        "selected_and_excluded_modules",
+        "per_step_inputs_outputs_diagnostics",
+        "figure_handoff_plan"
+      ],
       "default_execution": "plan_only",
       "boundary": "Selects a defensible analysis chain. No packaged Seurat/Scanpy analysis runner is implied."
     },
     "analysis-code": {
       "execution_kind": "agent_code_authoring",
       "entry": "singlecell-spatial-figures/research_logic/ANALYSIS_EXECUTION.md",
-      "read_after": ["singlecell-spatial-figures/research_logic/ANALYSIS_SKILL.md", "singlecell-spatial-figures/pipeline_tree/RESULT_CONTRACTS.json"],
-      "required_inputs": ["reviewed_analysis_plan", "actual_input_paths_and_metadata", "language_and_compute_constraints"],
-      "outputs": ["project_analysis_scripts", "environment_and_commands", "preflight_checks", "result_contract_exporters", "run_log_only_if_executed"],
+      "read_after": [
+        "singlecell-spatial-figures/research_logic/ANALYSIS_SKILL.md",
+        "singlecell-spatial-figures/pipeline_tree/RESULT_CONTRACTS.json"
+      ],
+      "required_inputs": [
+        "reviewed_analysis_plan",
+        "actual_input_paths_and_metadata",
+        "language_and_compute_constraints"
+      ],
+      "outputs": [
+        "project_analysis_scripts",
+        "environment_and_commands",
+        "preflight_checks",
+        "result_contract_exporters",
+        "run_log_only_if_executed"
+      ],
       "default_execution": "write_code",
       "boundary": "The agent authors project-specific R/Python code. Execution requires run_approved and satisfied scientific/input prerequisites; unexecuted code is not a completed analysis."
     },
     "plot-single": {
       "execution_kind": "python_renderer",
       "entry": "singlecell-spatial-figures/style_gallery/README.md",
-      "read_after": ["singlecell-spatial-figures/SKILL.md", "singlecell-spatial-figures/style_gallery/DESIGN_GUIDE.md", "singlecell-spatial-figures/style_gallery/catalogue_v32.json"],
-      "required_inputs": ["plot_kind", "reviewed_csv", "reviewed_config_json"],
-      "outputs": ["png", "pdf", "svg", "qa_json", "source_and_config_hashes"],
+      "read_after": [
+        "singlecell-spatial-figures/SKILL.md",
+        "singlecell-spatial-figures/style_gallery/DESIGN_GUIDE.md",
+        "singlecell-spatial-figures/style_gallery/catalogue_v32.json"
+      ],
+      "required_inputs": [
+        "plot_kind",
+        "reviewed_csv",
+        "reviewed_config_json"
+      ],
+      "outputs": [
+        "png",
+        "pdf",
+        "svg",
+        "qa_json",
+        "source_and_config_hashes"
+      ],
       "default_execution": "run_approved",
       "cli": "singlecell-spatial-figures/style_gallery/render.py",
       "boundary": "Renders one kind in minimal or advanced mode. Does not compute missing statistical estimates."
@@ -60,9 +112,22 @@
     "plot-pipeline": {
       "execution_kind": "python_renderer",
       "entry": "singlecell-spatial-figures/pipeline_tree/README.md",
-      "read_after": ["singlecell-spatial-figures/SKILL.md", "singlecell-spatial-figures/pipeline_tree/IMPLEMENTED_MODULES.json", "singlecell-spatial-figures/pipeline_tree/RESULT_CONTRACTS.json"],
-      "required_inputs": ["plot_module", "all_named_input_tables", "module_config_json"],
-      "outputs": ["module_figures", "review_panels_when_available", "manifest_json", "conditional_skip_reasons"],
+      "read_after": [
+        "singlecell-spatial-figures/SKILL.md",
+        "singlecell-spatial-figures/pipeline_tree/IMPLEMENTED_MODULES.json",
+        "singlecell-spatial-figures/pipeline_tree/RESULT_CONTRACTS.json"
+      ],
+      "required_inputs": [
+        "plot_module",
+        "all_named_input_tables",
+        "module_config_json"
+      ],
+      "outputs": [
+        "module_figures",
+        "review_panels_when_available",
+        "manifest_json",
+        "conditional_skip_reasons"
+      ],
       "default_execution": "run_approved",
       "cli": "singlecell-spatial-figures/pipeline_tree/run_pipeline.py",
       "boundary": "Draws an existing analysis module's reviewed results; does not perform the named biological analysis or guarantee every mapped target."
@@ -70,9 +135,19 @@
     "figure-audit": {
       "execution_kind": "python_audit",
       "entry": "singlecell-spatial-figures/SKILL.md",
-      "read_after": ["singlecell-spatial-figures/examples/v3_software_qa/figure.yaml"],
-      "required_inputs": ["figure_spec_or_exported_pdf", "source_data_and_scale_definitions", "carrier_placement_when_requested"],
-      "outputs": ["figure_spec_render_outputs_when_requested", "export_or_carrier_audit", "artifact_bound_review_state"],
+      "read_after": [
+        "singlecell-spatial-figures/examples/v3_software_qa/figure.yaml"
+      ],
+      "required_inputs": [
+        "figure_spec_or_exported_pdf",
+        "source_data_and_scale_definitions",
+        "carrier_placement_when_requested"
+      ],
+      "outputs": [
+        "figure_spec_render_outputs_when_requested",
+        "export_or_carrier_audit",
+        "artifact_bound_review_state"
+      ],
       "default_execution": "run_approved",
       "cli": "singlecell-spatial-figures/scripts/render_v3.py",
       "boundary": "The strict FigureSpec composer has its own renderer registry, not all 26 gallery families. Human acceptance is not automated."
@@ -80,34 +155,122 @@
     "end-to-end": {
       "execution_kind": "agent_orchestration",
       "entry": "AGENTS.md",
-      "read_after": ["singlecell-spatial-figures/research_logic/SKILL.md", "singlecell-spatial-figures/research_logic/ANALYSIS_SKILL.md", "singlecell-spatial-figures/research_logic/ANALYSIS_EXECUTION.md", "singlecell-spatial-figures/SKILL.md"],
-      "required_inputs": ["project_brief", "data_inventory", "sample_metadata", "compute_and_output_constraints"],
-      "outputs": ["research_plan", "analysis_plan", "code_if_requested", "results_only_after_execution", "figures_only_from_reviewed_results"],
+      "read_after": [
+        "singlecell-spatial-figures/research_logic/SKILL.md",
+        "singlecell-spatial-figures/research_logic/ANALYSIS_SKILL.md",
+        "singlecell-spatial-figures/research_logic/ANALYSIS_EXECUTION.md",
+        "singlecell-spatial-figures/SKILL.md",
+        "singlecell-spatial-figures/result_interpretation/SKILL.md"
+      ],
+      "required_inputs": [
+        "project_brief",
+        "data_inventory",
+        "sample_metadata",
+        "compute_and_output_constraints"
+      ],
+      "outputs": [
+        "research_plan",
+        "analysis_plan",
+        "code_if_requested",
+        "results_only_after_execution",
+        "figures_only_from_reviewed_results",
+        "source_linked_interpretation_after_result_diagnostics"
+      ],
       "default_execution": "plan_only",
       "boundary": "Staged orchestration, not one-click analysis. Respect the requested execution stage and do not manufacture missing evidence."
+    },
+    "results-interpret": {
+      "execution_kind": "agent_interpretation",
+      "entry": "singlecell-spatial-figures/result_interpretation/SKILL.md",
+      "read_after": [
+        "singlecell-spatial-figures/result_interpretation/ASSAY_PLAYBOOK.md",
+        "singlecell-spatial-figures/result_interpretation/NARRATIVE_PLAYBOOK.md",
+        "singlecell-spatial-figures/result_interpretation/LITERATURE_LOGIC.md"
+      ],
+      "required_inputs": [
+        "research_question_or_local_comparison",
+        "actual_results_or_figures",
+        "available_sample_and_assay_metadata"
+      ],
+      "outputs": [
+        "interpretation.md",
+        "claim_evidence.json",
+        "contradictions.md",
+        "next_steps.md",
+        "Results_and_Discussion_drafts_when_requested",
+        "review_pending"
+      ],
+      "default_execution": "plan_only",
+      "audit_cli": "singlecell-spatial-figures/result_interpretation/review_results.py",
+      "boundary": "Agent reads and interprets actual results. The optional CLI validates declarations, local file hashes and explicit CSV/TSV bindings, not mechanisms, all prose entailment, or journal readiness."
     }
   },
   "analysis_to_plot": {
-    "sc.qc": ["scrna.qc"],
-    "sc.integration": ["scrna.integration"],
-    "sc.annotation": ["scrna.annotation"],
-    "sc.composition_da": ["scrna.composition_da"],
-    "sc.de": ["scrna.markers_de"],
-    "sc.pathway": ["scrna.pathway_activity"],
-    "sc.regulon": ["scrna.regulon_module"],
-    "sc.trajectory": ["scrna.trajectory", "development.lineage_progression"],
-    "sc.velocity": ["scrna.velocity_fate"],
-    "sc.communication": ["scrna.communication"],
-    "spatial.qc": ["spatial.qc"],
-    "spatial.mapping_deconvolution": ["spatial.mapping_deconvolution"],
-    "spatial.domains": ["spatial.domains"],
-    "spatial.svg": ["spatial.svg_autocorrelation", "spatial.expression"],
-    "spatial.niche": ["spatial.neighborhood_niche"],
-    "spatial.gradient": ["spatial.gradient_trajectory", "development.spatial_gradient"],
-    "spatial.communication": ["spatial.communication"],
-    "spatial.multisection": ["spatial.multisection"],
-    "spatial.histology": ["spatial.histology_morphology"],
-    "crossmodal.sc_to_spatial": ["cross_modal.reference_mapping", "cross_modal.marker_validation"]
+    "sc.qc": [
+      "scrna.qc"
+    ],
+    "sc.integration": [
+      "scrna.integration"
+    ],
+    "sc.annotation": [
+      "scrna.annotation"
+    ],
+    "sc.composition_da": [
+      "scrna.composition_da"
+    ],
+    "sc.de": [
+      "scrna.markers_de"
+    ],
+    "sc.pathway": [
+      "scrna.pathway_activity"
+    ],
+    "sc.regulon": [
+      "scrna.regulon_module"
+    ],
+    "sc.trajectory": [
+      "scrna.trajectory",
+      "development.lineage_progression"
+    ],
+    "sc.velocity": [
+      "scrna.velocity_fate"
+    ],
+    "sc.communication": [
+      "scrna.communication"
+    ],
+    "spatial.qc": [
+      "spatial.qc"
+    ],
+    "spatial.mapping_deconvolution": [
+      "spatial.mapping_deconvolution"
+    ],
+    "spatial.domains": [
+      "spatial.domains"
+    ],
+    "spatial.svg": [
+      "spatial.svg_autocorrelation",
+      "spatial.expression"
+    ],
+    "spatial.niche": [
+      "spatial.neighborhood_niche"
+    ],
+    "spatial.gradient": [
+      "spatial.gradient_trajectory",
+      "development.spatial_gradient"
+    ],
+    "spatial.communication": [
+      "spatial.communication"
+    ],
+    "spatial.multisection": [
+      "spatial.multisection"
+    ],
+    "spatial.histology": [
+      "spatial.histology_morphology"
+    ],
+    "crossmodal.sc_to_spatial": [
+      "cross_modal.reference_mapping",
+      "cross_modal.marker_validation"
+    ]
   },
-  "handoff_rule": "Mappings are candidate figure handoffs, not analysis implementations, automatic field conversions, or complete target-coverage guarantees. Check every selected renderer's named inputs and conditions in the live pipeline registry. Do not guess an ID for an unregistered analysis."
+  "handoff_rule": "Mappings are candidate figure handoffs, not analysis implementations, automatic field conversions, or complete target-coverage guarantees. Check every selected renderer's named inputs and conditions in the live pipeline registry. Do not guess an ID for an unregistered analysis.",
+  "result_bundle_schema": "singlecell-spatial-figures/result_interpretation/RESULT_BUNDLE_SCHEMA.json"
 }

@@ -61,3 +61,9 @@ Record a figure or an explicit skip/failure reason for every executed analysis s
 ## Completion criterion
 
 The route is complete when the requested deliverable exists at the requested stage: a checked plan for `plan_only`, source code plus run instructions for `write_code`, or recorded execution outputs and diagnostics for `run_approved`. Distinguish a completed code-writing task from a completed biological analysis.
+
+<!-- RESULT_INTERPRETATION:START -->
+## Interpretation handoff
+
+After diagnostics, invoke `results-interpret` for source-linked biological interpretation before manuscript claims. Read `../result_interpretation/SKILL.md`. Preserve assay/layer, contrast, biological units, normalization, intervals, limitations and negative results. No completed analysis is assumed merely because its script exists.
+<!-- RESULT_INTERPRETATION:END -->

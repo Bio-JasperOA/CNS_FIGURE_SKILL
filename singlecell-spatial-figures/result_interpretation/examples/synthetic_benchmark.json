@@ -1,0 +1,157 @@
+{
+  "schema_version": "1.0",
+  "example_only": true,
+  "question": "Does the model improve over a matched baseline on this synthetic task?",
+  "sources": [
+    {
+      "id": "S1",
+      "kind": "result_table",
+      "path": "synthetic_benchmark.csv",
+      "read_scope": "full",
+      "locator": "Only row; synthetic benchmark values",
+      "synthetic": true,
+      "sha256": "f640f4964093f635b5e011e66dac24826234bf1543f103cabed69422417fc812"
+    }
+  ],
+  "observations": [
+    {
+      "id": "R1",
+      "assay": "model_prediction",
+      "question": "Which part of the proposed biological explanation does this contrast address?",
+      "finding": "No clear improvement over the matched baseline is established in the synthetic heldout task.",
+      "origin": "computed",
+      "source_refs": [
+        "S1"
+      ],
+      "provenance_group": "benchmark_test",
+      "contrast": {
+        "test": "model",
+        "reference": "baseline",
+        "definition": "model minus baseline score; larger is better"
+      },
+      "design": {
+        "kind": "model_evaluation",
+        "biological_unit": "heldout_dataset",
+        "inferential_unit": "heldout_dataset",
+        "population_claim": false,
+        "hierarchy_accounted": true,
+        "paired": true,
+        "n_biological": {
+          "model": 6,
+          "baseline": 6
+        },
+        "unit_ids_by_group": {
+          "model": [
+            "T0",
+            "T1",
+            "T2",
+            "T3",
+            "T4",
+            "T5"
+          ],
+          "baseline": [
+            "T0",
+            "T1",
+            "T2",
+            "T3",
+            "T4",
+            "T5"
+          ]
+        },
+        "cohort_id": "synthetic_benchmark",
+        "validation_role": "heldout"
+      },
+      "statistics": {
+        "estimate": -0.003,
+        "scale": "difference",
+        "null_value": 0,
+        "unit": "declared assay unit",
+        "method": "synthetic specimen-level contrast",
+        "ci": {
+          "lower": -0.02,
+          "upper": 0.011,
+          "level": 0.95,
+          "kind": "confidence",
+          "method": "synthetic interval"
+        },
+        "p_value": 0.68,
+        "q_value": null,
+        "multiplicity": "not_applicable"
+      },
+      "quality": {
+        "status": "passed",
+        "details": [
+          "Synthetic fixture structure checked; not a biological QC claim"
+        ]
+      },
+      "limitations": [
+        "Teaching fixture; no real experiment was performed."
+      ],
+      "assay_details": {
+        "heldout": true,
+        "split_unit": "dataset",
+        "baseline_comparison": "Matched simple baseline",
+        "leakage_check": "Synthetic fixture, not an empirical assurance"
+      },
+      "numeric_bindings": [
+        {
+          "source_id": "S1",
+          "row_key": {
+            "result_id": "R1"
+          },
+          "column": "estimate",
+          "statistic": "estimate"
+        }
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "text": "The current benchmark does not establish superiority.",
+      "type": "comparative",
+      "status": "supported",
+      "scope": "Synthetic teaching system only",
+      "supporting_results": [
+        "R1"
+      ],
+      "contradicting_results": [],
+      "unresolved_results": [],
+      "reasoning": "The interval covers effects on either side of the no-improvement reference. This does not establish equivalence or universal model failure.",
+      "alternatives": [
+        {
+          "explanation": "A compositional or measurement-specific explanation may account for part of the pattern.",
+          "predicted_observation": "An appropriately controlled comparison would reduce that part of the signal.",
+          "discriminating_test": "Use an endpoint-matched, specimen-aware validation."
+        }
+      ],
+      "unsupported_extension": "Do not infer a demonstrated tissue-level disease mechanism or therapeutic rescue."
+    }
+  ],
+  "evidence_links": [],
+  "excluded_results": [],
+  "narrative": {
+    "results_sections": [
+      {
+        "heading": "No demonstrated improvement on the tested task",
+        "claim_ids": [
+          "C1"
+        ],
+        "result_ids": [
+          "R1"
+        ],
+        "text": "The synthetic model-versus-baseline contrast did not establish a performance advantage (R1). The uncertainty does not justify declaring equivalence."
+      }
+    ],
+    "discussion": "This finding is restricted to the defined benchmark and evaluation design, not all models or biological tasks.",
+    "literature_refs": [
+      "P7",
+      "P8"
+    ]
+  },
+  "next_steps": [],
+  "review": {
+    "status": "pending",
+    "note": "Synthetic software fixture; a human must review actual study evidence."
+  }
+}

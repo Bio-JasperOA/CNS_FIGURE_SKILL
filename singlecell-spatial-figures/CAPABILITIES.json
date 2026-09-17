@@ -377,5 +377,14 @@
       "Native R parity is not claimed",
       "Review contact sheets are raster navigation artifacts; standalone PDF/SVG files are publication candidates"
     ]
+  },
+  "result_interpretation": {
+    "version": "1.0",
+    "task_mode": "results-interpret",
+    "agent_workflow": true,
+    "validator": "singlecell-spatial-figures/result_interpretation/review_results.py",
+    "native_scientific_inference_engine": false,
+    "human_review_required": true,
+    "tests": "See result_interpretation/tests and its CI; no native R assay validation or biological truth certification implied."
   }
 }
