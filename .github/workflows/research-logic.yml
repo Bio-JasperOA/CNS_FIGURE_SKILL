@@ -1,0 +1,40 @@
+name: Validate research logic skill
+
+on:
+  push:
+    paths:
+      - 'AGENTS.md'
+      - 'singlecell-spatial-figures/research_logic/**'
+      - '.github/workflows/research-logic.yml'
+  pull_request:
+    paths:
+      - 'AGENTS.md'
+      - 'singlecell-spatial-figures/research_logic/**'
+      - '.github/workflows/research-logic.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Install validator dependency
+        run: python -m pip install 'jsonschema>=4.18,<5'
+      - name: Validate research-plan example
+        run: |
+          python singlecell-spatial-figures/research_logic/validate_research_plan.py \
+            singlecell-spatial-figures/research_logic/templates/research_plan.example.json
+      - name: Compile validator
+        run: python -m py_compile singlecell-spatial-figures/research_logic/validate_research_plan.py
+      - name: Check routing files exist
+        run: |
+          test -s AGENTS.md
+          test -s singlecell-spatial-figures/research_logic/SKILL.md
+          test -s singlecell-spatial-figures/research_logic/PAPER_LOGIC_LIBRARY.md
+          test -s singlecell-spatial-figures/research_logic/RESEARCH_PLAN_SCHEMA.json
