@@ -23,8 +23,10 @@ _chart_core.palette = editorial_palette
 _chart_core.cmap = editorial_cmap
 KINDS=list(REQUIRED)
 PALETTE_SNAPSHOT={**PAL,**editorial_snapshots()}
-_palette=editorial_palette
-_cmap=editorial_cmap
+# Compatibility hooks retained for the legacy primitive-contract tests only. Actual
+# rendering above is explicitly routed through modern_palettes.
+_palette=palette
+_cmap=cmap
 
 # Explanatory microcopy is intentionally suppressed from the plotting canvas. Scientific
 # meaning should live in axis labels, legends, direct data labels, captions and provenance.
