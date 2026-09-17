@@ -216,14 +216,14 @@
   "font": "DejaVu Sans",
   "width_mm": 190.0,
   "height_mm": 155.0,
-  "input_csv_sha256": "333a178e814190370648ad1aabb5f8b9fe44790930d792c120eb57d84f6765b1",
+  "input_csv_sha256": "94368f2f49d01921e9cc712afc466c55f89d33f2804c6ebf2bc356dca7c7b68d",
   "derived_order": null,
   "omitted_intersections": null,
   "axes_count": 2,
   "scope": "canvas bounds and subtitle policy; not a scientific or universal collision certificate",
   "outputs": {
-    "png": "c166cafd2640c4ef132b40ef7b86fc2f4955f3f1b862591b058c2c03e02a2d33",
-    "pdf": "5fa4de7f896cf7282031cd23f5d2c09954ae5e2206abea5b4b3e4796d7a65137",
-    "svg": "83fa510e540d5f97b7ce8aa0c3e7b1338a276c3f502138be0f08c316e7ded803"
+    "png": "ecc38fc80c48de0da91b1b6547f2da7d324da956c60a8ad804af937844643318",
+    "pdf": "23d2cbf19942884060da7294e6f0ff28ed044a2e7ba4cc6992d0c802c8a15677",
+    "svg": "5c2ea12ca4e245f60e34491120e04ba53d8de3e60ae4c9638d3c5665f46e2c50"
   }
 }
