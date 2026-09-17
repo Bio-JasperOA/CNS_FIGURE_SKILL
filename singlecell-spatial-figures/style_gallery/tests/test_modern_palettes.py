@@ -3,13 +3,21 @@ import sys
 from pathlib import Path
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
 
-from matplotlib.colors import to_rgb
+import matplotlib.pyplot as plt
+from matplotlib.colors import to_rgb,to_hex
+from matplotlib.collections import PathCollection
 from modern_palettes import palette,cmap,CATEGORICAL,SEQUENTIAL,DIVERGING
+from render import render,_prepare_demo_config
+from fixtures import generate
 
 
-def _lightness(hex_color):
-    r,g,b=to_rgb(hex_color)
+def _lightness(color):
+    r,g,b=to_rgb(color)
     return 0.2126*r+0.7152*g+0.0722*b
+
+
+def _hexset(rows):
+    return {to_hex(x,keep_alpha=False).upper() for x in rows}
 
 
 def test_editorial_inventory_is_complete_and_high_lightness():
@@ -61,3 +69,52 @@ def test_continuous_defaults_are_light_and_never_black():
     assert _lightness(seq(1.0))>.55
     assert _lightness(div(0.5))>.90
     assert _lightness(div(0.0))>.55 and _lightness(div(1.0))>.55
+
+
+def test_demo_config_removes_legacy_palette_hints():
+    _,c=generate()['embedding']
+    prepared=_prepare_demo_config(c)
+    assert prepared['palette_policy']=='modern_editorial'
+    assert 'colors' not in prepared
+    assert 'categorical_preset' not in prepared
+    _,c=generate()['benchmark']
+    prepared=_prepare_demo_config(c)
+    assert 'continuous_preset' not in prepared
+
+
+def test_rendered_embedding_artist_uses_editorial_palette():
+    d,c=generate()['embedding']
+    legacy={x.upper() for x in c['colors'].values()}
+    fig=render('embedding',d,c,'minimal')
+    try:
+        coll=next(x for x in fig.axes[0].collections if isinstance(x,PathCollection))
+        actual=_hexset(coll.get_facecolors())
+        expected={x.upper() for x in CATEGORICAL['E01']['colors']}
+        assert actual==expected
+        assert actual.isdisjoint(legacy)
+        assert fig._palette_policy=='modern_editorial'
+        assert fig._palette_router=='modern_palettes'
+    finally:
+        plt.close(fig)
+
+
+def test_rendered_spatial_artist_uses_editorial_sequential_cmap():
+    d,c=generate()['spatial']
+    fig=render('spatial',d,c,'minimal')
+    try:
+        im=fig.axes[0].collections[0]
+        assert to_hex(im.cmap(0.0)).upper()==SEQUENTIAL['L01']['colors'][0]
+        assert to_hex(im.cmap(1.0)).upper()==SEQUENTIAL['L01']['colors'][-1]
+    finally:
+        plt.close(fig)
+
+
+def test_rendered_heatmap_artist_uses_editorial_diverging_cmap():
+    d,c=generate()['heatmap']
+    fig=render('heatmap',d,c,'minimal')
+    try:
+        im=fig.axes[0].images[0]
+        assert to_hex(im.cmap(0.0)).upper()==DIVERGING['V02']['colors'][0]
+        assert to_hex(im.cmap(1.0)).upper()==DIVERGING['V02']['colors'][-1]
+    finally:
+        plt.close(fig)
