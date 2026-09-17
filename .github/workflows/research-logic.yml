@@ -3,13 +3,23 @@ name: Validate research logic skill
 on:
   push:
     paths:
+      - 'README.md'
       - 'AGENTS.md'
+      - 'STRATEGY_ROUTES.json'
       - 'singlecell-spatial-figures/research_logic/**'
+      - 'singlecell-spatial-figures/pipeline_tree/IMPLEMENTED_MODULES.json'
+      - 'singlecell-spatial-figures/style_gallery/catalogue_v32.json'
+      - '.github/scripts/validate_strategy_routes.py'
       - '.github/workflows/research-logic.yml'
   pull_request:
     paths:
+      - 'README.md'
       - 'AGENTS.md'
+      - 'STRATEGY_ROUTES.json'
       - 'singlecell-spatial-figures/research_logic/**'
+      - 'singlecell-spatial-figures/pipeline_tree/IMPLEMENTED_MODULES.json'
+      - 'singlecell-spatial-figures/style_gallery/catalogue_v32.json'
+      - '.github/scripts/validate_strategy_routes.py'
       - '.github/workflows/research-logic.yml'
   workflow_dispatch:
 
@@ -19,6 +29,7 @@ permissions:
 jobs:
   validate:
     runs-on: ubuntu-latest
+    timeout-minutes: 5
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -46,13 +57,20 @@ jobs:
               assert spec['question'] and spec['minimum_inputs'] and spec['outputs']
           print('analysis modules',len(x['modules']))
           PY
-      - name: Compile validator
-        run: python -m py_compile singlecell-spatial-figures/research_logic/validate_research_plan.py
+      - name: Validate invocation routes, README links and negative cases
+        run: python .github/scripts/validate_strategy_routes.py --self-test
+      - name: Compile validators
+        run: |
+          python -m py_compile singlecell-spatial-figures/research_logic/validate_research_plan.py
+          python -m py_compile .github/scripts/validate_strategy_routes.py
       - name: Check routing files exist
         run: |
+          test -s README.md
           test -s AGENTS.md
+          test -s STRATEGY_ROUTES.json
           test -s singlecell-spatial-figures/research_logic/SKILL.md
           test -s singlecell-spatial-figures/research_logic/ANALYSIS_SKILL.md
+          test -s singlecell-spatial-figures/research_logic/ANALYSIS_EXECUTION.md
           test -s singlecell-spatial-figures/research_logic/PAPER_LOGIC_LIBRARY.md
           test -s singlecell-spatial-figures/research_logic/ANALYSIS_STRATEGY_LIBRARY.md
           test -s singlecell-spatial-figures/research_logic/ANALYSIS_STRATEGY_CATALOG.json

@@ -1,49 +1,84 @@
 # Repository agent routing
 
-This repository has two complementary execution layers.
+## Start with the requested task
 
-## Research design / scientific strategy
+Read the root `README.md` Invocation section and `STRATEGY_ROUTES.json`. The JSON file defines repository-local `task_mode` values, entry documents, prerequisites, deliverables and analysis-to-plot handoffs. These are agent routing labels, not shell commands or automatically installed slash commands. All paths in that registry are repository-root relative.
 
-If the task asks to design, critique, prioritize, extend or interpret a study, **read first**:
+| Task mode | Instruction |
+|---|---|
+| `research-design` | Read `singlecell-spatial-figures/research_logic/SKILL.md`; design or critique the question, provisional claims and evidence chain. |
+| `analysis-plan` | Read `singlecell-spatial-figures/research_logic/ANALYSIS_SKILL.md`; choose question-driven analysis families and diagnostics. |
+| `analysis-code` | Read `singlecell-spatial-figures/research_logic/ANALYSIS_EXECUTION.md`; author project-specific R/Python scripts from a reviewed plan. |
+| `plot-single` | Read `singlecell-spatial-figures/style_gallery/README.md`; render one reviewed table with an existing gallery kind. |
+| `plot-pipeline` | Read `singlecell-spatial-figures/pipeline_tree/README.md`; render the reviewed inputs of one registered module. |
+| `figure-audit` | Read `singlecell-spatial-figures/SKILL.md`; select strict FigureSpec rendering, PDF inspection, carrier checking or artifact-bound review. |
+| `end-to-end` | Follow the staged chain below; do not recursively reload this document. |
+
+Honor an explicit task mode. Without one, select the smallest route that answers the user's task and state the selected route briefly. A request to redraw an existing result does not require a new research plan. A request for an analysis plan does not authorize data processing or figure regeneration. Do not invent route IDs, module IDs, CLI flags, missing data or claimed capabilities.
+
+`language: R|Python|mixed` is an analysis implementation preference, not renderer parity. `execution: plan_only` means no analysis execution, `write_code` means source deliverables, and `run_approved` means the user has explicitly requested execution of the named scope. Respect scientific prerequisites and actual data access. An explicit, sufficiently specified execution request does not need redundant confirmation. Never report an unexecuted script as a completed analysis.
+
+## Research design and scientific strategy
+
+For research questions, study critique, literature-derived logic or prioritization, read:
 
 1. `singlecell-spatial-figures/research_logic/SKILL.md`
 2. `singlecell-spatial-figures/research_logic/CNS_ANCHORS.md`
 3. `singlecell-spatial-figures/research_logic/PAPER_LOGIC_LIBRARY.md`
-4. `singlecell-spatial-figures/research_logic/ANALYSIS_SKILL.md` for operational scRNA-seq / spatial analysis planning.
-5. `singlecell-spatial-figures/research_logic/ANALYSIS_STRATEGY_LIBRARY.md`
-6. `singlecell-spatial-figures/research_logic/ANALYSIS_STRATEGY_CATALOG.json` when selecting concrete analysis families.
-7. `singlecell-spatial-figures/research_logic/RESEARCH_PLAN_SCHEMA.json` when producing a durable project plan.
+4. `singlecell-spatial-figures/research_logic/RESEARCH_PLAN_SCHEMA.json` when authoring a full machine-readable research plan.
 
-Do not begin a research-design task with software, analysis methods or figures. Start from the biological gap, core question, central claim and claim–evidence graph.
+Start from the biological gap, answerable question, provisional central claim, alternatives and claim-evidence graph, not software or attractive plots. Treat the literature library as a navigation aid: verify specific literature claims in the actual source and distinguish verified facts from hypotheses. A valid JSON plan is not a scientific certification.
 
-Once the claims are defined, choose the **smallest defensible analysis chain** from the analysis-strategy library. Every analysis step must support at least one claim and must specify its biological question, independence unit, expected output, limitation and validation. Do not add CellChat, trajectory, velocity, regulons, spatial niches, deconvolution or other advanced modules only because they are available.
+For biological foundation-model projects, address biological utility, appropriate baselines, OOD axes, specimen-level independence and leakage. For development/embryo and spatial studies, distinguish measured time and space from inferred geometry. Do not infer a true lineage from pseudotime or a spatial mechanism from dissociated data alone.
 
-For biological foundation-model projects, explicitly address biological utility, baseline hierarchy, OOD evaluation, specimen-level independence and leakage.
+## Analysis strategy and code authoring
 
-For developmental/embryo or spatial projects, distinguish measured time/space from inferred geometry. UMAP is not developmental time; pseudotime is not lineage by itself; a spatial claim requires measured spatial information.
+After the scientific objective is sufficiently defined, read:
 
-## Figure generation / result presentation
+1. `singlecell-spatial-figures/research_logic/ANALYSIS_SKILL.md`
+2. `singlecell-spatial-figures/research_logic/ANALYSIS_STRATEGY_LIBRARY.md`
+3. `singlecell-spatial-figures/research_logic/ANALYSIS_STRATEGY_CATALOG.json`
+4. `singlecell-spatial-figures/research_logic/ANALYSIS_EXECUTION.md` only when authoring or running project code.
 
-If the task is to render reviewed upstream results, read:
+Choose the smallest defensible analysis chain. Each step needs a question or technical quality objective, actual input, independence unit, method-selection reason, output, diagnostic, limitation, validation and figure handoff or justified skip. Do not add communication, trajectory, velocity, regulons, niches or deconvolution simply because they are available.
+
+Use `STRATEGY_ROUTES.json` `analysis_to_plot` only for candidate downstream figures. For example, analysis `sc.de` and plotting `scrna.markers_de` are not interchangeable IDs. The latter currently requires separate `markers` and `de` tables. Check all current named inputs and conditions; mappings do not manufacture missing outputs or run analysis algorithms.
+
+When a relevant analysis is absent from the catalog, describe its scientific and implementation requirements. Add a reviewed definition, handoff and validation when repository extension is requested. Until then, label it a project-specific or unregistered analysis rather than invoking a fictional built-in module.
+
+## Figure generation and audit
+
+For reviewed results, use the selected plotting entry and also read:
 
 - `singlecell-spatial-figures/SKILL.md`
-- `singlecell-spatial-figures/pipeline_tree/README.md`
-- the relevant style-gallery documentation.
+- `singlecell-spatial-figures/pipeline_tree/IMPLEMENTED_MODULES.json` for module inputs and conditional capabilities
+- `singlecell-spatial-figures/pipeline_tree/RESULT_CONTRACTS.json` for result-table fields
+- the relevant style-gallery design and example documentation.
 
-The plotting layer must not invent missing statistics, boundaries, trajectories, significance, uncertainty or biological conclusions.
+Do not refit biological/statistical models while plotting. Do not create missing intervals, significance, boundaries, trajectories, probabilities or conclusions. `plot-single` supports `minimal` and `advanced`, not a generic `panel` mode. Pipeline module figures and strict FigureSpec panels are distinct execution paths. Check manifest-generated records and skipped reasons instead of claiming all mapped targets were produced.
+
+Keep the established palette policy, no subtitles, aligned legends and no explanatory microcopy on the canvas. Retain essential data labels and synthetic-data identification; put interpretation in captions/provenance. Current R bridges are not native equivalents of the full Python gallery/runtime.
 
 ## Combined task
 
-When a task includes both research design and figures:
-
 ```text
-research question
-→ claim–evidence graph
-→ data design
-→ analysis strategy selection
-→ validation design
-→ reviewed result contracts
-→ figure pipeline
+research-design
+→ analysis-plan
+→ analysis-code
+→ actual analysis execution when requested and feasible
+→ result diagnostics and scientific review
+→ plot-single or plot-pipeline
+→ figure-audit when required
 ```
 
-Never reverse this order by selecting attractive figures first and retrofitting a scientific story afterward.
+`end-to-end` defaults to planning. Respect the requested execution stage, reuse adequate prior work, and stop only the branches whose prerequisites fail. Keep status for each step separate: planned, code written, executed, checked, or skipped. Never reverse this order by retrofitting a scientific story to attractive figures.
+
+## Maintenance
+
+When modifying task modes, named entry files or handoffs, update `STRATEGY_ROUTES.json`, the root README and these instructions together, then run:
+
+```bash
+python .github/scripts/validate_strategy_routes.py --self-test
+```
+
+Do not change figure renderers, palettes or generated images during documentation-only work. Keep Skill major version 3 and FigureSpec 3.0 unless the user explicitly requests otherwise.
