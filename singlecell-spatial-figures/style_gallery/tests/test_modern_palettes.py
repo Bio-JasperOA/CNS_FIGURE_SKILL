@@ -12,19 +12,21 @@ def _lightness(hex_color):
     return 0.2126*r+0.7152*g+0.0722*b
 
 
-def test_editorial_inventory_is_complete_and_light_background_friendly():
+def test_editorial_inventory_is_complete_and_high_lightness():
     assert len(CATEGORICAL)==12
     assert len(SEQUENTIAL)==6
     assert len(DIVERGING)==4
     colors=[c for row in CATEGORICAL.values() for c in row['colors']]
-    assert min(_lightness(c) for c in colors)>.30
+    assert min(_lightness(c) for c in colors)>.55
+    assert sum(_lightness(c) for c in colors)/len(colors)>.65
 
 
-def test_default_small_category_routing_is_low_saturation_editorial():
+def test_default_small_category_routing_is_light_editorial():
     levels=['A','B','C','D','E','F']
     p=palette(levels,{})
     assert list(p.values())==CATEGORICAL['E01']['colors']
     assert len(set(p.values()))==len(levels)
+    assert min(_lightness(c) for c in p.values())>.55
 
 
 def test_subset_identity_is_stable_under_editorial_routing():
@@ -55,7 +57,7 @@ def test_legacy_and_locked_routes_remain_available():
 def test_continuous_defaults_are_light_and_never_black():
     seq=cmap({'title':'Spatial expression'})
     div=cmap({'title':'Differential expression effect'},signed=True)
-    assert _lightness(seq(0.0))>.85
-    assert _lightness(seq(1.0))>.30
-    assert _lightness(div(0.5))>.85
-    assert _lightness(div(0.0))>.25 and _lightness(div(1.0))>.25
+    assert _lightness(seq(0.0))>.90
+    assert _lightness(seq(1.0))>.55
+    assert _lightness(div(0.5))>.90
+    assert _lightness(div(0.0))>.55 and _lightness(div(1.0))>.55
