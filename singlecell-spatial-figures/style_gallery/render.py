@@ -6,9 +6,10 @@ import argparse, copy, hashlib, json
 from pathlib import Path
 import pandas as pd
 import matplotlib.pyplot as plt
+from matplotlib import colors as mc
 from matplotlib.text import Text
 import chart_core as _chart_core
-from chart_core import VERSION,REQUIRED,validate,frame,audit,export,palette,cmap,PAL
+from chart_core import VERSION,REQUIRED,validate,frame,audit,export,palette,cmap,PAL,INK,MUTED
 import chart_types as _chart_types
 from chart_types import PLOTTERS
 from modern_palettes import palette as editorial_palette, cmap as editorial_cmap, snapshots as editorial_snapshots
@@ -22,8 +23,21 @@ _chart_core.palette = editorial_palette
 _chart_core.cmap = editorial_cmap
 KINDS=list(REQUIRED)
 PALETTE_SNAPSHOT={**PAL,**editorial_snapshots()}
-_palette=palette
-_cmap=cmap
+_palette=editorial_palette
+_cmap=editorial_cmap
+
+# Explanatory microcopy is intentionally suppressed from the plotting canvas. Scientific
+# meaning should live in axis labels, legends, direct data labels, captions and provenance.
+_EXPLAINER_PREFIXES=(
+    'Row order:',
+    'Cell text:',
+    'Cell text =',
+    'Node values:',
+    'Total ',
+    'Area ∝',
+    'Point area ∝',
+    'Fixed point area',
+)
 
 
 def _prepare_demo_config(config):
@@ -40,6 +54,46 @@ def _prepare_demo_config(config):
     return c
 
 
+def _align_legend(legend):
+    if legend is None:return
+    try:legend.set_alignment('left')
+    except Exception:
+        if hasattr(legend,'_legend_box'):legend._legend_box.align='left'
+    if hasattr(legend,'_legend_box'):legend._legend_box.align='left'
+    title=legend.get_title()
+    if title is not None:title.set_ha('left')
+    for txt in legend.get_texts():txt.set_ha('left')
+
+
+def finalize_figure(fig):
+    """Apply publication-level legend/text cleanup to gallery and pipeline figures.
+
+    - legend titles and entries are left aligned consistently;
+    - gray explanatory microcopy is removed when it is only a plotting note;
+    - remaining small muted labels are promoted to the main ink color;
+    - the synthetic fixture disclosure remains explicit, but is not gray microcopy.
+    """
+    for ax in fig.axes:_align_legend(ax.get_legend())
+    for legend in getattr(fig,'legends',[]):_align_legend(legend)
+
+    muted=mc.to_hex(MUTED).upper();removed=[]
+    for txt in fig.findobj(Text):
+        text=(txt.get_text() or '').strip()
+        if not text:continue
+        if txt.get_gid()=='synthetic_disclosure':
+            txt.set_color(INK);txt.set_fontsize(max(7,txt.get_fontsize()))
+            continue
+        if any(text.startswith(prefix) for prefix in _EXPLAINER_PREFIXES) or ' not displayed' in text:
+            txt.set_visible(False);removed.append(text);continue
+        try:color=mc.to_hex(txt.get_color()).upper()
+        except Exception:color=''
+        if color==muted and txt.get_fontsize()<=7.5:
+            txt.set_color(INK)
+    fig._legend_alignment='left'
+    fig._removed_explanatory_text=removed
+    return fig
+
+
 def render(kind,table,config=None,mode='advanced'):
     cfg=copy.deepcopy(config or {});d=table.copy(deep=True)
     cfg.setdefault('palette_policy','modern_editorial')
@@ -51,6 +105,7 @@ def render(kind,table,config=None,mode='advanced'):
         fig,ax=frame(kind,cfg)
         try:
             PLOTTERS[kind](ax,d,mode=='advanced',cfg)
+            finalize_figure(fig)
             for t in fig.findobj(Text):t.set_fontfamily(fig._actual_font)
             fig._mode=mode;fig._input_sha256=hashlib.sha256(table.to_csv(index=False).encode()).hexdigest()
             fig._palette_policy=cfg.get('palette_policy','modern_editorial')
