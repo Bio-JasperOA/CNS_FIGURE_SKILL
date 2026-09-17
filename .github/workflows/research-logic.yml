@@ -30,11 +30,30 @@ jobs:
         run: |
           python singlecell-spatial-figures/research_logic/validate_research_plan.py \
             singlecell-spatial-figures/research_logic/templates/research_plan.example.json
+      - name: Validate analysis-strategy catalog
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path('singlecell-spatial-figures/research_logic/ANALYSIS_STRATEGY_CATALOG.json')
+          x=json.loads(p.read_text())
+          assert x['version']
+          assert len(x['modules']) >= 15
+          required={'question','minimum_inputs','unit_of_inference','outputs','supports','does_not_support','validation'}
+          for name,spec in x['modules'].items():
+              missing=required-set(spec)
+              assert not missing,(name,missing)
+              assert spec['question'] and spec['minimum_inputs'] and spec['outputs']
+          print('analysis modules',len(x['modules']))
+          PY
       - name: Compile validator
         run: python -m py_compile singlecell-spatial-figures/research_logic/validate_research_plan.py
       - name: Check routing files exist
         run: |
           test -s AGENTS.md
           test -s singlecell-spatial-figures/research_logic/SKILL.md
+          test -s singlecell-spatial-figures/research_logic/ANALYSIS_SKILL.md
           test -s singlecell-spatial-figures/research_logic/PAPER_LOGIC_LIBRARY.md
+          test -s singlecell-spatial-figures/research_logic/ANALYSIS_STRATEGY_LIBRARY.md
+          test -s singlecell-spatial-figures/research_logic/ANALYSIS_STRATEGY_CATALOG.json
           test -s singlecell-spatial-figures/research_logic/RESEARCH_PLAN_SCHEMA.json
