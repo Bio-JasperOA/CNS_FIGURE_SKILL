@@ -7,6 +7,19 @@ CNS Figure Skill is designed for research workflows in which scientific reasonin
 
 CNS Figure Skill 面向需要保持“科学问题—分析结果—图形证据”可追溯关系的科研工作流。它不会替代上游生物学或统计分析，而是将已经审核的输入转化为可复现的分析规划、结果解读与发表级图形。
 
+## Start here · 从这里开始
+
+**New users should first read [`USAGE_EXAMPLES.md`](USAGE_EXAMPLES.md).** It explains the main usage scenarios, how to choose among the eight task routes, how to call each module from an Agent/Codex workflow, and how direct plotting/pipeline CLIs fit into the overall research workflow.
+
+**首次使用建议先阅读 [`USAGE_EXAMPLES.md`](USAGE_EXAMPLES.md)。** 其中以“使用场景 → 模块选择 → 调用模板 → 预期输出”的方式说明八类任务路线，并提供 Agent/Codex 调用框架、直接绘图命令和典型组合使用实例。
+
+Quick references / 快速入口：
+
+- [`USAGE_EXAMPLES.md`](USAGE_EXAMPLES.md) — usage scenarios and module examples / 使用场景与模块调用示例
+- [`AGENTS.md`](AGENTS.md) — agent routing rules / Agent 路由规则
+- [`STRATEGY_ROUTES.json`](STRATEGY_ROUTES.json) — machine-readable route registry / 机器可读路由表
+- [`singlecell-spatial-figures/README.md`](singlecell-spatial-figures/README.md) — scientific figure system / 科学绘图系统
+
 ## Core capabilities · 核心能力
 
 | Route | English | 中文 |
